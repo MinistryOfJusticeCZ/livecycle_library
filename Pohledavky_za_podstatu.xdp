@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V9.0.0.2.20120627.2.874785" APIVersion="3.1.20001.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2017-08-08T10:29:19Z" uuid="60d16445-553d-4dc8-8982-6f3518a20d3b">
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.8/">
+   <?formServer defaultPDFRenderFormat acrobat9.0static?>
+   <subform name="form1" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="0.25in" y="0.25in" w="576pt" h="756pt"/>
+            <medium stock="default" short="612pt" long="792pt"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform name="Pohledavky" layout="table" columnWidths="106.68mm 27.94mm 27.94mm 27.94mm">
+         <border>
+            <edge/>
+         </border>
+         <subform layout="row" name="HeaderRow" id="HeaderRow_ID_copy3">
+            <assist role="TH"/>
+            <draw h="6.35mm" name="Cell1">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Specifikace pohledávky</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <draw h="6.35mm" name="Cell3">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Výše pohledávky</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <draw h="6.35mm" name="Cell4">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Uhrazeno</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <draw h="6.35mm" name="Cell5">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Neuhrazeno</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <bind match="none"/>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="Pohledavka">
+            <assist role="TR"/>
+            <subform name="InnerTable" layout="table" columnWidths="25.4mm 81.28mm 27.94mm 27.94mm 27.94mm" colSpan="4">
+               <border>
+                  <edge/>
+               </border>
+               <subform layout="row" name="Row1">
+                  <assist role="TR"/>
+                  <field name="Specifikace_pohledavky" w="106.68mm" minH="6.35mm" colSpan="2">
+                     <ui>
+                        <textEdit multiLine="1">
+                           <border presence="hidden">
+                              <?templateDesigner StyleID aped0?></border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <fill/>
+                     </border>
+                  </field>
+                  <field name="Vyse_pohledavky" w="22.225mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit/>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <fill/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <format>
+                        <picture>num.currency{}</picture>
+                     </format>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                  </field>
+                  <field name="Uhrazeno" w="12.7mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit/>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <fill/>
+                     </border>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num.currency{}</picture>
+                     </format>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                  </field>
+                  <field name="Neuhrazeno" w="22.225mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit/>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <fill/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <format>
+                        <picture>num.currency{}</picture>
+                     </format>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                  </field>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <subform layout="row" name="Row2">
+                  <assist role="TR"/>
+                  <draw h="6.35mm" name="Cell1" y="0mm">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt" baselineShift="0pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                     <value>
+                        <text>Druh pohledávky</text>
+                     </value>
+                  </draw>
+                  <field name="Druh_drop" w="60.325mm" h="3.175mm" colSpan="4">
+                     <ui>
+                        <choiceList/>
+                     </ui>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <fill/>
+                     </border>
+                     <items save="1">
+                        <text>1. Náhrada hotových výdajů předběžného správce</text>
+                        <text>2. Náhrada nutných výdajů a odměna likvidátora dlužníka jmenovaného soudem a správce podniku dlužníka za součinnost poskytnutou předběžnému správci nebo insolvenčnímu správci</text>
+                        <text>3. Náhrada nutných výdajů a odměna členů a náhradníků věřitelského výboru</text>
+                        <text>4. Náhrada zálohy na náklady insolvenčního řízení, jestliže ji v souladu s rozhodnutím insolvenčního soudu zaplatila jiná osoba než dlužník</text>
+                        <text>5. Pohledávky věřitelů vzniklé za trvání moratoria ze smluv podle § 122 odst. 2 InsZ</text>
+                        <text>6. Pohledávky věřitelů z úvěrového financování</text>
+                        <text>7. Hotové výdaje insolvenčního správce</text>
+                        <text>8. Částka vyčleněná na předpokládané výlohy spojené s ukončením řízení podle § 305 odst. 3 InsZ</text>
+                        <text>9. Výdaje insolvenčního správce ze zpeněžení předmětu zajištění podle § 298 InsZ</text>
+                        <text>10. Náklady spojené s udržováním a správou majetkové podstaty dlužníka</text>
+                        <text>11. Náhrada nutných výdajů a odměna likvidátora, osoby v postavení obdobném postavení likvidátora a odpovědného zástupce za činnost prováděnou po rozhodnutí o úpadku</text>
+                        <text>12. Náhrada hotových výdajů a odměna znalce ustanoveného insolvenčním soudem za účelem ocenění majetkové podstaty</text>
+                        <text>13. Daně, poplatky a jiná obdobná peněžitá plnění, pojistné na sociální zabezpečení a příspěvek na státní politiku zaměstnanosti, pojistné na veřejné zdravotní pojištění a pojistné na důchodové spoření, pohledávky vzniklé opravou výše daně u pohledávek za dlužníkem v insolvenčním řízení podle zákona upravujícího daň z přidané hodnoty</text>
+                        <text>14. Pohledávky věřitelů ze smluv uzavřených osobou s dispozičními oprávněními</text>
+                        <text>15. Pohledávky věřitelů ze smluv, které se podle tohoto zákona považují za smlouvy, jejichž splnění osoba s dispozičními oprávněními neodmítla</text>
+                        <text>16. Pohledávky věřitelů odpovídající právu na vrácení plnění ze smluv, které se podle tohoto zákona považují za smlouvy, jejichž splnění osoba s dispozičními oprávněními odmítla</text>
+                        <text>17. Úroky podle § 171 odst. 4 InsZ</text>
+                        <text>18. Náhrada hotových výdajů osob, které poskytly insolvenčnímu správci součinnost</text>
+                        <text>19. Další pohledávky, o nichž tak stanoví InsZ</text>
+                     </items>
+                  </field>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <keep intact="contentArea"/>
+               <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <occur max="-1"/>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="Soucty" id="FooterRow_ID_copy3">
+            <assist role="TF"/>
+            <draw h="6.35mm" name="Cell1">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Celkem pohledávky za majetkovou podstatou</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt" weight="bold" baselineShift="0pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="1.7702mm" rightInset="0.5mm"/>
+               <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+            </draw>
+            <field name="Celkem_pohledavky" access="readOnly" w="12.7mm" minH="6.35mm">
+               <ui>
+                  <numericEdit/>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+               <calculate>
+                  <script>
+sum( this.parent.parent.Pohledavka[*].InnerTable.Row1.Vyse_pohledavky )
+</script>
+               </calculate>
+            </field>
+            <field name="Celkem_uhrazeno" access="readOnly" w="12.7mm" minH="6.35mm">
+               <ui>
+                  <numericEdit/>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+               <calculate>
+                  <script>
+sum( this.parent.parent.Pohledavka[*].InnerTable.Row1.Uhrazeno )
+</script>
+               </calculate>
+            </field>
+            <field name="Celkem_neuhrazeno" access="readOnly" w="12.7mm" minH="6.35mm">
+               <ui>
+                  <numericEdit/>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+               <calculate>
+                  <script>
+sum( this.parent.parent.Pohledavka[*].InnerTable.Row1.Neuhrazeno )
+</script>
+               </calculate>
+            </field>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <?templateDesigner expand 1?></subform>
+         <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+         <overflow leader="HeaderRow"/>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle Pohledavky_za_podstatu?>
+         <?templateDesigner expand 1?></subform>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 104 00010025002F003400360037004200440045004600470049004A004C004D004F00500051005300560057005A005B00C800DD00E2?>
+      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 76 000100240042004500460049004B004C004D004E005000510054005500560057005A005B00C8?>
+   </subform>
+   <?templateDesigner FormTargetVersion 28?>
+   <?templateDesigner Zoom 122?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/2.8/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>3</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 4.2.1-c043 52.437709, 2010/08/04-17:30:07        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2017-08-08T10:29:19Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer ES 9.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer ES 9.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:60d16445-553d-4dc8-8982-6f3518a20d3b</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Pohledavky_za_podstatu</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.Pohledavky</dc:identifier>
+                  <lcd:fragmentRole>Table</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>

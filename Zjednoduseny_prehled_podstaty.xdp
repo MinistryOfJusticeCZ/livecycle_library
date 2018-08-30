@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V9.0.0.2.20120627.2.874785" APIVersion="3.1.20001.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2017-06-20T12:30:40Z" uuid="0f331811-2081-4d85-a52c-0d11280471b7">
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.8/">
+   <?formServer defaultPDFRenderFormat acrobat9.0static?>
+   <subform name="form1" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="0.25in" y="0.25in" w="576pt" h="756pt"/>
+            <medium stock="default" short="612pt" long="792pt"/>
+         </pageArea>
+      </pageSet>
+      <subform name="Tabulka" layout="table" columnWidths="48.26mm 35.56mm 35.56mm 35.56mm 35.56mm">
+         <border>
+            <edge/>
+         </border>
+         <subform layout="row" name="HeaderRow" y="0mm">
+            <assist role="TH"/>
+            <draw h="9.767mm" name="Identifikace" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Identifikace majetku</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <draw h="9.767mm" name="Oceneni" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Ocenění majetku</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <draw h="9.767mm" name="Zpenezeni" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Zpeněžení ke dni vyhotovení soupisu</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <draw h="9.767mm" name="Zajisteno" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Zajištěno</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <draw h="9.767mm" name="Nezajisteno" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Nezajištěno</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <bind match="none"/>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="Nemovity_majetek" y="0mm">
+            <assist role="TR"/>
+            <draw h="7.62mm" name="Nemovity" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Nemovitý majetek</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <field name="Oceneni" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Zpenezeni" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Zajisteno" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Nezajisteno" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="Movity_majetek" y="0mm">
+            <assist role="TR"/>
+            <draw h="7.62mm" name="Movity" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Movitý majetek</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <field name="Oceneni" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Zpenezeni" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Zajisteno" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Nezajisteno" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="Financni_prostredky" y="0mm">
+            <assist role="TR"/>
+            <draw h="7.62mm" name="Financni" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Finanční prostředky</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <field name="Oceneni" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Zpenezeni" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Zajisteno" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Nezajisteno" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="Pohledavky" y="0mm">
+            <assist role="TR"/>
+            <draw h="7.62mm" name="Pohledavky" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Pohledávky</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <field name="Oceneni" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Zpenezeni" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Zajisteno" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Nezajisteno" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="Ostatni_majetek" y="0mm">
+            <assist role="TR"/>
+            <draw h="7.62mm" name="Ostatni" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Ostatní majetek</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+            </draw>
+            <field name="Oceneni" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Zpenezeni" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Zajisteno" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <field name="Nezajisteno" h="7.62mm" y="0mm">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+            </field>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="Celkem" y="0mm">
+            <assist role="TR"/>
+            <draw h="7.62mm" name="Celkem" y="0mm">
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Celkem</text>
+               </value>
+               <font typeface="Myriad Pro" weight="bold" baselineShift="0pt" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+            </draw>
+            <field name="Oceneni" h="7.62mm" y="0mm" access="readOnly">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+               <calculate>
+                  <script>
+var value = 0
+foreach sectionName in ("Nemovity_majetek", "Movity_majetek", "Financni_prostredky", "Pohledavky", "Ostatni_majetek") do
+	value = value + this.parent.parent.resolveNode(sectionName).resolveNode($.name)
+endfor
+
+$.rawValue = value
+</script>
+               </calculate>
+            </field>
+            <field name="Zpenezeni" h="7.62mm" y="0mm" access="readOnly">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+               <calculate>
+                  <script>
+var value = 0
+foreach sectionName in ("Nemovity_majetek", "Movity_majetek", "Financni_prostredky", "Pohledavky", "Ostatni_majetek") do
+	value = value + this.parent.parent.resolveNode(sectionName).resolveNode($.name)
+endfor
+
+$.rawValue = value
+</script>
+               </calculate>
+            </field>
+            <field name="Zajisteno" h="7.62mm" y="0mm" access="readOnly">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+               <calculate>
+                  <script>
+var value = 0
+foreach sectionName in ("Nemovity_majetek", "Movity_majetek", "Financni_prostredky", "Pohledavky", "Ostatni_majetek") do
+	value = value + this.parent.parent.resolveNode(sectionName).resolveNode($.name)
+endfor
+
+$.rawValue = value
+</script>
+               </calculate>
+            </field>
+            <field name="Nezajisteno" h="7.62mm" y="0mm" access="readOnly">
+               <ui>
+                  <numericEdit/>
+                  <picture>num.decimal{}</picture>
+               </ui>
+               <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <border>
+                  <edge/>
+                  <corner thickness="0.1778mm"/>
+                  <fill/>
+               </border>
+               <validate>
+                  <picture>num.decimal{}</picture>
+               </validate>
+               <bind>
+                  <picture>num.decimal{}</picture>
+               </bind>
+               <format>
+                  <picture>num.currency{}</picture>
+               </format>
+               <calculate>
+                  <script>
+var value = 0
+foreach sectionName in ("Nemovity_majetek", "Movity_majetek", "Financni_prostredky", "Pohledavky", "Ostatni_majetek") do
+	value = value + this.parent.parent.resolveNode(sectionName).resolveNode($.name)
+endfor
+
+$.rawValue = value
+</script>
+               </calculate>
+            </field>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <?templateDesigner expand 1?></subform>
+         <keep intact="contentArea"/>
+         <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+         <bind match="none"/>
+         <?templateDesigner expand 0?>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle Zjednoduseny_prehled_podstaty?></subform>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 148 00010027002A002E002F00300031003B004200440045004600470049004A004B004C004D004E004F0050005100530054005500560057005A005B00C800D300DD00E200E401CF01D401F2?>
+      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 20 00240046004C004D004E?>
+   </subform>
+   <?templateDesigner FormTargetVersion 28?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 115?></template>
+<config xmlns="http://www.xfa.org/schema/xci/2.8/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>3</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 4.2.1-c043 52.437709, 2010/08/04-17:30:07        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2017-06-20T12:30:40Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer ES 9.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer ES 9.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:0f331811-2081-4d85-a52c-0d11280471b7</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Zjednoduseny_prehled_podstaty</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.Tabulka</dc:identifier>
+                  <lcd:fragmentRole>Table</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>

@@ -1,0 +1,1377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V9.0.0.2.20120627.2.874785" APIVersion="3.1.20001.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2017-08-08T11:40:58Z" uuid="17c13e20-106e-43b1-bc13-2a5b6f642e18">
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.8/">
+   <?formServer defaultPDFRenderFormat acrobat9.0static?>
+   <subform name="form1" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="0.25in" y="0.25in" w="576pt" h="756pt"/>
+            <medium stock="default" short="612pt" long="792pt"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform name="Pohledavky" layout="table" columnWidths="7.5in">
+         <border>
+            <edge/>
+         </border>
+         <subform layout="row" name="HeaderRow" id="HeaderRow_ID">
+            <assist role="TH"/>
+            <subform name="Table7" layout="table" columnWidths="12.7mm 30.4801mm 30.4801mm 30.4801mm 30.4801mm 30.4801mm 25.4mm">
+               <border>
+                  <edge/>
+               </border>
+               <subform layout="row" name="Row1" y="0mm">
+                  <assist role="TR"/>
+                  <draw colSpan="-1" w="202.887mm" h="7.62mm" y="0mm">
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p><span style="xfa-spacerun:yes">   </span><span style="font-size:8pt">Věřitel</span><span style="xfa-spacerun:yes">  </span></p></body>
+                        </exData>
+                     </value>
+                     <font typeface="Myriad Pro"/>
+                     <para vAlign="middle" hAlign="center"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                  </draw>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <traversal>
+                     <traverse operation="first" ref="#draw[0]"/>
+                  </traversal>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <subform layout="row" name="Row2" y="0mm">
+                  <assist role="TR"/>
+                  <draw name="Cell1" minH="7.62mm">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Číslo věřitele</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw name="Cell2" minH="7.62mm">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Celková výše pohledávky</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt" weight="bold"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw h="7.62mm" name="Cell3">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Vykonatelné</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw h="7.62mm" name="Cell4">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Popřeno</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw h="7.62mm" name="Cell5">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Podmíněno</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw h="7.62mm" name="Cell6">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Nepřezkoumává se</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw name="Cell7" minH="7.62mm">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Datum doručení</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <subform layout="row" name="Row3" y="0mm">
+                  <assist role="TR"/>
+                  <draw name="Cell1" minH="7.62mm">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Poř. číslo přihlášky</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw name="Cell2" minH="7.62mm">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Zbývá k uspokojení</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw h="7.62mm" name="Cell3">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Nevykonatelné</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw h="7.62mm" name="Cell4">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Zjištěno</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt" weight="bold"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw h="7.62mm" name="Cell5">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Duplicitní</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw h="7.62mm" name="Cell6">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>Odmítnuto</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <draw name="Cell7" minH="7.62mm">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                     <value>
+                        <text>%</text>
+                     </value>
+                  </draw>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <keep intact="contentArea"/>
+               <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+               <traversal>
+                  <traverse operation="first" ref="Row1[0]"/>
+               </traversal>
+               <bind match="none"/>
+               <?templateDesigner expand 0?></subform>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <traversal>
+               <traverse operation="first" ref="Table7[0]"/>
+            </traversal>
+            <bind match="none"/>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="Data">
+            <assist role="TR"/>
+            <subform name="Pohledavka" layout="table" columnWidths="12.7mm 30.48mm 30.48mm 30.48mm 30.48mm 30.48mm 25.4mm" w="7.991278in">
+               <border>
+                  <edge thickness="0.4293mm"/>
+                  <corner thickness="0.429mm"/>
+               </border>
+               <subform layout="row" name="Row1" y="0mm">
+                  <assist role="TR"/>
+                  <field name="Veritel" w="202.887mm" minH="6.35mm" colSpan="7" y="0mm">
+                     <ui>
+                        <textEdit multiLine="1">
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="7.3508mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <border>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                     </border>
+                  </field>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <subform layout="row" name="Row2" y="0mm">
+                  <assist role="TR"/>
+                  <field name="Cislo_veritele" w="24.87mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                     <border>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                     </border>
+                  </field>
+                  <field name="Celkova_vyse" w="25.467mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt" weight="bold"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                  </field>
+                  <field name="Vykonatelne" w="30.897mm" minH="6.35mm" y="0mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                  </field>
+                  <field name="Popreno" w="30.897mm" minH="6.35mm" y="0mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                  </field>
+                  <field name="Podmineno" w="30.897mm" minH="6.35mm" y="0mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <traversal>
+                        <traverse ref="Neprezkoumava_se[0]"/>
+                     </traversal>
+                  </field>
+                  <field name="Neprezkoumava_se" w="30.897mm" minH="6.35mm" y="0mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.1778mm"/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                  </field>
+                  <field name="Datum_doruceni" w="28.847mm" minH="6.35mm">
+                     <ui>
+                        <dateTimeEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </dateTimeEdit>
+                        <picture>date{D.M.YYYY}</picture>
+                     </ui>
+                     <font size="9pt" typeface="Myriad Pro"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                     <value>
+                        <date/>
+                     </value>
+                     <border>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                     </border>
+                     <format>
+                        <picture>date{D.M.YYYY}</picture>
+                     </format>
+                     <bind>
+                        <picture>date{YYYY-MM-DD}</picture>
+                     </bind>
+                     <validate>
+                        <picture>date{D.M.YYYY}</picture>
+                     </validate>
+                  </field>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <subform layout="row" name="Row3" y="0mm">
+                  <assist role="TR"/>
+                  <field name="Poradove_cislo" w="26.042mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                     <border>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.429mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <edge thickness="0.4293mm"/>
+                     </border>
+                  </field>
+                  <field name="K_uspokojeni" w="27.444mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                  </field>
+                  <field name="Nevykonatelne" w="30.897mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                  </field>
+                  <field name="Zjisteno" w="30.897mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt" weight="bold"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                  </field>
+                  <field name="Duplicitni" w="30.897mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                  </field>
+                  <field name="Odmitnuto" w="30.897mm" minH="6.35mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.175mm"/>
+                        <edge thickness="0.1753mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                  </field>
+                  <field name="Percent" w="28.847mm" access="readOnly" minH="6.35mm">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <edge presence="hidden"/>
+                              <fill/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <corner thickness="0.175mm"/>
+                        <corner thickness="0.1778mm"/>
+                        <corner thickness="0.175mm"/>
+                        <edge thickness="0.1753mm"/>
+                        <edge thickness="0.1753mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{zzzz9.9z%}</picture>
+                     </format>
+                     <calculate>
+                        <script>
+if( HasValue(this.parent.parent.parent.parent.Soucty.Table7.Row3.Zjisteno) ) then
+	this.parent.parent.Row3.Zjisteno / this.parent.parent.parent.parent.Soucty.Table7.Row3.Zjisteno
+endif
+</script>
+                     </calculate>
+                  </field>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <keep intact="contentArea"/>
+               <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+               <?templateDesigner expand 0?></subform>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <traversal>
+               <traverse operation="first" ref="Table7[0]"/>
+            </traversal>
+            <occur max="-1"/>
+            <bind match="none"/>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="Soucty" id="FooterRow_ID">
+            <assist role="TF"/>
+            <subform name="Table7" layout="table" columnWidths="12.7mm 30.48mm 30.48mm 30.48mm 30.48mm 30.48mm 25.4mm" w="7.991278in">
+               <border>
+                  <edge/>
+               </border>
+               <subform layout="row" name="Row1" y="0mm">
+                  <assist role="TR"/>
+                  <draw h="6.35mm" colSpan="-1" w="202.978mm" name="Text_celkem">
+                     <font typeface="Myriad Pro" weight="bold"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>Celkem</text>
+                     </value>
+                     <margin leftInset="3.0402mm" topInset="0.5002mm" bottomInset="0.5002mm" rightInset="0.5002mm"/>
+                  </draw>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <subform layout="row" name="Row2" y="0mm">
+                  <assist role="TR"/>
+                  <draw h="6.35mm" y="0mm">
+                     <font typeface="Myriad Pro"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <para vAlign="middle"/>
+                  </draw>
+                  <field name="Celkova_vyse" w="25.467mm" minH="6.35mm" y="0mm" access="readOnly">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <calculate>
+                        <script>
+sum( this.parent.parent.parent.parent.Data[*].Pohledavka.Row2.resolveNode(this.name) )
+</script>
+                     </calculate>
+                  </field>
+                  <field name="Vykonatelne" w="30.897mm" minH="6.35mm" y="0mm" access="readOnly">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <calculate>
+                        <script>
+sum( this.parent.parent.parent.parent.Data[*].Pohledavka.resolveNode(this.parent.name).resolveNode(this.name) )
+</script>
+                     </calculate>
+                  </field>
+                  <field name="Popreno" w="30.897mm" minH="6.35mm" y="0mm" access="readOnly">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <calculate>
+                        <script>
+sum( this.parent.parent.parent.parent.Data[*].Pohledavka.Row2.resolveNode(this.name) )
+</script>
+                     </calculate>
+                  </field>
+                  <field name="Podmineno" w="30.897mm" minH="6.35mm" y="0mm" access="readOnly">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <traversal>
+                        <traverse ref="Row2[0].Duplicitni[0]"/>
+                     </traversal>
+                     <calculate>
+                        <script>
+sum( this.parent.parent.parent.parent.Data[*].Pohledavka.resolveNode(this.parent.name).resolveNode(this.name) )
+</script>
+                     </calculate>
+                  </field>
+                  <field name="Neprezkoumava_se" w="30.897mm" minH="6.35mm" y="0mm" access="readOnly">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <calculate>
+                        <script>
+sum( this.parent.parent.parent.parent.Data[*].Pohledavka.resolveNode(this.parent.name).resolveNode(this.name) )
+</script>
+                     </calculate>
+                  </field>
+                  <draw minH="6.35mm" w="26.7mm">
+                     <font typeface="Myriad Pro"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <para vAlign="middle"/>
+                  </draw>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <subform layout="row" name="Row3" y="0mm">
+                  <assist role="TR"/>
+                  <draw h="6.35mm" name="Cell1" y="0mm">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <field name="K_uspokojeni" w="27.444mm" minH="6.35mm" y="0mm" access="readOnly">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <calculate>
+                        <script>
+sum( this.parent.parent.parent.parent.Data[*].Pohledavka.Row3.resolveNode(this.name) )
+</script>
+                     </calculate>
+                  </field>
+                  <field name="Nevykonatelne" w="30.897mm" minH="6.35mm" y="0mm" access="readOnly">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <calculate>
+                        <script>
+sum( this.parent.parent.parent.parent.Data[*].Pohledavka.resolveNode(this.parent.name).resolveNode(this.name) )
+</script>
+                     </calculate>
+                  </field>
+                  <field name="Zjisteno" w="30.897mm" minH="6.35mm" y="0mm" access="readOnly">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <calculate>
+                        <script>
+sum( this.parent.parent.parent.parent.Data[*].Pohledavka.resolveNode(this.parent.name).resolveNode(this.name) )
+</script>
+                     </calculate>
+                  </field>
+                  <field name="Duplicitni" w="30.897mm" minH="6.35mm" y="0mm" access="readOnly">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <traversal>
+                        <traverse ref="Procent[0]"/>
+                     </traversal>
+                     <calculate>
+                        <script>
+sum( this.parent.parent.parent.parent.Data[*].Pohledavka.resolveNode(this.parent.name).resolveNode(this.name) )
+</script>
+                     </calculate>
+                  </field>
+                  <field name="Odmitnuto" w="30.897mm" minH="6.35mm" y="0mm" access="readOnly">
+                     <ui>
+                        <numericEdit>
+                           <border>
+                              <fill/>
+                              <edge presence="hidden"/>
+                           </border>
+                           <margin/>
+                        </numericEdit>
+                        <picture>num.decimal{}</picture>
+                     </ui>
+                     <font typeface="Myriad Pro" weight="bold" size="9pt"/>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle" hAlign="right"/>
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <validate>
+                        <picture>num.decimal{}</picture>
+                     </validate>
+                     <bind>
+                        <picture>num.decimal{}</picture>
+                     </bind>
+                     <format>
+                        <picture>num{z,zzz,zzz,zzz,zz9.zz $}</picture>
+                     </format>
+                     <traversal>
+                        <traverse ref="Cell7[0]"/>
+                     </traversal>
+                     <calculate>
+                        <script>
+sum( this.parent.parent.parent.parent.Data[*].Pohledavka.resolveNode(this.parent.name).resolveNode(this.name) )
+</script>
+                     </calculate>
+                  </field>
+                  <draw h="6.35mm" name="Cell7" y="0mm">
+                     <border>
+                        <edge/>
+                        <corner thickness="0.1778mm"/>
+                     </border>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                     <para vAlign="middle" hAlign="center"/>
+                  </draw>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <keep intact="contentArea"/>
+               <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <border>
+               <edge presence="hidden"/>
+            </border>
+            <traversal>
+               <traverse operation="first" ref="Table7[0]"/>
+            </traversal>
+            <?templateDesigner expand 0?></subform>
+         <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+         <traversal>
+            <traverse operation="first" ref="HeaderRow[0]"/>
+         </traversal>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle Prehled_pohledavek?>
+         <?templateDesigner expand 1?></subform>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 156 00010006000F0025002F003000310037003B004200430044004500460049004A004B004C004D004E004F0050005100530054005500560057005A005B00C800CF00D300DD00E2018E01CF01D401F2?>
+      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 84 00010024003B004500460049004A004B004C004D004E004F0050005100550057005A00C800DD00E201D4?>
+   </subform>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner FormTargetVersion 28?>
+   <?templateDesigner Zoom 122?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/2.8/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>3</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 4.2.1-c043 52.437709, 2010/08/04-17:30:07        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2017-08-08T11:40:58Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer ES 9.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer ES 9.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:17c13e20-106e-43b1-bc13-2a5b6f642e18</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Prehled_pohledavek</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.Pohledavky</dc:identifier>
+                  <lcd:fragmentRole>Table</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>
