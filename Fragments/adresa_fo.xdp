@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="Designer_V6.1.0.20150517.1.919161" APIVersion="3.6.15103.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-06-09T07:57:21Z" uuid="1e774549-5910-4f78-b7b9-5a7765ec25ec">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <?formServer defaultPDFRenderFormat acrobat11.0static?>
+   <subform name="adresa_po_fo" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="9.9mm" y="12.9mm" w="190.2mm" h="274.2mm" name="Content"/>
+            <medium stock="a4" short="210mm" long="297mm"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform w="190mm" name="adresa_fo_wrapper" layout="lr-tb">
+         <draw name="label_fo" w="25mm" h="10mm">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <text>Bydliště/sídlo</text>
+            </value>
+            <font typeface="MyriadPro-Regular" baselineShift="0pt" size="9pt">
+               <fill>
+                  <color value="51,51,51"/>
+               </fill>
+            </font>
+            <margin topInset="1mm" bottomInset="0mm" leftInset="2mm" rightInset="0mm"/>
+            <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+            <assist>
+               <toolTip>Vyplňte svou adresu místa trvalého pobytu nebo sídlo v den podání návrhu na povolení oddlužení na území České republiky nebo v zahraničí.</toolTip>
+               <speak priority="toolTip"/>
+            </assist>
+         </draw>
+         <subform usehref=".\adresa.xdp#som($template.adresa.adresa)">
+            <margin bottomInset="0.5mm" topInset="0.5mm"/>
+            <bind match="dataRef" ref="$.adresa"/>
+            <?templateDesigner expand 1?>
+         </subform>
+         <border>
+            <edge thickness="0.2mm">
+               <color value="130,130,130"/>
+            </edge>
+            <corner thickness="0.2mm">
+               <color value="130,130,130"/>
+            </corner>
+         </border>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle adresa_fo?>
+         <?templateDesigner fragmentDescription Adresa s nadpisem "Bydliště/sídlo", s délkou přes celou sekci?>
+         <bind match="none"/>
+         <?templateDesigner expand 1?>
+         <subform usehref=".\korespondencni_adresa.xdp#som($template.koresp_adresa.korespondencni_adresa_wrapper)" name="korespondencni_adresa_wrapper">
+            <border>
+               <corner presence="hidden" stroke="solid" join="square" inverted="0" thickness="0.2mm" radius="0in">
+                  <color value="130,130,130"/>
+               </corner>
+               <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.5pt" radius="0in">
+                  <color value="0,0,0"/>
+               </corner>
+               <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.5pt" radius="0in">
+                  <color value="0,0,0"/>
+               </corner>
+               <corner presence="hidden" stroke="solid" join="square" inverted="0" thickness="0.5pt" radius="0in">
+                  <color value="0,0,0"/>
+               </corner>
+               <edge presence="hidden" stroke="solid" thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </edge>
+               <edge presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge presence="hidden" stroke="solid" thickness="0.5pt">
+                  <color value="0,0,0"/>
+               </edge>
+            </border>
+            <bind match="dataRef" ref="$.koresp_adresa"/>
+            <margin bottomInset="0.5mm"/>
+            <?templateDesigner expand 1?>
+         </subform>
+      </subform>
+      <subform w="190mm" name="adresa_fo_bez_korespondenci_wrapper" layout="lr-tb" y="3mm">
+         <draw name="label_fo" w="25mm" h="10mm">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <text>Bydliště/sídlo</text>
+            </value>
+            <font typeface="MyriadPro-Regular" baselineShift="0pt" size="9pt">
+               <fill>
+                  <color value="51,51,51"/>
+               </fill>
+            </font>
+            <margin topInset="1mm" bottomInset="0mm" leftInset="2mm" rightInset="0mm"/>
+            <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+            <assist>
+               <toolTip>Vyplňte svou adresu místa trvalého pobytu nebo sídlo v den podání návrhu na povolení oddlužení na území České republiky nebo v zahraničí.</toolTip>
+               <speak priority="toolTip"/>
+            </assist>
+         </draw>
+         <subform usehref=".\adresa.xdp#som($template.adresa.adresa)">
+            <margin bottomInset="0.5mm" topInset="0.5mm"/>
+            <bind match="dataRef" ref="$.adresa"/>
+            <?templateDesigner expand 1?>
+         </subform>
+         <border>
+            <edge thickness="0.2mm">
+               <color value="130,130,130"/>
+            </edge>
+            <corner thickness="0.2mm">
+               <color value="130,130,130"/>
+            </corner>
+         </border>
+         <bind match="none"/>
+         <?templateDesigner expand 1?>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle adresa_fo_bez_korespondencni?>
+         <?templateDesigner fragmentDescription Adresa s nadpisem "Bydliště/sídlo", s délkou přes celou sekci?></subform>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 140 00010009000A000F0010001B00220023003000310034003600420043004400450046004A004C004D004F0050005100530054005500560057005A00C800D300DD018E01CF01D4?>
+   </subform>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?templateDesigner FormTargetVersion 36?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 141?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>11</adobeExtensionLevel>
+      </pdf>
+      <common>
+         <data>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+      </common>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/" xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <xmp:MetadataDate>2020-06-09T07:57:21Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Designer 6.1</xmp:CreatorTool>
+         <pdf:Producer>Designer 6.1</pdf:Producer>
+         <xmpMM:DocumentID>uuid:1e774549-5910-4f78-b7b9-5a7765ec25ec</xmpMM:DocumentID>
+         <pdfuaid:part>1</pdfuaid:part>
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">adresa_fo</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Adresa s nadpisem "Bydliště/sídlo", s délkou přes celou sekci</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.adresa_po_fo.adresa_fo_wrapper</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">adresa_fo_bez_korespondencni</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Adresa s nadpisem "Bydliště/sídlo", s délkou přes celou sekci</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.adresa_po_fo.adresa_fo_bez_korespondenci_wrapper</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
+   <xsdConnection name="DataConnection" dataDescription="adresa_po_fo">
+      <uri>..\Data\Xsd\fragents_xsd\adresa_po_fo.xsd</uri>
+      <rootElement>adresa_po_fo</rootElement>
+      <?templateDesigner fileDigest shaHash="ZNXOt0Yf+pUqcEpkN7ciiH6VasM="?></xsdConnection>
+</connectionSet>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+   <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="adresa_po_fo">
+      <adresa_po_fo>
+         <adresa>
+            <ulice/>
+            <cpop/>
+            <cori/>
+            <psc/>
+            <obec/>
+            <stat dd:minOccur="0" dd:nullType="exclude"/>
+         </adresa>
+         <koresp_adresa switch="">
+            <ulice/>
+            <cpop/>
+            <cori/>
+            <psc/>
+            <obec/>
+            <stat dd:minOccur="0" dd:nullType="exclude"/>
+         </koresp_adresa>
+      </adresa_po_fo>
+   </dd:dataDescription>
+</xfa:datasets></xdp:xdp>

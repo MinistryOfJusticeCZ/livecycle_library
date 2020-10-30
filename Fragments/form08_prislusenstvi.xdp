@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20130830.1.901444" APIVersion="3.6.13235.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-07-08T11:36:49Z" uuid="56700cc3-1ab5-4f92-8090-1bc328d33a15">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <?formServer defaultPDFRenderFormat acrobat11.0static?>
+   <subform name="form1" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="9.9mm" y="12.9mm" w="190.2mm" h="274.2mm" name="Content"/>
+            <medium stock="a4" short="210mm" long="297mm"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform w="190mm" minH="21.001mm" layout="lr-tb" name="prislusenstvi_wrapper">
+         <bind match="none"/>
+         <draw h="6mm" name="prislusenstvi_label" w="190mm">
+            <border>
+               <corner thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </corner>
+               <corner thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </corner>
+               <corner/>
+               <corner thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </corner>
+               <edge thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </edge>
+               <edge thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </edge>
+               <edge presence="hidden"/>
+               <edge thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </edge>
+               <fill>
+                  <color value="230,235,240"/>
+               </fill>
+            </border>
+            <font typeface="Myriad Pro" size="9pt" weight="bold">
+               <fill>
+                  <color value="51,51,51"/>
+               </fill>
+            </font>
+            <margin bottomInset="0mm" leftInset="2mm" rightInset="0mm" topInset="0.5mm"/>
+            <para vAlign="middle"/>
+            <ui>
+               <textEdit>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <value>
+               <text>Příslušenství</text>
+            </value>
+            <keep next="contentArea"/>
+         </draw>
+         <draw name="rb_prislusenstvi_label" w="163mm" h="7mm">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <text>Příslušenství</text>
+            </value>
+            <font size="9pt" typeface="Myriad Pro">
+               <fill>
+                  <color value="51,51,51"/>
+               </fill>
+            </font>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="2mm" rightInset="2mm"/>
+            <para vAlign="middle"/>
+         </draw>
+         <exclGroup name="rb_prislusenstvi" layout="lr-tb">
+            <?templateDesigner itemValuesSpecified 1?>
+            <field w="14mm" h="7mm" name="ano">
+               <ui>
+                  <checkButton shape="round" size="3.8806mm">
+                     <border>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <fill/>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                  </checkButton>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="251,85,91"/>
+                  </fill>
+               </font>
+               <margin leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption placement="right" reserve="6mm">
+                  <para vAlign="middle"/>
+                  <font typeface="Myriad Pro">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <value>
+                     <text>Ano</text>
+                  </value>
+               </caption>
+               <items>
+                  <text>1</text>
+               </items>
+               <bind match="none"/>
+               <assist>
+                  <toolTip>Rozhodněte, zda budete vyplňovat Příslušenství.</toolTip>
+               </assist>
+            </field>
+            <field w="13mm" h="7mm" name="ne">
+               <ui>
+                  <checkButton shape="round" size="3.8806mm">
+                     <border>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <fill/>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                  </checkButton>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="251,85,91"/>
+                  </fill>
+               </font>
+               <margin leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption placement="right" reserve="4.776mm">
+                  <para vAlign="middle"/>
+                  <font typeface="Myriad Pro">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <value>
+                     <text>Ne</text>
+                  </value>
+               </caption>
+               <value>
+                  <text xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+               </value>
+               <items>
+                  <text>0</text>
+               </items>
+               <bind match="none"/>
+               <assist>
+                  <toolTip>Rozhodněte, zda budete vyplňovat Příslušenství.</toolTip>
+               </assist>
+            </field>
+            <bind match="dataRef" ref="$.prislusenstvi_switch"/>
+            <event activity="change" name="event__change">
+               <script contentType="application/x-javascript">
+if (this.rawValue == 1) {
+	_prislusenstvi.setInstances(1);
+} else {
+	_prislusenstvi.setInstances(0);
+}
+</script>
+            </event>
+            <?templateDesigner expand 0?></exclGroup>
+         <subform name="prislusenstvi" layout="tb" w="190mm">
+            <border>
+               <edge thickness="0.1mm" presence="hidden">
+                  <color value="180,180,180"/>
+               </edge>
+               <corner thickness="0.1mm" presence="hidden">
+                  <color value="180,180,180"/>
+               </corner>
+               <edge thickness="0.1mm" presence="hidden"/>
+               <edge thickness="0.1mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </edge>
+               <edge thickness="0.1mm" presence="hidden"/>
+               <corner thickness="0.1mm" presence="hidden"/>
+               <corner thickness="0.1mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </corner>
+               <corner thickness="0.1mm" presence="hidden"/>
+            </border>
+            <margin topInset="0mm" bottomInset="0mm" leftInset="0mm" rightInset="0mm"/>
+            <para vAlign="middle" hAlign="center"/>
+            <bind match="dataRef" ref="$.prislusenstvi_opak"/>
+            <occur min="0"/>
+            <subform name="tbl_prislusenstvi" layout="table" columnWidths="173mm 13mm">
+               <border>
+                  <edge presence="hidden"/>
+                  <corner presence="hidden"/>
+               </border>
+               <subform layout="row" name="prislusenstvi_row" x="0mm" y="0mm">
+                  <assist role="TR"/>
+                  <subform layout="lr-tb" name="prislusenstvi_row_wrapper">
+                     <bind match="none"/>
+                     <para vAlign="middle" hAlign="center"/>
+                     <border>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                     <field name="druh" w="106mm" minH="7mm" y="0mm">
+                        <ui>
+                           <choiceList>
+                              <border>
+                                 <edge thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </edge>
+                                 <corner thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </corner>
+                                 <fill/>
+                              </border>
+                           </choiceList>
+                        </ui>
+                        <font typeface="Myriad Pro">
+                           <fill>
+                              <color value="51,51,51"/>
+                           </fill>
+                        </font>
+                        <margin topInset="1mm" bottomInset="1mm" leftInset="2mm" rightInset="1mm"/>
+                        <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt" spaceBelow="0pt" vAlign="middle"/>
+                        <caption reserve="33mm">
+                           <value>
+                              <text>Druh:</text>
+                           </value>
+                           <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt"/>
+                           <font typeface="Myriad Pro" size="9pt">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                        </caption>
+                        <assist>
+                           <speak priority="toolTip"/>
+                           <toolTip>Uveďte druh příslušenství, který je po dlužníkovi požadován. Uveďte též jeho výši a způsob, jakým byla výše příslušenství vypočtena.</toolTip>
+                        </assist>
+                        <border>
+                           <edge thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </corner>
+                        </border>
+                        <bind match="dataRef" ref="$.druh"/>
+                        <items>
+                           <text>Úrok</text>
+                           <text>Kapitalizovaný úrok</text>
+                           <text>Zákonný úrok z prodlení</text>
+                           <text>Smluvní úrok z prodlení</text>
+                           <text>Kapitalizovaný zákonný úrok z prodlení</text>
+                           <text>Kapitalizovaný smluvní úrok z prodlení</text>
+                           <text>Jiné příslušenství</text>
+                           <text>Poplatek z prodlení</text>
+                           <text>Kapitalizovaný poplatek z prodlení</text>
+                           <text>Smluvní poplatek z prodlení</text>
+                        </items>
+                        <items save="1" presence="hidden">
+                           <text>1</text>
+                           <text>2</text>
+                           <text>3</text>
+                           <text>4</text>
+                           <text>5</text>
+                           <text>6</text>
+                           <text>7</text>
+                           <text>8</text>
+                           <text>9</text>
+                           <text>10</text>
+                        </items>
+                     </field>
+                     <field name="vyse" h="7mm" w="67mm" y="0mm">
+                        <ui>
+                           <numericEdit>
+                              <border>
+                                 <edge thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </edge>
+                                 <corner thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </corner>
+                                 <fill/>
+                              </border>
+                           </numericEdit>
+                        </ui>
+                        <font typeface="Myriad Pro">
+                           <fill>
+                              <color value="51,51,51"/>
+                           </fill>
+                        </font>
+                        <margin topInset="1mm" bottomInset="1mm" leftInset="2mm" rightInset="1mm"/>
+                        <para vAlign="middle" hAlign="right" marginLeft="0pt" marginRight="2.835pt" spaceAbove="2pt" spaceBelow="0pt"/>
+                        <value>
+                           <decimal leadDigits="11"/>
+                        </value>
+                        <border>
+                           <edge thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </corner>
+                        </border>
+                        <format>
+                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                        </format>
+                        <assist>
+                           <speak priority="toolTip"/>
+                           <toolTip>Uveďte výši příslušenství.</toolTip>
+                        </assist>
+                        <caption reserve="36mm">
+                           <value>
+                              <text>Výše:</text>
+                           </value>
+                           <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt"/>
+                           <font typeface="Myriad Pro" size="9pt">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                        </caption>
+                        <bind match="dataRef" ref="$.vyse"/>
+                        <validate>
+                           <script contentType="application/x-javascript">
+if (this.rawValue &lt; 0) {
+	xfa.host.messageBox("Částka \"" + sharedLib.getObjText (this, null, null ) +"\" nesmí být záporná");
+	xfa.host.setFocus(this);
+};
+</script>
+                        </validate>
+                        <event activity="change" name="event__change">
+                           <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+                        </event>
+                        <event activity="initialize" name="event__initialize">
+                           <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+                        </event>
+                     </field>
+                     <field name="zpusob_vypoctu" w="173mm" minH="8mm" y="0mm">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border>
+                                 <edge thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </edge>
+                                 <corner thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </corner>
+                                 <fill/>
+                              </border>
+                           </textEdit>
+                        </ui>
+                        <font typeface="Myriad Pro">
+                           <fill>
+                              <color value="51,51,51"/>
+                           </fill>
+                        </font>
+                        <margin topInset="1mm" bottomInset="2mm" leftInset="2mm" rightInset="1mm"/>
+                        <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt" spaceBelow="0pt" vAlign="middle"/>
+                        <caption reserve="33mm">
+                           <value>
+                              <text>Způsob výpočtu:</text>
+                           </value>
+                           <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt"/>
+                           <font typeface="Myriad Pro" size="9pt">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                        </caption>
+                        <assist>
+                           <speak priority="toolTip"/>
+                           <toolTip>Uveďte způsob, jakým byla výše příslušenství vypočtena. </toolTip>
+                        </assist>
+                        <border>
+                           <edge thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </corner>
+                        </border>
+                        <bind match="dataRef" ref="$.zpusob_vypoctu"/>
+                        <validate>
+                           <script contentType="application/x-javascript">
+if (this.rawValue &lt; 0) {
+	xfa.host.messageBox("Částka \"" + sharedLib.getObjText (this, null, null ) +"\" nesmí být záporná");
+	xfa.host.setFocus(this);
+};
+</script>
+                        </validate>
+                     </field>
+                     <occur max="-1"/>
+                     <margin topInset="1mm"/>
+                     <?templateDesigner expand 1?></subform>
+                  <subform name="buttons" layout="lr-tb">
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="2mm"/>
+                     <bind match="none"/>
+                     <field relevant="-print" h="5mm" name="btnAdd" w="5mm" y="0mm">
+                        <border hand="right">
+                           <edge thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </corner>
+                        </border>
+                        <caption>
+                           <font typeface="Myriad Pro" size="12pt" weight="bold">
+                              <fill>
+                                 <color value="77,114,149"/>
+                              </fill>
+                           </font>
+                           <para hAlign="center" vAlign="middle"/>
+                           <value>
+                              <text>+</text>
+                           </value>
+                        </caption>
+                        <font typeface="Myriad Pro"/>
+                        <ui>
+                           <button highlight="none"/>
+                        </ui>
+                        <bind match="none"/>
+                        <event activity="click" name="event__click">
+                           <script contentType="application/x-javascript">
+_prislusenstvi_row.addInstance(1);
+</script>
+                        </event>
+                     </field>
+                     <field relevant="-print" h="5mm" name="btnRemove" w="5mm" y="0mm">
+                        <border hand="right">
+                           <edge thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </corner>
+                        </border>
+                        <caption>
+                           <font typeface="Myriad Pro" size="12pt" weight="bold">
+                              <fill>
+                                 <color value="251,85,91"/>
+                              </fill>
+                           </font>
+                           <para hAlign="center" vAlign="middle"/>
+                           <value>
+                              <text>−</text>
+                           </value>
+                        </caption>
+                        <font typeface="Myriad Pro"/>
+                        <ui>
+                           <button highlight="none"/>
+                        </ui>
+                        <bind match="none"/>
+                        <event activity="click" name="event__click">
+                           <script contentType="application/x-javascript">
+if (_prislusenstvi_row.count &gt; 1) {
+	_prislusenstvi_row.removeInstance(this.parent.parent.index);
+}
+</script>
+                        </event>
+                     </field>
+                     <border>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <border>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind match="dataRef" ref="$.prislusenstvi[*]"/>
+                  <occur max="-1"/>
+                  <margin leftInset="0mm" topInset="0mm" bottomInset="0mm" rightInset="0mm"/>
+                  <keep intact="none"/>
+                  <?templateDesigner expand 1?></subform>
+               <bind match="none"/>
+               <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+               <overflow leader="HeaderRow"/>
+               <margin leftInset="2mm" rightInset="2mm" topInset="0mm" bottomInset="2mm"/>
+               <?templateDesigner expand 1?></subform>
+            <field name="celk_vyse" h="7mm" w="188mm" access="readOnly">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="4mm" rightInset="1mm"/>
+               <para vAlign="middle" hAlign="right" marginLeft="0pt" marginRight="2.835pt" spaceAbove="2pt" spaceBelow="0pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <assist>
+                  <speak priority="toolTip"/>
+                  <toolTip>Uveďte výši příslušenství.</toolTip>
+               </assist>
+               <caption reserve="156mm">
+                  <value>
+                     <text>Celková výše příslušenství:</text>
+                  </value>
+                  <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt"/>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <bind match="dataRef" ref="$.celk_vyse"/>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <calculate>
+                  <script contentType="application/x-javascript">
+var celk = 0;
+for (var i=0; i &lt; prislusenstvi.tbl_prislusenstvi._prislusenstvi_row.count; i++) {
+	celk = celk + xfa.resolveNode("prislusenstvi.tbl_prislusenstvi.prislusenstvi_row[" + i + "].prislusenstvi_row_wrapper.vyse").rawValue;
+}
+sharedLib.setFontSizeFromValue(this, celk );
+
+if (celk == 0) celk = "";
+
+celk ;
+</script>
+               </calculate>
+            </field>
+            <?templateDesigner expand 1?></subform>
+         <border>
+            <edge thickness="0.2mm">
+               <color value="130,130,130"/>
+            </edge>
+            <corner thickness="0.2mm">
+               <color value="130,130,130"/>
+            </corner>
+         </border>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle prislusenstvi_wrapper?>
+         <?templateDesigner expand 1?></subform>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 120 0001001B002200240025002C002F00310037003B004300460049004C004D004F005000510053005400550056005700C800D300DD00E201CF01F201FE?>
+      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 52 000C00310046004D004F005400550056005700A600D300DD01F2?>
+   </subform>
+   <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner FormTargetVersion 36?>
+   <?templateDesigner Zoom 149?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>11</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-07-08T11:36:49Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:56700cc3-1ab5-4f92-8090-1bc328d33a15</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">prislusenstvi_wrapper</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.prislusenstvi_wrapper</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>

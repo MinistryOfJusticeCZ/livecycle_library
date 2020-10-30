@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <subform name="form1" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="9.9mm" y="12.9mm" w="190.2mm" h="274.2mm" name="Content"/>
+            <medium stock="a4" short="210mm" long="297mm"/>
+         </pageArea>
+      </pageSet>
+      <subform layout="tb" minH="16.001mm" name="hlavicka" w="190mm">
+         <bind match="none"/>
+         <subform layout="lr-tb" minH="14mm" name="veritel_wrapper" w="190mm">
+            <margin bottomInset="0mm" topInset="1mm"/>
+            <bind match="none"/>
+            <field access="readOnly" minH="7mm" name="veritel_nazev" w="130mm">
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <calculate override="error"/>
+               <caption reserve="25.4mm">
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>Název věřitele:</text>
+                  </value>
+               </caption>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin bottomInset="1mm" leftInset="2mm" rightInset="1mm" topInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt" vAlign="middle"/>
+               <ui>
+                  <textEdit multiLine="1">
+                     <border>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <bind ref="$.veritel_nazev" match="dataRef"/>
+            </field>
+            <field access="readOnly" h="7mm" name="veritel" w="60mm">
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <caption reserve="45mm">
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>Číslo věřitele:</text>
+                  </value>
+               </caption>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin bottomInset="1mm" leftInset="2mm" rightInset="2mm" topInset="1mm"/>
+               <para hAlign="center" marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt" vAlign="middle"/>
+               <ui>
+                  <textEdit hScrollPolicy="off">
+                     <border>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <bind ref="$.veritel" match="dataRef"/>
+            </field>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="lr-tb" minH="14mm" name="prihlaska_wrapper" w="190mm">
+            <margin bottomInset="1mm" topInset="0mm"/>
+            <bind match="none"/>
+            <field access="readOnly" h="7mm" name="prihlaska" w="40mm">
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <caption reserve="25mm">
+                  <font typeface="Myriad Pro" size="9pt" weight="bold">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>Číslo přihlášky:</text>
+                  </value>
+               </caption>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin bottomInset="1mm" leftInset="2mm" rightInset="1mm" topInset="1mm"/>
+               <para hAlign="center" marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt" vAlign="middle"/>
+               <ui>
+                  <textEdit hScrollPolicy="off">
+                     <border>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <bind ref="$.prihlaska" match="dataRef"/>
+            </field>
+            <?templateDesigner expand 1?></subform>
+         <?templateDesigner expand 1?>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle hlavicka?></subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">hlavicka</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.hlavicka</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

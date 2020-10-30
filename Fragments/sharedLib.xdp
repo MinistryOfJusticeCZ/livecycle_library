@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-08-05T11:33:36Z" uuid="7bfa15a7-2601-4444-8533-323053116356">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <?formServer defaultPDFRenderFormat acrobat11.0static?>
+   <subform name="form1" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="9.9mm" y="12.9mm" w="190.2mm" h="274.2mm" name="Content"/>
+            <medium stock="a4" short="210mm" long="297mm"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="sharedLib">
+function isVisible(objVis){
+	r = false;
+	//xfa.host.messageBox(objVis.name + " " + objVis.className );
+	if (objVis == null || objVis.name == xfa.record.name) {
+			//xfa.host.messageBox("visible");
+			r = true;
+		}
+		else {
+			//xfa.host.messageBox(objVis.name + " " + objVis.className);
+			if (objVis.presence == "hidden") { 
+				//xfa.host.messageBox("Hidden");
+				r = false;
+				
+			}	
+			else {
+				r = isVisible(objVis.parent);
+			}
+		}
+	return r;
+}
+
+function getObj (obj_txt) {
+	var obj2 = null;
+	if (obj_txt != "" &amp;&amp; obj_txt != null)  obj2 = xfa.resolveNode(obj_txt);
+	return obj2;
+};
+
+function getObjText (obj1, label_obj, label_txt ) {
+	var ret = "";
+	
+	try { 
+		if (obj1 != null) {
+			if (obj1.className == "draw") ret = (obj1.resolveNode("value.#exData") != null?obj1.resolveNode("value.#exData").value:obj1.value.text.value);
+			if (obj1.className == "field") ret = (obj1.caption.resolveNode("value.#exData") != null?obj1.caption.resolveNode("value.#exData").value:obj1.caption.value.text.value);
+			if (obj1.className == "exclGroup"){
+				for (var i = 0; i &lt; obj1.nodes.length  ; i++) {
+					try {
+						var node = obj1.resolveNode("nodes["+i+"]");
+						if (node != null &amp;&amp; node.className == "field") {
+						 	ret += (ret!=""?" / ":"") + (node.caption.resolveNode("value.#exData") != null?node.caption.resolveNode("value.#exData").value:node.caption.value.text.value);
+						 	ret = ret.replace(":", "");
+							ret = ret.replace(/[0-9]*$/,"");
+						};
+					} catch (err1) {
+						 xfa.host.messageBox ("2:" + err1.toString() + "\n" + ret + "\n" + i);
+					}
+				 };
+			};
+		};
+	} 
+	catch (err) {
+	    xfa.host.messageBox (err.toString() + "\n" + (obj1 != null?obj1.name:"Null objekt"));
+	}
+	//if (ret == "") xfa.host.messageBox(label_txt );
+	if (label_obj != null &amp;&amp; ret == "") ret = getObjText(label_obj, null, label_txt);
+	//if (label_obj == null &amp;&amp; ret == "") ret = (label_txt == null || label_txt == "")?"Nedefinováno":label_txt;
+	if (label_obj == null &amp;&amp; ret == "") ret = (label_txt == null || label_txt == "")?"":label_txt;
+		
+	ret = ret.replace(":", "");
+	ret = ret.replace(/[0-9]*$/,"");
+	return ret;
+}
+
+function PreSignCheck(povinne, jedno_z_nich) {
+	var result = "";
+	//xfa.host.messageBox(povinne[1].sekce.repeatfor[0].pole[1].field);
+	for (var sec=0; sec &lt; povinne.length; sec++) {
+		var lbl_obj_sec = getObj (povinne[sec].sekce.label);
+				
+		var sec_txt =  getObjText (lbl_obj_sec, null, povinne[sec].sekce.label_txt) + "\n";
+		var sec_used = false;
+		
+		for (var rep=0; rep &lt; povinne[sec].sekce.repeatfor.length; rep++) {
+			var rep_obj = getObj(povinne[sec].sekce.repeatfor[rep].field);
+			var rep_obj_count = rep_obj!=null?rep_obj.count:1;
+			
+			for (var rep2=0; rep2 &lt; rep_obj_count ; rep2++) {
+				var radek_txt = "";
+				var rep_obj_txt = ""; 
+				if (povinne[sec].sekce.repeatfor[rep].prefix_field!="") {
+					rep_obj_txt = povinne[sec].sekce.repeatfor[rep].prefix_field+ "[" + rep2 +"].";
+					radek_txt = (povinne[sec].sekce.repeatfor[rep].label_txt == ""?"řádek:":povinne[sec].sekce.repeatfor[rep].label_txt) + " " + (rep2 +1) + ": " ;
+				};
+				
+				for (var fld=0; fld &lt; povinne[sec].sekce.repeatfor[rep].pole.length; fld++) {
+					
+					try {
+						var obj_fld = getObj (rep_obj_txt + povinne[sec].sekce.repeatfor[rep].pole[fld].field);
+						if (obj_fld != null) {
+							var lbl_obj = getObj (povinne[sec].sekce.repeatfor[rep].pole[fld].label);
+							var lbl_txt =  povinne[sec].sekce.repeatfor[rep].pole[fld].label_txt;
+							var lbl_pref_txt = getObjText(getObj (povinne[sec].sekce.repeatfor[rep].pole[fld].label_prefix), null, "");
+							lbl_pref_txt = (lbl_pref_txt==""?"":lbl_pref_txt + " - ");
+							
+							if ( (obj_fld.rawValue == null ||  obj_fld.rawValue == " "  || obj_fld.rawValue == "") &amp;&amp; isVisible(obj_fld) ) {
+								if (! sec_used) {
+									result += sec_txt;
+									sec_used = true;
+								};
+								result += " - " + radek_txt + lbl_pref_txt + getObjText (lbl_obj, obj_fld, lbl_txt) + "\n";
+							};
+						};
+					} catch(err) {
+						xfa.host.messageBox("Chyba na: " + rep_obj_txt + povinne[sec].sekce.repeatfor[rep].pole[fld].field);
+					};
+				};
+			};
+		};
+	};
+	result += (result!=""?"\n\n\n":"") + PreSignCheck_jedno(jedno_z_nich)
+	if (result != "") {
+		xfa.host.messageBox("Chyba. Nejsou vyplněna tato pole: \n"  + result );
+		xfa.event.cancelAction = 1;
+	}
+};
+
+function PreSignCheck_jedno(povinne){
+	var err_txt = "";
+	//xfa.host.messageBox(povinne[1].sekce.repeatfor[0].pole[1].field);
+	for (var sec=0; sec &lt; povinne.length; sec++) {
+		var lbl_obj_sec = getObj (povinne[sec].sekce.label);
+				
+		var sec_txt =  getObjText (lbl_obj_sec, null, povinne[sec].sekce.label_txt) + "\n";
+		var sec_used = false;
+		
+		for (var rep=0; rep &lt; povinne[sec].sekce.repeatfor.length; rep++) {
+			var rep_obj = getObj(povinne[sec].sekce.repeatfor[rep].field);
+			var rep_obj_count = rep_obj!=null?rep_obj.count:1;
+			var lbl_rep2_obj = getObj (povinne[sec].sekce.repeatfor[rep].label2);
+			var lbl_rep2_txt =  povinne[sec].sekce.repeatfor[rep].label2_txt;
+			
+			for (var rep2=0; rep2 &lt; rep_obj_count ; rep2++) {
+				var radek_txt = "";
+				var rep_obj_txt = ""; 
+				if (povinne[sec].sekce.repeatfor[rep].prefix_field!="") {
+					rep_obj_txt = povinne[sec].sekce.repeatfor[rep].prefix_field+ "[" + rep2 +"].";
+					radek_txt = (povinne[sec].sekce.repeatfor[rep].label_txt == ""?"řádek:":povinne[sec].sekce.repeatfor[rep].label_txt) + " " + (rep2 +1) + ": " ;
+				};
+				var result = true;
+				for (var fld=0; fld &lt; povinne[sec].sekce.repeatfor[rep].pole.length; fld++) {
+					
+					try {
+						var obj_fld = getObj (rep_obj_txt + povinne[sec].sekce.repeatfor[rep].pole[fld].field);
+						
+						if ( !(obj_fld.rawValue == null ||  obj_fld.rawValue == " "  || obj_fld.rawValue == "") &amp;&amp; isVisible(obj_fld) ) result = false;
+						
+					} catch(err) {
+						xfa.host.messageBox("Chyba na: " + rep_obj_txt + povinne[sec].sekce.repeatfor[rep].pole[fld].field);
+					};
+				};
+				if (result) {
+					if (! sec_used) {
+						err_txt+= sec_txt;
+						sec_used = true;
+					};
+					err_txt+= " - " + radek_txt +  getObjText (lbl_rep2_obj, null, lbl_rep2_txt) + "\n";
+				};
+			};
+		};
+	};
+	
+	if (err_txt != "") {
+		err_txt = "Chyba. Alespoň jedno pole musí být vyplněno: \n"  + err_txt;
+	}
+	
+	return err_txt;
+};
+
+
+function EraseAllChildFields(myParentObject){
+
+	var allChildElements;
+	var intNumElements;
+	var currentElement;
+	var j;
+
+	//Get all the child nodes of the parent element
+	allChildElements = myParentObject.nodes;
+
+	if (allChildElements ==  null) return;
+	//Total number of element in the object
+	intNumElements = allChildElements.length;
+
+	//Loop through all the child elements
+	for(j=0; j&lt; allChildElements.length;j++){
+		currentElement = allChildElements.item(j);
+		//If the element is another subform we'll recusively call the function again
+		if(allChildElements.item(j).className == "subform"){
+			EraseAllChildFields(currentElement);
+			currentElement.execEvent("indexChange")
+		}
+		else if(currentElement.className == "field"){
+			//if (currentElement.name == "korespondencni_adresa_switch") xfa.host.messageBox(currentElement.name + ' - pred - ' + currentElement.rawValue );
+			currentElement.rawValue = ((currentElement.resolveNode("ui.checkButton") != null)?0:""); //checkBox dela problem pri hodnote ""
+			//if (currentElement.name == "korespondencni_adresa_switch") currentElement.rawValue = 0;
+			//if (currentElement.name == "korespondencni_adresa_switch") xfa.host.messageBox(currentElement.name + ' - po - ' + currentElement.rawValue );
+			currentElement.execEvent("calculate");
+			
+		}
+		//Check for exclusion groups - Radio Buttons
+		else if(currentElement.className == "exclGroup"){
+			for(k=0; k&lt; currentElement.nodes.length;k++){
+				if(currentElement.nodes.item(k).className == "field"){
+					currentElement.rawValue = null;				}
+			};
+			currentElement.rawValue = null;
+			currentElement.execEvent("change");
+			//xfa.host.messageBox(currentElement.name);
+		} 
+	}
+}
+/*
+	Nastaví novou hodnotu pole, pokud se liší od aktuální.
+*/
+function setOnValueChange(field, newValue) {
+	if (field.resolveNode("ui.checkButton") != null) { //checkBox 
+		var fld = field.rawValue==null?0:field.rawValue;
+		newValue = newValue==null?0:newValue;
+		
+		if (fld != newValue)
+			field.rawValue = newValue;
+	}
+	else {
+		if (field.rawValue != newValue)
+			field.rawValue = newValue;
+	};
+}
+
+/*
+	Nastaví novou caption pole, pokud se liší od aktuální.
+*/
+function setOnCaptionChange(field, newValue) {
+	if (field.caption.value.resolveNode("#text").value != newValue)
+		field.caption.value.resolveNode("#text").value = newValue;
+}
+
+/*
+	Nastaví velikost fontu pole, pokud se liší od aktuální.
+*/
+function setOnFontSizeChange(field, newValue) {
+	if (field.font.size != newValue)
+		field.font.size = newValue;
+}
+
+/*
+	Nastaví barvu výplně pole, pokud se liší od aktuální.
+*/
+function setOnFillColorChange(field, newValue) {
+	if (field.border.fill.color.value != newValue)
+		field.border.fill.color.value = newValue;
+}
+
+/*
+	Nastaví velikost fontu pole pro částku podle délky hodnoty pole. Do hraniční délky @lengthThreshold je velikost fontu @fontSize, poté automatická (0). 
+	Defaultní délka @lengthThreshold = 11
+	Defaultní velikost fontu @fontSize = "10pt"
+*/
+function setFontSizeFromValue(field, value, lengthThreshold, fontSize) {
+		
+	if (value === undefined || value === null) value = null;
+	if (lengthThreshold === undefined || lengthThreshold === null) lengthThreshold = 11;
+	if (fontSize === undefined || fontSize === null) fontSize = "10pt";	
+
+	setOnFontSizeChange(field, String(value != null ? value : field.rawValue).length &gt; lengthThreshold ? "0pt" : fontSize);
+}
+
+/*
+	Skryje pole, pokud je viditelné.
+*/
+function hideIfVisible(field, eraseContent) {
+	if (field.presence == "visible") {
+		field.presence = "hidden";
+		
+		if (eraseContent == true)
+			EraseAllChildFields(field);
+	}
+}
+
+/*
+	Zobrazí pole, pokud je skryté.
+*/
+function visibleIfHidden(field) {
+	if (field.presence == "hidden")
+		field.presence = "visible";
+}
+
+/*
+	Povolí editaci pole uživatelem, pokud je zakázána.
+*/
+function openIfReadOnly(field) {
+	if (field.access == "readOnly")
+		field.access = "open"
+}
+
+/*
+	Zakáže editaci pole uživatelem, pokud je povolena.
+*/
+function readOnlyIfOpen(field) {
+	if (field.access == "open")
+		field.access = "readOnly"
+}
+
+/*
+	Z řetězce odstaní všechny znaky, které odpovídají předanému regulárnímu výrazu.
+*/
+function filterRegex(value, regex) {
+	if (value == null)
+		return null;
+	
+	if (regex == null)
+		return value;
+
+	return value.replace(regex, '');
+}
+
+/*
+	Z řetězce odstraní všechny znaky, které nejsou číslo.
+*/
+function filterNumbers(value) {
+	return filterRegex(value, /\D+/g);
+}
+
+/*
+	Z eventu odstraní z property newText všechny znaky, které netvoří datum
+*/
+function filterDateEvent(event) {
+	if (event.newText.match(/[^0-9\.]/)) {
+		event.change = "";
+	}
+}
+
+               
+/*
+	Porovna hodnotu pole s datumem s textovym datumem ve formatu "d.m.yyyy". 
+	Pokud je datum v poli mensi nez textove nebo je datum v poli null, vraci -1
+	Pokud se datumy rovnaji, vraci 0
+	Pokud je datum v poli vetsi nez textove, vraci 1
+*/	
+function compareDates(field, textDate) {
+	if (field == null || field.rawValue == null || field.rawValue == "")
+		return -1;	
+
+	var fieldDate = util.scand("yyyy-mm-dd", field.rawValue);
+	var otherDate = util.scand("d.m.yyyy", textDate);
+	
+	if (fieldDate == null)
+		return -1;
+	
+	// odecteni milisekund. Ve vytvorenem Date objektu jsou jako jedina slozka casu pritomny, takze porovnani na rovnost datumu se musi odstranit
+	fieldDate.setMilliseconds(0);
+	otherDate.setMilliseconds(0);
+
+	return fieldDate &lt; otherDate ? -1 : fieldDate &gt; otherDate ? 1 : 0;
+}
+
+/*
+	Vrací T/F, jestli je hodnota pole platné datum.
+	Pokud je pole null, rawValue je null nebe je rawValue prázdný string, vrací false
+*/	
+function isDate(field) {
+	if (field == null || field.rawValue == null || field.rawValue == "")
+		return false;	
+
+	var fieldDate = util.scand("yyyy-mm-dd", field.rawValue);
+	
+	return fieldDate != null;
+}               
+
+               
+               
+
+               
+               
+
+               
+               
+
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle sharedLib?></script>
+         </variables>
+      </subform>
+   </subform>
+   <?templateDesigner Grid show:0, snap:0, units:3, color:ff8080, origin:(0,0), interval:(18000,18000), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner FormTargetVersion 36?>
+   <?templateDesigner Zoom 92?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>11</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+   <psMap>
+      <font typeface="Calibri" psName="Calibri" weight="normal" posture="normal"/>
+      <font typeface="Calibri" psName="Calibri-Bold" weight="bold" posture="normal"/>
+   </psMap>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-08-05T11:33:36Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:7bfa15a7-2601-4444-8533-323053116356</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">sharedLib</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.sharedLib</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>

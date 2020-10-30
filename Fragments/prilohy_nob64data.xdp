@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-08-21T13:39:43Z" uuid="32984447-17b6-4769-affa-6e386ee01130">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <?formServer defaultPDFRenderFormat acrobat11.0static?>
+   <subform name="prilohy" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="10mm" y="13mm" w="190mm" h="274mm" name="Content"/>
+            <medium stock="a4" short="210mm" long="297mm"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform name="prilohy" layout="table" columnWidths="7mm 98mm 55mm 15mm 5mm 6mm">
+         <border>
+            <edge thickness="0.2mm" presence="hidden">
+               <color value="130,130,130"/>
+            </edge>
+            <corner thickness="0.2mm" presence="hidden">
+               <color value="130,130,130"/>
+            </corner>
+         </border>
+         <subform layout="row" name="header" id="HeaderRow_ID_copy1" x="0mm" y="0mm">
+            <assist role="TH"/>
+            <draw h="5.928mm" name="poradi">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <para vAlign="middle" hAlign="center"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <value>
+                  <text>č.:</text>
+               </value>
+               <keep intact="none"/>
+            </draw>
+            <draw h="5.928mm" name="nazev">
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>Název přílohy:</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" marginLeft="2.835pt"/>
+               <keep intact="none"/>
+            </draw>
+            <border>
+               <edge thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </edge>
+               <corner thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </corner>
+               <fill>
+                  <color value="230,235,240"/>
+               </fill>
+            </border>
+            <occur max="-1"/>
+            <bind match="none"/>
+            <draw h="5.928mm" name="fileName">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <text>Jméno souboru:</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <keep intact="none"/>
+            </draw>
+            <draw h="5.928mm" name="attSize">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <value>
+                  <text>Velikost:</text>
+               </value>
+               <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <keep intact="none"/>
+            </draw>
+            <draw w="0.472444in" name="preview">
+               <ui>
+                  <textEdit>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <para vAlign="middle"/>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <keep intact="none"/>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+            </draw>
+            <subform name="btnAdd" layout="lr-tb" w="0.472444in">
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <bind match="none"/>
+               <field relevant="-print" h="4mm" name="btn" w="4mm" x="0mm">
+                  <border hand="right">
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <fill/>
+                  </border>
+                  <caption>
+                     <font typeface="Myriad Pro" weight="bold">
+                        <fill>
+                           <color value="77,114,149"/>
+                        </fill>
+                     </font>
+                     <para hAlign="center" vAlign="middle"/>
+                     <value>
+                        <text>+</text>
+                     </value>
+                  </caption>
+                  <font typeface="Myriad Pro"/>
+                  <ui>
+                     <button highlight="none"/>
+                  </ui>
+                  <bind match="none"/>
+                  <event activity="click" name="event__click">
+                     <script contentType="application/x-javascript">
+//var rowNumber = this.parent.parent.index;
+
+//this.parent.parent.parent._priloha.insertInstance(rowNumber + 1);
+
+
+var attTempId = "ISIR_"+String(new Date().getTime());
+
+var att = event.target.importDataObject(attTempId);
+if (att) {
+	att = event.target.getDataObject(attTempId);
+	
+	if (att !=  null) {
+		
+		/// console.println("attachemnt immported - starting processing");
+		var result;
+		var attSize = att.size;
+		var extension = att.path;
+		extension = extension.split(".").pop().toUpperCase();
+		
+		//console.println("attachemnt extension: " + extension);
+		var validType = (extension === "PDF" || extension === "RTF" || extension == "DOC" || extension == "DOCX" || extension === "XLS" || extension == "XLSX" || extension === "JPG" || extension == "JPEG" || extension === "TXT");
+		
+		if (!validType || attSize&gt;10485760) {	//10*1024*1024
+			event.target.removeDataObject(attTempId);
+		 	if(!validType)
+				xfa.host.messageBox(IsirLibStr.str.attachment.enabledtype, IsirLibStr.str.attachment.title);
+			else
+				xfa.host.messageBox(IsirLibStr.str.attachment.maxsize, IsirLibStr.str.attachment.title);
+		} else {
+			var newRow = this.parent.parent.parent._priloha.addInstance(1);
+			//console.println("new row SOM: " + newRow.somExpression);
+			xfa.resolveNode(newRow.somExpression+".subAtt.attId").rawValue = attTempId;
+			xfa.resolveNode(newRow.somExpression+".subAtt.fileName").rawValue = att.path;
+			attSize = Math.ceil(attSize/1024);	
+			xfa.resolveNode(newRow.somExpression+".attSize").rawValue = attSize + " kB";
+			//xfa.resolveNode(attachName.value).rawValue = attach.path;
+			//xfa.resolveNode(attachId.value).rawValue = attachTime;
+		
+			//add file content
+			//var lineId = newRow.index;
+			//var dtNode = xfa.resolveNode("xfa[0].record[0].prilohy[0].obecna_priloha["+lineId+"]");
+		
+			//dtNode.kodovani.value = "base64";
+			//dtNode.value = IsirLib.getAttachmentContentString(attTempId);
+			xfa.form.recalculate(1);
+		}
+	};
+};
+</script>
+                  </event>
+                  <assist>
+                     <toolTip>Vložit novou přílohu</toolTip>
+                     <speak priority="toolTip"/>
+                  </assist>
+               </field>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <?templateDesigner expand 1?></subform>
+            <keep next="contentArea" intact="none"/>
+            <?templateDesigner expand 1?></subform>
+         <subform layout="row" name="priloha" x="0mm" y="0mm">
+            <assist role="TR"/>
+            <field name="poradi" h="6mm" access="readOnly" x="0mm">
+               <ui>
+                  <numericEdit>
+                     <margin/>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" hAlign="center"/>
+               <value>
+                  <integer>1</integer>
+               </value>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.obecna_priloha[*].cislo"/>
+               <format>
+                  <picture>num{'E'zzzzzzzzzzzz9'.'}</picture>
+               </format>
+            </field>
+            <field name="nazev" w="3.543306in" minH="6mm">
+               <ui>
+                  <textEdit multiLine="1">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro" size="9pt">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt"/>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.obecna_priloha[*].nazev"/>
+               <event activity="click" name="event__click">
+                  <script contentType="application/x-javascript">
+
+//155
+</script>
+               </event>
+               <assist>
+                  <toolTip>Označte veškeré přílohy, které jsou k formuláři přikládány.</toolTip>
+                  <speak priority="toolTip"/>
+               </assist>
+               <event activity="exit" name="event__exit">
+                  <script contentType="application/x-javascript">
+//xfa.resolveNode("xfa[0].record[0].prilohy[0].obecna_priloha[" + this.parent.index +"].nazev").value = this.rawValue;
+</script>
+               </event>
+            </field>
+            <border>
+               <edge thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </edge>
+               <corner thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </corner>
+               <fill/>
+            </border>
+            <margin topInset="0mm" leftInset="0mm" rightInset="0mm" bottomInset="0mm"/>
+            <subform name="subAtt" w="62mm" layout="tb">
+               <para hAlign="center" vAlign="middle"/>
+               <bind match="none"/>
+               <field access="readOnly" name="fileName" w="55mm" minH="6mm">
+                  <assist>
+                     <toolTip>Jméno souboru</toolTip>
+                  </assist>
+                  <border>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                  </border>
+                  <font typeface="Myriad Pro" size="8pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle" marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt"/>
+                  <ui>
+                     <textEdit multiLine="1">
+                        <border>
+                           <edge thickness="0.1mm">
+                              <color value="180,180,180"/>
+                           </edge>
+                           <corner thickness="0.1mm">
+                              <color value="180,180,180"/>
+                           </corner>
+                           <fill/>
+                        </border>
+                     </textEdit>
+                  </ui>
+                  <bind ref="$.obecna_priloha[*].jmeno_souboru" match="dataRef"/>
+               </field>
+               <field access="readOnly" name="attId" w="55mm" h="6mm" presence="hidden">
+                  <border>
+                     <corner thickness="0.1778mm"/>
+                     <edge/>
+                  </border>
+                  <font typeface="Myriad Pro" size="8pt"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para hAlign="center" vAlign="middle"/>
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <bind match="none"/>
+                  <value>
+                     <text maxChars="255"/>
+                  </value>
+               </field>
+               <border hand="right">
+                  <corner presence="hidden"/>
+                  <edge presence="hidden" stroke="raised"/>
+               </border>
+               <?templateDesigner expand 1?></subform>
+            <field access="readOnly" name="attSize" w="12mm" h="6mm">
+               <assist>
+                  <toolTip>Velikost</toolTip>
+               </assist>
+               <border>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+               </border>
+               <font typeface="Myriad Pro" size="8pt">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para hAlign="right" vAlign="middle" marginLeft="2.835pt" marginRight="2.835pt"/>
+               <ui>
+                  <textEdit>
+                     <margin/>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </textEdit>
+               </ui>
+               <bind match="dataRef" ref="$.obecna_priloha[*].velikost_souboru"/>
+               <traversal>
+                  <traverse ref="btnPreview[0]"/>
+               </traversal>
+            </field>
+            <subform w="14.2mm" name="btnPreview" h="6mm">
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+               </border>
+               <para hAlign="center" vAlign="middle"/>
+               <traversal>
+                  <traverse operation="first" ref="icon[0]"/>
+                  <traverse ref="bDeleteAttachment[0]"/>
+               </traversal>
+               <bind match="none"/>
+               <draw h="4mm" name="icon" w="4mm" x="2mm" y="2mm" anchorType="middleCenter" relevant="-print">
+                  <assist>
+                     <toolTip>Zobrazit přílohu</toolTip>
+                  </assist>
+                  <border>
+                     <corner thickness="0.176mm" presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <fill/>
+                  </border>
+                  <font typeface="Myriad Pro" size="8pt"/>
+                  <margin bottomInset="1mm" leftInset="1.2mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <traversal>
+                     <traverse ref="btn[0]"/>
+                  </traversal>
+                  <ui>
+                     <imageEdit data="embed">
+                        <margin/>
+                     </imageEdit>
+                  </ui>
+                  <desc>
+                     <text name="embeddedHref">.\img\preview.png</text>
+                  </desc>
+                  <value>
+                     <image contentType="image/png">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</image>
+                  </value>
+               </draw>
+               <field h="4mm" name="btn" w="4mm" x="0.001mm" relevant="-print" y="0.001mm">
+                  <assist>
+                     <toolTip>Zobrazit přílohu</toolTip>
+                  </assist>
+                  <border hand="right">
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                  </border>
+                  <caption>
+                     <para hAlign="center" vAlign="middle"/>
+                  </caption>
+                  <font typeface="Myriad Pro"/>
+                  <ui>
+                     <button highlight="inverted"/>
+                  </ui>
+                  <bind match="none"/>
+                  <event activity="click" name="event__click">
+                     <script contentType="application/x-javascript">
+var attId = subAtt.attId.rawValue;
+if (attId != null){
+	event.target.exportDataObject({ cName: attId, nLaunch: 2 });
+}
+</script>
+                  </event>
+               </field>
+               <keep intact="none"/>
+               <margin leftInset="1mm" rightInset="1mm" topInset="1mm" bottomInset="1mm"/>
+               <?templateDesigner expand 1?></subform>
+            <subform name="btnRemove" layout="lr-tb" x="0.501mm" y="0.424mm">
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <bind match="none"/>
+               <field relevant="-print" h="4mm" name="btn" w="4mm" x="0mm">
+                  <border hand="right">
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <fill/>
+                  </border>
+                  <caption>
+                     <font typeface="Myriad Pro" weight="bold">
+                        <fill>
+                           <color value="251,85,91"/>
+                        </fill>
+                     </font>
+                     <para hAlign="center" vAlign="middle"/>
+                     <value>
+                        <text>−</text>
+                     </value>
+                  </caption>
+                  <font typeface="Myriad Pro"/>
+                  <ui>
+                     <button highlight="none"/>
+                  </ui>
+                  <bind match="none"/>
+                  <event activity="click" name="event__click">
+                     <script contentType="application/x-javascript">
+
+if (_priloha.count &gt; 0) {
+
+	var attId =  xfa.resolveNode("subAtt.attId").rawValue;
+	
+	event.target.removeDataObject(attId);
+	
+	var rowIndex = this.parent.parent.index;
+	
+	var	lineNode = xfa.resolveNode("xfa[0].record[0].prilohy[0].obecna_priloha[" + rowIndex + "]");
+	var	oNode = xfa.resolveNode("xfa[0].record[0].prilohy[0].obecna_priloha[" + rowIndex + "].kodovani");
+//	lineNode.nodes.remove(oNode);
+	xfa.record.prilohy.nodes.remove(lineNode);
+			
+	_priloha.removeInstance(rowIndex);
+	xfa.form.recalculate(1);
+}
+</script>
+                  </event>
+                  <assist>
+                     <toolTip>Odebrat přílohu</toolTip>
+                     <speak priority="toolTip"/>
+                  </assist>
+               </field>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <?templateDesigner expand 1?></subform>
+            <occur max="20" min="0"/>
+            <keep intact="none"/>
+            <bind match="none"/>
+            <event activity="indexChange" name="event__indexChange">
+               <script contentType="application/x-javascript" runAt="both">//{{Adobe LiveCycle Designer Generated Code Begin}} - row shading script. Don't modify it!
+var Freqs=[1,1];
+var Colors=["255,255,255","245,245,250"];
+var nFreqSize = 0;
+for (var i=0; i&lt;Freqs.length; i++)
+  nFreqSize += Freqs[i];
+var nRelIndex = this.index % nFreqSize + 1;
+for (var nRun=0; nRun&lt;Freqs.length; nRun++)
+{
+   if (nRelIndex&gt;Freqs[nRun])
+   {
+        nRelIndex -= Freqs[nRun];
+   }
+   else
+   {
+      this.border.fill.color.value = Colors[nRun];
+      break;
+   }
+}
+//{{Adobe LiveCycle Designer Generated Code End}} - row shading script.
+
+if (this.poradi.rawValue != this.index + 1)
+	this.poradi.rawValue = (this.index + 1);
+</script>
+            </event>
+            <?templateDesigner rowpattern first:1, next:1, firstcolor:ffffff, nextcolor:faf5f5, apply:1?>
+            <?templateDesigner expand 1?></subform>
+         <margin leftInset="2mm" rightInset="2mm" topInset="2mm" bottomInset="2mm"/>
+         <bind match="none"/>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle prilohy_nob64data?>
+         <?templateDesigner fragmentDescription Sekce pro přidávání příloh?>
+         <?templateDesigner rowpattern first:1, next:1, firstcolor:ffffff, nextcolor:faf5f5, apply:1?>
+         <?templateDesigner expand 1?></subform>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 120 0001000F0012001B0026002B002F0037004300460049004A004C004D004E004F0050005100530054005500560057005A005B00C800CF00D301CF01F2?>
+      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 8 000C00A6?>
+   </subform>
+   <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner FormTargetVersion 36?>
+   <?templateDesigner Zoom 92?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>11</adobeExtensionLevel>
+      </pdf>
+      <common>
+         <data>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+      </common>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-08-21T13:39:43Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:32984447-17b6-4769-affa-6e386ee01130</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">prilohy_nob64data</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Sekce pro přidávání příloh</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.prilohy.prilohy</dc:identifier>
+                  <lcd:fragmentRole>Table</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
+   <xsdConnection name="DataConnection" dataDescription="prilohy">
+      <uri>..\Data\Xsd\fragents_xsd\prilohy_popis.xsd</uri>
+      <rootElement>prilohy</rootElement>
+      <?templateDesigner fileDigest shaHash="ztd6SXZHQwJPC2hpSVYN0lVg9os="?></xsdConnection>
+</connectionSet>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+   <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="prilohy">
+      <prilohy>
+         <obecna_priloha dd:minOccur="0" dd:maxOccur="20" cislo="" nazev="" jmeno_souboru="" velikost_souboru="" dd:dataNode="dataGroup"/>
+      </prilohy>
+   </dd:dataDescription>
+</xfa:datasets></xdp:xdp>
