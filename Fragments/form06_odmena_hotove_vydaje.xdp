@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xfa generator="Designer_V6.1.0.20150517.1.919161" APIVersion="3.6.15103.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-05-19T14:56:00Z" uuid="605f4514-4aa7-4348-900b-2dc110cf0a87">
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-10T11:47:35Z" uuid="68a44661-7fed-416f-bf24-39470347557f">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="form1" locale="cs_CZ" layout="tb">
@@ -168,6 +168,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                   <message>
                      <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
                   </message>
+                  <picture>date{D.M.YYYY}</picture>
                </validate>
                <value>
                   <date/>
@@ -218,6 +219,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                   <message>
                      <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
                   </message>
+                  <picture>date{D.M.YYYY}</picture>
                </validate>
                <value>
                   <date/>
@@ -353,14 +355,15 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
          </subform>
          <variables>
             <script contentType="application/x-javascript" name="lib">
-function hideDph(eraseContent) {
-	sharedLib.hideIfVisible(odmena.dph.vyse, eraseContent);
-	sharedLib.hideIfVisible(odmena.vcetne_dph.vyse, eraseContent);
+function hideDph(formObj, eraseContent) {
+	sharedLib.hideIfVisible(formObj.odmena.dph.vyse, eraseContent);
+	sharedLib.hideIfVisible(formObj.odmena.vcetne_dph.vyse, eraseContent);
 }
 
-function showDph() {
-	sharedLib.visibleIfHidden(odmena.dph.vyse);
-	sharedLib.visibleIfHidden(odmena.vcetne_dph.vyse);
+
+function showDph(formObj) {
+	sharedLib.visibleIfHidden(formObj.odmena.dph.vyse);
+	sharedLib.visibleIfHidden(formObj.odmena.vcetne_dph.vyse);
 }
 </script>
             <?templateDesigner expand 1?></variables>
@@ -526,6 +529,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                   <message>
                      <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
                   </message>
+                  <picture>date{D.M.YYYY}</picture>
                </validate>
                <value>
                   <date/>
@@ -576,6 +580,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                   <message>
                      <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
                   </message>
+                  <picture>date{D.M.YYYY}</picture>
                </validate>
                <value>
                   <date/>
@@ -711,14 +716,14 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
          </subform>
          <variables>
             <script contentType="application/x-javascript" name="lib">
-function hideDph(eraseContent) {
-	sharedLib.hideIfVisible(odmena_celkem.dph.vyse, eraseContent);
-	sharedLib.hideIfVisible(odmena_celkem.vcetne_dph.vyse, eraseContent);
+function hideDph(formObj, eraseContent) {
+	sharedLib.hideIfVisible(formObj.odmena_celkem.dph.vyse, eraseContent);
+	sharedLib.hideIfVisible(formObj.odmena_celkem.vcetne_dph.vyse, eraseContent);
 }
 
-function showDph() {
-	sharedLib.visibleIfHidden(odmena_celkem.dph.vyse);
-	sharedLib.visibleIfHidden(odmena_celkem.vcetne_dph.vyse);
+function showDph(formObj) {
+	sharedLib.visibleIfHidden(formObj.odmena_celkem.dph.vyse);
+	sharedLib.visibleIfHidden(formObj.odmena_celkem.vcetne_dph.vyse);
 }
 </script>
             <?templateDesigner expand 1?></variables>
@@ -883,6 +888,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                   <message>
                      <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
                   </message>
+                  <picture>date{D.M.YYYY}</picture>
                </validate>
                <value>
                   <date/>
@@ -933,6 +939,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                   <message>
                      <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
                   </message>
+                  <picture>date{D.M.YYYY}</picture>
                </validate>
                <value>
                   <date/>
@@ -1049,6 +1056,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                   <message>
                      <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
                   </message>
+                  <picture>date{D.M.YYYY}</picture>
                </validate>
                <value>
                   <date/>
@@ -1099,6 +1107,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                   <message>
                      <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
                   </message>
+                  <picture>date{D.M.YYYY}</picture>
                </validate>
                <value>
                   <date/>
@@ -1349,6 +1358,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                   <message>
                      <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
                   </message>
+                  <picture>date{D.M.YYYY}</picture>
                </validate>
                <value>
                   <date/>
@@ -1399,6 +1409,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                   <message>
                      <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
                   </message>
+                  <picture>date{D.M.YYYY}</picture>
                </validate>
                <value>
                   <date/>
@@ -1536,14 +1547,14 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
          <?templateDesigner fragmentTitle hotove_vydaje?>
          <variables>
             <script contentType="application/x-javascript" name="lib">
-function hideDph(eraseContent) {
-	sharedLib.hideIfVisible(hotove_vydaje.dph.vyse, eraseContent);
-	sharedLib.hideIfVisible(hotove_vydaje.vcetne_dph.vyse, eraseContent);
+function hideDph(formObj, eraseContent) {
+	sharedLib.hideIfVisible(formObj.hotove_vydaje.dph.vyse, eraseContent);
+	sharedLib.hideIfVisible(formObj.hotove_vydaje.vcetne_dph.vyse, eraseContent);
 }
 
-function showDph() {
-	sharedLib.visibleIfHidden(hotove_vydaje.dph.vyse);
-	sharedLib.visibleIfHidden(hotove_vydaje.vcetne_dph.vyse);
+function showDph(formObj) {
+	sharedLib.visibleIfHidden(formObj.hotove_vydaje.dph.vyse);
+	sharedLib.visibleIfHidden(formObj.hotove_vydaje.vcetne_dph.vyse);
 }
 </script>
             <?templateDesigner expand 1?></variables>
@@ -1556,8 +1567,8 @@ function showDph() {
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
-   <?templateDesigner Zoom 149?></template>
+   <?templateDesigner Zoom 97?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -1583,11 +1594,17 @@ function showDph() {
 </config>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:pdf="http://ns.adobe.com/pdf/1.3/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
-         <xmp:MetadataDate>2020-05-19T14:56Z</xmp:MetadataDate>
-         <xmp:CreatorTool>Designer 6.1</xmp:CreatorTool>
-         <pdf:Producer>Designer 6.1</pdf:Producer>
-         <xmpMM:DocumentID>uuid:605f4514-4aa7-4348-900b-2dc110cf0a87</xmpMM:DocumentID>
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-12-10T11:47:35Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:68a44661-7fed-416f-bf24-39470347557f</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
             <rdf:Seq>
                <rdf:li rdf:parseType="Resource">

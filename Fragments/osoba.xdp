@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-08-20T08:01:28Z" uuid="3a886c3a-7ad7-4e54-968f-13b600eb68c2">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-30T13:00:37Z" uuid="65f6353c-75e5-42e7-9f9c-6c3d144d2fbb">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
+   <?formServer allowRenderCaching 0?>
+   <?formServer formModel both?>
    <subform name="osoba" locale="cs_CZ" layout="tb">
       <pageSet>
          <pageArea>
@@ -48,13 +50,9 @@
             </value>
             <event activity="change" name="event__change">
                <script contentType="application/x-javascript">
-this.calculate.override = "disabled";
-jmeno.calculate.override = "disabled";
-prijmeni.calculate.override = "disabled";
-titul_za.calculate.override = "disabled";
+this.parent.localOverrideLib.set();
 </script>
             </event>
-            <calculate override="warning"/>
             <assist>
                <toolTip>Vyplňte získané vědecké a akademické tituly před jménem.</toolTip>
                <speak priority="toolTip"/>
@@ -95,13 +93,9 @@ titul_za.calculate.override = "disabled";
             <value>
                <text maxChars="255"/>
             </value>
-            <calculate override="warning"/>
             <event activity="change" name="event__change">
                <script contentType="application/x-javascript">
-titul_pred.calculate.override = "disabled";
-this.calculate.override = "disabled";
-prijmeni.calculate.override = "disabled";
-titul_za.calculate.override = "disabled";
+this.parent.localOverrideLib.set();
 </script>
             </event>
             <assist>
@@ -144,13 +138,9 @@ titul_za.calculate.override = "disabled";
             <value>
                <text maxChars="255"/>
             </value>
-            <calculate override="warning"/>
             <event activity="change" name="event__change">
                <script contentType="application/x-javascript">
-titul_pred.calculate.override = "disabled";
-jmeno.calculate.override = "disabled";
-this.calculate.override = "disabled";
-titul_za.calculate.override = "disabled";
+this.parent.localOverrideLib.set();
 </script>
             </event>
             <assist>
@@ -193,13 +183,9 @@ titul_za.calculate.override = "disabled";
             <value>
                <text maxChars="50"/>
             </value>
-            <calculate override="warning"/>
             <event activity="change" name="event__change">
                <script contentType="application/x-javascript">
-titul_pred.calculate.override = "disabled";
-jmeno.calculate.override = "disabled";
-prijmeni.calculate.override = "disabled";
-this.calculate.override = "disabled";
+this.parent.localOverrideLib.set();
 </script>
             </event>
             <assist>
@@ -210,17 +196,50 @@ this.calculate.override = "disabled";
          <?templateDesigner isFragment yes?>
          <?templateDesigner fragmentTitle osoba?>
          <?templateDesigner fragmentDescription Osoba - titul před, jméno, příjmení, titul za?>
-         <?templateDesigner expand 1?>
+         <variables>
+            <script contentType="application/x-javascript" name="localOverrideLib">
+var vOverrideEnabled = "true";
+
+function set () {
+	if (vOverrideEnabled != "false") vOverrideEnabled = "false";
+}
+
+function get () {
+
+return vOverrideEnabled ;
+}
+
+function print () {
+	xfa.host.messageBox(get);
+}
+
+</script>
+            <?templateDesigner expand 1?></variables>
          <bind match="none"/>
-      </subform>
+         <?templateDesigner expand 1?></subform>
+      <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
       <?templateDesigner expand 1?>
       <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 84 0001001B002B00310035004200450046004A004B004D004E004F0050005100550056005B00CF00D301F2?>
    </subform>
    <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?originalXFAVersion http://www.xfa.org/schema/xfa-template/3.6/?>
+   <?templateDesigner DefaultLanguage JavaScript?>
+   <?templateDesigner DefaultRunAt client?>
+   <?PDFPrintOptions embedViewerPrefs 0?>
+   <?PDFPrintOptions embedPrintOnFormOpen 0?>
+   <?PDFPrintOptions scalingPrefs 0?>
+   <?PDFPrintOptions enforceScalingPrefs 0?>
+   <?PDFPrintOptions paperSource 0?>
+   <?PDFPrintOptions duplexMode 0?>
+   <?templateDesigner DefaultPreviewType interactive?>
+   <?templateDesigner DefaultPreviewPagination simplex?>
+   <?templateDesigner XDPPreviewFormat 19?>
+   <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Zoom 92?>
+   <?templateDesigner Zoom 97?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
@@ -258,14 +277,14 @@ this.calculate.override = "disabled";
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-08-20T08:01:28Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2020-12-30T13:00:37Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:3a886c3a-7ad7-4e54-968f-13b600eb68c2</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:65f6353c-75e5-42e7-9f9c-6c3d144d2fbb</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
@@ -398,7 +417,7 @@ this.calculate.override = "disabled";
    <xsdConnection name="DataConnection" dataDescription="osoba">
       <uri>..\Data\Xsd\fragents_xsd\osoba.xsd</uri>
       <rootElement>osoba</rootElement>
-      <?templateDesigner fileDigest shaHash="fAAyxiyqRdpx/9X6GEeVQNfSWRk="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="+F5EuuL/pHiyLKZw1C4ejgctiOs="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-01-10T12:46:16Z" uuid="134f555e-3802-4413-b898-72d216f94372">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-10-05T14:01:18Z" uuid="5a266726-0539-4436-824e-22ca0d3705c1">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="form1" locale="cs_CZ" layout="tb">
@@ -270,7 +270,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                </caption>
                <assist>
                   <speak priority="toolTip"/>
-                  <toolTip>V poli „dle“ označte skutečnosti, o které se vykonatelnost opírá. Vykonatelnost pohledávky se prokazuje veřejnou listinou (tj. rozhodnutím, notářským či exekutorským zápisem, nebo jiným exekučním titulem uvedeným v § 274 občanského soudního řádu, ze kterého vykonatelnost vyplývá). Tuto veřejnou listinu opatřenou doložkou vykonatelnosti přiložte k přihlášce; pro posouzení, zda přihlášená pohledávka je pohledávkou vykonatelnou, je rozhodná vykonatelnost v době konání přezkumného jednání.</toolTip>
+                  <toolTip>V poli „dle“ označte skutečnosti, o které se vykonatelnost opírá. Vykonatelnost pohledávky se prokazuje veřejnou listinou (tj. rozhodnutím, notářským či exekutorským zápisem, nebo jiným exekučním titulem uvedeným v § 274 občanského soudního řádu, ze kterého vykonatelnost vyplývá). Tuto veřejnou listinu opatřenou doložkou vykonatelnosti přiložte k přihlášce; pro posouzení, zda přihlášená pohledávka je pohledávkou vykonatelnou, je rozhodná vykonatelnost nastalá nejpozději ke dni rozhodnutí o úpadku, ledaže do konce přezkumného jednání, v pochybnostech o vykonatelnosti, rozhodne pro účely jejího přezkoumání insolvenční soud.</toolTip>
                </assist>
                <border>
                   <edge thickness="0.2mm" presence="hidden">
@@ -312,7 +312,7 @@ if (this.rawValue &lt; 0) {
    </subform>
    <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Zoom 90?>
+   <?templateDesigner Zoom 92?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
@@ -340,14 +340,14 @@ if (this.rawValue &lt; 0) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-01-10T12:46:16Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2020-10-05T14:01:18Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:134f555e-3802-4413-b898-72d216f94372</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:5a266726-0539-4436-824e-22ca0d3705c1</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>

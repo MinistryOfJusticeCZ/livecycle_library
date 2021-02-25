@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20130830.1.901444" APIVersion="3.6.13235.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-07-08T11:36:49Z" uuid="56700cc3-1ab5-4f92-8090-1bc328d33a15">
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-13T08:10:26Z" uuid="40ea631c-1055-46ab-bd58-513b1f0105ce">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="form1" locale="cs_CZ" layout="tb">
@@ -281,6 +281,9 @@ if (this.rawValue == 1) {
                            <text>Poplatek z prodlení</text>
                            <text>Kapitalizovaný poplatek z prodlení</text>
                            <text>Smluvní poplatek z prodlení</text>
+                           <text>Náhrada nákladů řízení</text>
+                           <text>Náklady spojené s uplatněním pohledávky</text>
+                           <text>Penále (veřejnoprávní pohledávky)</text>
                         </items>
                         <items save="1" presence="hidden">
                            <text>1</text>
@@ -293,6 +296,9 @@ if (this.rawValue == 1) {
                            <text>8</text>
                            <text>9</text>
                            <text>10</text>
+                           <text>11</text>
+                           <text>12</text>
+                           <text>13</text>
                         </items>
                      </field>
                      <field name="vyse" h="7mm" w="67mm" y="0mm">
@@ -399,7 +405,7 @@ sharedLib.setFontSizeFromValue(this);
                         </caption>
                         <assist>
                            <speak priority="toolTip"/>
-                           <toolTip>Uveďte způsob, jakým byla výše příslušenství vypočtena. </toolTip>
+                           <toolTip>Uveďte způsob, jakým byla výše příslušenství vypočtena. V případě úroku uveďte výši procentuální sazby a období, které je jím úročeno. Je-li procentuálních sazeb více, rozlište období, ke kterým se vztahují. Vždy uveďte, z jaké výše jistiny je příslušenství vypočítáváno.</toolTip>
                         </assist>
                         <border>
                            <edge thickness="0.2mm" presence="hidden">
@@ -591,9 +597,12 @@ var celk = 0;
 for (var i=0; i &lt; prislusenstvi.tbl_prislusenstvi._prislusenstvi_row.count; i++) {
 	celk = celk + xfa.resolveNode("prislusenstvi.tbl_prislusenstvi.prislusenstvi_row[" + i + "].prislusenstvi_row_wrapper.vyse").rawValue;
 }
-sharedLib.setFontSizeFromValue(this, celk );
 
 if (celk == 0) celk = "";
+
+celk = sharedLib.limitDecField(this, celk );
+sharedLib.setFontSizeFromValue(this, celk );
+
 
 celk ;
 </script>
@@ -619,7 +628,7 @@ celk ;
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Zoom 149?>
+   <?templateDesigner Zoom 97?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
@@ -647,14 +656,14 @@ celk ;
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-07-08T11:36:49Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2020-12-13T08:10:26Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:56700cc3-1ab5-4f92-8090-1bc328d33a15</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:40ea631c-1055-46ab-bd58-513b1f0105ce</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>

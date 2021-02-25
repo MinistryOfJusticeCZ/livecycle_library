@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20130830.1.901444" APIVersion="3.6.13235.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2019-12-11T10:17:01Z" uuid="6d815812-3e41-4f7e-b01c-522c5d705fb9">
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-09-10T09:10:13Z" uuid="0aba4e05-4451-4352-b94d-34574a7b37b8">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="osoba" locale="cs_CZ" layout="tb">
@@ -44,6 +44,7 @@
                         </corner>
                      </border>
                   </textEdit>
+                  <picture>text{99999999}</picture>
                </ui>
                <font typeface="Myriad Pro">
                   <fill>
@@ -63,7 +64,9 @@
                   </value>
                   <para marginLeft="2.835pt" marginRight="2.835pt"/>
                </caption>
-               <bind match="dataRef" ref="$.ico"/>
+               <bind match="dataRef" ref="$.ico">
+                  <picture>text{99999999}</picture>
+               </bind>
                <value>
                   <text maxChars="8"/>
                </value>
@@ -74,6 +77,9 @@ if (xfa.event.newText.match(/[^0-9]/)) {
 }
 </script>
                </event>
+               <format>
+                  <picture>text{999 99 999}</picture>
+               </format>
             </field>
             <bind match="none"/>
             <?templateDesigner expand 1?></subform>
@@ -98,7 +104,7 @@ if (xfa.event.newText.match(/[^0-9]/)) {
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Zoom 148?>
+   <?templateDesigner Zoom 92?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
@@ -136,14 +142,14 @@ if (xfa.event.newText.match(/[^0-9]/)) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2019-12-11T10:17:01Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2020-09-10T09:10:13Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:6d815812-3e41-4f7e-b01c-522c5d705fb9</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:0aba4e05-4451-4352-b94d-34574a7b37b8</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
@@ -276,7 +282,7 @@ if (xfa.event.newText.match(/[^0-9]/)) {
    <xsdConnection name="DataConnection" dataDescription="osoba">
       <uri>..\Data\Xsd\fragents_xsd\osoba.xsd</uri>
       <rootElement>osoba</rootElement>
-      <?templateDesigner fileDigest shaHash="Lh7/acsQhG538EioPVWxrrX+2pc="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="fAAyxiyqRdpx/9X6GEeVQNfSWRk="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>

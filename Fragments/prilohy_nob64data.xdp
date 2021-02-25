@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-08-21T13:39:43Z" uuid="32984447-17b6-4769-affa-6e386ee01130">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-10T14:42:48Z" uuid="0ade2da5-03c7-4e6b-ae12-1c57060a16d5">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="prilohy" locale="cs_CZ" layout="tb">
@@ -248,7 +248,7 @@ if (att) {
 		
 			//dtNode.kodovani.value = "base64";
 			//dtNode.value = IsirLib.getAttachmentContentString(attTempId);
-			xfa.form.recalculate(1);
+			//xfa.form.recalculate(1);
 		}
 	};
 };
@@ -689,7 +689,7 @@ if (_priloha.count &gt; 0) {
 	xfa.record.prilohy.nodes.remove(lineNode);
 			
 	_priloha.removeInstance(rowIndex);
-	xfa.form.recalculate(1);
+//	xfa.form.recalculate(1);
 }
 </script>
                   </event>
@@ -771,7 +771,7 @@ if (this.poradi.rawValue != this.index + 1)
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Zoom 92?>
+   <?templateDesigner Zoom 97?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
@@ -809,14 +809,14 @@ if (this.poradi.rawValue != this.index + 1)
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-08-21T13:39:43Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2020-12-10T14:42:48Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:32984447-17b6-4769-affa-6e386ee01130</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:0ade2da5-03c7-4e6b-ae12-1c57060a16d5</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>

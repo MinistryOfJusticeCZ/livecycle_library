@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-09-15T10:15:00Z" uuid="53307991-3be1-4304-b818-3b58445012ad">
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20130830.1.901444" APIVersion="3.6.13235.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-16T12:42:51Z" uuid="1c9256ed-4346-4a71-b500-671365c61c56">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
    <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
    <?formServer allowRenderCaching 0?>
@@ -15,14 +15,14 @@
             <contentArea x="9.9mm" y="12.9mm" w="190.2mm" h="274.2mm" name="Content"/>
             <medium stock="a4" short="210mm" long="297mm"/>
             <subform x="9.9mm" y="287mm" usehref="..\..\Fragments\footer.xdp">
-               <?templateDesigner expand 1?>
+               <?templateDesigner expand 0?>
             </subform>
             <draw name="form_version" w="50.4mm" h="6mm" x="20mm" y="287mm">
                <ui>
                   <textEdit/>
                </ui>
                <value>
-                  <text>1.4.2</text>
+                  <text>1.4.5-TEST</text>
                </value>
                <font typeface="Myriad Pro" baselineShift="0pt" size="8pt">
                   <fill>
@@ -1212,36 +1212,36 @@ popis_rozhodujicich_skutecnosti.wrapper.dalsi_skutecnosti.popis.execInitialize()
                   <bind match="none"/>
                   <?templateDesigner expand 1?></subform>
                <subform w="190mm" name="fyzicka_osoba" layout="tb">
-                  <subform name="udaje_osoba_wrapper" layout="lr-tb" w="190mm">
-                     <margin bottomInset="0mm" topInset="0mm"/>
+                  <subform usehref="..\..\Fragments\udaje_osoba_sekce.xdp#som($template.osobni_udaje.udaje_osoba_wrapper)" name="udaje_osoba_wrapper">
+                     <margin/>
                      <bind match="dataRef" ref="$.osobni_udaje"/>
                      <border>
-                        <corner presence="hidden" thickness="0.2mm">
+                        <corner presence="hidden" stroke="solid" join="square" inverted="0" thickness="0.2mm" radius="0in">
                            <color value="130,130,130"/>
                         </corner>
-                        <edge presence="hidden" thickness="0.2mm">
+                        <edge presence="hidden" stroke="solid" thickness="0.2mm">
                            <color value="130,130,130"/>
                         </edge>
-                        <edge thickness="0.2mm">
+                        <edge presence="visible" stroke="solid" thickness="0.2mm">
                            <color value="130,130,130"/>
                         </edge>
-                        <edge presence="hidden" thickness="0.2mm">
+                        <edge presence="hidden" stroke="solid" thickness="0.2mm">
                            <color value="130,130,130"/>
                         </edge>
-                        <edge thickness="0.2mm">
+                        <edge presence="visible" stroke="solid" thickness="0.2mm">
                            <color value="130,130,130"/>
                         </edge>
-                        <corner thickness="0.2mm">
+                        <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.2mm" radius="0in">
                            <color value="130,130,130"/>
                         </corner>
-                        <corner presence="hidden" thickness="0.2mm">
+                        <corner presence="hidden" stroke="solid" join="square" inverted="0" thickness="0.2mm" radius="0in">
                            <color value="130,130,130"/>
                         </corner>
-                        <corner thickness="0.2mm">
+                        <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.2mm" radius="0in">
                            <color value="130,130,130"/>
                         </corner>
                      </border>
-                     <event activity="initialize" name="event__initialize">
+                     <event activity="initialize" ref="$" name="event__initialize">
                         <script contentType="application/x-javascript">
 if (druh_navrhu.wrapper.spojeni_ano.rozhodnuti_o_upadku.rawValue == "1") {
 	sharedLib.visibleIfHidden(popis_rozhodujicich_skutecnosti.wrapper.forma_upadku);
@@ -1257,7 +1257,7 @@ if (druh_navrhu.wrapper.spojeni_ano.rozhodnuti_o_upadku.rawValue == "1") {
 }
 </script>
                      </event>
-                     <event activity="exit" name="event__exit">
+                     <event activity="exit" ref="$" name="event__exit">
                         <script contentType="application/x-javascript">
 if (druh_navrhu.wrapper.spojeni_ano.rozhodnuti_o_upadku.rawValue == "1") {
 	sharedLib.visibleIfHidden(popis_rozhodujicich_skutecnosti.wrapper.forma_upadku);
@@ -1273,814 +1273,8 @@ if (druh_navrhu.wrapper.spojeni_ano.rozhodnuti_o_upadku.rawValue == "1") {
 }
 </script>
                      </event>
-                     <subform layout="lr-tb" name="label_wrapper" w="25mm">
-                        <bind match="none"/>
-                        <draw h="5mm" name="label" w="25mm">
-                           <font typeface="MyriadPro-Regular" baselineShift="0pt" size="9pt">
-                              <fill>
-                                 <color value="51,51,51"/>
-                              </fill>
-                           </font>
-                           <margin bottomInset="0mm" leftInset="2mm" rightInset="0mm" topInset="1mm"/>
-                           <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
-                           <ui>
-                              <textEdit>
-                                 <margin/>
-                              </textEdit>
-                           </ui>
-                           <value>
-                              <text>Osobní údaje</text>
-                           </value>
-                        </draw>
-                        <draw presence="hidden" h="14mm" name="label_name" w="25mm">
-                           <font typeface="MyriadPro-Regular" baselineShift="0pt" size="9pt">
-                              <fill>
-                                 <color value="51,51,51"/>
-                              </fill>
-                           </font>
-                           <margin bottomInset="0mm" leftInset="2mm" rightInset="0mm" topInset="1mm"/>
-                           <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
-                           <ui>
-                              <textEdit/>
-                           </ui>
-                           <value>
-                              <text>jméno</text>
-                           </value>
-                        </draw>
-                        <?templateDesigner expand 1?></subform>
-                     <subform layout="lr-tb" minH="52.593mm" name="udaje_osoba" w="164mm">
-                        <margin bottomInset="0.5mm" topInset="0.5mm"/>
-                        <bind match="none"/>
-                        <subform usehref="..\..\Fragments\osoba_testFlatovani.xdp#som($template.osoba.osoba)">
-                           <bind match="dataRef" ref="$.osoba"/>
-                           <occur min="1" max="1"/>
-                           <?templateDesigner expand 1?>
-                        </subform>
-                        <field h="9mm" name="statni_prislusnost" w="41mm">
-                           <assist>
-                              <speak priority="toolTip"/>
-                              <toolTip>Vyplňte státní příslušnost. Údaj o státní příslušnosti se vyplňuje pouze tehdy, pokud je osoba zahraniční osobou.</toolTip>
-                           </assist>
-                           <caption placement="top" reserve="3.1mm">
-                              <font typeface="Myriad Pro" size="8pt">
-                                 <fill>
-                                    <color value="91,91,93"/>
-                                 </fill>
-                              </font>
-                              <para marginLeft="2.835pt" marginRight="2.835pt"/>
-                              <value>
-                                 <text>Státní příslušnost:</text>
-                              </value>
-                           </caption>
-                           <font typeface="Myriad Pro">
-                              <fill>
-                                 <color value="51,51,51"/>
-                              </fill>
-                           </font>
-                           <items>
-                              <text>Česká republika</text>
-                              <text>Afghánistán</text>
-                              <text>Albánie</text>
-                              <text>Alžírsko</text>
-                              <text>Americká Samoa</text>
-                              <text>Americké Panenské ostrovy</text>
-                              <text>Andorra</text>
-                              <text>Angola</text>
-                              <text>Anguilla</text>
-                              <text>Antarktida</text>
-                              <text>Antigua a Barbuda</text>
-                              <text>Argentina</text>
-                              <text>Arménie</text>
-                              <text>Aruba</text>
-                              <text>Austrálie</text>
-                              <text>Ázerbájdžán</text>
-                              <text>Bahamy</text>
-                              <text>Bahrajn</text>
-                              <text>Bangladéš</text>
-                              <text>Barbados</text>
-                              <text>Belgie</text>
-                              <text>Belize</text>
-                              <text>Bělorusko</text>
-                              <text>Benin</text>
-                              <text>Bermudy</text>
-                              <text>Bhútán</text>
-                              <text>Bolívie</text>
-                              <text>Bosna a Hercegovina</text>
-                              <text>Botswana</text>
-                              <text>Bouvetův ostrov</text>
-                              <text>Brazílie</text>
-                              <text>Britské indickooceánské území</text>
-                              <text>Britské Panenské ostrovy</text>
-                              <text>Brunej Darussalam</text>
-                              <text>Bulharsko</text>
-                              <text>Burkina Faso</text>
-                              <text>Burundi</text>
-                              <text>Ceuta</text>
-                              <text>Cookovy ostrovy</text>
-                              <text>Čad</text>
-                              <text>Černá Hora</text>
-                              <text>Čína</text>
-                              <text>Dánsko</text>
-                              <text>Dominika</text>
-                              <text>Dominikánská republika</text>
-                              <text>Džibutsko</text>
-                              <text>Egypt</text>
-                              <text>Ekvádor</text>
-                              <text>Eritrea</text>
-                              <text>Estonsko</text>
-                              <text>Etiopie</text>
-                              <text>Faerské ostrovy</text>
-                              <text>Falklandy</text>
-                              <text>Fidži</text>
-                              <text>Filipíny</text>
-                              <text>Finsko</text>
-                              <text>Francie</text>
-                              <text>Francouzská Guyana</text>
-                              <text>Francouzská jižní území</text>
-                              <text>Francouzská Polynésie</text>
-                              <text>Gabon</text>
-                              <text>Gambie</text>
-                              <text>Ghana</text>
-                              <text>Gibraltar</text>
-                              <text>Grenada</text>
-                              <text>Grónsko</text>
-                              <text>Gruzie</text>
-                              <text>Guadeloupe</text>
-                              <text>Guam</text>
-                              <text>Guatemala</text>
-                              <text>Guinea</text>
-                              <text>Guinea-Bissau</text>
-                              <text>Guyana</text>
-                              <text>Haiti</text>
-                              <text>Heardův ostrov a McDonaldovy ostrovy</text>
-                              <text>Honduras</text>
-                              <text>Hongkong</text>
-                              <text>Chile</text>
-                              <text>Chorvatsko</text>
-                              <text>Indie</text>
-                              <text>Indonésie</text>
-                              <text>Irák</text>
-                              <text>Írán</text>
-                              <text>Irsko</text>
-                              <text>Island</text>
-                              <text>Itálie</text>
-                              <text>Izrael</text>
-                              <text>Jamajka</text>
-                              <text>Japonsko</text>
-                              <text>Jemen</text>
-                              <text>Jihoafrická republika</text>
-                              <text>Jižní Georgie a Jižní Sandwichovy ostrovy</text>
-                              <text>Jordánsko</text>
-                              <text>Jugoslávie</text>
-                              <text>Kajmanské ostrovy</text>
-                              <text>Kambodža</text>
-                              <text>Kamerun</text>
-                              <text>Kanada</text>
-                              <text>Kapverdy</text>
-                              <text>Katar</text>
-                              <text>Kazachstán</text>
-                              <text>Keňa</text>
-                              <text>Kiribati</text>
-                              <text>Kokosové ostrovy</text>
-                              <text>Kolumbie</text>
-                              <text>Komory</text>
-                              <text>Kongo</text>
-                              <text>Kongo, demokratická republika</text>
-                              <text>Korea</text>
-                              <text>Korea, lidově demokratická republika</text>
-                              <text>Kosovo</text>
-                              <text>Kostarika</text>
-                              <text>Kuba</text>
-                              <text>Kuvajt</text>
-                              <text>Kypr</text>
-                              <text>Kyrgyzstán</text>
-                              <text>Laos</text>
-                              <text>Lesotho</text>
-                              <text>Libanon</text>
-                              <text>Libérie</text>
-                              <text>Libye</text>
-                              <text>Lichtenštejnsko</text>
-                              <text>Litva</text>
-                              <text>Lotyšsko</text>
-                              <text>Lucembursko</text>
-                              <text>Macao</text>
-                              <text>Madagaskar</text>
-                              <text>Maďarsko</text>
-                              <text>Makedonie</text>
-                              <text>Malajsie</text>
-                              <text>Malawi</text>
-                              <text>Maledivy</text>
-                              <text>Mali</text>
-                              <text>Malta</text>
-                              <text>Maroko</text>
-                              <text>Marshallovy ostrovy</text>
-                              <text>Martinik</text>
-                              <text>Mauricius</text>
-                              <text>Mauritánie</text>
-                              <text>Mayotte</text>
-                              <text>Melilla</text>
-                              <text>Menší odlehlé ostrovy USA</text>
-                              <text>Mexiko</text>
-                              <text>Mikronésie</text>
-                              <text>Moldavsko</text>
-                              <text>Monako</text>
-                              <text>Mongolsko</text>
-                              <text>Montserrat</text>
-                              <text>Mosambik</text>
-                              <text>Myanmar</text>
-                              <text>Namibie</text>
-                              <text>Nauru</text>
-                              <text>Německo</text>
-                              <text>Nepál</text>
-                              <text>Niger</text>
-                              <text>Nigérie</text>
-                              <text>Nikaragua</text>
-                              <text>Niue</text>
-                              <text>Nizozemské Antily</text>
-                              <text>Nizozemsko</text>
-                              <text>Norfolk</text>
-                              <text>Norsko</text>
-                              <text>Nová Kaledonie</text>
-                              <text>Nový Zéland</text>
-                              <text>Okupované palestinské území</text>
-                              <text>Omán</text>
-                              <text>Pákistán</text>
-                              <text>Palau</text>
-                              <text>Panama</text>
-                              <text>Papua Nová Guinea</text>
-                              <text>Paraguay</text>
-                              <text>Peru</text>
-                              <text>Pitcairn</text>
-                              <text>Pobřeží slonoviny</text>
-                              <text>Polsko</text>
-                              <text>Portoriko</text>
-                              <text>Portugalsko</text>
-                              <text>Rakousko</text>
-                              <text>Réunion</text>
-                              <text>Rovníková Guinea</text>
-                              <text>Rumunsko</text>
-                              <text>Rusko</text>
-                              <text>Rwanda</text>
-                              <text>Řecko</text>
-                              <text>Saint Barthélemy</text>
-                              <text>Saint Pierre a Miquelon</text>
-                              <text>Salvador</text>
-                              <text>Samoa</text>
-                              <text>San Marino</text>
-                              <text>Saúdská Arábie</text>
-                              <text>Senegal</text>
-                              <text>Severní Mariany</text>
-                              <text>Seychely</text>
-                              <text>Sierra Leone</text>
-                              <text>Singapur</text>
-                              <text>Slovensko</text>
-                              <text>Slovinsko</text>
-                              <text>Somálsko</text>
-                              <text>Spojené arabské emiráty</text>
-                              <text>Spojené království</text>
-                              <text>Spojené státy</text>
-                              <text>Srbsko a Černá Hora</text>
-                              <text>Srí Lanka</text>
-                              <text>Středoafrická republika</text>
-                              <text>Súdán</text>
-                              <text>Surinam</text>
-                              <text>Svalbard a ostrov Jan Mayen</text>
-                              <text>Svatá Helena</text>
-                              <text>Svatá Lucie</text>
-                              <text>Svatý Kryštof a Nevis</text>
-                              <text>Svatý Martin (francouzská část)</text>
-                              <text>Svatý stolec</text>
-                              <text>Svatý Tomáš</text>
-                              <text>Svatý Vincenc a Grenadiny</text>
-                              <text>Svazijsko</text>
-                              <text>Sýrie</text>
-                              <text>Šalamounovy ostrovy</text>
-                              <text>Španělsko</text>
-                              <text>Švédsko</text>
-                              <text>Švýcarsko</text>
-                              <text>Tádžikistán</text>
-                              <text>Tanzanie</text>
-                              <text>Thajsko</text>
-                              <text>Tchaj-wan</text>
-                              <text>Togo</text>
-                              <text>Tokelau</text>
-                              <text>Tonga</text>
-                              <text>Trinidad a Tobago</text>
-                              <text>Tunisko</text>
-                              <text>Turecko</text>
-                              <text>Turkmenistán</text>
-                              <text>Turks a Caicos</text>
-                              <text>Tuvalu</text>
-                              <text>Uganda</text>
-                              <text>Ukrajina</text>
-                              <text>Uruguay</text>
-                              <text>Uzbekistán</text>
-                              <text>Vánoční ostrov</text>
-                              <text>Vanuatu</text>
-                              <text>Venezuela</text>
-                              <text>Vietnam</text>
-                              <text>Východní Timor</text>
-                              <text>Wallis a Futuna</text>
-                              <text>Zambie</text>
-                              <text>Západní Sahara</text>
-                              <text>Zimbabwe</text>
-                           </items>
-                           <items presence="hidden" save="1">
-                              <text>CZ</text>
-                              <text>AF</text>
-                              <text>AL</text>
-                              <text>DZ</text>
-                              <text>AS</text>
-                              <text>VI</text>
-                              <text>AD</text>
-                              <text>AO</text>
-                              <text>AI</text>
-                              <text>AQ</text>
-                              <text>AG</text>
-                              <text>AR</text>
-                              <text>AM</text>
-                              <text>AW</text>
-                              <text>AU</text>
-                              <text>AZ</text>
-                              <text>BS</text>
-                              <text>BH</text>
-                              <text>BD</text>
-                              <text>BB</text>
-                              <text>BE</text>
-                              <text>BZ</text>
-                              <text>BY</text>
-                              <text>BJ</text>
-                              <text>BM</text>
-                              <text>BT</text>
-                              <text>BO</text>
-                              <text>BA</text>
-                              <text>BW</text>
-                              <text>BV</text>
-                              <text>BR</text>
-                              <text>IO</text>
-                              <text>VG</text>
-                              <text>BN</text>
-                              <text>BG</text>
-                              <text>BF</text>
-                              <text>BI</text>
-                              <text>XC</text>
-                              <text>CK</text>
-                              <text>TD</text>
-                              <text>ME</text>
-                              <text>CN</text>
-                              <text>DK</text>
-                              <text>DM</text>
-                              <text>DO</text>
-                              <text>DJ</text>
-                              <text>EG</text>
-                              <text>EC</text>
-                              <text>ER</text>
-                              <text>EE</text>
-                              <text>ET</text>
-                              <text>FO</text>
-                              <text>FK</text>
-                              <text>FJ</text>
-                              <text>PH</text>
-                              <text>FI</text>
-                              <text>FR</text>
-                              <text>GF</text>
-                              <text>TF</text>
-                              <text>PF</text>
-                              <text>GA</text>
-                              <text>GM</text>
-                              <text>GH</text>
-                              <text>GI</text>
-                              <text>GD</text>
-                              <text>GL</text>
-                              <text>GE</text>
-                              <text>GP</text>
-                              <text>GU</text>
-                              <text>GT</text>
-                              <text>GN</text>
-                              <text>GW</text>
-                              <text>GY</text>
-                              <text>HT</text>
-                              <text>HM</text>
-                              <text>HN</text>
-                              <text>HK</text>
-                              <text>CL</text>
-                              <text>HR</text>
-                              <text>IN</text>
-                              <text>ID</text>
-                              <text>IQ</text>
-                              <text>IR</text>
-                              <text>IE</text>
-                              <text>IS</text>
-                              <text>IT</text>
-                              <text>IL</text>
-                              <text>JM</text>
-                              <text>JP</text>
-                              <text>YE</text>
-                              <text>ZA</text>
-                              <text>GS</text>
-                              <text>JO</text>
-                              <text>YU</text>
-                              <text>KY</text>
-                              <text>KH</text>
-                              <text>CM</text>
-                              <text>CA</text>
-                              <text>CV</text>
-                              <text>QA</text>
-                              <text>KZ</text>
-                              <text>KE</text>
-                              <text>KI</text>
-                              <text>CC</text>
-                              <text>CO</text>
-                              <text>KM</text>
-                              <text>CG</text>
-                              <text>CD</text>
-                              <text>KR</text>
-                              <text>KP</text>
-                              <text>XK</text>
-                              <text>CR</text>
-                              <text>CU</text>
-                              <text>KW</text>
-                              <text>CY</text>
-                              <text>KG</text>
-                              <text>LA</text>
-                              <text>LS</text>
-                              <text>LB</text>
-                              <text>LR</text>
-                              <text>LY</text>
-                              <text>LI</text>
-                              <text>LT</text>
-                              <text>LV</text>
-                              <text>LU</text>
-                              <text>MO</text>
-                              <text>MG</text>
-                              <text>HU</text>
-                              <text>MK</text>
-                              <text>MY</text>
-                              <text>MW</text>
-                              <text>MV</text>
-                              <text>ML</text>
-                              <text>MT</text>
-                              <text>MA</text>
-                              <text>MH</text>
-                              <text>MQ</text>
-                              <text>MU</text>
-                              <text>MR</text>
-                              <text>YT</text>
-                              <text>XL</text>
-                              <text>UM</text>
-                              <text>MX</text>
-                              <text>FM</text>
-                              <text>MD</text>
-                              <text>MC</text>
-                              <text>MN</text>
-                              <text>MS</text>
-                              <text>MZ</text>
-                              <text>MM</text>
-                              <text>NA</text>
-                              <text>NR</text>
-                              <text>DE</text>
-                              <text>NP</text>
-                              <text>NE</text>
-                              <text>NG</text>
-                              <text>NI</text>
-                              <text>NU</text>
-                              <text>AN</text>
-                              <text>NL</text>
-                              <text>NF</text>
-                              <text>NO</text>
-                              <text>NC</text>
-                              <text>NZ</text>
-                              <text>PS</text>
-                              <text>OM</text>
-                              <text>PK</text>
-                              <text>PW</text>
-                              <text>PA</text>
-                              <text>PG</text>
-                              <text>PY</text>
-                              <text>PE</text>
-                              <text>PN</text>
-                              <text>CI</text>
-                              <text>PL</text>
-                              <text>PR</text>
-                              <text>PT</text>
-                              <text>AT</text>
-                              <text>RE</text>
-                              <text>GQ</text>
-                              <text>RO</text>
-                              <text>RU</text>
-                              <text>RW</text>
-                              <text>GR</text>
-                              <text>BL</text>
-                              <text>PM</text>
-                              <text>SV</text>
-                              <text>WS</text>
-                              <text>SM</text>
-                              <text>SA</text>
-                              <text>SN</text>
-                              <text>MP</text>
-                              <text>SC</text>
-                              <text>SL</text>
-                              <text>SG</text>
-                              <text>SK</text>
-                              <text>SI</text>
-                              <text>SO</text>
-                              <text>AE</text>
-                              <text>UK</text>
-                              <text>US</text>
-                              <text>CS</text>
-                              <text>LK</text>
-                              <text>CF</text>
-                              <text>SD</text>
-                              <text>SR</text>
-                              <text>SJ</text>
-                              <text>SH</text>
-                              <text>LC</text>
-                              <text>KN</text>
-                              <text>MF</text>
-                              <text>VA</text>
-                              <text>ST</text>
-                              <text>VC</text>
-                              <text>SZ</text>
-                              <text>SY</text>
-                              <text>SB</text>
-                              <text>ES</text>
-                              <text>SE</text>
-                              <text>CH</text>
-                              <text>TJ</text>
-                              <text>TZ</text>
-                              <text>TH</text>
-                              <text>TW</text>
-                              <text>TG</text>
-                              <text>TK</text>
-                              <text>TO</text>
-                              <text>TT</text>
-                              <text>TN</text>
-                              <text>TR</text>
-                              <text>TM</text>
-                              <text>TC</text>
-                              <text>TV</text>
-                              <text>UG</text>
-                              <text>UA</text>
-                              <text>UY</text>
-                              <text>UZ</text>
-                              <text>CX</text>
-                              <text>VU</text>
-                              <text>VE</text>
-                              <text>VN</text>
-                              <text>TL</text>
-                              <text>WF</text>
-                              <text>ZM</text>
-                              <text>EH</text>
-                              <text>ZW</text>
-                           </items>
-                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
-                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="1pt" vAlign="middle"/>
-                           <ui>
-                              <choiceList>
-                                 <border>
-                                    <corner thickness="0.1mm">
-                                       <color value="180,180,180"/>
-                                    </corner>
-                                    <edge thickness="0.1mm">
-                                       <color value="180,180,180"/>
-                                    </edge>
-                                 </border>
-                                 <margin/>
-                              </choiceList>
-                           </ui>
-                           <bind ref="$.statni_prislusnost" match="dataRef"/>
-                        </field>
-                        <field h="9mm" name="datum_narozeni" w="41mm">
-                           <assist>
-                              <speak priority="toolTip"/>
-                              <toolTip>Uveďte datum narození.</toolTip>
-                           </assist>
-                           <caption placement="top" reserve="3.1mm">
-                              <font typeface="Myriad Pro" size="8pt">
-                                 <fill>
-                                    <color value="91,91,93"/>
-                                 </fill>
-                              </font>
-                              <para marginLeft="2.835pt" marginRight="2.835pt"/>
-                              <value>
-                                 <text>Datum narození:</text>
-                              </value>
-                           </caption>
-                           <font typeface="Myriad Pro">
-                              <fill>
-                                 <color value="51,51,51"/>
-                              </fill>
-                           </font>
-                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
-                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="1pt" vAlign="middle"/>
-                           <ui>
-                              <picture>null{}|date{D.M.YYYY}</picture>
-                              <dateTimeEdit hScrollPolicy="off">
-                                 <border>
-                                    <corner thickness="0.1mm">
-                                       <color value="180,180,180"/>
-                                    </corner>
-                                    <edge thickness="0.1mm">
-                                       <color value="180,180,180"/>
-                                    </edge>
-                                 </border>
-                                 <margin/>
-                              </dateTimeEdit>
-                           </ui>
-                           <bind ref="$.datum_narozeni" match="dataRef">
-                              <picture>null{}</picture>
-                           </bind>
-                           <format>
-                              <picture>null{}|date{D.M.YYYY}</picture>
-                           </format>
-                           <validate formatTest="error" scriptTest="warning">
-                              <picture>null{}|date{D.M.YYYY}</picture>
-                              <message>
-                                 <text name="scriptTest"/>
-                                 <text name="formatTest">Chybně vyplněné datum narození. Datum zadejte ve formátu d.m.rrrr.</text>
-                              </message>
-                           </validate>
-                           <value>
-                              <date/>
-                           </value>
-                           <event activity="change" name="event__change">
-                              <script contentType="application/x-javascript">
-if (xfa.event.newText.match(/[^0-9\.]/)) {
-	xfa.event.change = "";
-}
-</script>
-                           </event>
-                           <event activity="exit" name="event__exit">
-                              <script contentType="application/x-javascript">
-if (this.errorText != "") {
-	xfa.host.setFocus(this);
-}
-</script>
-                           </event>
-                        </field>
-                        <field h="9mm" name="rodne_cislo" w="41mm">
-                           <assist>
-                              <speak priority="toolTip"/>
-                              <toolTip>Uveďte rodné číslo. Není-li rodné číslo přiděleno, nevyplňujte.</toolTip>
-                           </assist>
-                           <caption placement="top" reserve="3.1mm">
-                              <font typeface="Myriad Pro" size="8pt">
-                                 <fill>
-                                    <color value="91,91,93"/>
-                                 </fill>
-                              </font>
-                              <para marginLeft="2.835pt" marginRight="2.835pt"/>
-                              <value>
-                                 <text>Rodné číslo:</text>
-                              </value>
-                           </caption>
-                           <font typeface="Myriad Pro">
-                              <fill>
-                                 <color value="51,51,51"/>
-                              </fill>
-                           </font>
-                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
-                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="1pt" vAlign="middle"/>
-                           <ui>
-                              <picture>null{}|text{999999/999}|text{999999/9999}</picture>
-                              <textEdit>
-                                 <border>
-                                    <corner thickness="0.1mm">
-                                       <color value="180,180,180"/>
-                                    </corner>
-                                    <edge thickness="0.1mm">
-                                       <color value="180,180,180"/>
-                                    </edge>
-                                 </border>
-                                 <margin/>
-                              </textEdit>
-                           </ui>
-                           <bind ref="$.rodne_cislo" match="dataRef">
-                              <picture>null{}|text{999999/999}|text{999999/9999}</picture>
-                           </bind>
-                           <format>
-                              <picture>null{}|text{999999/999}|text{999999/9999}</picture>
-                           </format>
-                           <value>
-                              <text maxChars="11"/>
-                           </value>
-                           <event activity="change" name="event__change">
-                              <script contentType="application/x-javascript">
-if (xfa.event.newText.match(/[^0-9\/]/)) {
-	xfa.event.change = "";
-}
-</script>
-                           </event>
-                           <event activity="exit" name="event__exit">
-                              <script contentType="application/x-javascript">
-if (! validateRCLib.validateRC(this.rawValue)) {
-	xfa.host.messageBox("Neplatné rodné číslo.");
-	xfa.host.setFocus(this);
-};
-</script>
-                           </event>
-                        </field>
-                        <field minH="9mm" name="osobni_stav" w="41mm">
-                           <assist>
-                              <speak priority="toolTip"/>
-                              <toolTip>Uveďte rodinný stav.</toolTip>
-                           </assist>
-                           <caption placement="top" reserve="3.1mm">
-                              <font typeface="Myriad Pro" size="8pt">
-                                 <fill>
-                                    <color value="91,91,93"/>
-                                 </fill>
-                              </font>
-                              <para marginLeft="2.835pt" marginRight="2.835pt"/>
-                              <value>
-                                 <text>Osobní stav:</text>
-                              </value>
-                           </caption>
-                           <font typeface="Myriad Pro">
-                              <fill>
-                                 <color value="51,51,51"/>
-                              </fill>
-                           </font>
-                           <items save="1">
-                              <text>svobodný / svobodná</text>
-                              <text>ženatý / vdaná</text>
-                              <text>registrovaný partner/ka</text>
-                              <text>rozvedený / rozvedená</text>
-                              <text>vdovec / vdova</text>
-                           </items>
-                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
-                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt" spaceBelow="1pt" vAlign="middle"/>
-                           <ui>
-                              <choiceList>
-                                 <border>
-                                    <corner thickness="0.1mm">
-                                       <color value="180,180,180"/>
-                                    </corner>
-                                    <edge thickness="0.1mm">
-                                       <color value="180,180,180"/>
-                                    </edge>
-                                 </border>
-                                 <margin/>
-                              </choiceList>
-                           </ui>
-                           <bind ref="$.osobni_stav" match="dataRef"/>
-                        </field>
-                        <field h="9mm" name="ico" w="41mm">
-                           <assist>
-                              <speak priority="toolTip"/>
-                              <toolTip>Uveďte identifikační číslo, pokud bylo přiděleno.</toolTip>
-                           </assist>
-                           <caption placement="top" reserve="3.1mm">
-                              <font typeface="Myriad Pro" size="8pt">
-                                 <fill>
-                                    <color value="91,91,93"/>
-                                 </fill>
-                              </font>
-                              <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="0pt" spaceBelow="0pt"/>
-                              <value>
-                                 <text>IČO:</text>
-                              </value>
-                           </caption>
-                           <font typeface="Myriad Pro">
-                              <fill>
-                                 <color value="51,51,51"/>
-                              </fill>
-                           </font>
-                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
-                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="1pt" vAlign="middle"/>
-                           <ui>
-                              <picture>text{99999999}</picture>
-                              <textEdit>
-                                 <border>
-                                    <corner thickness="0.1mm">
-                                       <color value="180,180,180"/>
-                                    </corner>
-                                    <edge thickness="0.1mm">
-                                       <color value="180,180,180"/>
-                                    </edge>
-                                 </border>
-                                 <margin/>
-                              </textEdit>
-                           </ui>
-                           <bind ref="$.osoba.ico" match="dataRef">
-                              <picture>text{99999999}</picture>
-                           </bind>
-                           <format>
-                              <picture>text{999 99 999}</picture>
-                           </format>
-                           <value>
-                              <text maxChars="8"/>
-                           </value>
-                           <event activity="change" name="event__change">
-                              <script contentType="application/x-javascript">
-if (xfa.event.newText.match(/[^0-9]/)) {
-	xfa.event.change = "";
-}
-</script>
-                           </event>
-                        </field>
-                        <?templateDesigner expand 1?></subform>
-                     <?templateDesigner expand 1?></subform>
+                     <?templateDesigner expand 0?>
+                  </subform>
                   <subform usehref="..\..\Fragments\adresa_fo.xdp#som($template.adresa_po_fo.adresa_fo_wrapper)" w="190mm">
                      <margin/>
                      <bind ref="" match="none"/>
@@ -7049,7 +6243,7 @@ if (this.poradi.rawValue != this.index + 1)
                </draw>
                <subform y="12mm" w="190mm" layout="tb" name="podpisy">
                   <bind match="dataRef" ref="$.podpisy"/>
-                  <subform usehref="..\..\Fragments\podpis_testFlatovani.xdp#som($template.podpis.podpis)" name="podpis1">
+                  <subform usehref="..\..\Fragments\podpis.xdp#som($template.podpis.podpis)" name="podpis1">
                      <keep intact="contentArea"/>
                      <bind match="dataRef" ref="$.podpis[0]"/>
                      <calculate>
@@ -7121,50 +6315,6 @@ if (spolecny == true) {
 	sharedLib.hideIfVisible(podpis2);
 	sharedLib.EraseAllChildFields(podpis2);
 }
-
-/*
-
-var t_pred_os = "";
-var jm_os = "";
-var pr_os = "";
-var t_za_os = "";
-
-if (osoby_jednajici_za_dluznika.wrapper.osoby_switch.osoby_switch.rawValue == "1" ) {
-	
-	if (osoby_jednajici_za_dluznika.wrapper.osoby.osoba.osoba_header.druh_osoby.druh.rawValue == 1) {
-		t_pred_os = osoby_jednajici_za_dluznika.wrapper.osoby.osoba.fyzicka_osoba.udaje_osoba_wrapper.udaje_osoba.osoba.titul_pred.rawValue;
-		jm_os = osoby_jednajici_za_dluznika.wrapper.osoby.osoba.fyzicka_osoba.udaje_osoba_wrapper.udaje_osoba.osoba.jmeno.rawValue;
-		pr_os = osoby_jednajici_za_dluznika.wrapper.osoby.osoba.fyzicka_osoba.udaje_osoba_wrapper.udaje_osoba.osoba.prijmeni.rawValue;
-		t_za_os = osoby_jednajici_za_dluznika.wrapper.osoby.osoba.fyzicka_osoba.udaje_osoba_wrapper.udaje_osoba.osoba.titul_za.rawValue;
-	};
-};
-
-var t_pred_dl = "";
-var jm_dl = "";
-var pr_dl = "";
-var t_za_dl = "";
-
-if (dluznik.wrapper._fyzicka_osoba.count &gt; 0) {
-	t_pred_dl = dluznik.wrapper.fyzicka_osoba.udaje_osoba_wrapper.udaje_osoba.osoba.titul_pred.rawValue;
-	jm_dl = dluznik.wrapper.fyzicka_osoba.udaje_osoba_wrapper.udaje_osoba.osoba.jmeno.rawValue;
-	pr_dl = dluznik.wrapper.fyzicka_osoba.udaje_osoba_wrapper.udaje_osoba.osoba.prijmeni.rawValue;
-	t_za_dl = dluznik.wrapper.fyzicka_osoba.udaje_osoba_wrapper.udaje_osoba.osoba.titul_za.rawValue;
-};
-
-if(podpis_udaje.podepisujici.osoba.titul_pred.calculate.override != "disabled"){
-	podpis_udaje.podepisujici.osoba.titul_pred.rawValue = pr_os == ""?t_pred_dl:t_pred_os;
-};
-if(podpis_udaje.podepisujici.osoba.jmeno.calculate.override != "disabled"){
-	podpis_udaje.podepisujici.osoba.jmeno.rawValue = pr_os == ""?jm_dl:jm_os;
-};
-if(podpis_udaje.podepisujici.osoba.prijmeni.calculate.override != "disabled"){
-	podpis_udaje.podepisujici.osoba.prijmeni.rawValue = pr_os == ""?pr_dl:pr_os;
-};
-if(podpis_udaje.podepisujici.osoba.titul_za.calculate.override != "disabled"){
-	podpis_udaje.podepisujici.osoba.titul_za.rawValue = pr_os == ""?t_za_dl:t_za_os;
-};
-
-*/
 </script>
                      </calculate>
                      <event activity="initialize" ref="$" name="event__initialize">
@@ -7233,7 +6383,7 @@ if ( (
         (found &amp;&amp; localLib.podpisConcatenate(podpis_udaje.podepisujici.osoba) != localLib.podpisConcatenate(osoba_podpis.udaje_osoba_wrapper.udaje_osoba.osoba) ) ||
          found_po ||
         (! found_po &amp;&amp; ! found &amp;&amp; je_zastupce )) ) {
-			podpis_udaje.podepisujici.osoba.localOverrideLib.set();
+			podpis_udaje.podepisujici.osoba.localOverrideLib.set();		
 		}
 /*
 if ( (
@@ -7259,7 +6409,7 @@ if ( (
 */
 </script>
                      </event>
-                     <?templateDesigner expand 1?>
+                     <?templateDesigner expand 0?>
                   </subform>
                   <subform usehref="..\..\Fragments\podpis_no_sign.xdp#som($template.podpis.podpis)" name="podpis2" layout="lr-tb" w="190mm" presence="hidden">
                      <keep intact="contentArea"/>
@@ -7296,19 +6446,11 @@ if (this.presence == "visible") {
 	if (zastupce == false &amp;&amp; dluznik.wrapper._fyzicka_osoba.count == 2) {	
 			osoba_podpis = dluznik.wrapper.resolveNode("fyzicka_osoba[1]");
 			
-			if(podpis_udaje.podepisujici.osoba.titul_pred.calculate.override != "disabled") {
+			//if(podpis_udaje.podepisujici.osoba.titul_pred.calculate.override != "disabled") {
+			if(podpis_udaje.podepisujici.osoba.localOverrideLib.get() != "false") {
 				podpis_udaje.podepisujici.osoba.titul_pred.rawValue = osoba_podpis.udaje_osoba_wrapper.udaje_osoba.osoba.titul_pred.rawValue;
-			};
-			
-			if(podpis_udaje.podepisujici.osoba.jmeno.calculate.override != "disabled") {
 				podpis_udaje.podepisujici.osoba.jmeno.rawValue = osoba_podpis.udaje_osoba_wrapper.udaje_osoba.osoba.jmeno.rawValue;
-			};
-			
-			if(podpis_udaje.podepisujici.osoba.prijmeni.calculate.override != "disabled") {
 				podpis_udaje.podepisujici.osoba.prijmeni.rawValue = osoba_podpis.udaje_osoba_wrapper.udaje_osoba.osoba.prijmeni.rawValue;
-			};
-			
-			if(podpis_udaje.podepisujici.osoba.titul_za.calculate.override != "disabled") {
 				podpis_udaje.podepisujici.osoba.titul_za.rawValue = osoba_podpis.udaje_osoba_wrapper.udaje_osoba.osoba.titul_za.rawValue;
 			};
 	}
@@ -7394,10 +6536,7 @@ if (zastupce == false &amp;&amp; dluznik.wrapper._fyzicka_osoba.count == 2) {
 		osoba_podpis = dluznik.wrapper.resolveNode("fyzicka_osoba[1]");
 		
 		if (localLib.podpisConcatenate(podpis_udaje.podepisujici.osoba) != localLib.podpisConcatenate(osoba_podpis.udaje_osoba_wrapper.udaje_osoba.osoba)  ) {
-					podpis_udaje.podepisujici.osoba.titul_pred.calculate.override = "disabled";
-					podpis_udaje.podepisujici.osoba.jmeno.calculate.override = "disabled";
-					podpis_udaje.podepisujici.osoba.prijmeni.calculate.override = "disabled";
-					podpis_udaje.podepisujici.osoba.titul_za.calculate.override = "disabled";
+					podpis_udaje.podepisujici.osoba.localOverrideLib.set();
 		}
 		
 		/*
@@ -7489,7 +6628,7 @@ var povinne = [
                	{field: "udaje_osoba_wrapper.udaje_osoba.osoba.jmeno", label:"", label_txt:""},
                 {field: "udaje_osoba_wrapper.udaje_osoba.osoba.prijmeni", label:"", label_txt:""},
                 {field: "udaje_osoba_wrapper.udaje_osoba.statni_prislusnost", label:"", label_txt:""},
-                {field: "udaje_osoba_wrapper.udaje_osoba.datum_narozeni", label:"", label_txt:""},
+   //             {field: "udaje_osoba_wrapper.udaje_osoba.datum_narozeni", label:"", label_txt:""},
                 //{field: "udaje_osoba_wrapper.udaje_osoba.rodne_cislo", label:"", label_txt:""},
                 {field: "udaje_osoba_wrapper.udaje_osoba.osobni_stav", label:"", label_txt:""},
                 //{field: "udaje_osoba_wrapper.udaje_osoba.ico", label:"", label_txt:""},
@@ -7599,7 +6738,30 @@ var povinne = [
     }*/
 ];	
 
-var jedno_z_nich = [];
+var jedno_z_nich = [
+   	{
+   		sekce:
+        {
+          label:"Formular.dluznik.wrapper.label",
+          repeatfor:
+            [{
+              field:"Formular.dluznik.wrapper._fyzicka_osoba",
+              prefix_field:"Formular.dluznik.wrapper.fyzicka_osoba",
+              label_txt:"Fyzická osoba",
+              label2:"",
+              label2_txt:"Datum narození, IČO",
+              pole:
+              [
+                {field: "udaje_osoba_wrapper.udaje_osoba.ico"},
+            	{field: "udaje_osoba_wrapper.udaje_osoba.datum_narozeni"}
+              ]
+             }
+            ]
+        }
+    }
+    
+  ]
+  
 /*zruseno ISIRFORM-70
 var jedno_z_nich = [
    	{
@@ -7795,10 +6957,7 @@ function podpisConcatenate (objOsoba) {
 	if (objOsoba == null) 
 		podpis = null
 	else
-		podpis = (objOsoba.titul_pred.rawValue == null?"":objOsoba.titul_pred.rawValue) + 
-		(objOsoba.jmeno.rawValue == null?"":objOsoba.jmeno.rawValue) + 
-		(objOsoba.prijmeni.rawValue == null?"":objOsoba.prijmeni.rawValue) + 
-		(objOsoba.titul_za.rawValue == null?"":objOsoba.titul_za.rawValue);
+		podpis = objOsoba.titul_pred.rawValue + objOsoba.jmeno.rawValue + objOsoba.prijmeni.rawValue + objOsoba.titul_za.rawValue;
 	
 	return podpis;
 }
@@ -7873,12 +7032,12 @@ function dluznikPodnikatel(dluznik) {
    <?templateDesigner XDPPreviewFormat 20?>
    <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
-   <?templateDesigner FormTargetVersion 33?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
-   <?templateDesigner Zoom 92?>
    <?templateDesigner SaveTaggedPDF 0?>
    <?templateDesigner SavePDFWithEmbeddedFonts 0?>
-   <?templateDesigner SavePDFWithLog 0?></template>
+   <?templateDesigner SavePDFWithLog 0?>
+   <?templateDesigner Zoom 137?>
+   <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -7890,14 +7049,15 @@ function dluznikPodnikatel(dluznik) {
    </agent>
    <present>
       <!--  [0..n]  -->
+      <destination>pdf</destination>
       <pdf>
          <!--  [0..n]  -->
-         <tagged>0</tagged>
          <fontInfo>
             <embed>0</embed>
          </fontInfo>
          <version>1.7</version>
          <adobeExtensionLevel>8</adobeExtensionLevel>
+         <tagged>0</tagged>
       </pdf>
       <common>
          <data>
@@ -8026,14 +7186,14 @@ function dluznikPodnikatel(dluznik) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-09-15T10:15Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2020-12-16T12:42:51Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:53307991-3be1-4304-b818-3b58445012ad</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:1c9256ed-4346-4a71-b500-671365c61c56</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/" rdf:about="">
          <pdfuaid:part>1</pdfuaid:part>
@@ -8057,7 +7217,7 @@ function dluznikPodnikatel(dluznik) {
    <xsdConnection name="DataConnection" dataDescription="NNPO">
       <uri>..\..\Data\Xsd\01_-_Navrh_na_povoleni_oddluzeni.xsd</uri>
       <rootElement>NNPO</rootElement>
-      <?templateDesigner fileDigest shaHash="H3XpfQ+ZIj+sZpNwRBy5bsJ+u+s="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="UKoOhXM91QMXwC0YBGt5DOd2UqE="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>

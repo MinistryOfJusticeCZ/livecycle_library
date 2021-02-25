@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-08-05T11:33:36Z" uuid="7bfa15a7-2601-4444-8533-323053116356">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-02-06T18:22:25Z" uuid="43070dea-2e7f-4a75-b91e-52730fb260aa">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="form1" locale="cs_CZ" layout="tb">
@@ -13,6 +13,60 @@
       <subform>
          <variables>
             <script contentType="application/x-javascript" name="sharedLib">
+var DEBUG1 = false; // setFontSizeFromValue
+var DEBUG2 = false; // set fontSize
+var DEBUG3 = false; // visible/hide
+var DEBUG4 = false  // limitDecField
+var DEBUG5 = false // EraseAllChildFields
+var DEBUG6 = false //setOnValueChange
+if (DEBUG1 || DEBUG2 || DEBUG3 || DEBUG4 || DEBUG5|| DEBUG6) console.show();
+
+function sumColumn(field, sSOMExp) {
+
+	var cells = field.resolveNodes(sSOMExp);
+	var sum = 0;
+	
+	for(i=0; i&lt;cells.length; i++)
+	{
+	    sum += cells.item(i).rawValue
+	}
+	
+	return sum;
+};
+
+function limitDecField(field, fValue, debug) {
+	var frac = 2;
+	var lead = 15;
+	
+	if (DEBUG4) console.println ("limitDecField: field: " + field.name);
+	
+	if (field.resolveNode("value.integer") ) {
+		frac = 0;
+	};
+	
+	if (field.resolveNode("value.#decimal")) {
+		frac = field.resolveNode("value.#decimal").fracDigits;
+		lead = field.resolveNode("value.#decimal").leadDigits;
+	};
+		
+	var maxNr = Math.pow(10,lead) - 1;
+	
+	var maxDec =  (Math.pow(10,frac) - 1)  /  Math.pow(10,frac) ;
+	
+	fValue = Math.round(fValue * ( Math.pow(10,frac))) / ( Math.pow(10,frac));
+	
+	if ( parseInt(fValue) &gt; maxNr ) {
+		fValue = maxNr + maxDec  ;
+		xfa.host.messageBox("Součet je vyšší než nejvyšší povolená částka.");
+		//setOnFillColorChange(field, "253, 85, 95");
+	}
+	else {
+	//	setOnFillColorChange(field, "255, 255, 255");
+	};
+	
+	return fValue;
+}
+
 function isVisible(objVis){
 	r = false;
 	//xfa.host.messageBox(objVis.name + " " + objVis.className );
@@ -78,6 +132,7 @@ function getObjText (obj1, label_obj, label_txt ) {
 
 function PreSignCheck(povinne, jedno_z_nich) {
 	var result = "";
+	var result_lines = 15;
 	//xfa.host.messageBox(povinne[1].sekce.repeatfor[0].pole[1].field);
 	for (var sec=0; sec &lt; povinne.length; sec++) {
 		var lbl_obj_sec = getObj (povinne[sec].sekce.label);
@@ -105,14 +160,22 @@ function PreSignCheck(povinne, jedno_z_nich) {
 							var lbl_obj = getObj (povinne[sec].sekce.repeatfor[rep].pole[fld].label);
 							var lbl_txt =  povinne[sec].sekce.repeatfor[rep].pole[fld].label_txt;
 							var lbl_pref_txt = getObjText(getObj (povinne[sec].sekce.repeatfor[rep].pole[fld].label_prefix), null, "");
-							lbl_pref_txt = (lbl_pref_txt==""?"":lbl_pref_txt + " - ");
+							if (povinne[sec].sekce.repeatfor[rep].pole[fld].label_prefix_rel != null &amp;&amp; povinne[sec].sekce.repeatfor[rep].pole[fld].label_prefix_rel != "") {
+                                lbl_pref_txt = getObjText(getObj (rep_obj_txt+povinne[sec].sekce.repeatfor[rep].pole[fld].label_prefix_rel), null, "");
+                                //console.show();
+                                //console.println("lib_pref_txt_rel: " + rep_obj_txt+povinne[sec].sekce.repeatfor[rep].pole[fld].label_prefix_rel);
+                            }
+                            
+                            lbl_pref_txt = (lbl_pref_txt==""?"":lbl_pref_txt + " - ");
 							
 							if ( (obj_fld.rawValue == null ||  obj_fld.rawValue == " "  || obj_fld.rawValue == "") &amp;&amp; isVisible(obj_fld) ) {
 								if (! sec_used) {
 									result += sec_txt;
 									sec_used = true;
 								};
-								result += " - " + radek_txt + lbl_pref_txt + getObjText (lbl_obj, obj_fld, lbl_txt) + "\n";
+								if (result_lines &gt; 0)
+									result += " - " + radek_txt + lbl_pref_txt + getObjText (lbl_obj, obj_fld, lbl_txt) + "\n";
+								result_lines--;
 							};
 						};
 					} catch(err) {
@@ -122,7 +185,11 @@ function PreSignCheck(povinne, jedno_z_nich) {
 			};
 		};
 	};
-	result += (result!=""?"\n\n\n":"") + PreSignCheck_jedno(jedno_z_nich)
+	if (result_lines &gt; 0)
+		result += (result!=""?"\n\n\n":"") + PreSignCheck_jedno(jedno_z_nich);
+	else
+		result += "\nZobrazeno prvních 15 chyb.\n";
+	
 	if (result != "") {
 		xfa.host.messageBox("Chyba. Nejsou vyplněna tato pole: \n"  + result );
 		xfa.event.cancelAction = 1;
@@ -147,17 +214,19 @@ function PreSignCheck_jedno(povinne){
 			for (var rep2=0; rep2 &lt; rep_obj_count ; rep2++) {
 				var radek_txt = "";
 				var rep_obj_txt = ""; 
+				var result = true;
 				if (povinne[sec].sekce.repeatfor[rep].prefix_field!="") {
 					rep_obj_txt = povinne[sec].sekce.repeatfor[rep].prefix_field+ "[" + rep2 +"].";
+					if ( ! getObj (povinne[sec].sekce.repeatfor[rep].prefix_field+ "[" + rep2 +"]")) result = false;
 					radek_txt = (povinne[sec].sekce.repeatfor[rep].label_txt == ""?"řádek:":povinne[sec].sekce.repeatfor[rep].label_txt) + " " + (rep2 +1) + ": " ;
 				};
-				var result = true;
+				
 				for (var fld=0; fld &lt; povinne[sec].sekce.repeatfor[rep].pole.length; fld++) {
 					
 					try {
 						var obj_fld = getObj (rep_obj_txt + povinne[sec].sekce.repeatfor[rep].pole[fld].field);
-						
-						if ( !(obj_fld.rawValue == null ||  obj_fld.rawValue == " "  || obj_fld.rawValue == "") &amp;&amp; isVisible(obj_fld) ) result = false;
+						if (obj_fld != null)
+							if ( !(obj_fld.rawValue == null ||  obj_fld.rawValue == " "  || obj_fld.rawValue == "") &amp;&amp; isVisible(obj_fld) ) result = false;
 						
 					} catch(err) {
 						xfa.host.messageBox("Chyba na: " + rep_obj_txt + povinne[sec].sekce.repeatfor[rep].pole[fld].field);
@@ -188,6 +257,8 @@ function EraseAllChildFields(myParentObject){
 	var intNumElements;
 	var currentElement;
 	var j;
+
+	if (DEBUG5) console.println("EraseAllChildFields: field: " + myParentObject.name)
 
 	//Get all the child nodes of the parent element
 	allChildElements = myParentObject.nodes;
@@ -227,17 +298,26 @@ function EraseAllChildFields(myParentObject){
 /*
 	Nastaví novou hodnotu pole, pokud se liší od aktuální.
 */
-function setOnValueChange(field, newValue) {
+function setOnValueChange(field, newValue, disableInit) {
+	if (disableInit === undefined) disableInit = false;
 	if (field.resolveNode("ui.checkButton") != null) { //checkBox 
 		var fld = field.rawValue==null?0:field.rawValue;
 		newValue = newValue==null?0:newValue;
 		
-		if (fld != newValue)
+		if (fld != newValue) {
+			if (DEBUG6) console.println("setOnValueChange: field: " + field.name + " change value " + field.rawValue + " to " + newValue );
 			field.rawValue = newValue;
+		}
 	}
 	else {
-		if (field.rawValue != newValue)
+		if (field.rawValue != newValue) {
+			if (DEBUG6) console.println("setOnValueChange: field: " + field.name + " change value " + field.rawValue + " to " + newValue );
 			field.rawValue = newValue;
+		};
+	};
+	if (field.className != "draw" &amp;&amp; ! disableInit) {
+		if (DEBUG6) console.println("setOnValueChange: field: " + field.name + " call IINIT "  );
+		field.execInitialize(); // muze byt volana zmena velikosti fontu
 	};
 }
 
@@ -253,8 +333,22 @@ function setOnCaptionChange(field, newValue) {
 	Nastaví velikost fontu pole, pokud se liší od aktuální.
 */
 function setOnFontSizeChange(field, newValue) {
-	if (field.font.size != newValue)
+	if (field.font.size != newValue) {
 		field.font.size = newValue;
+		if (DEBUG2) console.println ("setOnFontSizeChange: field: " + field.name + " newValue: " + newValue )
+	}
+		
+/*	if (field.para.marginLeft !== undefined) {
+		var marg = "1mm"; 
+		
+		if (newValue == "0pt") { // u policek &lt; 30mm to dela problem 
+			marg = "0mm";
+		};
+		if (field.para.marginLeft != marg)
+			field.para.marginLeft = marg;
+		if (field.para.marginRight != marg)
+			field.para.marginRight = marg;
+	};		*/
 }
 
 /*
@@ -270,13 +364,131 @@ function setOnFillColorChange(field, newValue) {
 	Defaultní délka @lengthThreshold = 11
 	Defaultní velikost fontu @fontSize = "10pt"
 */
-function setFontSizeFromValue(field, value, lengthThreshold, fontSize) {
-		
-	if (value === undefined || value === null) value = null;
-	if (lengthThreshold === undefined || lengthThreshold === null) lengthThreshold = 11;
-	if (fontSize === undefined || fontSize === null) fontSize = "10pt";	
 
-	setOnFontSizeChange(field, String(value != null ? value : field.rawValue).length &gt; lengthThreshold ? "0pt" : fontSize);
+function setFontSizeFromValue(field, fValue, lengthThreshold, defaultFSizePt, debug) {
+	/* lengthThreshold uz neni potreba, zachovano pouze kvuli zpetne kompatibilite pri volani */
+	if (defaultFSizePt === null || defaultFSizePt === undefined) defaultFSizePt = "10pt";
+	if (fValue === null || fValue === undefined) fValue = field.rawValue;
+	
+	if (fValue == null || fValue == "") return; // pokud je pole null neni treba menit velikost fontu (v pripade, ze byla nastavena blbe volani INIT pri otevreni formulare zbori podpis)
+	
+	var fieldWidthPT = getFieldWPt(field, debug) - (convert_to_pt(field.caption.reserve) &lt; 0?0:convert_to_pt(field.caption.reserve)) - convert_to_pt(field.para.marginLeft) - convert_to_pt(field.para.marginRight) ;
+	
+	if (DEBUG1) console.println("setFontSizeFromValue: field: " + field.name + " fieldWidthPT: " + fieldWidthPT );	
+	
+	
+	var desMist = 0.0;
+	desMist =  String( Math.floor(  (100.0 *fValue -  100.0 *Math.floor( fValue)))/100.0 ).length - 2 ;
+	
+	
+	if (desMist == -1 ) {
+		desMist = 0;
+		desMist += (field.format.picture.value.indexOf(".00") != -1?2:0);
+		desMist += (field.format.picture.value.indexOf(".99") != -1?2:0);
+		desMist += (field.format.picture.value.indexOf(".999") != -1?3:0);
+		desMist += (field.format.picture.value.indexOf(".9999") != -1?4:0);
+		desMist += (field.format.picture.value.indexOf(".z9") != -1?2:0);
+	}
+	else {
+		desMist = 0;
+	};
+	
+	//xfa.host.messageBox("desMist " + desMist );
+	
+	var fieldLength = String(fValue).length  + desMist  + (field.format.picture.value.indexOf("Kč") != -1?3:0);
+	
+	if (DEBUG1) console.println("setFontSizeFromValue: field: " + field.name + " fieldLength : " + fieldLength );	
+	
+	var ret = defaultFSizePt;
+	var  cKoef = 9; // v podstate prumerna sirka snaku u fontu 10pt
+	if (defaultFSizePt == "8pt") cKoef = 7;
+	var  cKoef2 =  ((2.75 * fieldLength )/ 100) + 1 ; // Randomiho konstanta :) bez ni to zmensuje moc.. nastaveno systemem pokus omyl .. 
+	
+	cKoef2 = (cKoef2&lt;1?1:cKoef2);
+	
+	if (( fieldLength * cKoef ) &gt; fieldWidthPT  ) {
+		ret = ( fieldWidthPT / (fieldLength * cKoef)  * convert_to_pt(defaultFSizePt) * cKoef2  );
+	 
+		if (ret &gt; convert_to_pt(defaultFSizePt) )
+			ret = defaultFSizePt;
+		else {
+			if (field.font.weight == "bold") { // pro tucne pismo trosku zmensime
+				ret *= 0.95; 
+			};
+			ret = (Math.floor(ret*10) / 10) + "pt";
+		};
+	}
+	
+	//xfa.host.messageBox("fieldLength: " + fieldLength  + " fieldWidthPT: " + fieldWidthPT);
+	if (DEBUG1) console.println("setFontSizeFromValue: field: " + field.name + "FontSize: " + ret);	
+	setOnFontSizeChange(field, ret);	
+};
+
+function getFieldWPt (field, debug) {
+	
+	var ret = 0;
+	
+	if (! field.parent ) xfa.host.messageBox("f.name = " + field.name);
+	
+	// tabulka
+	if (field.parent.parent.layout == "table") {
+		var colWidths = field.parent.parent.columnWidths.split(" ");
+		var realIndex = 0;
+		var i = 0
+		
+		while (field.parent.nodes.item(i) != field) {
+			var tmp = 1;
+			if ( field.parent.nodes.item(i).className != "instanceManager") {
+				tmp = field.parent.nodes.item(i).colSpan;
+				tmp = 1 * (tmp==""|| tmp==0|| tmp == null?1:tmp); 
+				realIndex += tmp ;
+			};
+			i++;
+			if (debug) xfa.host.messageBox("getFieldWPt field: " + field.name + " field.parent.nodes.item(i): " + field.parent.nodes.item(i).name);	
+		}
+		
+		if (debug) xfa.host.messageBox("getFieldWPt field: " + field.name + " realIndex: " + realIndex  );
+		
+		for (var i = 0; i &lt; field.colSpan; i++) {
+			ret += convert_to_pt(colWidths[i + realIndex ]);
+			if (debug) xfa.host.messageBox("getFieldWPt field: " + field.name + " colWidths[i + realIndex ]: " + colWidths[i + realIndex ]);
+		};
+	}
+	else 
+		ret =  convert_to_pt(field.w);
+	
+	return ret;
+}
+function convert_to_pt ( argSize ) {
+
+	var ret = null;
+	var argUnit = argSize.substring(argSize.length-2);
+	var argNum = argSize.substring(0, argSize.length-2);
+	
+	if (argUnit == "mm") ret = argNum * 72 / 25.4 ;
+	if (argUnit == "in") ret = argNum * 72;
+	if (argUnit == "cm") ret = argNum * 72 / 2.54;
+	if (argUnit == "pt") ret = argNum ;
+	
+	ret = Math.round(ret*1000)/1000;
+		
+	return ret ;
+}
+
+
+/*
+	Nastaví velikost fontu pole pro částku podle délky hodnoty pole. Do hraniční délky @lengthThreshold je velikost fontu @fontSize, poté automatická (0). 
+	Defaultní délka @lengthThreshold = 11
+	Defaultní velikost fontu @fontSize = "10pt"
+*/
+function setFontSizeFromValue_old(field, value, lengthThreshold, fontSize) { // nastaveni font.size = auto dela pri flatovani pruser...
+		
+	if (value === null || value === undefined ) value = null;
+	if (lengthThreshold === null || lengthThreshold === undefined ) lengthThreshold = 11;
+	if (fontSize === null  || fontSize === undefined ) fontSize = "10pt";	
+
+	setOnFontSizeChange(field, (String(value != null ? value : field.rawValue).length &gt; lengthThreshold ? "0pt" : fontSize));
+	
 }
 
 /*
@@ -285,7 +497,7 @@ function setFontSizeFromValue(field, value, lengthThreshold, fontSize) {
 function hideIfVisible(field, eraseContent) {
 	if (field.presence == "visible") {
 		field.presence = "hidden";
-		
+		if (DEBUG3) console.println("hideIfVisible: field: " + field.name );		
 		if (eraseContent == true)
 			EraseAllChildFields(field);
 	}
@@ -295,8 +507,10 @@ function hideIfVisible(field, eraseContent) {
 	Zobrazí pole, pokud je skryté.
 */
 function visibleIfHidden(field) {
-	if (field.presence == "hidden")
+	if (field.presence == "hidden") {
 		field.presence = "visible";
+		if (DEBUG3) console.println("visibleIfHidden: field: " + field.name );		
+	};
 }
 
 /*
@@ -346,7 +560,7 @@ function filterDateEvent(event) {
 
                
 /*
-	Porovna hodnotu pole s datumem s textovym datumem ve formatu "d.m.yyyy". 
+	Porovna hodnotu pole s datumem s textovym datumem ve formatu "yyyy-mm-dd". 
 	Pokud je datum v poli mensi nez textove nebo je datum v poli null, vraci -1
 	Pokud se datumy rovnaji, vraci 0
 	Pokud je datum v poli vetsi nez textove, vraci 1
@@ -355,8 +569,30 @@ function compareDates(field, textDate) {
 	if (field == null || field.rawValue == null || field.rawValue == "")
 		return -1;	
 
-	var fieldDate = util.scand("yyyy-mm-dd", field.rawValue);
-	var otherDate = util.scand("d.m.yyyy", textDate);
+//	var fieldDate = util.scand("yyyy-mm-dd", field.rawValue);
+//	var otherDate = util.scand("d.m.yyyy", textDate);
+	var fieldDate = new Date();
+	var otherDate = new Date(); 
+
+	var dtSplitted = field.rawValue.split("-");
+	fieldDate.setDate(1);
+	fieldDate.setYear(dtSplitted [0]);
+	fieldDate.setMonth(dtSplitted [1]-1);
+	fieldDate.setDate(dtSplitted [2]);
+	fieldDate.setHours(0);
+	fieldDate.setSeconds(0);
+	fieldDate.setMinutes(0);
+	
+	dtSplitted = textDate.split("-"); // textDate je potreba zadavat ve formatu YYYY-MM-DD
+	otherDate.setDate(1);
+	otherDate.setYear(dtSplitted[0]);
+	otherDate.setMonth(dtSplitted[1]-1);
+	otherDate.setDate(dtSplitted[2]);
+	
+	otherDate.setHours(0);
+	otherDate.setSeconds(0);
+	otherDate.setMinutes(0);
+	
 	
 	if (fieldDate == null)
 		return -1;
@@ -365,7 +601,7 @@ function compareDates(field, textDate) {
 	fieldDate.setMilliseconds(0);
 	otherDate.setMilliseconds(0);
 
-	return fieldDate &lt; otherDate ? -1 : fieldDate &gt; otherDate ? 1 : 0;
+	return fieldDate.valueOf() &lt; otherDate.valueOf() ? -1 : (fieldDate.valueOf() &gt; otherDate.valueOf() ? 1 : 0);
 }
 
 /*
@@ -376,10 +612,34 @@ function isDate(field) {
 	if (field == null || field.rawValue == null || field.rawValue == "")
 		return false;	
 
-	var fieldDate = util.scand("yyyy-mm-dd", field.rawValue);
-	
-	return fieldDate != null;
+//	var fieldDate = util.scand("yyyy-mm-dd", field.rawValue);
+//	return fieldDate != null;
+	return Date.parse(field.rawValue) * 1 ===  Date.parse(field.rawValue);	
+ 	
 }               
+var MAX_ATT_DOCS_SIZE = 17; //17MB
+
+function excMaxAttachSize(doc) {
+
+	var attDocs = doc.dataObjects;					// pole příloh dokumentu
+	if( attDocs == null )
+		return false;
+
+	var attDocsSize = 0;							// celková velikost příloh
+		
+	for (var i = 0; i &lt; attDocs.length; i++) {		// vvýpočet celkové velikosti příloh
+		attDocsSize += attDocs[i].size;
+	}	
+
+	if( attDocsSize&gt; MAX_ATT_DOCS_SIZE*1048576){    //kontrola ceklové velikosti v bytech
+	    return true;
+	}		
+
+	return false;
+}               
+
+               
+               
 
                
                
@@ -399,8 +659,8 @@ function isDate(field) {
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Zoom 92?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 93?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -431,14 +691,14 @@ function isDate(field) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-08-05T11:33:36Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-02-06T18:22:25Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:7bfa15a7-2601-4444-8533-323053116356</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:43070dea-2e7f-4a75-b91e-52730fb260aa</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>

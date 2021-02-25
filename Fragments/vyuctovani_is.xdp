@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-07-20T15:42:32Z" uuid="35c03eef-795c-4391-8630-518d10fa0c96">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-11T14:43:29Z" uuid="3c36107e-4a21-4435-81b4-43f653202140">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
    <?formServer defaultPDFRenderFormat acrobat10.0static?>
    <?formServer allowRenderCaching 0?>
@@ -494,6 +494,7 @@ sharedLib.setFontSizeFromValue(this);
 var suma = odmena_pausal.odmena_daba_trvani.rawValue + odmena_prezkum.odmena_prezkum.rawValue + 
 			odmena_vytezek_z_majetku.odmena_za_zajistene.rawValue + odmena_vytezek_zpenezeni.odmena_za_nezajistene.rawValue ;
 
+suma = sharedLib.limitDecField(this, suma);
 sharedLib.setFontSizeFromValue(this, suma);
 
 suma
@@ -545,7 +546,9 @@ sharedLib.setFontSizeFromValue(this);
                            <script contentType="application/x-javascript">
 var suma = odmena_pausal.odmena_daba_trvani_neuhrazeno.rawValue + odmena_prezkum.odmena_prezkum_neuhrazeno.rawValue + 
 			odmena_vytezek_z_majetku.odmena_za_zajistene_neuhrazeno.rawValue + odmena_vytezek_zpenezeni.odmena_za_nezajistene_neuhrazeno.rawValue ;
-			
+
+ suma = sharedLib.limitDecField(this, suma );
+ 
 sharedLib.setFontSizeFromValue(this, suma);
 
 if (suma + hotove_vydaje.hotove_vydaje_neuhrazeno.rawValue != 0) {
@@ -1393,8 +1396,8 @@ sharedLib.setFontSizeFromValue(this);
    <?layout containedExclGroup 1?>
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
-   <?templateDesigner Zoom 92?>
    <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Zoom 97?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
    <?templateDesigner Guidelines h:125600?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
@@ -1433,14 +1436,14 @@ sharedLib.setFontSizeFromValue(this);
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-07-20T15:42:32Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2020-12-11T14:43:29Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:35c03eef-795c-4391-8630-518d10fa0c96</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:3c36107e-4a21-4435-81b4-43f653202140</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
@@ -1468,7 +1471,7 @@ sharedLib.setFontSizeFromValue(this);
    <xsdConnection name="DataConnection" dataDescription="vyuctovaniIS">
       <uri>..\Data\Xsd\fragents_xsd\vyuctovaniIS.xsd</uri>
       <rootElement>vyuctovaniIS</rootElement>
-      <?templateDesigner fileDigest shaHash="DhGtW0b+vNCiyALcL80fQD+R0TY="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="TIcPLGY1KBKdb6m7NU3loprbweI="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>

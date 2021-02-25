@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20130830.1.901444" APIVersion="3.6.13235.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-02-11T14:24:39Z" uuid="37fc62e1-3013-404a-83f2-48fe42fd6e09">
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-10T14:41:15Z" uuid="35536059-543b-4726-ba5e-55bb59c94b9f">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="listinne_prilohy" locale="cs_CZ" layout="tb">
@@ -117,7 +117,7 @@
                      <script contentType="application/x-javascript">
 	this.parent.parent.parent._priloha.addInstance(1);
 
-	xfa.form.recalculate(1);
+//	xfa.form.recalculate(1);
 </script>
                   </event>
                   <assist>
@@ -277,7 +277,7 @@ if (_priloha.count &gt; 0) {
 
 	var rowIndex = this.parent.parent.index;
 	_priloha.removeInstance(rowIndex);
-	xfa.form.recalculate(1);
+//	xfa.form.recalculate(1);
 }
 </script>
                   </event>
@@ -359,8 +359,8 @@ if (this.poradi.rawValue != this.index + 1)
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Zoom 227?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 97?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -397,14 +397,14 @@ if (this.poradi.rawValue != this.index + 1)
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-02-11T14:24:39Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2020-12-10T14:41:15Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:37fc62e1-3013-404a-83f2-48fe42fd6e09</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:35536059-543b-4726-ba5e-55bb59c94b9f</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>

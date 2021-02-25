@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20130830.1.901444" APIVersion="3.6.13235.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-08-24T14:17:01Z" uuid="238f361e-4eff-4a1e-a12a-75be120a197d">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-16T12:47:22Z" uuid="43746fb2-2cf9-4c92-8f2b-6c220c2e77a5">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
    <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
    <?formServer allowRenderCaching 0?>
@@ -23,7 +23,7 @@
                   <textEdit/>
                </ui>
                <value>
-                  <text>1.0.2</text>
+                  <text>1.0.4-TEST</text>
                </value>
                <font typeface="Myriad Pro" baselineShift="0pt" size="8pt">
                   <fill>
@@ -264,7 +264,7 @@ function fillAdresat(field) {
             <bind match="none"/>
             <?templateDesigner expand 0?></subform>
          <bind match="none"/>
-         <?templateDesigner expand 1?></subform>
+         <?templateDesigner expand 0?></subform>
       <subform w="190.2mm" minH="6mm" layout="tb" name="Formular">
          <margin topInset="0mm" leftInset="0mm" rightInset="0mm" bottomInset="0mm"/>
          <subform w="190.2mm" layout="tb" name="dluznik">
@@ -327,7 +327,7 @@ function fillAdresat(field) {
                <?templateDesigner expand 1?></subform>
             <margin leftInset="0.1mm" rightInset="0.1mm" topInset="0mm" bottomInset="2mm"/>
             <bind match="none"/>
-            <?templateDesigner expand 0?></subform>
+            <?templateDesigner expand 1?></subform>
          <subform w="190.2mm" layout="tb" name="veritel">
             <subform w="190mm" name="wrapper" layout="lr-tb">
                <draw name="label" w="190mm" h="6mm">
@@ -1045,7 +1045,7 @@ if (this.rawValue == '2') {
                <?templateDesigner expand 1?></subform>
             <margin topInset="0mm" leftInset="0.1mm" rightInset="0.1mm" bottomInset="2mm"/>
             <bind match="dataRef" ref="$.osoba_s_disp_opr"/>
-            <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 0?></subform>
          <subform w="190.2mm" minH="6mm" layout="tb" name="insolvencni_spravce">
             <subform w="190mm" layout="tb" name="wrapper">
                <draw name="label" w="190mm" h="6mm">
@@ -2350,35 +2350,6 @@ sharedLib.setFontSizeFromValue(this);
                      <keep intact="contentArea"/>
                      <bind match="dataRef" ref="$.podpis"/>
                      <traversal/>
-                     <calculate>
-                        <script contentType="application/x-javascript" runAt="client">
-/*
-var spolecny = false, found = false;
-var osoba_podpis = null;
-
-if (dluznik.wrapper._fyzicka_osoba.count &gt; 0) {
-	osoba_podpis = dluznik.wrapper.resolveNode("fyzicka_osoba[0]");
-	found = osoba_podpis?true:false;
-	
-	if (dluznik.wrapper._fyzicka_osoba.count == 2)
-		spolecny = true;
-}
-
-if(podpis_udaje.podepisujici.osoba.titul_pred.calculate.override != "disabled"){
-	podpis_udaje.podepisujici.osoba.titul_pred.rawValue = found ? osoba_podpis.udaje_osoba_wrapper.udaje_osoba.osoba.titul_pred.rawValue : "";
-};
-if(podpis_udaje.podepisujici.osoba.jmeno.calculate.override != "disabled"){
-	podpis_udaje.podepisujici.osoba.jmeno.rawValue = found ? osoba_podpis.udaje_osoba_wrapper.udaje_osoba.osoba.jmeno.rawValue : "";
-};
-if(podpis_udaje.podepisujici.osoba.prijmeni.calculate.override != "disabled"){
-	podpis_udaje.podepisujici.osoba.prijmeni.rawValue = found ? osoba_podpis.udaje_osoba_wrapper.udaje_osoba.osoba.prijmeni.rawValue : "";
-};
-if(podpis_udaje.podepisujici.osoba.titul_za.calculate.override != "disabled"){
-	podpis_udaje.podepisujici.osoba.titul_za.rawValue = found ? osoba_podpis.udaje_osoba_wrapper.udaje_osoba.osoba.titul_za.rawValue : "";
-};
-*/
-</script>
-                     </calculate>
                      <?templateDesigner expand 1?>
                   </subform>
                   <bind match="none"/>
@@ -2415,6 +2386,32 @@ function updateOrder() {
 }
 </script>
          <script contentType="application/x-javascript" name="preSign_local">
+
+var jedno_z_nich = [
+   	{
+   		sekce:
+        {
+          label:"Formular.dluznik.wrapper.label",
+          repeatfor:
+            [{
+              field:"Formular.dluznik.wrapper.dluznik_wrapper._dluznik_wrapper_portrait",
+              prefix_field:"Formular.dluznik.wrapper.dluznik_wrapper.dluznik_wrapper_portrait",
+              label_txt:"Dlužník",
+              label2:"",
+              label2_txt:"Datum narození, IČO",
+              pole:
+              [
+                {field: "ico"},
+            	{field: "datum_narozeni"}
+              ]
+             }
+            ]
+        }
+    }
+    
+  ]
+  
+
 var povinne = [
    	{
    		sekce:
@@ -2483,47 +2480,7 @@ var povinne = [
     }
 ];	
 
-var jedno_z_nich = [];
-/*zruseno ISIRFORM-70
-var jedno_z_nich = [
-   	{
-   		sekce:
-        {
-          label:"Formular.dluznik.wrapper.label",
-          repeatfor:
-            [{
-              field:"Formular.dluznik.wrapper._pravnicka_osoba",
-              prefix_field:"Formular.dluznik.wrapper.pravnicka_osoba",
-              label_txt:"Právnická osoba",
-              label2:"Formular.dluznik.wrapper.pravnicka_osoba.jiny_kontakt_wrapper.label",
-              label2_txt:"",
-              pole:
-              [
-                {field: "jiny_kontakt_wrapper.jiny_kontakt.email"},
-            	{field: "jiny_kontakt_wrapper.jiny_kontakt.idds"}, 
-            	{field: "jiny_kontakt_wrapper.jiny_kontakt.telefon"}
-              ]
-             },
-             {
-              field:"Formular.dluznik.wrapper._fyzicka_osoba",
-              prefix_field:"Formular.dluznik.wrapper.fyzicka_osoba",
-              label_txt:"Fyzická osoba",
-              label2:"Formular.dluznik.wrapper.fyzicka_osoba.jiny_kontakt_wrapper.label",
-              label2_txt:"",
-              pole:
-              [
-                {field: "jiny_kontakt_wrapper.jiny_kontakt.email"},
-            	{field: "jiny_kontakt_wrapper.jiny_kontakt.idds"}, 
-            	{field: "jiny_kontakt_wrapper.jiny_kontakt.telefon"}
-              ]
-             }
-            ]
-        }
-    }
-    
-  ]
-          
-*/	
+	
 
 function PreSignCheck_local() {
 };
@@ -2556,7 +2513,7 @@ function setIdentifikaceDluznikaTitle(pocetDluzniku) {
       <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
       <?templateDesigner expand 1?>
       <?renderCache.subset "Calibri" 0 0 UTF-16 2 36 000300260064011A011E015D016F019A01C6?>
-      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 288 00010009000A000D000E000F00100011001200130014001B002200230024002500260027002A002B002C002D002F0030003100330034003500360037003B00420043004400450046004700480049004A004B004C004D004E004F00500051005300540055005600570059005A005B006F00C800CF00D300DD00DE00E200E4018E01CF01D201D401EA01F201F801FE0343?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 292 00010009000A000D000E000F001000110012001300140015001B002200230024002500260027002A002B002C002D002F0030003100330034003500360037003B00420043004400450046004700480049004A004B004C004D004E004F00500051005300540055005600570059005A005B006F00C800CF00D300DD00DE00E200E4018E01CF01D201D401EA01F201F801FE0343?>
       <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 200 0001000C000F0010001200220024002A002F0030003100340037003B00420043004400450046004700480049004A004B004C004D004E004F0050005100530054005500560057005A005B005C005E00A600C100C800CF00D300DD00E401CF01D401EA01F2?>
    </subform>
    <?templateDesigner DefaultPreviewDynamic 1?>
@@ -2580,7 +2537,7 @@ function setIdentifikaceDluznikaTitle(pocetDluzniku) {
    <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
    <?templateDesigner SaveTaggedPDF 0?>
    <?templateDesigner SavePDFWithEmbeddedFonts 0?>
-   <?templateDesigner Zoom 136?>
+   <?templateDesigner Zoom 137?>
    <?templateDesigner FormTargetVersion 33?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
@@ -2731,14 +2688,14 @@ function setIdentifikaceDluznikaTitle(pocetDluzniku) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-08-24T14:17:01Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2020-12-16T12:47:22Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:238f361e-4eff-4a1e-a12a-75be120a197d</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:43746fb2-2cf9-4c92-8f2b-6c220c2e77a5</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/" rdf:about="">
          <pdfuaid:part>1</pdfuaid:part>
@@ -2755,7 +2712,7 @@ function setIdentifikaceDluznikaTitle(pocetDluzniku) {
    <xsdConnection name="DataConnection" dataDescription="ELVUPP">
       <uri>..\..\Data\Xsd\12_-_Vyrozumeni_o_uplatneni_pohledavky.xsd</uri>
       <rootElement>ELVUPP</rootElement>
-      <?templateDesigner fileDigest shaHash="v/zYqRjXwmC7a+yVKz+2PSPgaow="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="RDfMH4E8ihAAqGTJ1I+XRG1m14A="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>
