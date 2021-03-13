@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2018-02-28T13:06:41Z" uuid="65850881-2ec7-46b3-b565-41de5efa7b7e">
+<template xmlns="http://www.xfa.org/schema/xfa-template/2.8/">
+   <?formServer defaultPDFRenderFormat acrobat9.0static?>
+   <subform name="form1" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea name="ContentArea1" x="0pt" y="0pt" w="595.276pt" h="841.89pt"/>
+            <medium short="595.276pt" long="841.89pt" stock="custom"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="validateRCLib">
+function validateRC_2(rc, yearDAP, errTXT) 
+{
+	rc = formatRC (rc);
+	var validRC = validateRC(rc);
+	
+	if (rc != null &amp;&amp; yearDAP != null &amp;&amp; validRC) {
+    var rclen=rc.length;
+    var yearPrefix = "20";
+    var yearXX = rc.substr(0,2);
+    
+    
+    if (rc.length == 10 &amp;&amp; yearXX &lt; 54)  yearPrefix = "19";
+    if (rc.length == 11 &amp;&amp; yearXX &gt; 53)  yearPrefix = "19";
+    
+    var yearRC = yearPrefix + yearXX ;
+		
+		if ( yearRC  &gt; yearDAP ) {
+	//		xfa.host.messageBox("Uplatnit slevu lze pouze na dítě narozené nejpozději v roce, za které se podává přiznání.");
+			xfa.host.messageBox(errTXT);
+		}
+	}
+	
+return validRC ;
+
+}	
+
+
+function validateRC(rc) 
+{
+var isValid = true;
+rc = formatRC (rc) ;
+//var rc=this.rawValue;
+if( rc != null ) {
+var rclen=rc.length;
+
+if(rclen==0){   
+        //app.beep;
+    } else if(!(rclen==11 || rclen==10)) {
+        isValid = false;
+    } else if(rc.charAt(6) != "/") {
+        isValid = false;
+    } else {
+            if(rclen==10) {
+                var a1 = rc.substr(0,2);
+                if( 53 &lt; a1 ) //app.alert("Spatny format");
+                {
+                   isValid = false;
+                }
+            } else {
+                var ss = rc.substr(0,6) + rc.substr(7,4);                                
+                var chsum=ss%11;
+                if(chsum != 0) {
+                    var a1 = rc.charAt(10);
+                    if( a1 == "0" ) { //mozna vyjimka
+                        ss = rc.substr(0,6) + rc.substr(7,3);
+                        chsum = ss%11;
+                        if( chsum != 10 )
+		                {
+		                   isValid = false;
+		                }
+                    }else {
+                           //app.alert("Neplatne RC");
+                        isValid = false;
+                    }
+                }
+            }
+    }
+}
+
+//isValid;
+return isValid;
+}
+
+function formatRC (rc) {
+	if (rc != null) {
+		var rclen=rc.length;
+	    //pokud je RC zadane bez lomitka, doplnime 
+	    if ( (rclen==9 || rclen==10) &amp;&amp;  rc.charAt(6) != "/")  {
+	      rc = rc.substr(0,6) + '/' + rc.substr(6,4);
+	      //xfa.host.messageBox("Doplneno lomitko na:" + rc);
+	    }
+	}
+    return rc ;
+}
+
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle validateRCLib?></script>
+         </variables>
+      </subform>
+   </subform>
+   <?originalXFAVersion http://www.xfa.org/schema/xfa-template/2.5/?>
+   <?templateDesigner FormTargetVersion 28?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 92?></template>
+<config xmlns="http://www.xfa.org/schema/xci/2.8/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>3</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 4.2.1-c043 52.398682, 2009/08/10-13:00:47        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2018-02-28T13:06:41Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:65850881-2ec7-46b3-b565-41de5efa7b7e</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">validateRCLib</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.validateRCLib</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Czech (Czech Republic)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+   <?originalXFAVersion http://www.xfa.org/schema/xfa-locale-set/2.1/?></localeSet></xdp:xdp>

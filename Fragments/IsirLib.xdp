@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <subform name="form1" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="9.9mm" y="12.9mm" w="190.2mm" h="274.2mm" name="Content"/>
+            <medium stock="a4" short="210mm" long="297mm"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="IsirLib">
+// **************** prepare utils ********************
+function resolveMimeType(attName) {
+	var extension = attName.split(".").pop().toUpperCase();	
+	var mimeType = "";
+	switch(extension) {
+	    case "PDF":
+	        mimeType = "application/pdf";
+	        break;
+	    case "DOC":
+	        mimeType = "application/msword";
+	        break;
+	    case "DOC":
+	        mimeType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+	        break;	        
+	    case "XLS":
+	        mimeType = "application/vnd.ms-excel";
+	    	break;
+	    case "XLSX":
+	        mimeType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+	        break;
+	    case "TXT":
+	        mimeType = "text/plain";
+	        break;
+	    case "RTF":
+	        mimeType = "application/rtf";
+	        break;		        
+	    case "JPG":
+	    case "JPEG":
+	        mimeType = "image/jpeg";
+	        break;    
+	    /*default:
+	        default code block*/
+	}
+//console.println("mime type resolved: " + mimeType);
+	return mimeType;
+}
+
+function getAttachmentContentString(attId){
+	var attObj = event.target.getDataObjectContents(attId);
+	// Convert to a string
+	return util.stringFromStream(Net.streamEncode(attObj, "base64")); //util.stringFromStream(attObj, "utf-8");
+}
+
+
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle IsirLib?>
+               <?templateDesigner fragmentDescription Prilohy?></script>
+         </variables>
+      </subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">IsirLib</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Prilohy</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.IsirLib</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

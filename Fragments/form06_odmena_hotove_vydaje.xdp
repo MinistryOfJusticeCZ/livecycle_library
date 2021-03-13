@@ -1,0 +1,1775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-10T11:47:35Z" uuid="68a44661-7fed-416f-bf24-39470347557f">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <?formServer defaultPDFRenderFormat acrobat11.0static?>
+   <subform name="form1" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="9.9mm" y="12.9mm" w="190.2mm" h="274.2mm" name="Content"/>
+            <medium stock="a4" short="210mm" long="297mm"/>
+            <?templateDesigner expand 0?></pageArea>
+         <?templateDesigner expand 0?></pageSet>
+      <subform w="186mm" layout="lr-tb" name="odmena">
+         <margin leftInset="0mm" rightInset="0mm" bottomInset="1mm"/>
+         <subform w="78mm" minH="14mm" layout="lr-tb" name="bez_dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.bez_dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Výše odměny (bez DPH):</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <margin topInset="1mm"/>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <subform w="108mm" minH="7mm" layout="lr-tb" name="doba">
+            <field name="pocet_mesicu" w="33mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <numericEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="21mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Počet měsíců:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <bind match="dataRef" ref="$.pocet_mesicu"/>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr hh:mm.</text>
+                  </message>
+               </validate>
+               <format>
+                  <picture>num{zzzzz}</picture>
+               </format>
+               <value>
+                  <integer/>
+               </value>
+            </field>
+            <field name="od" w="37mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <dateTimeEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </dateTimeEdit>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="7mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Od:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <format>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </format>
+               <bind match="dataRef" ref="$.od">
+                  <picture>null{}</picture>
+               </bind>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
+                  </message>
+                  <picture>date{D.M.YYYY}</picture>
+               </validate>
+               <value>
+                  <date/>
+               </value>
+            </field>
+            <field name="do" w="37mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <dateTimeEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </dateTimeEdit>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="7mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Do:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <format>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </format>
+               <bind match="dataRef" ref="$.do">
+                  <picture>null{}</picture>
+               </bind>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
+                  </message>
+                  <picture>date{D.M.YYYY}</picture>
+               </validate>
+               <value>
+                  <date/>
+               </value>
+            </field>
+            <margin topInset="1mm"/>
+            <bind match="none"/>
+            <?templateDesigner expand 0?></subform>
+         <subform y="8mm" w="186mm" minH="7mm" layout="lr-tb" name="dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Příslušející DPH:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <subform w="186mm" minH="7mm" layout="lr-tb" name="vcetne_dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.vcetne_dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Výše odměny včetně DPH:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <margin bottomInset="0mm"/>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <variables>
+            <script contentType="application/x-javascript" name="lib">
+function hideDph(formObj, eraseContent) {
+	sharedLib.hideIfVisible(formObj.odmena.dph.vyse, eraseContent);
+	sharedLib.hideIfVisible(formObj.odmena.vcetne_dph.vyse, eraseContent);
+}
+
+
+function showDph(formObj) {
+	sharedLib.visibleIfHidden(formObj.odmena.dph.vyse);
+	sharedLib.visibleIfHidden(formObj.odmena.vcetne_dph.vyse);
+}
+</script>
+            <?templateDesigner expand 1?></variables>
+         <bind match="none"/>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle odmena?>
+         <?templateDesigner expand 1?></subform>
+      <subform w="186mm" layout="lr-tb" name="odmena_celkem">
+         <margin leftInset="0mm" rightInset="0mm" bottomInset="1mm"/>
+         <subform w="78mm" minH="14mm" layout="lr-tb" name="bez_dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.bez_dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Odměna celkem (bez DPH):</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <margin topInset="1mm"/>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <subform w="108mm" minH="7mm" layout="lr-tb" name="doba">
+            <field name="pocet_mesicu" w="33mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <numericEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="21mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Počet měsíců:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <bind match="dataRef" ref="$.pocet_mesicu"/>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr hh:mm.</text>
+                  </message>
+               </validate>
+               <format>
+                  <picture>num{zzzzz}</picture>
+               </format>
+               <value>
+                  <integer/>
+               </value>
+            </field>
+            <field name="od" w="37mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <dateTimeEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </dateTimeEdit>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="7mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Od:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <format>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </format>
+               <bind match="dataRef" ref="$.od">
+                  <picture>null{}</picture>
+               </bind>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
+                  </message>
+                  <picture>date{D.M.YYYY}</picture>
+               </validate>
+               <value>
+                  <date/>
+               </value>
+            </field>
+            <field name="do" w="37mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <dateTimeEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </dateTimeEdit>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="7mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Do:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <format>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </format>
+               <bind match="dataRef" ref="$.do">
+                  <picture>null{}</picture>
+               </bind>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
+                  </message>
+                  <picture>date{D.M.YYYY}</picture>
+               </validate>
+               <value>
+                  <date/>
+               </value>
+            </field>
+            <margin topInset="1mm"/>
+            <bind match="none"/>
+            <?templateDesigner expand 0?></subform>
+         <subform y="8mm" w="186mm" minH="7mm" layout="lr-tb" name="dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Příslušející DPH:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <subform w="186mm" minH="7mm" layout="lr-tb" name="vcetne_dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.vcetne_dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Odměna celkem včetně DPH:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <margin bottomInset="0mm"/>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <variables>
+            <script contentType="application/x-javascript" name="lib">
+function hideDph(formObj, eraseContent) {
+	sharedLib.hideIfVisible(formObj.odmena_celkem.dph.vyse, eraseContent);
+	sharedLib.hideIfVisible(formObj.odmena_celkem.vcetne_dph.vyse, eraseContent);
+}
+
+function showDph(formObj) {
+	sharedLib.visibleIfHidden(formObj.odmena_celkem.dph.vyse);
+	sharedLib.visibleIfHidden(formObj.odmena_celkem.vcetne_dph.vyse);
+}
+</script>
+            <?templateDesigner expand 1?></variables>
+         <bind match="none"/>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle odmena_celkem?>
+         <?templateDesigner expand 1?></subform>
+      <subform w="186mm" layout="lr-tb" name="odmena_obsolete">
+         <margin leftInset="0mm" rightInset="0mm" bottomInset="1mm"/>
+         <subform w="78mm" minH="14mm" layout="lr-tb" name="bez_dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.bez_dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Výše odměny (bez DPH):</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <margin topInset="1mm"/>
+            <bind match="none"/>
+            <?templateDesigner expand 0?></subform>
+         <subform w="108mm" minH="7mm" layout="lr-tb" name="doba">
+            <field name="pocet_mesicu" w="33mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <numericEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="21mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Počet měsíců:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <bind match="dataRef" ref="$.pocet_mesicu"/>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr hh:mm.</text>
+                  </message>
+               </validate>
+               <format>
+                  <picture>num{zzzzz}</picture>
+               </format>
+               <value>
+                  <integer/>
+               </value>
+            </field>
+            <field name="od" w="37mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <dateTimeEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </dateTimeEdit>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="7mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Od:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <format>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </format>
+               <bind match="dataRef" ref="$.od">
+                  <picture>null{}</picture>
+               </bind>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
+                  </message>
+                  <picture>date{D.M.YYYY}</picture>
+               </validate>
+               <value>
+                  <date/>
+               </value>
+            </field>
+            <field name="do" w="37mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <dateTimeEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </dateTimeEdit>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="7mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Do:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <format>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </format>
+               <bind match="dataRef" ref="$.do">
+                  <picture>null{}</picture>
+               </bind>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
+                  </message>
+                  <picture>date{D.M.YYYY}</picture>
+               </validate>
+               <value>
+                  <date/>
+               </value>
+            </field>
+            <margin topInset="1mm"/>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <subform w="78mm" minH="7mm" layout="lr-tb" name="dph" y="8mm">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Příslušející DPH:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <bind match="none"/>
+            <?templateDesigner expand 0?></subform>
+         <subform w="108mm" minH="7mm" layout="lr-tb" name="doba">
+            <field name="od" w="70mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <dateTimeEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </dateTimeEdit>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="40mm">
+                  <para vAlign="middle" marginLeft="96.378pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Od:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <format>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </format>
+               <bind match="none">
+                  <picture>null{}</picture>
+               </bind>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
+                  </message>
+                  <picture>date{D.M.YYYY}</picture>
+               </validate>
+               <value>
+                  <date/>
+               </value>
+            </field>
+            <field name="do" w="37mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <dateTimeEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </dateTimeEdit>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="7mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Do:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <format>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </format>
+               <bind match="none">
+                  <picture>null{}</picture>
+               </bind>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
+                  </message>
+                  <picture>date{D.M.YYYY}</picture>
+               </validate>
+               <value>
+                  <date/>
+               </value>
+            </field>
+            <margin topInset="0mm"/>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <subform w="186mm" minH="7mm" layout="lr-tb" name="vcetne_dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.vcetne_dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Výše odměny včetně DPH:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <margin bottomInset="0mm"/>
+            <bind match="none"/>
+            <?templateDesigner expand 0?></subform>
+         <variables>
+            <script contentType="application/x-javascript" name="lib">
+/*
+
+function hideDph(eraseContent) {
+	sharedLib.hideIfVisible(odmena_trvani.dph.vyse, eraseContent);
+	sharedLib.hideIfVisible(odmena_trvani.vcetne_dph.vyse, eraseContent);
+}
+
+function showDph() {
+	sharedLib.visibleIfHidden(odmena_trvani.dph.vyse);
+	sharedLib.visibleIfHidden(odmena_trvani.vcetne_dph.vyse);
+}
+
+*/
+</script>
+            <?templateDesigner expand 1?></variables>
+         <bind match="none"/>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle odmena_obsolete?>
+         <?templateDesigner expand 1?></subform>
+      <subform w="186mm" layout="lr-tb" name="hotove_vydaje">
+         <margin leftInset="0mm" rightInset="0mm" bottomInset="1mm"/>
+         <subform w="78mm" minH="14mm" layout="lr-tb" name="bez_dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.bez_dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Hotové výdaje celkem (bez DPH):</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <margin topInset="1mm"/>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <subform w="108mm" minH="7mm" layout="lr-tb" name="doba">
+            <field name="pocet_mesicu" w="33mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <numericEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="21mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Počet měsíců:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <bind match="dataRef" ref="$.pocet_mesicu"/>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr hh:mm.</text>
+                  </message>
+               </validate>
+               <format>
+                  <picture>num{zzzzz}</picture>
+               </format>
+               <value>
+                  <integer/>
+               </value>
+            </field>
+            <field name="od" w="37mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <dateTimeEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </dateTimeEdit>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="7mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Od:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <format>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </format>
+               <bind match="dataRef" ref="$.od">
+                  <picture>null{}</picture>
+               </bind>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
+                  </message>
+                  <picture>date{D.M.YYYY}</picture>
+               </validate>
+               <value>
+                  <date/>
+               </value>
+            </field>
+            <field name="do" w="37mm" h="7mm" locale="cs_CZ">
+               <ui>
+                  <dateTimeEdit hScrollPolicy="off">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                  </dateTimeEdit>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" hAlign="center"/>
+               <caption reserve="7mm">
+                  <para vAlign="middle" marginLeft="2.835pt" spaceAbove="1pt"/>
+                  <value>
+                     <text>Do:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <format>
+                  <picture>null{}|date{D.M.YYYY}</picture>
+               </format>
+               <bind match="dataRef" ref="$.do">
+                  <picture>null{}</picture>
+               </bind>
+               <assist>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate formatTest="error">
+                  <message>
+                     <text name="formatTest">Chybně vyplněno datum. Datum zadejte ve formátu d.m.rrrr</text>
+                  </message>
+                  <picture>date{D.M.YYYY}</picture>
+               </validate>
+               <value>
+                  <date/>
+               </value>
+            </field>
+            <margin topInset="1mm"/>
+            <bind match="none"/>
+            <?templateDesigner expand 0?></subform>
+         <subform y="8mm" w="186mm" minH="7mm" layout="lr-tb" name="dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Příslušející DPH:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <subform w="186mm" minH="7mm" layout="lr-tb" name="vcetne_dph">
+            <field name="vyse" minH="7mm" w="78mm">
+               <ui>
+                  <numericEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                        <fill/>
+                     </border>
+                  </numericEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="2.835pt" hAlign="right" spaceAbove="2pt"/>
+               <value>
+                  <decimal leadDigits="11"/>
+               </value>
+               <border>
+                  <edge thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm" presence="hidden">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="dataRef" ref="$.vcetne_dph"/>
+               <format>
+                  <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+               </format>
+               <caption reserve="48mm">
+                  <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="2.835pt" marginRight="0pt"/>
+                  <value>
+                     <text>Hotové výdaje celkem včetně DPH:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+               </caption>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this);
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">
+sharedLib.setFontSizeFromValue(this, xfa.event.newText);
+</script>
+               </event>
+            </field>
+            <margin bottomInset="0mm"/>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle hotove_vydaje?>
+         <variables>
+            <script contentType="application/x-javascript" name="lib">
+function hideDph(formObj, eraseContent) {
+	sharedLib.hideIfVisible(formObj.hotove_vydaje.dph.vyse, eraseContent);
+	sharedLib.hideIfVisible(formObj.hotove_vydaje.vcetne_dph.vyse, eraseContent);
+}
+
+function showDph(formObj) {
+	sharedLib.visibleIfHidden(formObj.hotove_vydaje.dph.vyse);
+	sharedLib.visibleIfHidden(formObj.hotove_vydaje.vcetne_dph.vyse);
+}
+</script>
+            <?templateDesigner expand 1?></variables>
+         <bind match="none"/>
+         <?templateDesigner expand 1?></subform>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 140 00010009000A001B00250029002C00300031003700420043004400450046004B004C004D004E004F00500054005500560057005A005B00CF00D300DD00E201CF01D401F201FE?>
+   </subform>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?templateDesigner FormTargetVersion 36?>
+   <?templateDesigner Zoom 97?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>11</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-12-10T11:47:35Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:68a44661-7fed-416f-bf24-39470347557f</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">odmena</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.odmena</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">odmena_celkem</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.odmena_celkem</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">odmena_obsolete</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.odmena_obsolete</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">hotove_vydaje</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.hotove_vydaje</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>

@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-30T13:00:45Z" uuid="247c3acf-3ec3-448c-8af6-0a5846866c71">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <?formServer defaultPDFRenderFormat acrobat11.0static?>
+   <?formServer allowRenderCaching 0?>
+   <?formServer formModel both?>
+   <subform name="podpis" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="0.25in" y="0.25in" w="576pt" h="756pt"/>
+            <medium stock="default" short="612pt" long="792pt"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform w="190mm" name="podpis" layout="lr-tb">
+         <subform w="128mm" layout="lr-tb" name="podpis_udaje">
+            <subform w="123.001mm" minH="7mm" layout="lr-tb" name="misto_datum">
+               <field name="misto" w="61.5mm" h="7mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge thickness="0.1mm">
+                              <color value="180,180,180"/>
+                           </edge>
+                           <corner thickness="0.1mm">
+                              <color value="180,180,180"/>
+                           </corner>
+                        </border>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Myriad Pro">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt"/>
+                  <caption reserve="7mm">
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>V</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="9pt">
+                        <fill>
+                           <color value="51,51,51"/>
+                        </fill>
+                     </font>
+                  </caption>
+                  <bind match="dataRef" ref="$.v_mesto"/>
+                  <assist>
+                     <toolTip>Uvedte místo sepsání.</toolTip>
+                  </assist>
+               </field>
+               <field name="datum" w="61.5mm" h="7mm">
+                  <ui>
+                     <dateTimeEdit>
+                        <border>
+                           <edge thickness="0.1mm">
+                              <color value="180,180,180"/>
+                           </edge>
+                           <corner thickness="0.1mm">
+                              <color value="180,180,180"/>
+                           </corner>
+                        </border>
+                     </dateTimeEdit>
+                     <picture>null{}|date{D.M.YYYY}</picture>
+                  </ui>
+                  <font typeface="Myriad Pro">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="22mm" rightInset="1mm"/>
+                  <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt"/>
+                  <value>
+                     <date/>
+                  </value>
+                  <caption reserve="12mm">
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>Dne</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="9pt">
+                        <fill>
+                           <color value="51,51,51"/>
+                        </fill>
+                     </font>
+                  </caption>
+                  <format>
+                     <picture>null{}|date{D.M.YYYY}</picture>
+                  </format>
+                  <bind match="dataRef" ref="$.dne">
+                     <picture>null{}</picture>
+                  </bind>
+                  <assist>
+                     <toolTip>Uveďte datum sepsání.</toolTip>
+                  </assist>
+                  <event activity="change" name="event__change">
+                     <script contentType="application/x-javascript">
+if (xfa.event.newText.match(/[^0-9\.]/)) {
+	xfa.event.change = "";
+}
+</script>
+                  </event>
+                  <validate formatTest="error">
+                     <picture>null{}|date{D.M.YYYY}</picture>
+                     <message>
+                        <text name="formatTest">Chybně vyplněné datum. Datum zadejte ve formátu d.m.rrrr.</text>
+                     </message>
+                  </validate>
+                  <event activity="exit" name="event__exit">
+                     <script contentType="application/x-javascript">
+if (this.errorText != "") {
+	xfa.host.setFocus(this);
+}
+</script>
+                  </event>
+               </field>
+               <margin topInset="2.6mm"/>
+               <bind match="none"/>
+               <keep intact="contentArea"/>
+               <?templateDesigner expand 1?></subform>
+            <subform minH="18mm" layout="lr-tb" w="123mm" name="podepisujici">
+               <subform usehref=".\osoba.xdp#som($template.osoba.osoba)" w="123mm">
+                  <margin leftInset="0mm"/>
+                  <bind match="dataRef" ref="$.osoba"/>
+                  <keep intact="contentArea"/>
+                  <?templateDesigner expand 1?>
+               </subform>
+               <margin topInset="9.4mm"/>
+               <keep intact="contentArea"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <margin bottomInset="5.5mm" leftInset="5mm" rightInset="0mm"/>
+            <bind match="none"/>
+            <keep intact="contentArea"/>
+            <?templateDesigner expand 1?></subform>
+         <subform w="62mm" name="podpisove_misto" layout="tb">
+            <field name="podpis" h="28mm" minW="53mm">
+               <ui>
+                  <signature type="PDF1.6">
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                     <margin/>
+                     <manifest action="all"/>
+                  </signature>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt"/>
+               <caption reserve="3.1mm" placement="top">
+                  <value>
+                     <text>Podpis:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="8pt">
+                     <fill>
+                        <color value="91,91,93"/>
+                     </fill>
+                  </font>
+                  <para marginLeft="2.835pt" marginRight="2.835pt"/>
+               </caption>
+               <bind match="none"/>
+               <event activity="preSign" name="event__preSign">
+                  <script contentType="application/x-javascript">
+ sharedLib.PreSignCheck(preSign_local.povinne, preSign_local.jedno_z_nich);
+ preSign_local.PreSignCheck_local() 
+</script>
+               </event>
+            </field>
+            <bind match="none"/>
+            <margin leftInset="4mm" bottomInset="5.5mm"/>
+            <?templateDesigner expand 1?>
+         </subform>
+         <margin topInset="0mm"/>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle podpis?>
+         <?templateDesigner fragmentDescription Podpis?>
+         <keep intact="contentArea"/>
+         <bind match="none"/>
+         <?templateDesigner expand 1?>
+      </subform>
+      <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
+      <subform w="190mm" name="podpis_rucni" layout="lr-tb" y="3mm">
+         <subform w="128mm" layout="lr-tb" name="podpis_udaje">
+            <subform w="123.001mm" minH="7mm" layout="lr-tb" name="misto_datum">
+               <field name="misto" w="61.5mm" h="7mm">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge thickness="0.1mm">
+                              <color value="180,180,180"/>
+                           </edge>
+                           <corner thickness="0.1mm">
+                              <color value="180,180,180"/>
+                           </corner>
+                        </border>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Myriad Pro">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt"/>
+                  <caption reserve="7mm">
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>V</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="9pt">
+                        <fill>
+                           <color value="51,51,51"/>
+                        </fill>
+                     </font>
+                  </caption>
+                  <bind match="dataRef" ref="$.v_mesto"/>
+                  <assist>
+                     <toolTip>Uvedte místo sepsání.</toolTip>
+                  </assist>
+               </field>
+               <field name="datum" w="61.5mm" h="7mm">
+                  <ui>
+                     <dateTimeEdit>
+                        <border>
+                           <edge thickness="0.1mm">
+                              <color value="180,180,180"/>
+                           </edge>
+                           <corner thickness="0.1mm">
+                              <color value="180,180,180"/>
+                           </corner>
+                        </border>
+                     </dateTimeEdit>
+                     <picture>null{}|date{D.M.YYYY}</picture>
+                  </ui>
+                  <font typeface="Myriad Pro">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="22mm" rightInset="1mm"/>
+                  <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt"/>
+                  <value>
+                     <date/>
+                  </value>
+                  <caption reserve="12mm">
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>Dne</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="9pt">
+                        <fill>
+                           <color value="51,51,51"/>
+                        </fill>
+                     </font>
+                  </caption>
+                  <format>
+                     <picture>null{}|date{D.M.YYYY}</picture>
+                  </format>
+                  <bind match="dataRef" ref="$.dne">
+                     <picture>null{}</picture>
+                  </bind>
+                  <assist>
+                     <toolTip>Uveďte datum sepsání.</toolTip>
+                  </assist>
+                  <event activity="change" name="event__change">
+                     <script contentType="application/x-javascript">
+if (xfa.event.newText.match(/[^0-9\.]/)) {
+	xfa.event.change = "";
+}
+</script>
+                  </event>
+                  <validate formatTest="error">
+                     <picture>null{}|date{D.M.YYYY}</picture>
+                     <message>
+                        <text name="formatTest">Chybně vyplněné datum. Datum zadejte ve formátu d.m.rrrr.</text>
+                     </message>
+                  </validate>
+                  <event activity="exit" name="event__exit">
+                     <script contentType="application/x-javascript">
+if (this.errorText != "") {
+	xfa.host.setFocus(this);
+}
+</script>
+                  </event>
+               </field>
+               <margin topInset="2.6mm"/>
+               <bind match="none"/>
+               <keep intact="contentArea"/>
+               <?templateDesigner expand 1?></subform>
+            <subform minH="18mm" layout="lr-tb" w="123mm" name="podepisujici">
+               <subform usehref=".\osoba.xdp#som($template.osoba.osoba)" w="123mm">
+                  <margin leftInset="0mm"/>
+                  <bind match="dataRef" ref="$.osoba"/>
+                  <keep intact="contentArea"/>
+                  <?templateDesigner expand 1?>
+               </subform>
+               <margin topInset="9.4mm"/>
+               <keep intact="contentArea"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <margin bottomInset="5.5mm" leftInset="5mm" rightInset="0mm"/>
+            <bind match="none"/>
+            <keep intact="contentArea"/>
+            <?templateDesigner expand 1?></subform>
+         <subform w="62mm" name="podpisove_misto" layout="tb">
+            <field name="podpis" h="28mm" minW="53mm" access="readOnly">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </edge>
+                        <corner thickness="0.1mm">
+                           <color value="180,180,180"/>
+                        </corner>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="1mm" rightInset="1mm"/>
+               <para marginLeft="2.835pt" marginRight="2.835pt"/>
+               <caption reserve="3.1mm" placement="top">
+                  <value>
+                     <text>Podpis:</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="8pt">
+                     <fill>
+                        <color value="91,91,93"/>
+                     </fill>
+                  </font>
+                  <para marginLeft="2.835pt" marginRight="2.835pt"/>
+               </caption>
+               <event activity="preSign" name="event__preSign">
+                  <script contentType="application/x-javascript">
+ sharedLib.PreSignCheck(preSign_local.povinne, preSign_local.jedno_z_nich);
+ preSign_local.PreSignCheck_local() 
+</script>
+               </event>
+               <bind match="none"/>
+            </field>
+            <bind match="none"/>
+            <margin leftInset="4mm" bottomInset="5.5mm"/>
+            <?templateDesigner expand 1?></subform>
+         <margin topInset="0mm"/>
+         <keep intact="contentArea"/>
+         <bind match="none"/>
+         <?templateDesigner expand 1?>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle podpis_rucni?>
+         <?templateDesigner fragmentDescription Podpis?></subform>
+      <variables>
+         <script usehref=".\sharedLib.xdp#som($template.form1.#subform.#variables.sharedLib)"/>
+         <script contentType="application/x-javascript" name="preSign_local">
+var povinne = [
+		["","xxx"]
+	];
+</script>
+         <?templateDesigner expand 1?></variables>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 96 0001001B0025002B003100350037004200450046004A004B004D004E004F00500051005400550056005B00CF00D301F2?>
+   </subform>
+   <?originalXFAVersion http://www.xfa.org/schema/xfa-template/3.6/?>
+   <?templateDesigner DefaultLanguage JavaScript?>
+   <?templateDesigner DefaultRunAt client?>
+   <?PDFPrintOptions embedViewerPrefs 0?>
+   <?PDFPrintOptions embedPrintOnFormOpen 0?>
+   <?PDFPrintOptions scalingPrefs 0?>
+   <?PDFPrintOptions enforceScalingPrefs 0?>
+   <?PDFPrintOptions paperSource 0?>
+   <?PDFPrintOptions duplexMode 0?>
+   <?templateDesigner DefaultPreviewType interactive?>
+   <?templateDesigner DefaultPreviewPagination simplex?>
+   <?templateDesigner XDPPreviewFormat 19?>
+   <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?templateDesigner SaveTaggedPDF 1?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 1?>
+   <?templateDesigner FormTargetVersion 36?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 94?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>11</adobeExtensionLevel>
+      </pdf>
+      <common>
+         <data>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+      </common>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+   <psMap/>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-12-30T13:00:45Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:247c3acf-3ec3-448c-8af6-0a5846866c71</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/" rdf:about="">
+         <pdfuaid:part>1</pdfuaid:part>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">podpis</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Podpis</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.podpis.podpis</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">podpis_rucni</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Podpis</rdf:li>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.podpis.podpis_rucni</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
+   <xsdConnection name="DataConnection" dataDescription="podpis">
+      <uri>..\Data\Xsd\fragents_xsd\podpis.xsd</uri>
+      <rootElement>podpis</rootElement>
+      <?templateDesigner fileDigest shaHash="qOJz+2Zgr/fOJAV5HWXJaWVuvus="?></xsdConnection>
+</connectionSet>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+   <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="podpis">
+      <podpis>
+         <v_mesto/>
+         <dne/>
+         <osoba>
+            <prijmeni/>
+            <jmeno/>
+            <titul_pred dd:minOccur="0" dd:nullType="exclude"/>
+            <titul_za dd:minOccur="0" dd:nullType="exclude"/>
+            <ico dd:minOccur="0" dd:nullType="exclude"/>
+         </osoba>
+      </podpis>
+   </dd:dataDescription>
+</xfa:datasets></xdp:xdp>

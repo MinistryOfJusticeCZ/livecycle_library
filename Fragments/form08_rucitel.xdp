@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-17T12:16:03Z" uuid="180815ac-56ea-4623-bb4d-403b3d5c36ab">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
+   <?formServer defaultPDFRenderFormat acrobat11.0static?>
+   <subform name="form1" locale="cs_CZ" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="9.9mm" y="12.9mm" w="190.2mm" h="274.2mm" name="Content"/>
+            <medium stock="a4" short="210mm" long="297mm"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform w="190mm" layout="lr-tb" name="rucitel">
+         <bind match="dataRef" ref="$.rucitel"/>
+         <draw name="rb_rucitel_label" w="163mm" h="7mm">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <text>Ručitel:</text>
+            </value>
+            <font size="9pt" typeface="Myriad Pro" baselineShift="0pt">
+               <fill>
+                  <color value="51,51,51"/>
+               </fill>
+            </font>
+            <margin topInset="0mm" bottomInset="0mm" leftInset="2mm" rightInset="2mm"/>
+            <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+         </draw>
+         <exclGroup name="rb_rucitel" layout="lr-tb">
+            <?templateDesigner itemValuesSpecified 1?>
+            <field w="14mm" h="7mm" name="ano">
+               <ui>
+                  <checkButton shape="round" size="3.8806mm">
+                     <border>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <fill/>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                  </checkButton>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="251,85,91"/>
+                  </fill>
+               </font>
+               <margin leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption placement="right" reserve="6mm">
+                  <para vAlign="middle"/>
+                  <font typeface="Myriad Pro">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <value>
+                     <text>Ano</text>
+                  </value>
+               </caption>
+               <items>
+                  <text>1</text>
+               </items>
+               <bind match="none"/>
+               <assist>
+                  <toolTip>V případě, že je pohledávka zajištěna ručitelem, zaškrtněte ANO. V opačném případě zaškrtněte NE. K přihlášce pak přiložte smlouvu či jinou listinu, ze které ručení vyplývá. Je-li ručitelů více, opakujte sekci.</toolTip>
+               </assist>
+            </field>
+            <field w="13mm" h="7mm" name="ne">
+               <ui>
+                  <checkButton shape="round" size="3.8806mm">
+                     <border>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <fill/>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                  </checkButton>
+               </ui>
+               <font typeface="Myriad Pro">
+                  <fill>
+                     <color value="251,85,91"/>
+                  </fill>
+               </font>
+               <margin leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption placement="right" reserve="4.776mm">
+                  <para vAlign="middle"/>
+                  <font typeface="Myriad Pro">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <value>
+                     <text>Ne</text>
+                  </value>
+               </caption>
+               <value>
+                  <text xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+               </value>
+               <items>
+                  <text>0</text>
+               </items>
+               <bind match="none"/>
+               <assist>
+                  <toolTip>V případě, že je pohledávka zajištěna ručitelem, zaškrtněte ANO. V opačném případě zaškrtněte NE. K přihlášce pak přiložte smlouvu či jinou listinu, ze které ručení vyplývá. Je-li ručitelů více, opakujte sekci.</toolTip>
+               </assist>
+            </field>
+            <bind match="dataRef" ref="$.rucitel_switch"/>
+            <event activity="change" name="event__change">
+               <script contentType="application/x-javascript">
+if(this.rawValue == 1) {
+	//xfa.host.messageBox("setInstances 1");
+	this.parent._rucitele.setInstances(1)
+}
+else  {
+	//xfa.host.messageBox("setInstances 0");
+	this.parent._rucitele.setInstances(0);
+};
+</script>
+            </event>
+            <?templateDesigner expand 1?></exclGroup>
+         <subform y="7mm" w="190mm" minH="6mm" layout="lr-tb" name="rucitele">
+            <bind match="dataRef" ref="$.rucitel_opak"/>
+            <subform name="tbl_rucitele" layout="table" columnWidths="173mm 13mm">
+               <border>
+                  <edge presence="hidden"/>
+                  <corner presence="hidden"/>
+               </border>
+               <subform layout="row" name="rucitel_row" x="0mm" y="0mm">
+                  <assist role="TR"/>
+                  <subform layout="lr-tb" name="rucitel_row_wrapper">
+                     <bind match="none"/>
+                     <field name="jmeno" w="119mm" minH="8mm" y="0mm">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border>
+                                 <edge thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </edge>
+                                 <corner thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </corner>
+                              </border>
+                           </textEdit>
+                        </ui>
+                        <font typeface="Myriad Pro">
+                           <fill>
+                              <color value="51,51,51"/>
+                           </fill>
+                        </font>
+                        <margin topInset="2mm" bottomInset="1mm" leftInset="2mm" rightInset="1mm"/>
+                        <para vAlign="middle" marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt"/>
+                        <border>
+                           <edge thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </corner>
+                        </border>
+                        <bind match="dataRef" ref="jmeno"/>
+                        <caption reserve="22mm">
+                           <value>
+                              <text>Jméno:</text>
+                           </value>
+                           <font typeface="Myriad Pro" size="9pt">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <para vAlign="middle"/>
+                        </caption>
+                        <assist>
+                           <toolTip>V případě, že je pohledávka zajištěna ručitelem, doplňte v tomto poli jméno a příjmení, název či obchodní firmu ručitele.</toolTip>
+                        </assist>
+                     </field>
+                     <para vAlign="middle" hAlign="center"/>
+                     <field name="datum_vzniku" w="54mm" h="8mm" y="0mm">
+                        <ui>
+                           <dateTimeEdit>
+                              <border>
+                                 <edge thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </edge>
+                                 <corner thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </corner>
+                              </border>
+                           </dateTimeEdit>
+                           <picture>null{}|date{D.M.YYYY}</picture>
+                        </ui>
+                        <font typeface="Myriad Pro">
+                           <fill>
+                              <color value="51,51,51"/>
+                           </fill>
+                        </font>
+                        <margin topInset="2mm" bottomInset="1mm" leftInset="3mm" rightInset="1mm"/>
+                        <para vAlign="middle" marginLeft="2.835pt" marginRight="2.835pt" hAlign="center" spaceAbove="2pt"/>
+                        <value>
+                           <date/>
+                        </value>
+                        <border>
+                           <edge thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </corner>
+                        </border>
+                        <bind match="dataRef" ref="datum_vzniku"/>
+                        <caption reserve="22mm">
+                           <value>
+                              <text>Datum vzniku:</text>
+                           </value>
+                           <font typeface="Myriad Pro" size="9pt">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <para vAlign="middle"/>
+                        </caption>
+                        <validate>
+                           <picture>null{}|date{D.M.YYYY}</picture>
+                           <message>
+                              <text name="formatTest">Datum narození uvádějte ve formátu dd.mm.rrrr.</text>
+                           </message>
+                        </validate>
+                        <format>
+                           <picture>null{}|date{D.M.YYYY}</picture>
+                        </format>
+                        <assist>
+                           <toolTip>Uveďte den, měsíc a rok vzniku zajištění. </toolTip>
+                        </assist>
+                     </field>
+                     <field name="rozsah_ruceni" w="173mm" minH="8mm" y="0mm">
+                        <ui>
+                           <textEdit multiLine="1">
+                              <border>
+                                 <edge thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </edge>
+                                 <corner thickness="0.1mm">
+                                    <color value="180,180,180"/>
+                                 </corner>
+                              </border>
+                           </textEdit>
+                        </ui>
+                        <font typeface="Myriad Pro">
+                           <fill>
+                              <color value="51,51,51"/>
+                           </fill>
+                        </font>
+                        <margin topInset="1mm" bottomInset="2mm" leftInset="2mm" rightInset="1mm"/>
+                        <para vAlign="middle" marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt"/>
+                        <border>
+                           <edge thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm" presence="hidden">
+                              <color value="130,130,130"/>
+                           </corner>
+                        </border>
+                        <bind match="dataRef" ref="rozsah_ruceni"/>
+                        <caption reserve="22mm">
+                           <value>
+                              <text>Rozsah ručení:</text>
+                           </value>
+                           <font typeface="Myriad Pro" size="9pt">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <para vAlign="middle"/>
+                        </caption>
+                        <assist>
+                           <toolTip>Uveďte rozsah ručení.</toolTip>
+                        </assist>
+                     </field>
+                     <border>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <subform name="buttons" layout="lr-tb" w="13mm">
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="2mm"/>
+                     <bind match="none"/>
+                     <field relevant="-print" h="5mm" name="btnAdd" w="5mm">
+                        <border hand="right">
+                           <edge thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </corner>
+                        </border>
+                        <caption>
+                           <font typeface="Myriad Pro" size="12pt" weight="bold">
+                              <fill>
+                                 <color value="77,114,149"/>
+                              </fill>
+                           </font>
+                           <para hAlign="center" vAlign="middle"/>
+                           <value>
+                              <text>+</text>
+                           </value>
+                        </caption>
+                        <font typeface="Myriad Pro"/>
+                        <ui>
+                           <button highlight="none"/>
+                        </ui>
+                        <bind match="none"/>
+                        <event activity="click" name="event__click">
+                           <script contentType="application/x-javascript">
+_rucitel_row.addInstance(1);
+</script>
+                        </event>
+                     </field>
+                     <field relevant="-print" h="5mm" name="btnRemove" w="5mm">
+                        <border hand="right">
+                           <edge thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </corner>
+                        </border>
+                        <caption>
+                           <font typeface="Myriad Pro" size="12pt" weight="bold">
+                              <fill>
+                                 <color value="251,85,91"/>
+                              </fill>
+                           </font>
+                           <para hAlign="center" vAlign="middle"/>
+                           <value>
+                              <text>−</text>
+                           </value>
+                        </caption>
+                        <font typeface="Myriad Pro"/>
+                        <ui>
+                           <button highlight="none"/>
+                        </ui>
+                        <bind match="none"/>
+                        <event activity="click" name="event__click">
+                           <script contentType="application/x-javascript">
+if (_rucitel_row.count &gt; 1) {
+	_rucitel_row.removeInstance(this.parent.parent.index);
+}
+</script>
+                        </event>
+                     </field>
+                     <border>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                     <?templateDesigner expand 1?></subform>
+                  <bind match="dataRef" ref="$.rucitel[*]"/>
+                  <border>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                  </border>
+                  <occur max="-1"/>
+                  <?templateDesigner expand 1?>
+                  <keep intact="none"/>
+               </subform>
+               <bind match="none"/>
+               <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
+               <overflow leader="header"/>
+               <margin leftInset="2mm" rightInset="2mm" topInset="0mm" bottomInset="2mm"/>
+               <?templateDesigner expand 1?></subform>
+            <occur min="0"/>
+            <?templateDesigner expand 1?></subform>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle rucitel?>
+         <?templateDesigner expand 1?></subform>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 100 0001001B00220025002B002F0033004200460049004A004C004D004E004F005000530054005500560057005B00CF00D301CF?>
+      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 8 000C00A6?>
+   </subform>
+   <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?templateDesigner FormTargetVersion 36?>
+   <?templateDesigner Zoom 97?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>11</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-12-17T12:16:03Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:180815ac-56ea-4623-bb4d-403b3d5c36ab</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">rucitel</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.rucitel</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>
