@@ -1,0 +1,3260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20130830.1.901444" APIVersion="3.6.13235.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-09-25T08:59:04Z" uuid="62d65447-2eca-4132-98d5-674836087ceb">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
+   <?formServer allowRenderCaching 0?>
+   <?formServer formModel both?>
+   <subform name="PCHU" layout="tb" locale="cs_CZ" restoreState="auto">
+      <pageSet name="Layout">
+         <pageArea name="Page" id="Page1">
+            <subform usehref="..\..\Fragments\header.xdp" x="9.9mm" y="0in">
+               <bind/>
+               <?templateDesigner expand 0?>
+               <traversal>
+                  <traverse operation="next" ref="Footer[0]"/>
+               </traversal>
+            </subform>
+            <draw name="form_version" w="25mm" h="6mm" x="20mm" y="287mm">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <text>1.0.2-TEST</text>
+               </value>
+               <font typeface="Myriad Pro" baselineShift="0pt" size="8pt">
+                  <fill>
+                     <color value="130,130,130"/>
+                  </fill>
+               </font>
+               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+               <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+               <assist>
+                  <toolTip>Číslo verze</toolTip>
+                  <speak priority="toolTip"/>
+               </assist>
+            </draw>
+            <contentArea x="9.9mm" y="12.9mm" w="190.2mm" h="274.2mm" name="Content" id="Content_ID"/>
+            <medium stock="a4" short="210mm" long="297mm"/>
+            <subform x="9.9mm" y="287mm" usehref="..\..\Fragments\footer.xdp">
+               <traversal>
+                  <traverse operation="next" ref="form_version[0]"/>
+               </traversal>
+               <?templateDesigner expand 1?>
+            </subform>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform w="190.2mm" name="Formular" layout="tb">
+         <border>
+            <edge presence="hidden">
+               <color value="180,180,180"/>
+            </edge>
+            <corner thickness="0.176mm" presence="hidden">
+               <color value="180,180,180"/>
+            </corner>
+         </border>
+         <field name="verze" w="47.848mm" h="9mm" presence="hidden">
+            <ui>
+               <textEdit>
+                  <border presence="hidden"/>
+                  <margin/>
+               </textEdit>
+            </ui>
+            <font typeface="Myriad Pro"/>
+            <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+            <para vAlign="middle"/>
+            <bind match="dataRef" ref="$.verze"/>
+            <keep intact="contentArea"/>
+            <event activity="initialize" name="event__initialize">
+               <script contentType="application/x-javascript">
+if(typeof myFormVersionPCHU !== "undefined") {
+	if(myFormVersionPCHU != this.rawValue ){
+		this.rawValue = myFormVersionPCHU ;
+	}
+}
+</script>
+            </event>
+            <event activity="docReady" ref="$host" name="event__docReady">
+               <script contentType="application/x-javascript">
+var vf = xfa.resolveNode("PCHU.#pageSet.Page.form_version");
+// vf musi existovat =&gt; umyslne neni kontrola na !=null
+if(vf.rawValue!=this.rawValue ){
+	this.rawValue = vf.rawValue;
+}
+myFormVersionPCHU = vf.rawValue;
+</script>
+            </event>
+            <traversal>
+               <traverse ref="title[0]"/>
+            </traversal>
+         </field>
+         <subform name="title" w="190.2mm" layout="tb">
+            <draw name="title" w="190.2mm" h="11.365mm">
+               <ui>
+                  <textEdit/>
+               </ui>
+               <value>
+                  <exData contentType="text/html">
+                     <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-decoration:none;letter-spacing:0in">Potvrzení k chráněnému účtu<br/><span style="font-size:10pt;font-weight:normal;text-decoration:none">podle § 304d odst. 1 občanského soudního řádu</span></p></body>
+                  </exData>
+               </value>
+               <font typeface="Myriad Pro" weight="bold" size="14pt" baselineShift="0pt">
+                  <fill>
+                     <color value="51,51,51"/>
+                  </fill>
+               </font>
+               <margin topInset="0.5mm" bottomInset="0mm" leftInset="0mm" rightInset="0mm"/>
+               <para hAlign="center" vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <fill>
+                     <color value="241,94,100"/>
+                     <linear type="toBottom">
+                        <color value="248,175,179"/>
+                     </linear>
+                  </fill>
+               </border>
+               <traversal>
+                  <traverse ref="dluznik[0]"/>
+               </traversal>
+            </draw>
+            <margin bottomInset="2mm"/>
+            <bind match="none"/>
+            <traversal>
+               <traverse operation="first" ref="title[0]"/>
+               <traverse ref="dluznik[0]"/>
+            </traversal>
+            <?templateDesigner expand 1?></subform>
+         <subform w="190.2mm" layout="tb" name="dluznik">
+            <subform w="190mm" name="wrapper" layout="lr-tb">
+               <draw name="label" w="190mm" h="6mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-decoration:none;letter-spacing:0in">I. Dlužník z chráněného příjmu<span style="vertical-align:3pt;font-size:7pt">a)</span></p></body>
+                     </exData>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" weight="bold">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <margin topInset="0.5mm" bottomInset="0mm" leftInset="2mm" rightInset="0mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <fill>
+                        <color value="248,175,179"/>
+                     </fill>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <edge presence="hidden"/>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <corner/>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                  </border>
+                  <keep next="contentArea"/>
+                  <traversal>
+                     <traverse ref="dluznik_wrapper[0]"/>
+                  </traversal>
+               </draw>
+               <subform usehref="..\..\Fragments\XXform_dluznik_wrapper.xdp#som($template.#subform.dluznik_wrapper)">
+                  <border>
+                     <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.2mm" radius="0in">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.5pt" radius="0in">
+                        <color value="0,0,0"/>
+                     </corner>
+                     <corner presence="hidden" stroke="solid" join="square" inverted="0" thickness="0.2mm" radius="0in">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.5pt" radius="0in">
+                        <color value="0,0,0"/>
+                     </corner>
+                     <edge presence="visible" stroke="solid" thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <edge presence="hidden"/>
+                     <edge presence="hidden" stroke="solid" thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <edge presence="hidden"/>
+                  </border>
+                  <bind ref="$.dluznik" match="dataRef"/>
+                  <traversal>
+                     <traverse operation="next" ref="povinny[0]"/>
+                  </traversal>
+                  <?templateDesigner expand 1?>
+               </subform>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="none"/>
+               <margin bottomInset="0mm"/>
+               <traversal>
+                  <traverse operation="first" ref="label[0]"/>
+               </traversal>
+               <?templateDesigner expand 1?></subform>
+            <margin leftInset="0.1mm" rightInset="0.1mm" topInset="0mm" bottomInset="2mm"/>
+            <bind match="none"/>
+            <traversal>
+               <traverse operation="first" ref="wrapper[0]"/>
+               <traverse ref="povinny[0]"/>
+            </traversal>
+            <?templateDesigner expand 1?></subform>
+         <draw name="text" w="190mm" h="12mm">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <text>potvrzuje, že vyplácí paní / panu</text>
+            </value>
+            <font typeface="Myriad Pro" size="12pt" weight="bold">
+               <fill>
+                  <color value="51,51,51"/>
+               </fill>
+            </font>
+            <margin topInset="0.5mm" bottomInset="0mm" leftInset="2mm" rightInset="0mm"/>
+            <para vAlign="middle" hAlign="center"/>
+            <border>
+               <edge thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </edge>
+               <edge thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </edge>
+               <edge presence="hidden"/>
+               <edge thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </edge>
+               <corner thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </corner>
+               <corner thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </corner>
+               <corner presence="hidden"/>
+               <corner thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </corner>
+            </border>
+            <traversal>
+               <traverse ref="povinny[0].wrapper[0].label[0]"/>
+            </traversal>
+         </draw>
+         <subform w="190.2mm" layout="tb" name="povinny">
+            <subform w="190mm" name="wrapper" layout="lr-tb">
+               <draw name="label" w="190mm" h="6mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text>II. Identifikace povinného</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" weight="bold">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <margin topInset="0.5mm" bottomInset="0mm" leftInset="2mm" rightInset="0mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <fill>
+                        <color value="248,175,179"/>
+                     </fill>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <edge presence="hidden"/>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <corner/>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                  </border>
+                  <keep next="contentArea"/>
+                  <traversal>
+                     <traverse ref="fyzicka_osoba[0].udaje_osoba_wrapper[0].label_wrapper[0].label[0]"/>
+                  </traversal>
+               </draw>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <bind match="none"/>
+               <subform w="190mm" name="fyzicka_osoba" layout="tb">
+                  <subform name="udaje_osoba_wrapper" layout="lr-tb" w="190mm">
+                     <margin bottomInset="0mm" topInset="0mm"/>
+                     <bind match="dataRef" ref="$.osobni_udaje"/>
+                     <border>
+                        <corner presence="hidden" thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <edge presence="hidden" thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge presence="hidden" thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner presence="hidden" thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                     <subform layout="lr-tb" name="label_wrapper" w="25mm">
+                        <bind match="none"/>
+                        <draw h="5mm" name="label" w="25mm">
+                           <font typeface="MyriadPro-Regular" baselineShift="0pt" size="9pt">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <margin bottomInset="0mm" leftInset="2mm" rightInset="0mm" topInset="1mm"/>
+                           <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                           <ui>
+                              <textEdit>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <value>
+                              <text>Osobní údaje</text>
+                           </value>
+                           <traversal>
+                              <traverse ref="udaje_osoba[0].statni_prislusnost[0]"/>
+                           </traversal>
+                        </draw>
+                        <draw presence="hidden" h="14mm" name="label_name" w="25mm">
+                           <font typeface="MyriadPro-Regular" baselineShift="0pt" size="9pt">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <margin bottomInset="0mm" leftInset="2mm" rightInset="0mm" topInset="1mm"/>
+                           <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                           <ui>
+                              <textEdit/>
+                           </ui>
+                           <value>
+                              <text>jméno</text>
+                           </value>
+                        </draw>
+                        <traversal>
+                           <traverse operation="first" ref="label[0]"/>
+                           <traverse ref="udaje_osoba[0]"/>
+                        </traversal>
+                        <?templateDesigner expand 1?></subform>
+                     <subform name="udaje_osoba" w="165mm">
+                        <margin bottomInset="0.5mm" topInset="0.5mm"/>
+                        <bind match="none"/>
+                        <subform usehref="..\..\Fragments\osoba.xdp#som($template.#subform.osoba)" x="0in" y="0.008mm">
+                           <bind ref="$.osoba" match="dataRef"/>
+                           <traversal>
+                              <traverse operation="next" ref="text[0]"/>
+                           </traversal>
+                           <?templateDesigner expand 1?>
+                        </subform>
+                        <field h="9mm" name="statni_prislusnost" w="41mm" x="123mm" y="0.007mm">
+                           <assist>
+                              <speak priority="toolTip"/>
+                              <toolTip>Vyplňte státní příslušnost. Údaj o státní příslušnosti se vyplňuje pouze tehdy, pokud je osoba zahraniční osobou.</toolTip>
+                           </assist>
+                           <caption placement="top" reserve="3.1097mm">
+                              <font typeface="Myriad Pro" size="8pt">
+                                 <fill>
+                                    <color value="91,91,93"/>
+                                 </fill>
+                              </font>
+                              <para marginLeft="2.835pt" marginRight="2.835pt"/>
+                              <value>
+                                 <text>Státní příslušnost:</text>
+                              </value>
+                           </caption>
+                           <font typeface="Myriad Pro">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <items>
+                              <text>Česká republika</text>
+                              <text>Afghánistán</text>
+                              <text>Albánie</text>
+                              <text>Alžírsko</text>
+                              <text>Americká Samoa</text>
+                              <text>Americké Panenské ostrovy</text>
+                              <text>Andorra</text>
+                              <text>Angola</text>
+                              <text>Anguilla</text>
+                              <text>Antarktida</text>
+                              <text>Antigua a Barbuda</text>
+                              <text>Argentina</text>
+                              <text>Arménie</text>
+                              <text>Aruba</text>
+                              <text>Austrálie</text>
+                              <text>Ázerbájdžán</text>
+                              <text>Bahamy</text>
+                              <text>Bahrajn</text>
+                              <text>Bangladéš</text>
+                              <text>Barbados</text>
+                              <text>Belgie</text>
+                              <text>Belize</text>
+                              <text>Bělorusko</text>
+                              <text>Benin</text>
+                              <text>Bermudy</text>
+                              <text>Bhútán</text>
+                              <text>Bolívie</text>
+                              <text>Bosna a Hercegovina</text>
+                              <text>Botswana</text>
+                              <text>Bouvetův ostrov</text>
+                              <text>Brazílie</text>
+                              <text>Britské indickooceánské území</text>
+                              <text>Britské Panenské ostrovy</text>
+                              <text>Brunej Darussalam</text>
+                              <text>Bulharsko</text>
+                              <text>Burkina Faso</text>
+                              <text>Burundi</text>
+                              <text>Ceuta</text>
+                              <text>Cookovy ostrovy</text>
+                              <text>Čad</text>
+                              <text>Černá Hora</text>
+                              <text>Čína</text>
+                              <text>Dánsko</text>
+                              <text>Dominika</text>
+                              <text>Dominikánská republika</text>
+                              <text>Džibutsko</text>
+                              <text>Egypt</text>
+                              <text>Ekvádor</text>
+                              <text>Eritrea</text>
+                              <text>Estonsko</text>
+                              <text>Etiopie</text>
+                              <text>Faerské ostrovy</text>
+                              <text>Falklandy</text>
+                              <text>Fidži</text>
+                              <text>Filipíny</text>
+                              <text>Finsko</text>
+                              <text>Francie</text>
+                              <text>Francouzská Guyana</text>
+                              <text>Francouzská jižní území</text>
+                              <text>Francouzská Polynésie</text>
+                              <text>Gabon</text>
+                              <text>Gambie</text>
+                              <text>Ghana</text>
+                              <text>Gibraltar</text>
+                              <text>Grenada</text>
+                              <text>Grónsko</text>
+                              <text>Gruzie</text>
+                              <text>Guadeloupe</text>
+                              <text>Guam</text>
+                              <text>Guatemala</text>
+                              <text>Guinea</text>
+                              <text>Guinea-Bissau</text>
+                              <text>Guyana</text>
+                              <text>Haiti</text>
+                              <text>Heardův ostrov a McDonaldovy ostrovy</text>
+                              <text>Honduras</text>
+                              <text>Hongkong</text>
+                              <text>Chile</text>
+                              <text>Chorvatsko</text>
+                              <text>Indie</text>
+                              <text>Indonésie</text>
+                              <text>Irák</text>
+                              <text>Írán</text>
+                              <text>Irsko</text>
+                              <text>Island</text>
+                              <text>Itálie</text>
+                              <text>Izrael</text>
+                              <text>Jamajka</text>
+                              <text>Japonsko</text>
+                              <text>Jemen</text>
+                              <text>Jihoafrická republika</text>
+                              <text>Jižní Georgie a Jižní Sandwichovy ostrovy</text>
+                              <text>Jordánsko</text>
+                              <text>Jugoslávie</text>
+                              <text>Kajmanské ostrovy</text>
+                              <text>Kambodža</text>
+                              <text>Kamerun</text>
+                              <text>Kanada</text>
+                              <text>Kapverdy</text>
+                              <text>Katar</text>
+                              <text>Kazachstán</text>
+                              <text>Keňa</text>
+                              <text>Kiribati</text>
+                              <text>Kokosové ostrovy</text>
+                              <text>Kolumbie</text>
+                              <text>Komory</text>
+                              <text>Kongo</text>
+                              <text>Kongo, demokratická republika</text>
+                              <text>Korea</text>
+                              <text>Korea, lidově demokratická republika</text>
+                              <text>Kosovo</text>
+                              <text>Kostarika</text>
+                              <text>Kuba</text>
+                              <text>Kuvajt</text>
+                              <text>Kypr</text>
+                              <text>Kyrgyzstán</text>
+                              <text>Laos</text>
+                              <text>Lesotho</text>
+                              <text>Libanon</text>
+                              <text>Libérie</text>
+                              <text>Libye</text>
+                              <text>Lichtenštejnsko</text>
+                              <text>Litva</text>
+                              <text>Lotyšsko</text>
+                              <text>Lucembursko</text>
+                              <text>Macao</text>
+                              <text>Madagaskar</text>
+                              <text>Maďarsko</text>
+                              <text>Makedonie</text>
+                              <text>Malajsie</text>
+                              <text>Malawi</text>
+                              <text>Maledivy</text>
+                              <text>Mali</text>
+                              <text>Malta</text>
+                              <text>Maroko</text>
+                              <text>Marshallovy ostrovy</text>
+                              <text>Martinik</text>
+                              <text>Mauricius</text>
+                              <text>Mauritánie</text>
+                              <text>Mayotte</text>
+                              <text>Melilla</text>
+                              <text>Menší odlehlé ostrovy USA</text>
+                              <text>Mexiko</text>
+                              <text>Mikronésie</text>
+                              <text>Moldavsko</text>
+                              <text>Monako</text>
+                              <text>Mongolsko</text>
+                              <text>Montserrat</text>
+                              <text>Mosambik</text>
+                              <text>Myanmar</text>
+                              <text>Namibie</text>
+                              <text>Nauru</text>
+                              <text>Německo</text>
+                              <text>Nepál</text>
+                              <text>Niger</text>
+                              <text>Nigérie</text>
+                              <text>Nikaragua</text>
+                              <text>Niue</text>
+                              <text>Nizozemské Antily</text>
+                              <text>Nizozemsko</text>
+                              <text>Norfolk</text>
+                              <text>Norsko</text>
+                              <text>Nová Kaledonie</text>
+                              <text>Nový Zéland</text>
+                              <text>Okupované palestinské území</text>
+                              <text>Omán</text>
+                              <text>Pákistán</text>
+                              <text>Palau</text>
+                              <text>Panama</text>
+                              <text>Papua Nová Guinea</text>
+                              <text>Paraguay</text>
+                              <text>Peru</text>
+                              <text>Pitcairn</text>
+                              <text>Pobřeží slonoviny</text>
+                              <text>Polsko</text>
+                              <text>Portoriko</text>
+                              <text>Portugalsko</text>
+                              <text>Rakousko</text>
+                              <text>Réunion</text>
+                              <text>Rovníková Guinea</text>
+                              <text>Rumunsko</text>
+                              <text>Rusko</text>
+                              <text>Rwanda</text>
+                              <text>Řecko</text>
+                              <text>Saint Barthélemy</text>
+                              <text>Saint Pierre a Miquelon</text>
+                              <text>Salvador</text>
+                              <text>Samoa</text>
+                              <text>San Marino</text>
+                              <text>Saúdská Arábie</text>
+                              <text>Senegal</text>
+                              <text>Severní Mariany</text>
+                              <text>Seychely</text>
+                              <text>Sierra Leone</text>
+                              <text>Singapur</text>
+                              <text>Slovensko</text>
+                              <text>Slovinsko</text>
+                              <text>Somálsko</text>
+                              <text>Spojené arabské emiráty</text>
+                              <text>Spojené království</text>
+                              <text>Spojené státy</text>
+                              <text>Srbsko a Černá Hora</text>
+                              <text>Srí Lanka</text>
+                              <text>Středoafrická republika</text>
+                              <text>Súdán</text>
+                              <text>Surinam</text>
+                              <text>Svalbard a ostrov Jan Mayen</text>
+                              <text>Svatá Helena</text>
+                              <text>Svatá Lucie</text>
+                              <text>Svatý Kryštof a Nevis</text>
+                              <text>Svatý Martin (francouzská část)</text>
+                              <text>Svatý stolec</text>
+                              <text>Svatý Tomáš</text>
+                              <text>Svatý Vincenc a Grenadiny</text>
+                              <text>Svazijsko</text>
+                              <text>Sýrie</text>
+                              <text>Šalamounovy ostrovy</text>
+                              <text>Španělsko</text>
+                              <text>Švédsko</text>
+                              <text>Švýcarsko</text>
+                              <text>Tádžikistán</text>
+                              <text>Tanzanie</text>
+                              <text>Thajsko</text>
+                              <text>Tchaj-wan</text>
+                              <text>Togo</text>
+                              <text>Tokelau</text>
+                              <text>Tonga</text>
+                              <text>Trinidad a Tobago</text>
+                              <text>Tunisko</text>
+                              <text>Turecko</text>
+                              <text>Turkmenistán</text>
+                              <text>Turks a Caicos</text>
+                              <text>Tuvalu</text>
+                              <text>Uganda</text>
+                              <text>Ukrajina</text>
+                              <text>Uruguay</text>
+                              <text>Uzbekistán</text>
+                              <text>Vánoční ostrov</text>
+                              <text>Vanuatu</text>
+                              <text>Venezuela</text>
+                              <text>Vietnam</text>
+                              <text>Východní Timor</text>
+                              <text>Wallis a Futuna</text>
+                              <text>Zambie</text>
+                              <text>Západní Sahara</text>
+                              <text>Zimbabwe</text>
+                           </items>
+                           <items presence="hidden" save="1">
+                              <text>CZ</text>
+                              <text>AF</text>
+                              <text>AL</text>
+                              <text>DZ</text>
+                              <text>AS</text>
+                              <text>VI</text>
+                              <text>AD</text>
+                              <text>AO</text>
+                              <text>AI</text>
+                              <text>AQ</text>
+                              <text>AG</text>
+                              <text>AR</text>
+                              <text>AM</text>
+                              <text>AW</text>
+                              <text>AU</text>
+                              <text>AZ</text>
+                              <text>BS</text>
+                              <text>BH</text>
+                              <text>BD</text>
+                              <text>BB</text>
+                              <text>BE</text>
+                              <text>BZ</text>
+                              <text>BY</text>
+                              <text>BJ</text>
+                              <text>BM</text>
+                              <text>BT</text>
+                              <text>BO</text>
+                              <text>BA</text>
+                              <text>BW</text>
+                              <text>BV</text>
+                              <text>BR</text>
+                              <text>IO</text>
+                              <text>VG</text>
+                              <text>BN</text>
+                              <text>BG</text>
+                              <text>BF</text>
+                              <text>BI</text>
+                              <text>XC</text>
+                              <text>CK</text>
+                              <text>TD</text>
+                              <text>ME</text>
+                              <text>CN</text>
+                              <text>DK</text>
+                              <text>DM</text>
+                              <text>DO</text>
+                              <text>DJ</text>
+                              <text>EG</text>
+                              <text>EC</text>
+                              <text>ER</text>
+                              <text>EE</text>
+                              <text>ET</text>
+                              <text>FO</text>
+                              <text>FK</text>
+                              <text>FJ</text>
+                              <text>PH</text>
+                              <text>FI</text>
+                              <text>FR</text>
+                              <text>GF</text>
+                              <text>TF</text>
+                              <text>PF</text>
+                              <text>GA</text>
+                              <text>GM</text>
+                              <text>GH</text>
+                              <text>GI</text>
+                              <text>GD</text>
+                              <text>GL</text>
+                              <text>GE</text>
+                              <text>GP</text>
+                              <text>GU</text>
+                              <text>GT</text>
+                              <text>GN</text>
+                              <text>GW</text>
+                              <text>GY</text>
+                              <text>HT</text>
+                              <text>HM</text>
+                              <text>HN</text>
+                              <text>HK</text>
+                              <text>CL</text>
+                              <text>HR</text>
+                              <text>IN</text>
+                              <text>ID</text>
+                              <text>IQ</text>
+                              <text>IR</text>
+                              <text>IE</text>
+                              <text>IS</text>
+                              <text>IT</text>
+                              <text>IL</text>
+                              <text>JM</text>
+                              <text>JP</text>
+                              <text>YE</text>
+                              <text>ZA</text>
+                              <text>GS</text>
+                              <text>JO</text>
+                              <text>YU</text>
+                              <text>KY</text>
+                              <text>KH</text>
+                              <text>CM</text>
+                              <text>CA</text>
+                              <text>CV</text>
+                              <text>QA</text>
+                              <text>KZ</text>
+                              <text>KE</text>
+                              <text>KI</text>
+                              <text>CC</text>
+                              <text>CO</text>
+                              <text>KM</text>
+                              <text>CG</text>
+                              <text>CD</text>
+                              <text>KR</text>
+                              <text>KP</text>
+                              <text>XK</text>
+                              <text>CR</text>
+                              <text>CU</text>
+                              <text>KW</text>
+                              <text>CY</text>
+                              <text>KG</text>
+                              <text>LA</text>
+                              <text>LS</text>
+                              <text>LB</text>
+                              <text>LR</text>
+                              <text>LY</text>
+                              <text>LI</text>
+                              <text>LT</text>
+                              <text>LV</text>
+                              <text>LU</text>
+                              <text>MO</text>
+                              <text>MG</text>
+                              <text>HU</text>
+                              <text>MK</text>
+                              <text>MY</text>
+                              <text>MW</text>
+                              <text>MV</text>
+                              <text>ML</text>
+                              <text>MT</text>
+                              <text>MA</text>
+                              <text>MH</text>
+                              <text>MQ</text>
+                              <text>MU</text>
+                              <text>MR</text>
+                              <text>YT</text>
+                              <text>XL</text>
+                              <text>UM</text>
+                              <text>MX</text>
+                              <text>FM</text>
+                              <text>MD</text>
+                              <text>MC</text>
+                              <text>MN</text>
+                              <text>MS</text>
+                              <text>MZ</text>
+                              <text>MM</text>
+                              <text>NA</text>
+                              <text>NR</text>
+                              <text>DE</text>
+                              <text>NP</text>
+                              <text>NE</text>
+                              <text>NG</text>
+                              <text>NI</text>
+                              <text>NU</text>
+                              <text>AN</text>
+                              <text>NL</text>
+                              <text>NF</text>
+                              <text>NO</text>
+                              <text>NC</text>
+                              <text>NZ</text>
+                              <text>PS</text>
+                              <text>OM</text>
+                              <text>PK</text>
+                              <text>PW</text>
+                              <text>PA</text>
+                              <text>PG</text>
+                              <text>PY</text>
+                              <text>PE</text>
+                              <text>PN</text>
+                              <text>CI</text>
+                              <text>PL</text>
+                              <text>PR</text>
+                              <text>PT</text>
+                              <text>AT</text>
+                              <text>RE</text>
+                              <text>GQ</text>
+                              <text>RO</text>
+                              <text>RU</text>
+                              <text>RW</text>
+                              <text>GR</text>
+                              <text>BL</text>
+                              <text>PM</text>
+                              <text>SV</text>
+                              <text>WS</text>
+                              <text>SM</text>
+                              <text>SA</text>
+                              <text>SN</text>
+                              <text>MP</text>
+                              <text>SC</text>
+                              <text>SL</text>
+                              <text>SG</text>
+                              <text>SK</text>
+                              <text>SI</text>
+                              <text>SO</text>
+                              <text>AE</text>
+                              <text>UK</text>
+                              <text>US</text>
+                              <text>CS</text>
+                              <text>LK</text>
+                              <text>CF</text>
+                              <text>SD</text>
+                              <text>SR</text>
+                              <text>SJ</text>
+                              <text>SH</text>
+                              <text>LC</text>
+                              <text>KN</text>
+                              <text>MF</text>
+                              <text>VA</text>
+                              <text>ST</text>
+                              <text>VC</text>
+                              <text>SZ</text>
+                              <text>SY</text>
+                              <text>SB</text>
+                              <text>ES</text>
+                              <text>SE</text>
+                              <text>CH</text>
+                              <text>TJ</text>
+                              <text>TZ</text>
+                              <text>TH</text>
+                              <text>TW</text>
+                              <text>TG</text>
+                              <text>TK</text>
+                              <text>TO</text>
+                              <text>TT</text>
+                              <text>TN</text>
+                              <text>TR</text>
+                              <text>TM</text>
+                              <text>TC</text>
+                              <text>TV</text>
+                              <text>UG</text>
+                              <text>UA</text>
+                              <text>UY</text>
+                              <text>UZ</text>
+                              <text>CX</text>
+                              <text>VU</text>
+                              <text>VE</text>
+                              <text>VN</text>
+                              <text>TL</text>
+                              <text>WF</text>
+                              <text>ZM</text>
+                              <text>EH</text>
+                              <text>ZW</text>
+                           </items>
+                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
+                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="1pt" vAlign="middle"/>
+                           <ui>
+                              <choiceList>
+                                 <border>
+                                    <corner thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </corner>
+                                    <edge thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </edge>
+                                 </border>
+                                 <margin/>
+                              </choiceList>
+                           </ui>
+                           <bind ref="$.statni_prislusnost" match="dataRef"/>
+                           <traversal>
+                              <traverse ref="osoba[0]"/>
+                           </traversal>
+                        </field>
+                        <field h="9mm" name="datum_narozeni" w="41mm" y="9.009mm">
+                           <assist>
+                              <speak priority="toolTip"/>
+                              <toolTip>Uveďte datum narození.</toolTip>
+                           </assist>
+                           <caption placement="top" reserve="2.8319mm">
+                              <font typeface="Myriad Pro" size="8pt">
+                                 <fill>
+                                    <color value="91,91,93"/>
+                                 </fill>
+                              </font>
+                              <para marginLeft="2.835pt" marginRight="2.835pt"/>
+                              <value>
+                                 <text>Datum narození:</text>
+                              </value>
+                           </caption>
+                           <font typeface="Myriad Pro">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
+                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="1pt" vAlign="middle"/>
+                           <ui>
+                              <picture>null{}|date{D.M.YYYY}</picture>
+                              <dateTimeEdit hScrollPolicy="off">
+                                 <border>
+                                    <corner thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </corner>
+                                    <edge thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </edge>
+                                 </border>
+                                 <margin/>
+                              </dateTimeEdit>
+                           </ui>
+                           <bind ref="$.datum_narozeni" match="dataRef">
+                              <picture>null{}</picture>
+                           </bind>
+                           <format>
+                              <picture>null{}|date{D.M.YYYY}</picture>
+                           </format>
+                           <validate formatTest="error" scriptTest="warning">
+                              <picture>null{}|date{D.M.YYYY}</picture>
+                              <message>
+                                 <text name="scriptTest"/>
+                                 <text name="formatTest">Chybně vyplněné datum narození. Datum zadejte ve formátu d.m.rrrr.</text>
+                              </message>
+                           </validate>
+                           <value>
+                              <date/>
+                           </value>
+                           <event activity="change" name="event__change">
+                              <script contentType="application/x-javascript">
+if (xfa.event.newText.match(/[^0-9\.]/)) {
+	xfa.event.change = "";
+}
+</script>
+                           </event>
+                           <event activity="exit" name="event__exit">
+                              <script contentType="application/x-javascript">
+if (this.errorText != "") {
+	xfa.host.setFocus(this);
+}
+</script>
+                           </event>
+                           <traversal>
+                              <traverse ref="ico[0]"/>
+                           </traversal>
+                        </field>
+                        <field h="9mm" name="ico" w="41mm" x="82mm" y="9.009mm">
+                           <assist>
+                              <speak priority="toolTip"/>
+                              <toolTip>Uveďte identifikační číslo, pokud bylo přiděleno.</toolTip>
+                           </assist>
+                           <caption placement="top" reserve="3.1mm">
+                              <font typeface="Myriad Pro" size="8pt">
+                                 <fill>
+                                    <color value="91,91,93"/>
+                                 </fill>
+                              </font>
+                              <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="0pt" spaceBelow="0pt"/>
+                              <value>
+                                 <text>IČO:</text>
+                              </value>
+                           </caption>
+                           <font typeface="Myriad Pro">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
+                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="1pt" vAlign="middle"/>
+                           <ui>
+                              <picture>text{99999999}</picture>
+                              <textEdit>
+                                 <border>
+                                    <corner thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </corner>
+                                    <edge thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </edge>
+                                 </border>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <bind ref="$.osoba.ico" match="dataRef">
+                              <picture>text{99999999}</picture>
+                           </bind>
+                           <format>
+                              <picture>text{999 99 999}</picture>
+                           </format>
+                           <value>
+                              <text maxChars="8"/>
+                           </value>
+                           <event activity="change" name="event__change">
+                              <script contentType="application/x-javascript">
+if (xfa.event.newText.match(/[^0-9]/)) {
+	xfa.event.change = "";
+}
+</script>
+                           </event>
+                           <traversal>
+                              <traverse ref="adresa_fo_wrapper[0]"/>
+                           </traversal>
+                        </field>
+                        <traversal>
+                           <traverse operation="first" ref="osoba[0]"/>
+                        </traversal>
+                        <?templateDesigner expand 1?></subform>
+                     <traversal>
+                        <traverse ref="adresa_fo_wrapper[0]"/>
+                        <traverse operation="first" ref="udaje_osoba[0]"/>
+                     </traversal>
+                     <?templateDesigner expand 1?></subform>
+                  <subform w="190mm" layout="lr-tb" name="adresa_fo_wrapper">
+                     <bind match="none"/>
+                     <border>
+                        <corner presence="hidden" thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <edge presence="hidden" thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                     <draw h="12mm" name="label_fo" w="25mm">
+                        <assist>
+                           <speak priority="toolTip"/>
+                           <toolTip>Vyplňte svou adresu místa trvalého pobytu nebo sídlo v den podání návrhu na povolení oddlužení na území České republiky nebo v zahraničí.</toolTip>
+                        </assist>
+                        <font typeface="MyriadPro-Regular" baselineShift="0pt" size="9pt">
+                           <fill>
+                              <color value="51,51,51"/>
+                           </fill>
+                        </font>
+                        <margin bottomInset="0mm" leftInset="2mm" rightInset="0mm" topInset="1mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                        <ui>
+                           <textEdit>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <value>
+                           <text>Místo trvalého pobytu / místo pobytu</text>
+                        </value>
+                        <traversal>
+                           <traverse ref="adresa[0]"/>
+                        </traversal>
+                     </draw>
+                     <subform layout="lr-tb" minH="43mm" name="adresa" w="164mm">
+                        <margin bottomInset="0.5mm" topInset="0.5mm"/>
+                        <bind match="dataRef" ref="$.adresa"/>
+                        <field minH="9mm" name="ulice" w="41mm">
+                           <assist>
+                              <speak priority="toolTip"/>
+                              <toolTip>Ulice</toolTip>
+                           </assist>
+                           <caption placement="top" reserve="3.2046mm">
+                              <font typeface="Myriad Pro" size="8pt">
+                                 <fill>
+                                    <color value="91,91,93"/>
+                                 </fill>
+                              </font>
+                              <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="bottom"/>
+                              <value>
+                                 <text>Ulice:</text>
+                              </value>
+                           </caption>
+                           <font typeface="Myriad Pro">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
+                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="0pt" spaceBelow="0pt" vAlign="middle"/>
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border>
+                                    <corner thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </corner>
+                                    <edge thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </edge>
+                                 </border>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <bind ref="$.ulice" match="dataRef"/>
+                           <value>
+                              <text maxChars="255"/>
+                           </value>
+                           <traversal>
+                              <traverse ref="cpop[0]"/>
+                           </traversal>
+                        </field>
+                        <field name="cpop" w="14mm" minH="9mm">
+                           <assist>
+                              <speak priority="toolTip"/>
+                              <toolTip>Číslo popisné/Číslo evidenční. Pokud se jedná o číslo evidenční, uvádějte číslo nulou.</toolTip>
+                           </assist>
+                           <caption placement="top" reserve="3.2046mm">
+                              <font typeface="Myriad Pro" size="8pt">
+                                 <fill>
+                                    <color value="91,91,93"/>
+                                 </fill>
+                              </font>
+                              <para marginLeft="0pt" marginRight="0pt" vAlign="bottom"/>
+                              <value>
+                                 <text>Č. p./Č. e.:</text>
+                              </value>
+                           </caption>
+                           <font typeface="Myriad Pro">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="0mm" topInset="0.5mm"/>
+                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="0pt" spaceBelow="0pt" vAlign="middle"/>
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border>
+                                    <corner thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </corner>
+                                    <edge thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </edge>
+                                 </border>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <bind ref="$.cpop" match="dataRef"/>
+                           <value>
+                              <text maxChars="20"/>
+                           </value>
+                           <event activity="change" name="event__change">
+                              <script contentType="application/x-javascript">
+if (xfa.event.newText.match(/[^0-9a-zA-Z\-]/)) {
+	xfa.event.change = "";
+}
+</script>
+                           </event>
+                           <traversal>
+                              <traverse ref="Lomeno[0]"/>
+                           </traversal>
+                        </field>
+                        <draw h="9mm" name="Lomeno" w="2mm">
+                           <font typeface="Myriad Pro">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <margin bottomInset="0.5mm" leftInset="0mm" rightInset="0mm" topInset="0.5mm"/>
+                           <para hAlign="center" spaceBelow="1pt" vAlign="bottom"/>
+                           <ui>
+                              <textEdit>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <value>
+                              <text>/</text>
+                           </value>
+                           <traversal>
+                              <traverse ref="cori[0]"/>
+                           </traversal>
+                        </draw>
+                        <field minH="9mm" name="cori" w="9mm">
+                           <assist>
+                              <speak priority="toolTip"/>
+                              <toolTip>Číslo orientační</toolTip>
+                           </assist>
+                           <caption placement="top" reserve="3.2046mm">
+                              <font typeface="Myriad Pro" size="8pt">
+                                 <fill>
+                                    <color value="91,91,93"/>
+                                 </fill>
+                              </font>
+                              <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="bottom"/>
+                              <value>
+                                 <text>Č. o.:</text>
+                              </value>
+                           </caption>
+                           <font typeface="Myriad Pro">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <margin bottomInset="0.5mm" leftInset="0mm" rightInset="1mm" topInset="0.5mm"/>
+                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="0pt" spaceBelow="0pt" vAlign="middle"/>
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border>
+                                    <corner thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </corner>
+                                    <edge thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </edge>
+                                 </border>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <bind ref="$.cori" match="dataRef"/>
+                           <value>
+                              <text maxChars="20"/>
+                           </value>
+                           <event activity="change" name="event__change">
+                              <script contentType="application/x-javascript">
+if (xfa.event.newText.match(/[^0-9a-zA-Z\-]/)) {
+	xfa.event.change = "";
+}
+</script>
+                           </event>
+                           <traversal>
+                              <traverse ref="psc[0]"/>
+                           </traversal>
+                        </field>
+                        <field minH="9mm" name="psc" w="16mm">
+                           <assist>
+                              <speak priority="toolTip"/>
+                              <toolTip>PSČ</toolTip>
+                           </assist>
+                           <caption placement="top" reserve="3.2046mm">
+                              <font typeface="Myriad Pro" size="8pt">
+                                 <fill>
+                                    <color value="91,91,93"/>
+                                 </fill>
+                              </font>
+                              <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="bottom"/>
+                              <value>
+                                 <text>PSČ:</text>
+                              </value>
+                           </caption>
+                           <font typeface="Myriad Pro">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
+                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="0pt" spaceBelow="0pt" vAlign="middle"/>
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border>
+                                    <corner thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </corner>
+                                    <edge thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </edge>
+                                 </border>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <bind ref="$.psc" match="dataRef"/>
+                           <value>
+                              <text maxChars="20"/>
+                           </value>
+                           <event activity="change" name="event__change">
+                              <script contentType="application/x-javascript">
+if (xfa.event.newText.match(/[^0-9a-zA-Z]/)) {
+	xfa.event.change = "";
+}
+</script>
+                           </event>
+                           <traversal>
+                              <traverse ref="obec[0]"/>
+                           </traversal>
+                        </field>
+                        <field minH="9mm" name="obec" w="41mm">
+                           <assist>
+                              <speak priority="toolTip"/>
+                              <toolTip>Název obce</toolTip>
+                           </assist>
+                           <caption placement="top" reserve="3.2046mm">
+                              <font typeface="Myriad Pro" baselineShift="0pt" size="8pt">
+                                 <fill>
+                                    <color value="91,91,93"/>
+                                 </fill>
+                              </font>
+                              <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="bottom"/>
+                              <value>
+                                 <text>Obec:</text>
+                              </value>
+                           </caption>
+                           <font typeface="Myriad Pro">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
+                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="0pt" spaceBelow="0pt" vAlign="middle"/>
+                           <ui>
+                              <textEdit multiLine="1">
+                                 <border>
+                                    <corner thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </corner>
+                                    <edge thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </edge>
+                                 </border>
+                                 <margin/>
+                              </textEdit>
+                           </ui>
+                           <bind ref="$.obec" match="dataRef"/>
+                           <value>
+                              <text maxChars="255"/>
+                           </value>
+                           <traversal>
+                              <traverse ref="stat[0]"/>
+                           </traversal>
+                        </field>
+                        <field h="9mm" name="stat" w="41mm">
+                           <assist>
+                              <speak priority="toolTip"/>
+                              <toolTip>Stát</toolTip>
+                           </assist>
+                           <caption placement="top" reserve="3.2046mm">
+                              <font typeface="Myriad Pro" size="8pt">
+                                 <fill>
+                                    <color value="91,91,93"/>
+                                 </fill>
+                              </font>
+                              <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="bottom"/>
+                              <value>
+                                 <text>Stát:</text>
+                              </value>
+                           </caption>
+                           <font typeface="Myriad Pro">
+                              <fill>
+                                 <color value="51,51,51"/>
+                              </fill>
+                           </font>
+                           <items>
+                              <text>Česká republika</text>
+                              <text>Afghánistán</text>
+                              <text>Albánie</text>
+                              <text>Alžírsko</text>
+                              <text>Americká Samoa</text>
+                              <text>Americké Panenské ostrovy</text>
+                              <text>Andorra</text>
+                              <text>Angola</text>
+                              <text>Anguilla</text>
+                              <text>Antarktida</text>
+                              <text>Antigua a Barbuda</text>
+                              <text>Argentina</text>
+                              <text>Arménie</text>
+                              <text>Aruba</text>
+                              <text>Austrálie</text>
+                              <text>Ázerbájdžán</text>
+                              <text>Bahamy</text>
+                              <text>Bahrajn</text>
+                              <text>Bangladéš</text>
+                              <text>Barbados</text>
+                              <text>Belgie</text>
+                              <text>Belize</text>
+                              <text>Bělorusko</text>
+                              <text>Benin</text>
+                              <text>Bermudy</text>
+                              <text>Bhútán</text>
+                              <text>Bolívie</text>
+                              <text>Bosna a Hercegovina</text>
+                              <text>Botswana</text>
+                              <text>Bouvetův ostrov</text>
+                              <text>Brazílie</text>
+                              <text>Britské indickooceánské území</text>
+                              <text>Britské Panenské ostrovy</text>
+                              <text>Brunej Darussalam</text>
+                              <text>Bulharsko</text>
+                              <text>Burkina Faso</text>
+                              <text>Burundi</text>
+                              <text>Ceuta</text>
+                              <text>Cookovy ostrovy</text>
+                              <text>Čad</text>
+                              <text>Černá Hora</text>
+                              <text>Čína</text>
+                              <text>Dánsko</text>
+                              <text>Dominika</text>
+                              <text>Dominikánská republika</text>
+                              <text>Džibutsko</text>
+                              <text>Egypt</text>
+                              <text>Ekvádor</text>
+                              <text>Eritrea</text>
+                              <text>Estonsko</text>
+                              <text>Etiopie</text>
+                              <text>Faerské ostrovy</text>
+                              <text>Falklandy</text>
+                              <text>Fidži</text>
+                              <text>Filipíny</text>
+                              <text>Finsko</text>
+                              <text>Francie</text>
+                              <text>Francouzská Guyana</text>
+                              <text>Francouzská jižní území</text>
+                              <text>Francouzská Polynésie</text>
+                              <text>Gabon</text>
+                              <text>Gambie</text>
+                              <text>Ghana</text>
+                              <text>Gibraltar</text>
+                              <text>Grenada</text>
+                              <text>Grónsko</text>
+                              <text>Gruzie</text>
+                              <text>Guadeloupe</text>
+                              <text>Guam</text>
+                              <text>Guatemala</text>
+                              <text>Guinea</text>
+                              <text>Guinea-Bissau</text>
+                              <text>Guyana</text>
+                              <text>Haiti</text>
+                              <text>Heardův ostrov a McDonaldovy ostrovy</text>
+                              <text>Honduras</text>
+                              <text>Hongkong</text>
+                              <text>Chile</text>
+                              <text>Chorvatsko</text>
+                              <text>Indie</text>
+                              <text>Indonésie</text>
+                              <text>Irák</text>
+                              <text>Írán</text>
+                              <text>Irsko</text>
+                              <text>Island</text>
+                              <text>Itálie</text>
+                              <text>Izrael</text>
+                              <text>Jamajka</text>
+                              <text>Japonsko</text>
+                              <text>Jemen</text>
+                              <text>Jihoafrická republika</text>
+                              <text>Jižní Georgie a Jižní Sandwichovy ostrovy</text>
+                              <text>Jordánsko</text>
+                              <text>Jugoslávie</text>
+                              <text>Kajmanské ostrovy</text>
+                              <text>Kambodža</text>
+                              <text>Kamerun</text>
+                              <text>Kanada</text>
+                              <text>Kapverdy</text>
+                              <text>Katar</text>
+                              <text>Kazachstán</text>
+                              <text>Keňa</text>
+                              <text>Kiribati</text>
+                              <text>Kokosové ostrovy</text>
+                              <text>Kolumbie</text>
+                              <text>Komory</text>
+                              <text>Kongo</text>
+                              <text>Kongo, demokratická republika</text>
+                              <text>Korea</text>
+                              <text>Korea, lidově demokratická republika</text>
+                              <text>Kosovo</text>
+                              <text>Kostarika</text>
+                              <text>Kuba</text>
+                              <text>Kuvajt</text>
+                              <text>Kypr</text>
+                              <text>Kyrgyzstán</text>
+                              <text>Laos</text>
+                              <text>Lesotho</text>
+                              <text>Libanon</text>
+                              <text>Libérie</text>
+                              <text>Libye</text>
+                              <text>Lichtenštejnsko</text>
+                              <text>Litva</text>
+                              <text>Lotyšsko</text>
+                              <text>Lucembursko</text>
+                              <text>Macao</text>
+                              <text>Madagaskar</text>
+                              <text>Maďarsko</text>
+                              <text>Makedonie</text>
+                              <text>Malajsie</text>
+                              <text>Malawi</text>
+                              <text>Maledivy</text>
+                              <text>Mali</text>
+                              <text>Malta</text>
+                              <text>Maroko</text>
+                              <text>Marshallovy ostrovy</text>
+                              <text>Martinik</text>
+                              <text>Mauricius</text>
+                              <text>Mauritánie</text>
+                              <text>Mayotte</text>
+                              <text>Melilla</text>
+                              <text>Menší odlehlé ostrovy USA</text>
+                              <text>Mexiko</text>
+                              <text>Mikronésie</text>
+                              <text>Moldavsko</text>
+                              <text>Monako</text>
+                              <text>Mongolsko</text>
+                              <text>Montserrat</text>
+                              <text>Mosambik</text>
+                              <text>Myanmar</text>
+                              <text>Namibie</text>
+                              <text>Nauru</text>
+                              <text>Německo</text>
+                              <text>Nepál</text>
+                              <text>Niger</text>
+                              <text>Nigérie</text>
+                              <text>Nikaragua</text>
+                              <text>Niue</text>
+                              <text>Nizozemské Antily</text>
+                              <text>Nizozemsko</text>
+                              <text>Norfolk</text>
+                              <text>Norsko</text>
+                              <text>Nová Kaledonie</text>
+                              <text>Nový Zéland</text>
+                              <text>Okupované palestinské území</text>
+                              <text>Omán</text>
+                              <text>Pákistán</text>
+                              <text>Palau</text>
+                              <text>Panama</text>
+                              <text>Papua Nová Guinea</text>
+                              <text>Paraguay</text>
+                              <text>Peru</text>
+                              <text>Pitcairn</text>
+                              <text>Pobřeží slonoviny</text>
+                              <text>Polsko</text>
+                              <text>Portoriko</text>
+                              <text>Portugalsko</text>
+                              <text>Rakousko</text>
+                              <text>Réunion</text>
+                              <text>Rovníková Guinea</text>
+                              <text>Rumunsko</text>
+                              <text>Rusko</text>
+                              <text>Rwanda</text>
+                              <text>Řecko</text>
+                              <text>Saint Barthélemy</text>
+                              <text>Saint Pierre a Miquelon</text>
+                              <text>Salvador</text>
+                              <text>Samoa</text>
+                              <text>San Marino</text>
+                              <text>Saúdská Arábie</text>
+                              <text>Senegal</text>
+                              <text>Severní Mariany</text>
+                              <text>Seychely</text>
+                              <text>Sierra Leone</text>
+                              <text>Singapur</text>
+                              <text>Slovensko</text>
+                              <text>Slovinsko</text>
+                              <text>Somálsko</text>
+                              <text>Spojené arabské emiráty</text>
+                              <text>Spojené království</text>
+                              <text>Spojené státy</text>
+                              <text>Srbsko a Černá Hora</text>
+                              <text>Srí Lanka</text>
+                              <text>Středoafrická republika</text>
+                              <text>Súdán</text>
+                              <text>Surinam</text>
+                              <text>Svalbard a ostrov Jan Mayen</text>
+                              <text>Svatá Helena</text>
+                              <text>Svatá Lucie</text>
+                              <text>Svatý Kryštof a Nevis</text>
+                              <text>Svatý Martin (francouzská část)</text>
+                              <text>Svatý stolec</text>
+                              <text>Svatý Tomáš</text>
+                              <text>Svatý Vincenc a Grenadiny</text>
+                              <text>Svazijsko</text>
+                              <text>Sýrie</text>
+                              <text>Šalamounovy ostrovy</text>
+                              <text>Španělsko</text>
+                              <text>Švédsko</text>
+                              <text>Švýcarsko</text>
+                              <text>Tádžikistán</text>
+                              <text>Tanzanie</text>
+                              <text>Thajsko</text>
+                              <text>Tchaj-wan</text>
+                              <text>Togo</text>
+                              <text>Tokelau</text>
+                              <text>Tonga</text>
+                              <text>Trinidad a Tobago</text>
+                              <text>Tunisko</text>
+                              <text>Turecko</text>
+                              <text>Turkmenistán</text>
+                              <text>Turks a Caicos</text>
+                              <text>Tuvalu</text>
+                              <text>Uganda</text>
+                              <text>Ukrajina</text>
+                              <text>Uruguay</text>
+                              <text>Uzbekistán</text>
+                              <text>Vánoční ostrov</text>
+                              <text>Vanuatu</text>
+                              <text>Venezuela</text>
+                              <text>Vietnam</text>
+                              <text>Východní Timor</text>
+                              <text>Wallis a Futuna</text>
+                              <text>Zambie</text>
+                              <text>Západní Sahara</text>
+                              <text>Zimbabwe</text>
+                           </items>
+                           <items presence="hidden" save="1">
+                              <text>CZ</text>
+                              <text>AF</text>
+                              <text>AL</text>
+                              <text>DZ</text>
+                              <text>AS</text>
+                              <text>VI</text>
+                              <text>AD</text>
+                              <text>AO</text>
+                              <text>AI</text>
+                              <text>AQ</text>
+                              <text>AG</text>
+                              <text>AR</text>
+                              <text>AM</text>
+                              <text>AW</text>
+                              <text>AU</text>
+                              <text>AZ</text>
+                              <text>BS</text>
+                              <text>BH</text>
+                              <text>BD</text>
+                              <text>BB</text>
+                              <text>BE</text>
+                              <text>BZ</text>
+                              <text>BY</text>
+                              <text>BJ</text>
+                              <text>BM</text>
+                              <text>BT</text>
+                              <text>BO</text>
+                              <text>BA</text>
+                              <text>BW</text>
+                              <text>BV</text>
+                              <text>BR</text>
+                              <text>IO</text>
+                              <text>VG</text>
+                              <text>BN</text>
+                              <text>BG</text>
+                              <text>BF</text>
+                              <text>BI</text>
+                              <text>XC</text>
+                              <text>CK</text>
+                              <text>TD</text>
+                              <text>ME</text>
+                              <text>CN</text>
+                              <text>DK</text>
+                              <text>DM</text>
+                              <text>DO</text>
+                              <text>DJ</text>
+                              <text>EG</text>
+                              <text>EC</text>
+                              <text>ER</text>
+                              <text>EE</text>
+                              <text>ET</text>
+                              <text>FO</text>
+                              <text>FK</text>
+                              <text>FJ</text>
+                              <text>PH</text>
+                              <text>FI</text>
+                              <text>FR</text>
+                              <text>GF</text>
+                              <text>TF</text>
+                              <text>PF</text>
+                              <text>GA</text>
+                              <text>GM</text>
+                              <text>GH</text>
+                              <text>GI</text>
+                              <text>GD</text>
+                              <text>GL</text>
+                              <text>GE</text>
+                              <text>GP</text>
+                              <text>GU</text>
+                              <text>GT</text>
+                              <text>GN</text>
+                              <text>GW</text>
+                              <text>GY</text>
+                              <text>HT</text>
+                              <text>HM</text>
+                              <text>HN</text>
+                              <text>HK</text>
+                              <text>CL</text>
+                              <text>HR</text>
+                              <text>IN</text>
+                              <text>ID</text>
+                              <text>IQ</text>
+                              <text>IR</text>
+                              <text>IE</text>
+                              <text>IS</text>
+                              <text>IT</text>
+                              <text>IL</text>
+                              <text>JM</text>
+                              <text>JP</text>
+                              <text>YE</text>
+                              <text>ZA</text>
+                              <text>GS</text>
+                              <text>JO</text>
+                              <text>YU</text>
+                              <text>KY</text>
+                              <text>KH</text>
+                              <text>CM</text>
+                              <text>CA</text>
+                              <text>CV</text>
+                              <text>QA</text>
+                              <text>KZ</text>
+                              <text>KE</text>
+                              <text>KI</text>
+                              <text>CC</text>
+                              <text>CO</text>
+                              <text>KM</text>
+                              <text>CG</text>
+                              <text>CD</text>
+                              <text>KR</text>
+                              <text>KP</text>
+                              <text>XK</text>
+                              <text>CR</text>
+                              <text>CU</text>
+                              <text>KW</text>
+                              <text>CY</text>
+                              <text>KG</text>
+                              <text>LA</text>
+                              <text>LS</text>
+                              <text>LB</text>
+                              <text>LR</text>
+                              <text>LY</text>
+                              <text>LI</text>
+                              <text>LT</text>
+                              <text>LV</text>
+                              <text>LU</text>
+                              <text>MO</text>
+                              <text>MG</text>
+                              <text>HU</text>
+                              <text>MK</text>
+                              <text>MY</text>
+                              <text>MW</text>
+                              <text>MV</text>
+                              <text>ML</text>
+                              <text>MT</text>
+                              <text>MA</text>
+                              <text>MH</text>
+                              <text>MQ</text>
+                              <text>MU</text>
+                              <text>MR</text>
+                              <text>YT</text>
+                              <text>XL</text>
+                              <text>UM</text>
+                              <text>MX</text>
+                              <text>FM</text>
+                              <text>MD</text>
+                              <text>MC</text>
+                              <text>MN</text>
+                              <text>MS</text>
+                              <text>MZ</text>
+                              <text>MM</text>
+                              <text>NA</text>
+                              <text>NR</text>
+                              <text>DE</text>
+                              <text>NP</text>
+                              <text>NE</text>
+                              <text>NG</text>
+                              <text>NI</text>
+                              <text>NU</text>
+                              <text>AN</text>
+                              <text>NL</text>
+                              <text>NF</text>
+                              <text>NO</text>
+                              <text>NC</text>
+                              <text>NZ</text>
+                              <text>PS</text>
+                              <text>OM</text>
+                              <text>PK</text>
+                              <text>PW</text>
+                              <text>PA</text>
+                              <text>PG</text>
+                              <text>PY</text>
+                              <text>PE</text>
+                              <text>PN</text>
+                              <text>CI</text>
+                              <text>PL</text>
+                              <text>PR</text>
+                              <text>PT</text>
+                              <text>AT</text>
+                              <text>RE</text>
+                              <text>GQ</text>
+                              <text>RO</text>
+                              <text>RU</text>
+                              <text>RW</text>
+                              <text>GR</text>
+                              <text>BL</text>
+                              <text>PM</text>
+                              <text>SV</text>
+                              <text>WS</text>
+                              <text>SM</text>
+                              <text>SA</text>
+                              <text>SN</text>
+                              <text>MP</text>
+                              <text>SC</text>
+                              <text>SL</text>
+                              <text>SG</text>
+                              <text>SK</text>
+                              <text>SI</text>
+                              <text>SO</text>
+                              <text>AE</text>
+                              <text>UK</text>
+                              <text>US</text>
+                              <text>CS</text>
+                              <text>LK</text>
+                              <text>CF</text>
+                              <text>SD</text>
+                              <text>SR</text>
+                              <text>SJ</text>
+                              <text>SH</text>
+                              <text>LC</text>
+                              <text>KN</text>
+                              <text>MF</text>
+                              <text>VA</text>
+                              <text>ST</text>
+                              <text>VC</text>
+                              <text>SZ</text>
+                              <text>SY</text>
+                              <text>SB</text>
+                              <text>ES</text>
+                              <text>SE</text>
+                              <text>CH</text>
+                              <text>TJ</text>
+                              <text>TZ</text>
+                              <text>TH</text>
+                              <text>TW</text>
+                              <text>TG</text>
+                              <text>TK</text>
+                              <text>TO</text>
+                              <text>TT</text>
+                              <text>TN</text>
+                              <text>TR</text>
+                              <text>TM</text>
+                              <text>TC</text>
+                              <text>TV</text>
+                              <text>UG</text>
+                              <text>UA</text>
+                              <text>UY</text>
+                              <text>UZ</text>
+                              <text>CX</text>
+                              <text>VU</text>
+                              <text>VE</text>
+                              <text>VN</text>
+                              <text>TL</text>
+                              <text>WF</text>
+                              <text>ZM</text>
+                              <text>EH</text>
+                              <text>ZW</text>
+                           </items>
+                           <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
+                           <para marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="1pt" vAlign="middle"/>
+                           <ui>
+                              <choiceList>
+                                 <border>
+                                    <corner thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </corner>
+                                    <edge thickness="0.1mm">
+                                       <color value="180,180,180"/>
+                                    </edge>
+                                 </border>
+                                 <margin/>
+                              </choiceList>
+                           </ui>
+                           <bind ref="$.stat" match="dataRef"/>
+                           <traversal>
+                              <traverse ref="korespondencni_adresa_wrapper[0]"/>
+                           </traversal>
+                        </field>
+                        <traversal>
+                           <traverse operation="first" ref="ulice[0]"/>
+                           <traverse ref="korespondencni_adresa_wrapper[0]"/>
+                        </traversal>
+                        <?templateDesigner expand 1?></subform>
+                     <subform usehref="..\..\Fragments\korespondencni_adresa.xdp#som($template.koresp_adresa.korespondencni_adresa_wrapper)" name="korespondencni_adresa_wrapper">
+                        <border>
+                           <corner presence="hidden" stroke="solid" join="square" inverted="0" thickness="0.2mm" radius="0in">
+                              <color value="130,130,130"/>
+                           </corner>
+                           <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.5pt" radius="0in">
+                              <color value="0,0,0"/>
+                           </corner>
+                           <corner presence="visible" stroke="solid" join="square" inverted="0" thickness="0.5pt" radius="0in">
+                              <color value="0,0,0"/>
+                           </corner>
+                           <corner presence="hidden" stroke="solid" join="square" inverted="0" thickness="0.5pt" radius="0in">
+                              <color value="0,0,0"/>
+                           </corner>
+                           <edge presence="hidden" stroke="solid" thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <edge presence="hidden"/>
+                           <edge presence="hidden"/>
+                           <edge presence="hidden" stroke="solid" thickness="0.5pt">
+                              <color value="0,0,0"/>
+                           </edge>
+                        </border>
+                        <bind match="dataRef" ref="$.koresp_adresa"/>
+                        <margin bottomInset="0.5mm"/>
+                        <traversal>
+                           <traverse operation="next" ref="z_uctu[0]"/>
+                        </traversal>
+                        <?templateDesigner expand 1?>
+                     </subform>
+                     <traversal>
+                        <traverse operation="first" ref="label_fo[0]"/>
+                     </traversal>
+                     <?templateDesigner expand 1?></subform>
+                  <bind match="dataRef" ref="$.fyzicka_osoba"/>
+                  <traversal>
+                     <traverse operation="first" ref="udaje_osoba_wrapper[0]"/>
+                  </traversal>
+                  <?templateDesigner expand 1?></subform>
+               <traversal>
+                  <traverse operation="first" ref="fyzicka_osoba[0]"/>
+               </traversal>
+               <?templateDesigner expand 1?></subform>
+            <margin leftInset="0.1mm" rightInset="0.1mm" topInset="0mm" bottomInset="2mm"/>
+            <bind match="dataRef" ref="$.povinny"/>
+            <traversal>
+               <traverse operation="first" ref="wrapper[0]"/>
+               <traverse ref="text[0]"/>
+            </traversal>
+            <?templateDesigner expand 1?></subform>
+         <bind match="none"/>
+         <breakBefore target="Page" targetType="pageArea"/>
+         <breakAfter targetType="pageArea" target="Page"/>
+         <overflow leader="" trailer=""/>
+         <subform w="190.2mm" minH="24mm" layout="lr-tb" name="z_uctu">
+            <bind match="dataRef" ref="$.z_uctu"/>
+            <subform w="190mm" minH="19.933mm" layout="lr-tb" name="wrapper">
+               <bind match="none"/>
+               <subform w="190mm" layout="lr-tb" name="title">
+                  <bind match="none"/>
+                  <draw name="label" w="183mm" h="6mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>III. Z účtu</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="9pt" weight="bold">
+                        <fill>
+                           <color value="51,51,51"/>
+                        </fill>
+                     </font>
+                     <margin topInset="0mm" bottomInset="0mm" leftInset="2mm" rightInset="0mm"/>
+                     <para vAlign="middle"/>
+                     <border>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge presence="hidden"/>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner presence="hidden"/>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                     <traversal>
+                        <traverse ref="buttons[0]"/>
+                     </traversal>
+                  </draw>
+                  <keep intact="contentArea"/>
+                  <subform name="buttons" layout="lr-tb" w="7mm">
+                     <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
+                     <bind match="none"/>
+                     <field relevant="-print" h="5mm" name="btnAdd" w="5mm">
+                        <border hand="right">
+                           <edge thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </corner>
+                           <fill/>
+                        </border>
+                        <caption>
+                           <font typeface="Myriad Pro" size="12pt" weight="bold">
+                              <fill>
+                                 <color value="77,114,149"/>
+                              </fill>
+                           </font>
+                           <para hAlign="center" vAlign="middle"/>
+                           <value>
+                              <text>+</text>
+                           </value>
+                        </caption>
+                        <font typeface="Myriad Pro"/>
+                        <ui>
+                           <button highlight="none"/>
+                        </ui>
+                        <bind match="none"/>
+                        <event activity="click" name="event__click">
+                           <script contentType="application/x-javascript">
+
+ _ucet.addInstance(1);
+</script>
+                        </event>
+                        <traversal>
+                           <traverse ref="ucet[0]"/>
+                        </traversal>
+                     </field>
+                     <border>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                     </border>
+                     <keep intact="contentArea"/>
+                     <traversal>
+                        <traverse operation="first" ref="btnAdd[0]"/>
+                     </traversal>
+                     <?templateDesigner expand 1?></subform>
+                  <border>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <fill>
+                        <color value="248,175,179"/>
+                     </fill>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <edge thickness="0.2mm"/>
+                     <edge thickness="0.2mm" presence="hidden"/>
+                     <edge thickness="0.2mm"/>
+                     <corner thickness="0.2mm"/>
+                     <corner thickness="0.2mm" presence="hidden"/>
+                     <corner thickness="0.2mm"/>
+                  </border>
+                  <traversal>
+                     <traverse operation="first" ref="label[0]"/>
+                     <traverse ref="ucet[0]"/>
+                  </traversal>
+                  <?templateDesigner expand 1?></subform>
+               <subform w="190mm" minH="238.997mm" layout="lr-tb" name="ucet">
+                  <bind match="dataRef" ref="$.ucet[*]"/>
+                  <draw name="Nadpis_ucet" minW="123mm">
+                     <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                        <fill>
+                           <color value="51,51,51"/>
+                        </fill>
+                     </font>
+                     <value>
+                        <text>Číslo účtu nebo jiný jedinečný identifikátor</text>
+                     </value>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <margin leftInset="2mm" rightInset="0.5mm" topInset="1.5mm" bottomInset="0.5mm"/>
+                     <para vAlign="bottom" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                  </draw>
+                  <field name="identifikator" w="183mm" minH="7.758mm">
+                     <ui>
+                        <textEdit multiLine="1">
+                           <border>
+                              <edge thickness="0.1mm">
+                                 <color value="180,180,180"/>
+                              </edge>
+                              <corner thickness="0.1mm">
+                                 <color value="180,180,180"/>
+                              </corner>
+                              <fill/>
+                           </border>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Myriad Pro">
+                        <fill>
+                           <color value="51,51,51"/>
+                        </fill>
+                     </font>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="2mm" rightInset="2mm"/>
+                     <para vAlign="middle" marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt" spaceBelow="0pt"/>
+                     <assist>
+                        <speak priority="toolTip"/>
+                        <toolTip>Uveďte číslo účtu, na který vyplácíte povinnému mzdu, příjem podle § 299 o.s.ř. nebo pohledávku podle § 317 odst. 1 až 3, § 318 nebo § 319 o.s.ř. Pokud vyplácíte více takových pohledávek na různé účty, uveďte čísla všech těchto účtů.&#xD;&#xD;Číslo účtu uveďte dle vlastní volby v národním formátu nebo ve formátu IBAN. Pokud pohledávku vyplácíte na účet, kterému peněžní ústav přidělil jedinečný identifikátor účtu jiný, než číslo účtu (např. kombinaci čísla účtu peněžního ústavu a majitelova variabilního symbolu), uveďte tento jedinečný identifikátor.</toolTip>
+                     </assist>
+                     <border>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                     <bind match="dataRef" ref="$.identifikator"/>
+                     <traversal>
+                        <traverse ref="buttons[0]"/>
+                     </traversal>
+                  </field>
+                  <border>
+                     <edge thickness="0.2mm" presence="hidden">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <corner thickness="0.2mm" presence="hidden">
+                        <color value="130,130,130"/>
+                     </corner>
+                  </border>
+                  <subform name="buttons" layout="lr-tb" w="6mm">
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="0mm" topInset="1mm"/>
+                     <bind match="none"/>
+                     <field relevant="-print" h="5mm" name="btnRemove" w="5mm">
+                        <border hand="right">
+                           <edge thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </corner>
+                           <fill/>
+                        </border>
+                        <caption>
+                           <font typeface="Myriad Pro" size="12pt" weight="bold">
+                              <fill>
+                                 <color value="251,85,91"/>
+                              </fill>
+                           </font>
+                           <para hAlign="center" vAlign="middle"/>
+                           <value>
+                              <text>−</text>
+                           </value>
+                        </caption>
+                        <font typeface="Myriad Pro"/>
+                        <ui>
+                           <button highlight="none"/>
+                        </ui>
+                        <bind match="none"/>
+                        <event activity="click" name="event__click">
+                           <script contentType="application/x-javascript">if (_ucet.count &gt; 1) {
+	_ucet.removeInstance(wrapper.index);
+	
+}
+</script>
+                        </event>
+                     </field>
+                     <border>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                     </border>
+                     <keep intact="contentArea"/>
+                     <traversal>
+                        <traverse operation="first" ref="btnRemove[0]"/>
+                     </traversal>
+                     <?templateDesigner expand 1?></subform>
+                  <occur max="-1"/>
+                  <margin topInset="0mm"/>
+                  <traversal>
+                     <traverse operation="first" ref="identifikator[0]"/>
+                  </traversal>
+                  <?templateDesigner expand 1?></subform>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <traversal>
+                  <traverse operation="first" ref="title[0]"/>
+               </traversal>
+               <?templateDesigner expand 1?></subform>
+            <margin leftInset="0.1mm" rightInset="0.1mm" bottomInset="2mm"/>
+            <border>
+               <edge thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </edge>
+               <corner thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </corner>
+            </border>
+            <keep intact="contentArea"/>
+            <traversal>
+               <traverse operation="first" ref="wrapper[0]"/>
+            </traversal>
+            <?templateDesigner expand 1?></subform>
+         <draw name="text_ucty" w="190mm" h="12mm">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <text>mzdu, jiný příjem podle § 299 občanského soudního řádu, pohledávku 
+podle § 317 odst. 1 až 3, § 318 nebo § 319 občanského soudního řádu</text>
+            </value>
+            <font typeface="Myriad Pro" size="12pt" weight="bold">
+               <fill>
+                  <color value="51,51,51"/>
+               </fill>
+            </font>
+            <margin topInset="0mm" bottomInset="0mm" leftInset="2mm" rightInset="0mm"/>
+            <para vAlign="middle" hAlign="center"/>
+            <border>
+               <edge thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </edge>
+               <edge thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </edge>
+               <edge presence="hidden"/>
+               <edge thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </edge>
+               <corner thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </corner>
+               <corner thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </corner>
+               <corner presence="hidden"/>
+               <corner thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </corner>
+            </border>
+            <traversal>
+               <traverse ref="na_ucet[0]"/>
+            </traversal>
+         </draw>
+         <subform w="190.2mm" minH="24mm" layout="lr-tb" name="na_ucet">
+            <bind match="dataRef" ref="$.na_ucet"/>
+            <subform w="190mm" minH="19.933mm" layout="lr-tb" name="wrapper">
+               <bind match="none"/>
+               <subform w="190mm" layout="lr-tb" name="title">
+                  <bind match="none"/>
+                  <draw name="label" w="183mm" h="6mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <value>
+                        <text>IV. Na účet</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="9pt" weight="bold" baselineShift="0pt">
+                        <fill>
+                           <color value="51,51,51"/>
+                        </fill>
+                     </font>
+                     <margin topInset="0mm" bottomInset="0mm" leftInset="2mm" rightInset="0mm"/>
+                     <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                     <border>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <edge presence="hidden"/>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner presence="hidden"/>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                     <traversal>
+                        <traverse ref="buttons[0]"/>
+                     </traversal>
+                  </draw>
+                  <keep intact="contentArea"/>
+                  <subform name="buttons" layout="lr-tb" w="7mm">
+                     <margin bottomInset="0.5mm" leftInset="1mm" rightInset="1mm" topInset="0.5mm"/>
+                     <bind match="none"/>
+                     <field relevant="-print" h="5mm" name="btnAdd" w="5mm">
+                        <border hand="right">
+                           <edge thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </corner>
+                           <fill/>
+                        </border>
+                        <caption>
+                           <font typeface="Myriad Pro" size="12pt" weight="bold">
+                              <fill>
+                                 <color value="77,114,149"/>
+                              </fill>
+                           </font>
+                           <para hAlign="center" vAlign="middle"/>
+                           <value>
+                              <text>+</text>
+                           </value>
+                        </caption>
+                        <font typeface="Myriad Pro"/>
+                        <ui>
+                           <button highlight="none"/>
+                        </ui>
+                        <bind match="none"/>
+                        <event activity="click" name="event__click">
+                           <script contentType="application/x-javascript">
+
+ _ucet.addInstance(1);
+</script>
+                        </event>
+                        <traversal>
+                           <traverse ref="ucet[0]"/>
+                        </traversal>
+                     </field>
+                     <border>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                     </border>
+                     <keep intact="contentArea"/>
+                     <traversal>
+                        <traverse operation="first" ref="btnAdd[0]"/>
+                     </traversal>
+                     <?templateDesigner expand 1?></subform>
+                  <border>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <fill>
+                        <color value="248,175,179"/>
+                     </fill>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <edge thickness="0.2mm"/>
+                     <edge thickness="0.2mm" presence="hidden"/>
+                     <edge thickness="0.2mm"/>
+                     <corner thickness="0.2mm"/>
+                     <corner thickness="0.2mm" presence="hidden"/>
+                     <corner thickness="0.2mm"/>
+                  </border>
+                  <traversal>
+                     <traverse operation="first" ref="label[0]"/>
+                     <traverse ref="ucet[0]"/>
+                  </traversal>
+                  <?templateDesigner expand 1?></subform>
+               <subform w="190mm" minH="238.997mm" layout="lr-tb" name="ucet">
+                  <bind match="dataRef" ref="$.ucet[*]"/>
+                  <draw name="Nadpis_ucet" minW="123mm">
+                     <font typeface="Myriad Pro" size="9pt" baselineShift="0pt">
+                        <fill>
+                           <color value="51,51,51"/>
+                        </fill>
+                     </font>
+                     <value>
+                        <text>Číslo účtu nebo jiný jedinečný identifikátor</text>
+                     </value>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <margin leftInset="2mm" rightInset="0.5mm" topInset="1.5mm" bottomInset="0.5mm"/>
+                     <para vAlign="bottom" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                     <traversal>
+                        <traverse ref="identifikator[0]"/>
+                     </traversal>
+                  </draw>
+                  <field name="identifikator" w="183mm" minH="7.758mm">
+                     <ui>
+                        <textEdit multiLine="1">
+                           <border>
+                              <edge thickness="0.1mm">
+                                 <color value="180,180,180"/>
+                              </edge>
+                              <corner thickness="0.1mm">
+                                 <color value="180,180,180"/>
+                              </corner>
+                              <fill/>
+                           </border>
+                        </textEdit>
+                     </ui>
+                     <font typeface="Myriad Pro">
+                        <fill>
+                           <color value="51,51,51"/>
+                        </fill>
+                     </font>
+                     <margin topInset="1mm" bottomInset="1mm" leftInset="2mm" rightInset="2mm"/>
+                     <para vAlign="middle" marginLeft="2.835pt" marginRight="2.835pt" spaceAbove="2pt" spaceBelow="0pt"/>
+                     <assist>
+                        <speak priority="toolTip"/>
+                        <toolTip>Uveďte číslo účtu, na který vyplácíte povinnému mzdu, příjem podle § 299 o.s.ř. nebo pohledávku podle § 317 odst. 1 až 3, § 318 nebo § 319 o.s.ř. Pokud vyplácíte více takových pohledávek na různé účty, uveďte čísla všech těchto účtů.&#xD;&#xD;Číslo účtu uveďte dle vlastní volby v národním formátu nebo ve formátu IBAN. Pokud pohledávku vyplácíte na účet, kterému peněžní ústav přidělil jedinečný identifikátor účtu jiný, než číslo účtu (např. kombinaci čísla účtu peněžního ústavu a majitelova variabilního symbolu), uveďte tento jedinečný identifikátor.</toolTip>
+                     </assist>
+                     <border>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                     </border>
+                     <bind match="dataRef" ref="$.identifikator"/>
+                     <traversal>
+                        <traverse ref="buttons[0]"/>
+                     </traversal>
+                  </field>
+                  <border>
+                     <edge thickness="0.2mm" presence="hidden">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <corner thickness="0.2mm" presence="hidden">
+                        <color value="130,130,130"/>
+                     </corner>
+                  </border>
+                  <subform name="buttons" layout="lr-tb" w="6mm">
+                     <margin bottomInset="1mm" leftInset="1mm" rightInset="0mm" topInset="1mm"/>
+                     <bind match="none"/>
+                     <field relevant="-print" h="5mm" name="btnRemove" w="5mm">
+                        <border hand="right">
+                           <edge thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </edge>
+                           <corner thickness="0.2mm">
+                              <color value="130,130,130"/>
+                           </corner>
+                           <fill/>
+                        </border>
+                        <caption>
+                           <font typeface="Myriad Pro" size="12pt" weight="bold">
+                              <fill>
+                                 <color value="251,85,91"/>
+                              </fill>
+                           </font>
+                           <para hAlign="center" vAlign="middle"/>
+                           <value>
+                              <text>−</text>
+                           </value>
+                        </caption>
+                        <font typeface="Myriad Pro"/>
+                        <ui>
+                           <button highlight="none"/>
+                        </ui>
+                        <bind match="none"/>
+                        <event activity="click" name="event__click">
+                           <script contentType="application/x-javascript">if (_ucet.count &gt; 1) {
+	_ucet.removeInstance(wrapper.index);
+	
+}
+</script>
+                        </event>
+                     </field>
+                     <border>
+                        <edge thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </edge>
+                        <corner thickness="0.2mm" presence="hidden">
+                           <color value="130,130,130"/>
+                        </corner>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                        <corner thickness="0.2mm" presence="hidden"/>
+                     </border>
+                     <keep intact="contentArea"/>
+                     <traversal>
+                        <traverse operation="first" ref="btnRemove[0]"/>
+                     </traversal>
+                     <?templateDesigner expand 1?></subform>
+                  <occur max="-1"/>
+                  <margin topInset="0mm"/>
+                  <traversal>
+                     <traverse operation="first" ref="Nadpis_ucet[0]"/>
+                  </traversal>
+                  <?templateDesigner expand 1?></subform>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+               </border>
+               <traversal>
+                  <traverse operation="first" ref="title[0]"/>
+               </traversal>
+               <?templateDesigner expand 1?></subform>
+            <margin leftInset="0.1mm" rightInset="0.1mm" bottomInset="2mm"/>
+            <border>
+               <edge thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </edge>
+               <corner thickness="0.2mm" presence="hidden">
+                  <color value="130,130,130"/>
+               </corner>
+            </border>
+            <keep intact="contentArea"/>
+            <traversal>
+               <traverse operation="first" ref="wrapper[0]"/>
+            </traversal>
+            <?templateDesigner expand 1?></subform>
+         <subform w="190mm" minH="6mm" layout="tb" name="podpis">
+            <subform w="190mm" layout="tb" name="wrapper">
+               <draw name="label" w="190mm" h="6mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text>V. Podpis</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="9pt" weight="bold">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <margin topInset="0.5mm" bottomInset="0mm" leftInset="2mm" rightInset="0mm"/>
+                  <para vAlign="middle"/>
+                  <border>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <fill>
+                        <color value="248,175,179"/>
+                     </fill>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <edge presence="hidden"/>
+                     <edge thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </edge>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                     <corner/>
+                     <corner thickness="0.2mm">
+                        <color value="130,130,130"/>
+                     </corner>
+                  </border>
+                  <traversal>
+                     <traverse ref="text[0]"/>
+                  </traversal>
+               </draw>
+               <draw name="text" w="190mm" h="6mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text>Podpisem stvrzuje:</text>
+                  </value>
+                  <font typeface="MyriadPro-Regular" baselineShift="0pt" size="9pt">
+                     <fill>
+                        <color value="51,51,51"/>
+                     </fill>
+                  </font>
+                  <margin topInset="0mm" bottomInset="0mm" leftInset="2mm" rightInset="0mm"/>
+                  <para spaceAbove="3pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+                  <traversal>
+                     <traverse ref="podpis[0]"/>
+                  </traversal>
+               </draw>
+               <border>
+                  <edge thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </edge>
+                  <corner thickness="0.2mm">
+                     <color value="130,130,130"/>
+                  </corner>
+                  <fill/>
+               </border>
+               <margin leftInset="0mm"/>
+               <subform usehref="..\..\Fragments\podpis.xdp#som($template.podpis.podpis)">
+                  <keep intact="contentArea"/>
+                  <bind match="dataRef" ref="$.podpis"/>
+                  <traversal/>
+                  <?templateDesigner expand 1?>
+               </subform>
+               <bind match="none"/>
+               <keep intact="contentArea"/>
+               <traversal>
+                  <traverse operation="first" ref="label[0]"/>
+               </traversal>
+               <?templateDesigner expand 1?>
+            </subform>
+            <margin topInset="0mm" leftInset="0mm" rightInset="0mm" bottomInset="2mm"/>
+            <keep intact="contentArea"/>
+            <bind match="none"/>
+            <traversal>
+               <traverse operation="first" ref="wrapper[0]"/>
+            </traversal>
+            <?templateDesigner expand 1?>
+         </subform>
+         <traversal>
+            <traverse operation="first" ref="verze[0]"/>
+         </traversal>
+         <?templateDesigner expand 1?>
+      </subform>
+      <subform layout="tb" w="190.2mm" name="pouceni">
+         <breakBefore targetType="pageArea" startNew="1"/>
+         <bind match="none"/>
+         <draw name="Text1" w="7.488194in" minH="274.2mm">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <exData contentType="text/html">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="font-size:11pt;text-decoration:underline;letter-spacing:0in">Poučení:</p><p style="text-align:justify;text-decoration:underline;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="text-indent:-8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">a) Podle § 304d odst. 2 o.s.ř. dlužník povinného z pohledávek podle § 317 odst. 1 až 3 o.s.ř., § 318<span style="xfa-spacerun:yes">  </span>nebo 319 o.s.ř., plátce mzdy, plátce jiného příjmu podle § 299 o.s.ř. (viz bod 4) pokynů k vyplnění), případně, je-li povinným osoba, k jejímž rukám má dlužník dítěte podle § 317 odst. 1 o.s.ř. plnit vyživovací povinnost, i dlužník dítěte (dále „dlužník z chráněného příjmu“), vyplácí z účtu, jehož číslo je uvedeno v tomto potvrzení, na účet povinného, jehož číslo je uvedeno v tomto potvrzení, pouze pohledávky, mzdu nebo jiné příjmy podle § 304d odst. 1 (viz bod 4) pokynů k vyplnění), a to ode dne vystavení tohoto potvrzení povinnému do dne, kdy mu bude doručeno potvrzení podle § 304e odst. 2 věty poslední o.s.ř.</p><p style="text-align:justify;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><ul style="text-indent:35.4pt;text-align:justify;text-decoration:none;letter-spacing:0in;list-style-type:disc"><li style="text-indent:36.85pt">Dítětem<span style="xfa-spacerun:yes">  </span>podle § 317 odst. 1 o.s.ř. je nezaopatřené dítě podle zákona o státní sociální<span style="xfa-spacerun:yes">  </span>podpoře<span style="xfa-spacerun:yes">  </span>(zákon<span style="xfa-spacerun:yes">  </span>č. 117/1995 Sb.,<span style="xfa-spacerun:yes">  </span>o státní sociální podpoře, ve znění pozdějších předpisů).<span style="xfa-spacerun:yes"> </span></li><li>Podle § 304e odst. 2 věty poslední o.s.ř. peněžní ústav vydá na žádost povinnému potvrzení o tom, že se na účet, který byl zřízen jako chráněný, nevztahují § 304c, 304d a § 304e odst. 1 a 3 o.s.ř. (tedy účet přestal být chráněný) nebo že zanikl závazek ze smlouvy o chráněném účtu; povinný toto potvrzení zašle bez zbytečného odkladu dlužníku z chráněného příjmu.</li></ul><p style="text-align:justify;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="text-indent:-8.504pt;text-decoration:none;letter-spacing:0in">b) Podle § 304e odst. 3 o.s.ř. platí, že poruší-li dlužník z chráněného příjmu povinnost vyplácet ode dne vystavení tohoto potvrzení povinnému do dne, kdy mu bude doručeno potvrzení podle § 304e odst. 2 věty poslední o.s.ř., z účtu, jehož číslo je uvedeno v tomto potvrzení, na účet povinného, jehož číslo je uvedeno v tomto potvrzení, pouze pohledávky, mzdu nebo jiné příjmy podle § 304d odst. 1<span style="xfa-spacerun:yes">  </span>(viz bod 4) pokynů k vyplnění) (povinnost je uvedena v bodu a) tohoto poučení), může se oprávněný domáhat, aby mu dlužník z chráněného příjmu zaplatil částku, na kterou by měl právo, kdyby dlužník z chráněného příjmu tuto povinnost splnil.</p><p style="text-indent:-8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="text-indent:-8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">c) V případě, že ode dne vystavení potvrzení k chráněnému účtu do dne, kdy dlužníku z chráněného příjmu bude doručeno potvrzení podle § 304e odst. 2 věty poslední o.s.ř., dojde ke změně účtu, z něhož jsou vypláceny pohledávky, mzda, výživné nebo jiné příjmy podle § 304d odst. 1 o.s.ř. (viz bod 4) pokynů k vyplnění), je třeba neprodleně povinnému vystavit i bez žádosti aktualizované potvrzení k chráněnému účtu. V aktualizovaném potvrzení k chráněnému účtu dlužník z chráněného příjmu uvede všechny údaje, které má potvrzení k chráněnému účtu obsahovat, aktualizované ke dni vystavení tohoto potvrzení.</p><p style="text-align:justify;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="text-align:justify;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span><span style="font-size:11pt;text-decoration:underline">Pokyny k vyplnění:</span></p><p style="text-align:justify;font-weight:bold;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="text-indent:-8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">1)<span style="xfa-spacerun:yes"> </span><span style="font-weight:bold">Dlužník z chráněného příjmu:<span style="xfa-spacerun:yes"> </span></span>Uveďte vaši obchodní firmu, název, nebo jméno, popřípadě jména a příjmení, vaše identifikační číslo nebo datum narození, dále vaše sídlo nebo místo trvalého pobytu, popřípadě místo pobytu na území České republiky podle druhu pobytu cizince, případně další požadované údaje.</p><p style="text-indent:-8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">2)<span style="xfa-spacerun:yes"> </span><span style="font-weight:bold">Identifikace povinného:<span style="xfa-spacerun:yes"> </span></span>Uveďte jméno, popřípadě jména a příjmení, datum narození a místo trvalého pobytu, popřípadě místo pobytu na území České republiky podle druhu pobytu cizince, případně další požadované údaje povinného v řízení o výkonu rozhodnutí/exekučním řízení, v němž se vydává toto potvrzení ke zřízení chráněného účtu, vyplácíte-li tomuto povinnému pohledávku, mzdu nebo příjem uvedenou v poznámce č. 4. V případě, že povinným je osoba, k jejímž rukám má dlužník nezaopatřeného dítěte podle zákona o státní sociální podpoře plnit vyživovací povinnost, uveďte údaje o této osobě.</p><p style="text-indent:-8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">3) Uveďte číslo účtu, ze kterého vyplácíte povinnému pohledávku uvedenou v poznámce č. 4.</p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Pokud vyplácíte více pohledávek uvedených v poznámce č. 4 z více různých účtů, uveďte čísla všech těchto účtů.</p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Číslo účtu uveďte dle vlastní volby v národním formátu nebo ve formátu IBAN.</p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">POZOR: pokud vám váš peněžní ústav přidělil jedinečný identifikátor účtu jiný, než číslo účtu (např. kombinaci čísla účtu peněžního ústavu a vašeho variabilního symbolu), uveďte tento jedinečný identifikátor.<span style="xfa-spacerun:yes"> </span></p><p style="text-indent:-8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">4)<span style="xfa-spacerun:yes"> </span><span style="font-weight:bold">Neuvádějte konkrétní příjem ani konkrétní druh příjmu.</span></p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Na chráněný účet lze z účtu postiženého výkonem rozhodnutí/exekucí převádět pouze pohledávky podle § 317 odst. 1 až 3, § 318 nebo<br/>§ 319 o.s.ř., mzdu nebo jiný příjem podle § 299 o.s.ř.</p><p style="margin-left:8.504pt;text-indent:-8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Pohledávky podle § 317 odst. 1 o.s.ř. jsou:</p><ul style="text-align:justify;text-decoration:none;letter-spacing:0in;list-style-type:disc"><li>pohledávka náhrady, kterou podle pojistné smlouvy vyplácí pojišťovna, má-li být náhrady použito k novému vybudování nebo k opravě budovy,</li><li>výživné na nezaopatřené dítě podle zákona o státní sociální podpoře.</li></ul><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Pohledávky podle § 317 odst. 2 o.s.ř. jsou:</p><ul style="text-align:justify;text-decoration:none;letter-spacing:0in;list-style-type:disc"><li>peněžité dávky sociální péče,</li><li>dávky pomoci v hmotné nouzi,</li><li>náhradní výživné pro nezaopatřené dítě,</li><li>daňový bonus,<span style="xfa-spacerun:yes"> </span></li><li>příspěvek na bydlení,</li><li>jednorázově vyplácené dávky státní sociální podpory,</li><li>jednorázově vyplácené dávky pěstounské péče.</li></ul><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Pohledávky podle § 317 odst. 3 o.s.ř. jsou</p><ul style="text-align:justify;text-decoration:none;letter-spacing:0in;list-style-type:disc"><li>pohledávky, které povinný nabyl jako substituční jmění; to neplatí, má-li povinný právo s pohledávkou volně nakládat nebo jde-li o výkon rozhodnutí/exekuci, kterým jsou vymáhány zůstavitelovy dluhy nebo dluhy související s nutnou správou věcí nabytých jako substituční jmění. Pohledávka, kterou povinný nabyl jako substituční jmění, je pohledávkou, kterou povinný nabyl jako dědic dědictvím, které podle nařízení zůstavitele má přejít na svěřenského nástupce jako následného dědice.</li></ul><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Pohledávky podle § 318 o.s.ř. jsou pohledávky fyzických osob, které jsou podnikateli, vzniklé při jejich podnikatelské činnosti.</p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Pohledávky podle § 319 o.s.ř. jsou pohledávky autorské odměny, je-li povinným autor, pohledávky z práv výkonných umělců, je-li povinným výkonný umělec, a pohledávky z práv původců předmětů průmyslového vlastnictví, je-li povinným původce předmětu průmyslového vlastnictví.</p><p style="text-indent:36pt;text-align:justify;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="text-indent:36pt;text-align:justify;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="text-indent:36pt;text-align:justify;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in"><span style="xfa-spacerun:yes"> </span></p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Příjmy podle § 299 o.s.ř. jsou<span style="xfa-spacerun:yes"> </span></p><ul style="text-align:justify;text-decoration:none;letter-spacing:0in;list-style-type:disc"><li style="text-align:left">plat,</li><li style="text-align:left">odměna z dohody o pracovní činnosti,</li><li style="text-align:left">odměna z dohody o provedení práce,</li><li style="text-align:left">odměna za pracovní nebo služební pohotovost,</li><li style="text-align:left">odměna členů zastupitelstva územních samosprávných celků,</li><li style="text-align:left">dávky státní sociální podpory, které nejsou vyplaceny jednorázově,</li><li style="text-align:left">dávky pěstounské péče, které nejsou vyplaceny jednorázově,</li><li style="text-align:left">náhrada mzdy nebo platu,</li><li style="text-align:left">nemocenské,</li><li style="text-align:left">peněžitá pomoc v mateřství,</li><li style="text-align:left">důchody,</li><li style="text-align:left">stipendia,</li><li style="text-align:left">podpora v nezaměstnanosti a podpora při rekvalifikaci,</li><li style="text-align:left">odstupné, popřípadě obdobná plnění poskytnutá v souvislosti se skončením zaměstnání, služebního poměru nebo výkonu veřejné funkce,<span style="xfa-spacerun:yes"> </span></li><li style="text-align:left">peněžitá plnění věrnostní a stabilizační povahy poskytnutá v souvislosti se zaměstnáním,<span style="xfa-spacerun:yes"> </span></li><li style="text-align:left">náhrada za ztrátu na výdělku po dobu dočasné pracovní neschopnosti a náhrada za ztrátu na výdělku po skončení dočasné pracovní neschopnosti,</li><li style="text-align:left">dávky vyplývající ze smlouvy o výměnku podle občanského zákoníku,<span style="xfa-spacerun:yes"> </span></li><li style="text-align:left">výsluhový příspěvek vojáků z povolání nebo příslušníků bezpečnostních sborů,<span style="xfa-spacerun:yes"> </span></li><li style="text-align:left">příplatek k důchodu ke zmírnění některých křivd způsobených komunistickým režimem v oblasti sociální a příplatek k důchodu a zvláštní příspěvek k důchodu podle zákona upravujícího ocenění účastníků národního boje za vznik a osvobození Československa a některých pozůstalých po nich.</li></ul><p style="text-indent:-8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">5) Uveďte číslo účtu, na který vyplácíte nebo budete vyplácet povinnému mzdu, příjem podle § 299 o.s.ř. nebo pohledávku podle § 317 odst. 1 až 3, § 318 nebo § 319 o.s.ř. uvedenou v poznámce č. 4.</p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Uvedením tohoto účtu není dotčena Vaše případná zákonná či smluvní povinnost či možnost vyplatit povinnému mzdu, příjem podle § 299 o.s.ř. nebo pohledávku podle § 317 odst. 1 až 3, § 318 nebo § 319 o.s.ř. uvedenou v poznámce č. 4 v hotovosti či poštovním poukazem s dodáním poukázané peněžní částky v hotovosti (např. § 142 odst. 3 zákona č. 262/2006 Sb., zákoník práce, ve znění pozdějších předpisů, § 116b zákona č. 582/1991 Sb., o organizaci a provádění sociálního zabezpečení, ve znění pozdějších předpisů, atd.).</p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Pokud vyplácíte více pohledávek uvedených v poznámce č. 4 na různé účty, uveďte čísla všech těchto účtů.</p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">Číslo účtu uveďte dle vlastní volby v národním formátu nebo ve formátu IBAN.</p><p style="margin-left:8.504pt;text-align:justify;text-decoration:none;letter-spacing:0in">POZOR: pokud pohledávku uvedenou v poznámce č. 4 vyplácíte na účet, kterému peněžní ústav přidělil jedinečný identifikátor účtu jiný, než číslo účtu (např. kombinaci čísla účtu peněžního ústavu a majitelova variabilního symbolu), uveďte tento jedinečný identifikátor.</p></body>
+               </exData>
+            </value>
+            <font typeface="Myriad Pro" baselineShift="0pt" size="9pt">
+               <fill>
+                  <color value="51,51,51"/>
+               </fill>
+            </font>
+            <margin topInset="5mm" bottomInset="5mm" leftInset="2mm" rightInset="2mm"/>
+            <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+            <keep intact="none"/>
+            <border>
+               <edge thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </edge>
+               <corner thickness="0.2mm">
+                  <color value="130,130,130"/>
+               </corner>
+            </border>
+         </draw>
+         <breakAfter target="Page" targetType="pageArea"/>
+         <traversal>
+            <traverse operation="first" ref="Text1[0]"/>
+         </traversal>
+         <?templateDesigner expand 1?></subform>
+      <proto/>
+      <desc>
+         <text name="version">6.1.0.20150517.1.919161.918415</text>
+      </desc>
+      <variables>
+         <script usehref="..\..\Fragments\validateRCLib.xdp#som($template.form1.#subform.#variables.validateRCLib)"/>
+         <script usehref="..\..\Fragments\sharedLib.xdp#som($template.form1.#subform.#variables.sharedLib)"/>
+         <script contentType="application/x-javascript" name="labels">
+var texts = 
+{
+	dluznik1				: "Dlužník",
+	dluznik2				: "Dlužnice",
+	
+	sec2					: "II. Identifikace dlužníka",
+	sec2_multi				: "II. Identifikace dlužníků",							
+
+};
+
+
+</script>
+         <script contentType="application/x-javascript" name="preSign_local">
+var jedno_z_nich = [   	{
+   		sekce:
+        {
+          label:"Formular.dluznik.wrapper.label",
+          repeatfor:
+            [{
+              field:"Formular.dluznik.wrapper.dluznik_wrapper.dluznik._fyzicka_osoba",
+              prefix_field:"Formular.dluznik.wrapper.dluznik_wrapper.dluznik.fyzicka_osoba",
+              label_txt:"Fyzická osoba",
+              label2:"",
+              label2_txt:"Datum narození, IČO",
+              pole:
+              [
+                {field: "udaje_osoba_wrapper.udaje_osoba.ico"},
+            	{field: "udaje_osoba_wrapper.udaje_osoba.datum_narozeni"}
+              ]
+             }
+            ]
+        }
+    },
+   	{
+   		sekce:
+        {
+          label:"Formular.povinny.wrapper.label",
+          repeatfor:
+            [{
+              field:"Formular.povinny.wrapper._fyzicka_osoba",
+              prefix_field:"Formular.povinny.wrapper.fyzicka_osoba",
+              label_txt:"Fyzická osoba - povinný",
+              label2:"",
+              label2_txt:"Datum narození, IČO",
+              pole:
+              [
+                {field: "udaje_osoba_wrapper.udaje_osoba.ico"},
+            	{field: "udaje_osoba_wrapper.udaje_osoba.datum_narozeni"}
+              ]
+             },
+            
+            ]
+        }
+    },
+    
+    
+  ]
+
+
+var povinne = [
+   {
+   		sekce:
+        {
+          label:"Formular.dluznik.wrapper.label",
+          label_txt:"",
+          repeatfor:
+            [{
+               field:"",
+               prefix_field:"",
+               label_txt:"",
+               pole:
+               [
+               	{field: "Formular.dluznik.wrapper.dluznik_wrapper.dluznik.druh_osoby.druh", label_prefix:"Formular.dluznik.wrapper.label", label_txt:""}
+               ]
+            },
+            {
+               field:"Formular.dluznik.wrapper.dluznik_wrapper.dluznik._fyzicka_osoba",
+               prefix_field:"Formular.dluznik.wrapper.dluznik_wrapper.dluznik.fyzicka_osoba",
+               label_txt:"Fyzická osoba",
+               pole:
+               [
+               	{field: "udaje_osoba_wrapper.udaje_osoba.osoba.jmeno", label:"", label_txt:""},
+                {field: "udaje_osoba_wrapper.udaje_osoba.osoba.prijmeni", label:"", label_txt:""},
+                {field: "adresa_fo_wrapper.adresa.psc", label:"", label_txt:""},
+                {field: "adresa_fo_wrapper.adresa.obec", label:"", label_txt:""},
+                {field: "adresa_fo_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.psc", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.fyzicka_osoba.adresa_fo_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+                {field: "adresa_fo_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.obec", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.fyzicka_osoba.adresa_fo_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+               ]
+            },
+            {
+               field:"Formular.dluznik.wrapper.dluznik_wrapper.dluznik._pravnicka_osoba",
+               prefix_field:"Formular.dluznik.wrapper.dluznik_wrapper.dluznik.pravnicka_osoba",
+               label_txt:"Právnická osoba",
+               pole:
+               [
+               	{field: "udaje_firma_wrapper.udaje_firma.firma.nazev", label:"", label_txt:""},
+                //{field: "udaje_firma_wrapper.udaje_firma.firma.ico", label:"", label_txt:""},
+                //{field: "udaje_firma_wrapper.udaje_firma.firma.jina_registrace", label:"", label_txt:""},
+                //{field: "udaje_firma_wrapper.udaje_firma.pravni_rad_zalozeni", label:"", label_txt:""},
+                //{field: "adresa_po_wrapper.adresa.ulice", label:"", label_txt:""},
+                //{field: "adresa_po_wrapper.adresa.cpco", label:"", label_txt:""},
+                {field: "adresa_po_wrapper.adresa.psc", label:"", label_txt:""},
+                {field: "adresa_po_wrapper.adresa.obec", label:"", label_txt:""},
+                //{field: "adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.ulice", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.pravnicka_osoba.adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+                //{field: "adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.cpco", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.pravnicka_osoba.adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+                {field: "adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.psc", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.pravnicka_osoba.adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+                {field: "adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.obec", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.pravnicka_osoba.adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+               ]
+            }
+            ]
+        },
+    },
+    
+   {
+   		sekce:
+        {
+          label:"Formular.povinny.wrapper.label",
+          label_txt:"",
+          repeatfor:
+            [{
+               field:"",
+               prefix_field:"",
+               label_txt:"",
+               pole:
+               [
+               	{field: "Formular.povinny.wrapper.druh_osoby.druh", label_prefix:"Formular.povinny.wrapper.label", label_txt:""}
+               ]
+            },
+            {
+               field:"Formular.povinny.wrapper._fyzicka_osoba",
+               prefix_field:"Formular.povinny.wrapper.fyzicka_osoba",
+               label_txt:"Fyzická osoba",
+               pole:
+               [
+               	{field: "udaje_osoba_wrapper.udaje_osoba.osoba.jmeno", label:"", label_txt:""},
+                {field: "udaje_osoba_wrapper.udaje_osoba.osoba.prijmeni", label:"", label_txt:""},
+                {field: "adresa_fo_wrapper.adresa.psc", label:"", label_txt:""},
+                {field: "adresa_fo_wrapper.adresa.obec", label:"", label_txt:""},
+                {field: "adresa_fo_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.psc", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.fyzicka_osoba.adresa_fo_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+                {field: "adresa_fo_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.obec", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.fyzicka_osoba.adresa_fo_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+               ]
+            },
+            {
+               field:"Formular.povinny.wrapper._pravnicka_osoba",
+               prefix_field:"Formular.povinny.wrapper.pravnicka_osoba",
+               label_txt:"Právnická osoba",
+               pole:
+               [
+               	{field: "udaje_firma_wrapper.udaje_firma.firma.nazev", label:"", label_txt:""},
+                //{field: "udaje_firma_wrapper.udaje_firma.firma.ico", label:"", label_txt:""},
+                //{field: "udaje_firma_wrapper.udaje_firma.firma.jina_registrace", label:"", label_txt:""},
+                //{field: "udaje_firma_wrapper.udaje_firma.pravni_rad_zalozeni", label:"", label_txt:""},
+                //{field: "adresa_po_wrapper.adresa.ulice", label:"", label_txt:""},
+                //{field: "adresa_po_wrapper.adresa.cpco", label:"", label_txt:""},
+                {field: "adresa_po_wrapper.adresa.psc", label:"", label_txt:""},
+                {field: "adresa_po_wrapper.adresa.obec", label:"", label_txt:""},
+                //{field: "adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.ulice", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.pravnicka_osoba.adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+                //{field: "adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.cpco", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.pravnicka_osoba.adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+                {field: "adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.psc", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.pravnicka_osoba.adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+                {field: "adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa.obec", label:"", label_txt:"", label_prefix:"Formular.dluznik.wrapper.pravnicka_osoba.adresa_po_wrapper.korespondencni_adresa_wrapper.korespondencni_adresa_switch"},
+               ]
+            }
+            ]
+        },
+    },
+   
+//podpis
+    {
+   		sekce:
+        {
+          label:"Formular.podpis.wrapper.label",
+          label_txt:"",
+          repeatfor:
+            [{
+           		field:"",
+               	prefix_field:"",
+               	pole:
+		          [
+		               	{field: "Formular.podpis.wrapper.podpis.podpis_udaje.misto_datum.misto", label_prefix:"", label_txt:""},
+	//	           		{field: "Formular.podpis.wrapper.podpis.podpis_udaje.misto_datum.datum", label_prefix:"", label_txt:""},
+		           		{field: "Formular.podpis.wrapper.podpis.podpis_udaje.podepisujici.osoba.jmeno", label_prefix:"", label_txt:""},
+		           		{field: "Formular.podpis.wrapper.podpis.podpis_udaje.podepisujici.osoba.prijmeni", label_prefix:"", label_txt:""},
+		           				          ]
+		      },
+		      
+		      ],
+    	},
+   },     
+];	
+
+          
+	
+
+function PreSignCheck_local() {
+
+};
+</script>
+         <text name="form_version">0.0</text>
+         <?templateDesigner expand 1?></variables>
+      <border>
+         <edge stroke="raised" presence="hidden">
+            <color value="180,180,180"/>
+         </edge>
+         <corner presence="hidden"/>
+      </border>
+      <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 316 00010009000A000D000E000F0010001100120013001400150016001700180019001A001B001C00220023002500260027002A002B002E002F0030003100330034003500360037003B00420043004400450046004700480049004A004B004C004D004E004F00500051005300540055005600570059005A005B00660069007600C800CF00D300DD00DE00E200E4018E01CF01D201D401EA01F201F801FE0343?>
+      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 212 0001000A000C000D000F001000120013001400180019001A001B0025002A002F00310037003B0042004300440045004600470049004A004B004C004D004E004F0050005100530054005500560057005A005B006600A600C800CF00D300DE00E200E401CF01D401F20343?>
+      <?renderCache.subset "Symbol" 0 0 fontSpecific 4 8 3 00000076 ·?>
+   </subform>
+   <?templateDesigner DefaultPreviewDynamic 1?>
+   <?templateDesigner WidowOrphanControl 0?>
+   <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
+   <?originalXFAVersion http://www.xfa.org/schema/xfa-template/3.3/?>
+   <?templateDesigner DefaultLanguage JavaScript?>
+   <?templateDesigner DefaultRunAt both?>
+   <?acrobat JavaScript strictScoping?>
+   <?PDFPrintOptions embedViewerPrefs 0?>
+   <?PDFPrintOptions embedPrintOnFormOpen 0?>
+   <?PDFPrintOptions scalingPrefs 0?>
+   <?PDFPrintOptions enforceScalingPrefs 0?>
+   <?PDFPrintOptions paperSource 0?>
+   <?PDFPrintOptions duplexMode 0?>
+   <?templateDesigner DefaultPreviewType interactive?>
+   <?templateDesigner DefaultPreviewPagination simplex?>
+   <?templateDesigner XDPPreviewFormat 20?>
+   <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner SavePDFWithLog 0?>
+   <?templateDesigner SaveTaggedPDF 0?>
+   <?templateDesigner SavePDFWithEmbeddedFonts 0?>
+   <?templateDesigner FormTargetVersion 33?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Guidelines v:213977400;v:306965200;v:69896700;v:238250;h:435543000;h:437201000;h:1180580;h:732000;h:736500;h:992250?>
+   <?templateDesigner Zoom 110?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo>
+            <embed>0</embed>
+         </fontInfo>
+         <tagged>0</tagged>
+         <version>1.7</version>
+         <adobeExtensionLevel>8</adobeExtensionLevel>
+      </pdf>
+      <common>
+         <data>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+      </common>
+      <script>
+         <runScripts>server</runScripts>
+      </script>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+   <psMap>
+      <font typeface="Calibri" psName="Calibri" weight="normal" posture="normal"/>
+      <font typeface="Calibri" psName="Calibri-Bold" weight="bold" posture="normal"/>
+      <font typeface="Segoe UI" psName="SegoeUI" weight="normal" posture="normal"/>
+   </psMap>
+</config>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="cs_CZ" desc="Čeština (Česká republika)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>ledna</month>
+            <month>února</month>
+            <month>března</month>
+            <month>dubna</month>
+            <month>května</month>
+            <month>června</month>
+            <month>července</month>
+            <month>srpna</month>
+            <month>září</month>
+            <month>října</month>
+            <month>listopadu</month>
+            <month>prosince</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>I</month>
+            <month>II</month>
+            <month>III</month>
+            <month>IV</month>
+            <month>V</month>
+            <month>VI</month>
+            <month>VII</month>
+            <month>VIII</month>
+            <month>IX</month>
+            <month>X</month>
+            <month>XI</month>
+            <month>XII</month>
+         </monthNames>
+         <dayNames>
+            <day>neděle</day>
+            <day>pondělí</day>
+            <day>úterý</day>
+            <day>středa</day>
+            <day>čtvrtek</day>
+            <day>pátek</day>
+            <day>sobota</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Ne</day>
+            <day>Po</day>
+            <day>Út</day>
+            <day>St</day>
+            <day>Čt</day>
+            <day>Pá</day>
+            <day>So</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>dop.</meridiem>
+            <meridiem>odp.</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>př.Kr.</era>
+            <era>po Kr.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, D. MMMM YYYY</datePattern>
+         <datePattern name="long">D. MMMM YYYY</datePattern>
+         <datePattern name="med">D.M.YYYY</datePattern>
+         <datePattern name="short">D.M.YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">H:MM:SS Z</timePattern>
+         <timePattern name="long">H:MM:SS Z</timePattern>
+         <timePattern name="med">H:MM:SS</timePattern>
+         <timePattern name="short">H:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GuMtkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zz</numberPattern>
+         <numberPattern name="currency">z,zz9.zz $</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">Kč</currencySymbol>
+         <currencySymbol name="isoname">CZK</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+         <typeface name="Adobe Devanagari"/>
+      </typefaces>
+   </locale>
+</localeSet>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
+   <xsdConnection name="DataConnection" dataDescription="PCHU">
+      <uri>..\..\Data\Xsd-MSP\01_potvrzeni_k_uctu.xsd</uri>
+      <rootElement>PCHU</rootElement>
+      <?templateDesigner fileDigest shaHash="LIKf65lMXgkMzN6HSJOyHTeSZEA="?></xsdConnection>
+</connectionSet>
+<xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+   <xfa:data xfa:dataNode="dataGroup"/>
+   <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="PCHU">
+      <PCHU verze="">
+         <dluznik dd:model="choice" fo_po_switch="">
+            <fyzicka_osoba>
+               <osobni_udaje>
+                  <osoba>
+                     <prijmeni/>
+                     <jmeno/>
+                     <titul_pred dd:minOccur="0" dd:nullType="exclude"/>
+                     <titul_za dd:minOccur="0" dd:nullType="exclude"/>
+                     <ico dd:minOccur="0" dd:nullType="exclude"/>
+                  </osoba>
+                  <statni_prislusnost/>
+                  <datum_narozeni/>
+                  <rodne_cislo/>
+                  <osobni_stav/>
+               </osobni_udaje>
+               <adresa>
+                  <ulice/>
+                  <cpop/>
+                  <cori/>
+                  <psc/>
+                  <obec/>
+                  <stat dd:minOccur="0" dd:nullType="exclude"/>
+               </adresa>
+               <koresp_adresa dd:minOccur="0" switch="">
+                  <ulice/>
+                  <cpop/>
+                  <cori/>
+                  <psc/>
+                  <obec/>
+                  <stat dd:minOccur="0" dd:nullType="exclude"/>
+               </koresp_adresa>
+            </fyzicka_osoba>
+            <pravnicka_osoba>
+               <firma>
+                  <nazev/>
+                  <ico/>
+                  <jine_reg_c/>
+               </firma>
+               <pravni_rad_zalozeni/>
+               <adresa>
+                  <ulice/>
+                  <cpop/>
+                  <cori/>
+                  <psc/>
+                  <obec/>
+                  <stat dd:minOccur="0" dd:nullType="exclude"/>
+               </adresa>
+               <koresp_adresa switch="">
+                  <ulice/>
+                  <cpop/>
+                  <cori/>
+                  <psc/>
+                  <obec/>
+                  <stat dd:minOccur="0" dd:nullType="exclude"/>
+               </koresp_adresa>
+            </pravnicka_osoba>
+         </dluznik>
+         <povinny fo_po_switch="">
+            <fyzicka_osoba>
+               <osobni_udaje>
+                  <osoba>
+                     <prijmeni/>
+                     <jmeno/>
+                     <titul_pred dd:minOccur="0" dd:nullType="exclude"/>
+                     <titul_za dd:minOccur="0" dd:nullType="exclude"/>
+                     <ico dd:minOccur="0" dd:nullType="exclude"/>
+                  </osoba>
+                  <statni_prislusnost/>
+                  <datum_narozeni/>
+                  <rodne_cislo/>
+                  <osobni_stav/>
+               </osobni_udaje>
+               <adresa>
+                  <ulice/>
+                  <cpop/>
+                  <cori/>
+                  <psc/>
+                  <obec/>
+                  <stat dd:minOccur="0" dd:nullType="exclude"/>
+               </adresa>
+               <koresp_adresa dd:minOccur="0" switch="">
+                  <ulice/>
+                  <cpop/>
+                  <cori/>
+                  <psc/>
+                  <obec/>
+                  <stat dd:minOccur="0" dd:nullType="exclude"/>
+               </koresp_adresa>
+            </fyzicka_osoba>
+         </povinny>
+         <z_uctu>
+            <ucet dd:maxOccur="-1">
+               <identifikator/>
+            </ucet>
+         </z_uctu>
+         <na_ucet>
+            <ucet dd:maxOccur="-1">
+               <identifikator/>
+            </ucet>
+         </na_ucet>
+         <podpis>
+            <v_mesto/>
+            <dne/>
+            <osoba>
+               <prijmeni/>
+               <jmeno/>
+               <titul_pred dd:minOccur="0" dd:nullType="exclude"/>
+               <titul_za dd:minOccur="0" dd:nullType="exclude"/>
+               <ico dd:minOccur="0" dd:nullType="exclude"/>
+            </osoba>
+            <epodatelna dd:minOccur="0" switch="">
+               <guid dd:minOccur="0" dd:nullType="exclude"/>
+               <email dd:minOccur="0" dd:nullType="exclude"/>
+            </epodatelna>
+         </podpis>
+      </PCHU>
+   </dd:dataDescription>
+</xfa:datasets>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2021-09-25T08:59:04Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:62d65447-2eca-4132-98d5-674836087ceb</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:fff08d38-535a-4891-9981-5cbe2ad5cfa9</xmpMM:InstanceID>
+      </rdf:Description>
+      <rdf:Description xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/" rdf:about="">
+         <pdfuaid:part>1</pdfuaid:part>
+      </rdf:Description>
+      <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <dc:format>application/pdf</dc:format>
+      </rdf:Description>
+      <rdf:Description xmlns:desc="http://ns.adobe.com/xfa/promoted-desc/" rdf:about="">
+         <desc:version rdf:parseType="Resource">
+            <rdf:value>6.1.0.20150517.1.919161.918415</rdf:value>
+            <desc:ref>/template/subform[1]</desc:ref>
+         </desc:version>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+   <annots/>
+</xfdf></xdp:xdp>

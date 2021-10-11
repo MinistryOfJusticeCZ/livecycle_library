@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20130830.1.901444" APIVersion="3.6.13235.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-02-09T09:17:30Z" uuid="2cec0b2f-04d3-400c-a5a3-20051c9f4c03">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-04-30T09:38:49Z" uuid="2f3367da-6111-4e54-b487-0dea5c03285f">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
    <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
    <?formServer allowRenderCaching 0?>
@@ -22,7 +22,7 @@
                   <textEdit/>
                </ui>
                <value>
-                  <text>1.1.1-TEST</text>
+                  <text>1.2.1-TEST</text>
                </value>
                <font typeface="Myriad Pro" baselineShift="0pt" size="8pt">
                   <fill>
@@ -7705,9 +7705,12 @@ _pohledavka_row.addInstance(1);
                                  <bind match="none"/>
                                  <event activity="click" name="event__click">
                                     <script contentType="application/x-javascript">
+
 if (_pohledavka_row.count &gt; 1) {
 	_pohledavka_row.removeInstance(this.parent.parent.index);
 }
+
+xfa.form.recalculate(1);
 </script>
                                  </event>
                               </field>
@@ -15988,9 +15991,8 @@ function setOnDruhPohl(oPohledavka_row_tbl, zpusob_reseni) {
       </border>
       <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
       <?templateDesigner expand 1?>
-      <?renderCache.subset "Calibri" 0 0 UTF-16 2 36 000300260064011A011E015D016F019A01C6?>
-      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 292 000100060009000A000D000E000F001000110012001400160019001B0022002300240025002600270029002A002B002C002D002E002F0030003100330034003500360037003B00420043004400450046004700480049004A004B004C004D004E004F0050005100530054005500560057005A005B006600C800CF00D300DD00DE00E200E4018E01CF01D201D401EA01F201FE?>
-      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 252 0001000C000D000F0010001100130014001B0022002300240025002A002C002E002F00300031003300340037003B00420043004400450046004700480049004A004B004C004D004E004F0050005100530054005500560057005A005B005C005E006600A600C800CF00D300DD00DE00E200E4018E01CF01D401EA01F201FE?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 296 000100060009000A000D000E000F0010001100120013001400160019001B0022002300240025002600270029002A002B002C002D002E002F0030003100330034003500360037003B00420043004400450046004700480049004A004B004C004D004E004F0050005100530054005500560057005A005B006600C800CF00D300DD00DE00E200E4018E01CF01D201D401EA01F201FE?>
+      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 236 0001000C000D000F001100130014001B0022002300240025002A002C002E002F00300031003300340037003B0042004300440045004600470049004A004B004C004D004E004F0050005100530054005500560057005A005B006600A600C800CF00D300DD00DE00E200E4018E01CF01D401EA01F201FE?>
    </subform>
    <?templateDesigner DefaultPreviewDynamic 1?>
    <?templateDesigner WidowOrphanControl 0?>
@@ -16011,9 +16013,9 @@ function setOnDruhPohl(oPohledavka_row_tbl, zpusob_reseni) {
    <?templateDesigner XDPPreviewFormat 20?>
    <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner SavePDFWithLog 0?>
    <?templateDesigner SaveTaggedPDF 0?>
    <?templateDesigner SavePDFWithEmbeddedFonts 0?>
-   <?templateDesigner SavePDFWithLog 0?>
    <?templateDesigner Zoom 143?>
    <?templateDesigner FormTargetVersion 33?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
@@ -16171,17 +16173,17 @@ function setOnDruhPohl(oPohledavka_row_tbl, zpusob_reseni) {
    <xsdConnection name="DataConnection" dataDescription="ELKOZP">
       <uri>..\..\Data\Xsd\05_-_Konecna_zprava.xsd</uri>
       <rootElement>ELKOZP</rootElement>
-      <?templateDesigner fileDigest shaHash="ZT4m3dtTnX+s2fqLWEsbraPWOgg="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="iciYQJqoUdSkHxlulqvlHQDBdV0="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>
    <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="ELKOZP">
       <ELKOZP verze="">
          <prilohy>
-            <obecna_priloha dd:minOccur="0" dd:maxOccur="20" cislo="" nazev="" jmeno_souboru="" velikost_souboru="" dd:dataNode="dataGroup"/>
+            <obecna_priloha dd:minOccur="0" dd:maxOccur="-1" cislo="" nazev="" jmeno_souboru="" velikost_souboru="" dd:dataNode="dataGroup"/>
          </prilohy>
          <listinne_prilohy>
-            <listinna_priloha dd:minOccur="0" dd:maxOccur="20" cislo="" nazev="" dd:dataNode="dataGroup"/>
+            <listinna_priloha dd:minOccur="0" dd:maxOccur="-1" cislo="" nazev="" dd:dataNode="dataGroup"/>
          </listinne_prilohy>
          <hlavicka>
             <spisznacka>
@@ -16515,7 +16517,7 @@ function setOnDruhPohl(oPohledavka_row_tbl, zpusob_reseni) {
                <ico dd:minOccur="0" dd:nullType="exclude"/>
             </osoba>
             <epodatelna dd:minOccur="0" switch="">
-               <guid/>
+               <guid dd:minOccur="0" dd:nullType="exclude"/>
                <email dd:minOccur="0" dd:nullType="exclude"/>
             </epodatelna>
          </podpis>
@@ -16525,14 +16527,14 @@ function setOnDruhPohl(oPohledavka_row_tbl, zpusob_reseni) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2021-02-09T09:17:30Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-04-30T09:38:49Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:2cec0b2f-04d3-400c-a5a3-20051c9f4c03</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:2f3367da-6111-4e54-b487-0dea5c03285f</xmpMM:DocumentID>
          <xmpMM:InstanceID>uuid:b0267b21-fcca-4246-913b-042a7a5c2422</xmpMM:InstanceID>
       </rdf:Description>
       <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">

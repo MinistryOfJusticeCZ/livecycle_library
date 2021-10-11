@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-02-01T13:17:06Z" uuid="78ff4f82-1d39-49c4-a6c0-5ce534576cd1">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-04-16T07:34:51Z" uuid="63967782-6926-4871-989b-5dec2cbd136b">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="form1" locale="cs_CZ" layout="tb">
@@ -257,7 +257,7 @@ if (this.rawValue == 1) {
                      </corner>
                   </border>
                   <format>
-                     <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                     <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                   </format>
                   <assist>
                      <speak priority="toolTip"/>
@@ -948,7 +948,7 @@ if (this.rawValue == 1) {
                   </border>
                   <bind match="dataRef" ref="$.splatna_v_castce"/>
                   <format>
-                     <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                     <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                   </format>
                   <event activity="change" name="event__change">
                      <script contentType="application/x-javascript">
@@ -1259,7 +1259,7 @@ if (this.rawValue &lt; 0) {
          <?templateDesigner fragmentTitle vlastnosti?>
          <?templateDesigner expand 1?></subform>
       <?templateDesigner expand 1?>
-      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 164 0001001B0022002C002E002F003100340037003B004200430044004500460049004A004B004C004D004E004F0050005100530054005500560057005A005B00C800CF00D300DD00E200E401CF01D401F201FE?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 168 00010011001B0022002C002E002F003100340037003B004200430044004500460049004A004B004C004D004E004F0050005100530054005500560057005A005B00C800CF00D300DD00E200E401CF01D401F201FE?>
       <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 92 00010022002F003100370042004500460049004A004C004D004F00500051005400550057005A005B00C800D301F2?>
    </subform>
    <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
@@ -1294,14 +1294,14 @@ if (this.rawValue &lt; 0) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2021-02-01T13:17:06Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-04-16T07:34:51Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:78ff4f82-1d39-49c4-a6c0-5ce534576cd1</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:63967782-6926-4871-989b-5dec2cbd136b</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>

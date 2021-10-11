@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20130830.1.901444" APIVersion="3.6.13235.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-02-23T07:46:21Z" uuid="6b300da3-09b4-40b2-99d8-34f64d1760b2">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-04-20T07:00:42Z" uuid="1bd43536-033c-4d1d-8c51-2e1b48bd6e4a">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
    <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
    <?formServer allowRenderCaching 0?>
@@ -17,7 +17,7 @@
                   <textEdit/>
                </ui>
                <value>
-                  <text>1.0.10</text>
+                  <text>1.4.1-TEST</text>
                </value>
                <font typeface="Myriad Pro" baselineShift="0pt" size="8pt">
                   <fill>
@@ -34,7 +34,8 @@
             <contentArea x="9.9mm" y="12.9mm" w="190.2mm" h="274.2mm" name="Content" id="Content_ID"/>
             <medium stock="a4" short="210mm" long="297mm"/>
             <subform x="9.9mm" y="287mm" usehref="..\..\Fragments\footer.xdp">
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 1?>
+            </subform>
             <?templateDesigner expand 1?></pageArea>
          <?templateDesigner expand 1?></pageSet>
       <subform w="190.2mm" name="Formular" layout="tb">
@@ -384,7 +385,7 @@ if (this.rawValue == '2') {
                      </border>
                      <?templateDesigner expand 0?>
                   </subform>
-                  <subform usehref="..\..\Fragments\jiny_kontakt_sekce.xdp#som($template.kontakt.jiny_kontakt_wrapper)">
+                  <subform usehref="..\..\Fragments\jiny_kontakt_sekce.xdp#som($template.kontakt.jiny_kontakt_wrapper_veritel)" name="jiny_kontakt_wrapper">
                      <bind match="dataRef" ref="$.kontakt"/>
                      <margin bottomInset="1mm"/>
                      <?templateDesigner expand 0?>
@@ -451,7 +452,7 @@ if (this.rawValue == '2') {
                      <bind ref="" match="none"/>
                      <?templateDesigner expand 0?>
                   </subform>
-                  <subform usehref="..\..\Fragments\jiny_kontakt_sekce.xdp#som($template.kontakt.jiny_kontakt_wrapper)">
+                  <subform usehref="..\..\Fragments\jiny_kontakt_sekce.xdp#som($template.kontakt.jiny_kontakt_wrapper_veritel)" name="jiny_kontakt_wrapper">
                      <?templateDesigner expand 0?>
                      <margin bottomInset="1mm"/>
                      <bind ref="$.kontakt" match="dataRef"/>
@@ -640,6 +641,26 @@ if (this.rawValue &lt; 0) {
             <?templateDesigner expand 0?></subform>
          <subform w="190mm" layout="lr-tb" name="QR">
             <bind match="none"/>
+            <field name="QR_lock" w="62mm" h="9mm" access="readOnly" presence="hidden">
+               <ui>
+                  <textEdit>
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="24.3116mm">
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>Text Field</text>
+                  </value>
+               </caption>
+               <bind match="none"/>
+            </field>
             <subform w="63mm" minH="55.271mm" layout="lr-tb" name="prihlaska_wrapper">
                <bind match="none"/>
                <draw name="Text_prihlaska" w="60mm" h="5.233mm">
@@ -661,21 +682,51 @@ if (this.rawValue &lt; 0) {
                   </ui>
                   <calculate>
                      <script contentType="application/x-javascript">
-var sigField1 = event.target.getField("ELPP[0].Formular[0].podpis[0].wrapper[0].podpisy[0].podpis1[0].podpisove_misto[0].podpis[0]");
+if (this.rawValue != prihlaska_calc.rawValue &amp;&amp;  ELPP.Formular.QR.QR_lock.rawValue != 1 ) prihlaska_calc.rawValue;
+</script>
+                  </calculate>
+                  <bind match="none"/>
+               </field>
+               <margin leftInset="1mm"/>
+               <keep intact="contentArea"/>
+               <field name="prihlaska_calc" w="62mm" h="9mm" access="readOnly" presence="hidden">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="24.3116mm">
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>Text Field</text>
+                     </value>
+                  </caption>
+                  <bind match="none"/>
+                  <calculate>
+                     <script contentType="application/x-javascript" runAt="both">
+
+//var sigField1 = event.target.getField("ELPP[0].Formular[0].podpis[0].wrapper[0].podpisy[0].podpis1[0].podpisove_misto[0].podpis[0]");
 var collection = prihlaska_col;
 	
-var sigValidate1 = "CALC";
-if (sigField1) {
+
+/*if (sigField1) {
   if (sigField1.value) {
     if (sigField1.value.length&gt;0) {
       var sigValidate1 = "NO_CALC";
     }
   }
 }
+*/
 
 var res = this.rawValue;
 
-if (sigValidate1 == "CALC") {
+if (ELPP.Formular.QR.QR_lock.rawValue != 1) {
 	var is705ViewerRequired = false;
 	var useLegacyXMLFormat = false;
 		
@@ -732,10 +783,7 @@ function depends(node)
 }
 </script>
                   </calculate>
-                  <bind match="none"/>
                </field>
-               <margin leftInset="1mm"/>
-               <keep intact="contentArea"/>
                <?templateDesigner expand 1?></subform>
             <subform x="33.971mm" w="62mm" minH="105.309mm" layout="lr-tb" name="dluznik_wrapper">
                <bind match="none"/>
@@ -757,10 +805,40 @@ function depends(node)
                         <?templateDesigner decodeMethod 0?></barcode>
                   </ui>
                   <calculate>
-                     <script contentType="application/x-javascript">var sigField1 = event.target.getField("ELPP[0].Formular[0].podpis[0].wrapper[0].podpisy[0].podpis1[0].podpisove_misto[0].podpis[0]");
+                     <script contentType="application/x-javascript">
+if (this.rawValue != dluznik_calc.rawValue &amp;&amp;  ELPP.Formular.QR.QR_lock.rawValue != 1 )  dluznik_calc.rawValue;
+</script>
+                  </calculate>
+                  <bind match="none"/>
+               </field>
+               <keep intact="contentArea"/>
+               <field name="dluznik_calc" w="62mm" h="9mm" access="readOnly" presence="hidden">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="25mm">
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>Text Field</text>
+                     </value>
+                  </caption>
+                  <bind match="none"/>
+                  <calculate>
+                     <script contentType="application/x-javascript" runAt="both">//var sigField1 = event.target.getField("ELPP[0].Formular[0].podpis[0].wrapper[0].podpisy[0].podpis1[0].podpisove_misto[0].podpis[0]");
+
 var collection = dluznik_col;
-	
-var sigValidate1 = "CALC";
+
+//var sigValidate1 = "CALC";
+
+/*
 if (sigField1) {
   if (sigField1.value) {
     if (sigField1.value.length&gt;0) {
@@ -769,10 +847,12 @@ if (sigField1) {
   }
 }
 
+*/
+
 
 var res = this.rawValue;
 
-if (sigValidate1 == "CALC") {
+if (ELPP.Formular.QR.QR_lock.rawValue != 1) {
 	var is705ViewerRequired = false;
 	var useLegacyXMLFormat = false;
 		
@@ -829,9 +909,7 @@ function depends(node)
 }
 </script>
                   </calculate>
-                  <bind match="none"/>
                </field>
-               <keep intact="contentArea"/>
                <?templateDesigner expand 1?></subform>
             <subform x="67.971mm" y="55.271mm" w="62mm" minH="50.038mm" layout="lr-tb" name="veritel_wrapper">
                <bind match="none"/>
@@ -854,9 +932,38 @@ function depends(node)
                   </ui>
                   <calculate>
                      <script contentType="application/x-javascript">
+if (this.rawValue != veritel_calc.rawValue &amp;&amp;  ELPP.Formular.QR.QR_lock.rawValue != 1 )  veritel_calc.rawValue;
+</script>
+                  </calculate>
+                  <bind match="none"/>
+                  <margin leftInset="0mm" topInset="0mm"/>
+               </field>
+               <keep intact="contentArea"/>
+               <field name="veritel_calc" w="62mm" h="9mm" access="readOnly" presence="hidden">
+                  <ui>
+                     <textEdit>
+                        <border>
+                           <edge stroke="lowered"/>
+                        </border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="25mm">
+                     <para vAlign="middle"/>
+                     <value>
+                        <text>Text Field</text>
+                     </value>
+                  </caption>
+                  <bind match="none"/>
+                  <calculate>
+                     <script contentType="application/x-javascript" runAt="both">
 
-var sigField1 = event.target.getField("ELPP[0].Formular[0].podpis[0].wrapper[0].podpisy[0].podpis1[0].podpisove_misto[0].podpis[0]");
-var sigValidate1 = "CALC";
+//var sigField1 = event.target.getField("ELPP[0].Formular[0].podpis[0].wrapper[0].podpisy[0].podpis1[0].podpisove_misto[0].podpis[0]");
+//var sigValidate1 = "CALC";
+/*
 if (sigField1) {
   if (sigField1.value) {
     if (sigField1.value.length&gt;0) {
@@ -864,11 +971,12 @@ if (sigField1) {
     }
   }
 }
+*/
 
 
 var res = this.rawValue;
 
-if (sigValidate1 == "CALC") {
+if (ELPP.Formular.QR.QR_lock.rawValue != 1) {
 	var is705ViewerRequired = false;
 	var useLegacyXMLFormat = false;
 		
@@ -926,10 +1034,7 @@ function depends(node)
 }
 </script>
                   </calculate>
-                  <bind match="none"/>
-                  <margin leftInset="0mm" topInset="0mm"/>
                </field>
-               <keep intact="contentArea"/>
                <?templateDesigner expand 1?></subform>
             <margin leftInset="1mm" topInset="1mm" rightInset="1mm" bottomInset="2mm"/>
             <?templateDesigner expand 0?></subform>
@@ -1424,7 +1529,7 @@ if (this.rawValue == "6") {
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9' Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -1494,7 +1599,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -1677,7 +1782,7 @@ if (this.rawValue &lt; 0) {
                            <corner thickness="0.2mm" presence="hidden"/>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -2144,7 +2249,7 @@ prev_poradi;
                               </border>
                               <bind match="dataRef" ref="$.vyse_jistiny"/>
                               <format>
-                                 <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                                 <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                               </format>
                               <event activity="initialize" name="event__initialize">
                                  <script contentType="application/x-javascript">
@@ -2194,7 +2299,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                               </border>
                               <bind match="dataRef" ref="$.vyse_prislusenstvi"/>
                               <format>
-                                 <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                                 <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                               </format>
                               <event activity="initialize" name="event__initialize">
                                  <script contentType="application/x-javascript">
@@ -2709,7 +2814,7 @@ oLocalLib.disableValPrisl = false;
                            <occur max="-1"/>
                            <keep intact="none"/>
                            <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
-                           <?templateDesigner expand 1?></subform>
+                           <?templateDesigner expand 0?></subform>
                         <bind match="none"/>
                         <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
                         <overflow leader="HeaderRow"/>
@@ -2750,7 +2855,7 @@ oLocalLib.disableValPrisl = false;
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -2831,7 +2936,7 @@ suma;
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -3352,7 +3457,7 @@ if (this.rawValue == 1) {
                                        </ui>
                                        <bind ref="$.vyse" match="dataRef"/>
                                        <format>
-                                          <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                                          <picture>null{9' Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zz9.zz' Kč'}</picture>
                                        </format>
                                        <value>
                                           <decimal leadDigits="11"/>
@@ -3434,7 +3539,7 @@ localLib.dependCheckValPrisl = false;
                                        </ui>
                                        <bind ref="$.zpusob_vypoctu" match="dataRef"/>
                                     </field>
-                                    <?templateDesigner expand 1?></subform>
+                                    <?templateDesigner expand 0?></subform>
                                  <subform layout="lr-tb" name="buttons">
                                     <border>
                                        <corner thickness="0.2mm">
@@ -3601,7 +3706,7 @@ celk ;
                               </ui>
                               <bind ref="$.celk_vyse" match="dataRef"/>
                               <format>
-                                 <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                                 <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                               </format>
                               <value>
                                  <decimal leadDigits="11"/>
@@ -3613,7 +3718,7 @@ sharedLib.setFontSizeFromValue(this);
                               </event>
                            </field>
                            <?templateDesigner expand 1?></subform>
-                        <?templateDesigner expand 0?></subform>
+                        <?templateDesigner expand 1?></subform>
                      <subform name="vykonatelnost_wrapper" w="190mm" layout="lr-tb">
                         <bind match="dataRef" ref="$.vykonatelnost_opak"/>
                         <border>
@@ -3883,7 +3988,7 @@ else null;
                                  </ui>
                                  <bind ref="$.vykonatelnost_data.vykonatelnost_pro_castku" match="dataRef"/>
                                  <format>
-                                    <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                                    <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                                  </format>
                                  <validate>
                                     <script contentType="application/x-javascript">
@@ -4052,7 +4157,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                            </corner>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -4388,7 +4493,7 @@ if (this.rawValue == 1) {
                                  </ui>
                                  <bind ref="$.ve_vysi" match="dataRef"/>
                                  <format>
-                                    <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                                    <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                                  </format>
                                  <validate>
                                     <script contentType="application/x-javascript">
@@ -4593,7 +4698,7 @@ if (this.rawValue == 1) {
 </script>
                               </event>
                               <?templateDesigner itemValuesSpecified 1?>
-                              <?templateDesigner expand 1?></exclGroup>
+                              <?templateDesigner expand 0?></exclGroup>
                            <subform layout="lr-tb" name="penezita_info" w="143mm" hAlign="right" anchorType="topRight">
                               <border>
                                  <corner presence="hidden"/>
@@ -4689,7 +4794,7 @@ else null;
                                  </ui>
                                  <bind ref="$.pvj_vyse" match="dataRef"/>
                                  <format>
-                                    <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                                    <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                                  </format>
                                  <value>
                                     <decimal leadDigits="11"/>
@@ -4704,6 +4809,14 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
 sharedLib.setFontSizeFromValue(this);
 </script>
                                  </event>
+                                 <validate>
+                                    <script contentType="application/x-javascript" runAt="both">
+if (this.rawValue &lt; 0) {
+	xfa.host.messageBox("Částka \"" + sharedLib.getObjText (this, null, null ) +"\" nesmí být záporná");
+	xfa.host.setFocus(this);
+};
+</script>
+                                 </validate>
                               </field>
                               <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
                               <field name="id_pohledavky" y="3mm" w="31mm" h="7mm" presence="hidden">
@@ -5195,7 +5308,7 @@ else null;
                                  </ui>
                                  <bind ref="$.splatna_v_castce" match="dataRef"/>
                                  <format>
-                                    <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                                    <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                                  </format>
                                  <value>
                                     <decimal leadDigits="11"/>
@@ -5550,7 +5663,7 @@ if (this.rawValue == 1) {
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -5620,7 +5733,7 @@ sharedLib.setFontSizeFromValue(this);
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -5798,7 +5911,7 @@ if (this.rawValue &lt; 0) {
                            </corner>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -6737,7 +6850,7 @@ else {
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -6797,7 +6910,7 @@ if (this.rawValue &lt; 0) {
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -6965,7 +7078,7 @@ if (this.rawValue &lt; 0) {
                            </corner>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -7669,7 +7782,7 @@ if (this.rawValue &lt; 0) {
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -7739,7 +7852,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -7917,7 +8030,7 @@ if (this.rawValue &lt; 0) {
                            </corner>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -9541,7 +9654,7 @@ if (this.rawValue &lt; 0) {
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -9611,7 +9724,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                               </corner>
                            </border>
                            <format>
-                              <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                              <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                            </format>
                            <assist>
                               <speak priority="toolTip"/>
@@ -9788,7 +9901,7 @@ if (this.rawValue &lt; 0) {
                            </corner>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -10866,7 +10979,7 @@ else {
                            </corner>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -10986,7 +11099,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                            </corner>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -11007,8 +11120,8 @@ var suma = 0;
 for (var pohl = 0; pohl &lt; pohledavky._pohledavka.count; pohl++ ) {
 	obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_jednotlive[0].celk_vyse_pohledavky");
 	suma += (obj!=null?obj.rawValue:0);
-	//obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_hromadne[0].celk_vyse_pohledavky");
-	//suma += (obj!=null?obj.rawValue:0);
+	obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_hromadne[0].celk_vyse_pohledavky");
+	suma += (obj!=null?obj.rawValue:0);
 	obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_majetkem_dluznika[0].celk_vyse_pohledavky");
 	suma += (obj!=null?obj.rawValue:0);
 	};
@@ -11083,7 +11196,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                            </corner>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -11116,10 +11229,10 @@ var suma = nezaj_pohl.rawValue ;
 for (var pohl = 0; pohl &lt; pohledavky._pohledavka.count; pohl++ ) {
 	obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_jednotlive[0].vlastnosti.podrizena.podrizena_info.ve_vysi");
 	suma -= (obj!=null?obj.rawValue:0);
-	//obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_hromadne[0].vlastnosti.podrizena.podrizena_info.ve_vysi");
-	//suma -= (obj!=null?obj.rawValue:0);
-	obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_majetkem_dluznika[0].vlastnosti.podrizena.podrizena_info.ve_vysi");
+	obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_hromadne[0].vlastnosti.podrizena.podrizena_info.ve_vysi");
 	suma -= (obj!=null?obj.rawValue:0);
+	//obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_majetkem_dluznika[0].vlastnosti.podrizena.podrizena_info.ve_vysi");
+	//suma -= (obj!=null?obj.rawValue:0);
 	};
 
 
@@ -11185,7 +11298,7 @@ suma;
                            </corner>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -11211,6 +11324,8 @@ for (var pohl = 0; pohl &lt; pohledavky._pohledavka.count; pohl++ ) {
 	suma += (obj!=null?obj.rawValue:0);
 	obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.uspokojovana_pouze_z_majetku_poskytnuteho_k_zajisteni[0].celk_vyse_pohledavky");
 	suma += (obj!=null?obj.rawValue:0);
+	//obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_majetkem_dluznika[0].celk_vyse_pohledavky");
+	//suma += (obj!=null?obj.rawValue:0);
 };
 
 suma = sharedLib.limitDecField(this, suma);
@@ -11283,7 +11398,7 @@ sharedLib.setFontSizeFromValue(this, xfa.event.newText);
                            </corner>
                         </border>
                         <format>
-                           <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
+                           <picture>null{9 'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
                         </format>
                         <assist>
                            <speak priority="toolTip"/>
@@ -11319,6 +11434,8 @@ for (var pohl = 0; pohl &lt; pohledavky._pohledavka.count; pohl++ ) {
 	obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.zajistena_nejen_majetkem_dluznika[0].vlastnosti.podrizena.podrizena_info.ve_vysi");
 	suma -= (obj!=null?obj.rawValue:0);
 	obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.uspokojovana_pouze_z_majetku_poskytnuteho_k_zajisteni[0].vlastnosti.podrizena.podrizena_info.ve_vysi");
+	suma -= (obj!=null?obj.rawValue:0);
+	obj = xfa.resolveNode("pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_majetkem_dluznika[0].vlastnosti.podrizena.podrizena_info.ve_vysi");
 	suma -= (obj!=null?obj.rawValue:0);
 };
 
@@ -11486,7 +11603,7 @@ if (this.rawValue &lt; 0) {
                         <?templateDesigner floatingFieldPlaceholder ##?>
                         <calculate override="error"/>
                      </field>
-                     <?templateDesigner expand 1?></subform>
+                     <?templateDesigner expand 0?></subform>
                   <bind match="dataRef" ref="$.celkem"/>
                   <margin leftInset="0mm" rightInset="0mm" topInset="1mm" bottomInset="1mm"/>
                   <?templateDesigner rowpattern first:1, next:1, firstcolor:f0f0f0, nextcolor:ffffff, apply:0?>
@@ -11494,7 +11611,7 @@ if (this.rawValue &lt; 0) {
                <?templateDesigner expand 1?></subform>
             <margin topInset="0mm" leftInset="0.1mm" rightInset="0.1mm" bottomInset="2mm"/>
             <bind match="none"/>
-            <?templateDesigner expand 0?></subform>
+            <?templateDesigner expand 1?></subform>
          <subform w="190.2mm" name="prohlaseni">
             <margin topInset="0mm" leftInset="0.1mm" rightInset="0.1mm" bottomInset="2mm"/>
             <draw name="label" w="190mm" h="10mm" x="0mm">
@@ -12201,7 +12318,8 @@ var sigField1 = event.target.getField("ELPP[0].Formular[0].podpis[0].wrapper[0].
                            <traverse operation="next" ref="epodatelna[0]"/>
                         </traversal>
                      </subform>
-                     <?templateDesigner expand 1?></subform>
+                     <?templateDesigner expand 1?>
+                  </subform>
                   <subform w="190mm" layout="lr-tb" name="epodatelna">
                      <bind match="none"/>
                      <field name="email" w="132mm" minH="6mm">
@@ -12330,7 +12448,7 @@ if (sigField1) {
                         </border>
                         <bind match="none"/>
                         <event activity="click" name="event__click">
-                           <submit format="pdf" textEncoding="UTF-16" xdpContent="pdf datasets" target="https://epodatelna.justice.cz/ePodatelna/servlet/PrijmiPdfFormServlet?subtyp_podani=7"/>
+                           <submit format="pdf" textEncoding="UTF-16" xdpContent="pdf datasets" target="https://as022.cca.cz:9407/ePodatelna/servlet/PrijmiPdfFormServlet?subtyp_podani=7"/>
                         </event>
                         <margin topInset="0mm"/>
                         <traversal>
@@ -12520,7 +12638,8 @@ if (oVeritel != null ) {
 };
 </script>
                      </event>
-                     <?templateDesigner expand 1?></subform>
+                     <?templateDesigner expand 1?>
+                  </subform>
                   <keep intact="contentArea"/>
                   <occur min="0" max="-1"/>
                   <traversal>
@@ -12549,7 +12668,7 @@ if (oVeritel != null ) {
             <margin topInset="0mm" leftInset="0.1mm" rightInset="0.1mm" bottomInset="0mm"/>
             <keep intact="contentArea"/>
             <bind match="dataRef" ref="$.podpisy"/>
-            <?templateDesigner expand 0?>
+            <?templateDesigner expand 1?>
          </subform>
          <bind match="none"/>
          <breakBefore target="Page" targetType="pageArea"/>
@@ -12698,8 +12817,7 @@ function getVysePrisl(oPrislusenstvi) {
 };
 </script>
          <script contentType="application/x-javascript" name="preSign_local">
-var jedno_z_nich = [
-   	{
+var jedno_z_nich = [   	{
    		sekce:
         {
           label:"Formular.dluznik.wrapper.label",
@@ -12776,7 +12894,6 @@ var jedno_z_nich = [
     }
 */    
   ]
-
 var povinne = [
    {
    		sekce:
@@ -12816,7 +12933,7 @@ var povinne = [
                	{field: "udaje_firma_wrapper.udaje_firma.firma.nazev", label:"", label_txt:""},
                 //{field: "udaje_firma_wrapper.udaje_firma.firma.ico", label:"", label_txt:""},
                 //{field: "udaje_firma_wrapper.udaje_firma.firma.jina_registrace", label:"", label_txt:""},
-                {field: "udaje_firma_wrapper.udaje_firma.pravni_rad_zalozeni", label:"", label_txt:""},
+                //{field: "udaje_firma_wrapper.udaje_firma.pravni_rad_zalozeni", label:"", label_txt:""},
                 //{field: "adresa_po_wrapper.adresa.ulice", label:"", label_txt:""},
                 //{field: "adresa_po_wrapper.adresa.cpco", label:"", label_txt:""},
                 {field: "adresa_po_wrapper.adresa.psc", label:"", label_txt:""},
@@ -12923,7 +13040,12 @@ var povinne = [
                label_txt:"Pohledávka",
                pole:
                [
-               	{field: "wrapper.pohledavka_typ", label_prefix:"", label_txt:""}
+               	{field: "wrapper.pohledavka_typ", label_prefix:"", label_txt:""},
+               	{field: "wrapper.nezajistena_jednotlive.jistina_wrapper.puv_vyse_jistiny", label_prefix:"", label_txt:""},
+               	{field: "wrapper.zajistena_majetkem_dluznika.jistina_wrapper.puv_vyse_jistiny", label_prefix:"", label_txt:""},
+               	{field: "wrapper.nezajistena_majetkem_dluznika.jistina_wrapper.puv_vyse_jistiny", label_prefix:"", label_txt:""},
+               	{field: "wrapper.zajistena_nejen_majetkem_dluznika.jistina_wrapper.puv_vyse_jistiny", label_prefix:"", label_txt:""},
+               	{field: "wrapper.uspokojovana_pouze_z_majetku_poskytnuteho_k_zajisteni.jistina_wrapper.puv_vyse_jistiny", label_prefix:"", label_txt:""},
                ]
             },
            ]
@@ -12975,6 +13097,7 @@ var povinne = [
 	
 
 function PreSignCheck_local() {
+
 	if (Formular.podpis.wrapper.podpisy.switch.rawValue == "1") {
 		Formular.podpis.wrapper.podpisy.epodatelna.guid.rawValue = uuid_generator.createUUID();
 	}
@@ -12984,6 +13107,78 @@ function PreSignCheck_local() {
 	  app.alert("Je překročena maximální povolená celková velikost příloh "+sharedLib.MAX_ATT_DOCS_SIZE+" MB!");
 	  xfa.event.cancelAction = 1;
 	}
+
+	if (xfa.event.cancelAction != 1) 	Formular.QR.QR_lock.rawValue = 1
+	
+	
+	if (xfa.event.cancelAction != 1) {
+		var r = new RegExp(); 
+		var message = "";
+	
+		r.compile ("^[2-9a-km-np-z]{7}$");
+	
+		var oIDDS = xfa.resolveNode("Formular.dluznik.wrapper.fyzicka_osoba.jiny_kontakt_wrapper.jiny_kontakt_veritel.idds");	
+		if( oIDDS != null &amp;&amp; r.test(oIDDS.rawValue) == "0" &amp;&amp; oIDDS.rawValue != null &amp;&amp; oIDDS.rawValue != "") {
+			message += "Chybně zadaný údaj Datová schránka dlužníka.\n";
+			
+		};
+		oIDDS = xfa.resolveNode("Formular.dluznik.wrapper.pravnicka_osoba.jiny_kontakt_wrapper.jiny_kontakt_veritel.idds");
+		if( oIDDS != null &amp;&amp; r.test(oIDDS.rawValue) == "0" &amp;&amp; oIDDS.rawValue != null &amp;&amp; oIDDS.rawValue != "") {
+			message += "Chybně zadaný údaj Datová schránka dlužníka.\n";
+			
+		};
+		
+		for (var ver = 0; ver &lt; Formular.veritel.wrapper._veritel_wrapper.count; ver++) {
+			oIDDS = xfa.resolveNode("Formular.veritel.wrapper.veritel_wrapper["+ver+"].veritel.fyzicka_osoba.jiny_kontakt_wrapper_veritel.jiny_kontakt_veritel.idds");
+			if( oIDDS != null &amp;&amp; r.test(oIDDS.rawValue) == "0" &amp;&amp; oIDDS.rawValue != null &amp;&amp; oIDDS.rawValue != "") {
+				message += "Chybně zadaný údaj Datová schránka věřitele č: " + (ver + 1) + ".\n";
+				
+			};
+			
+			oIDDS = xfa.resolveNode("Formular.veritel.wrapper.veritel_wrapper["+ver+"].veritel.pravnicka_osoba.jiny_kontakt_wrapper_veritel.jiny_kontakt_veritel.idds");
+			if( oIDDS != null &amp;&amp; r.test(oIDDS.rawValue) == "0" &amp;&amp; oIDDS.rawValue != null &amp;&amp; oIDDS.rawValue != "") {
+				message += "Chybně zadaný údaj Datová schránka věřitele č: " + (ver + 1) + ".\n";
+				
+			};
+			
+			oIDDS = xfa.resolveNode("Formular.veritel.wrapper.veritel_wrapper["+ver+"].zastupce_wrapper.zastupce.fyzicka_osoba.jiny_kontakt_wrapper_veritel.jiny_kontakt_veritel.idds");
+			if( oIDDS != null &amp;&amp; r.test(oIDDS.rawValue) == "0" &amp;&amp; oIDDS.rawValue != null &amp;&amp; oIDDS.rawValue != "") {
+				message += "Chybně zadaný údaj Datová schránka zástupce věřitele č: " + (ver + 1) + ".\n";
+				
+			};
+			
+					
+			oIDDS = xfa.resolveNode("Formular.veritel.wrapper.veritel_wrapper["+ver+"].zastupce_wrapper.zastupce.pravnicka_osoba.jiny_kontakt_wrapper_veritel.jiny_kontakt_veritel.idds");
+			if( oIDDS != null &amp;&amp; r.test(oIDDS.rawValue) == "0" &amp;&amp; oIDDS.rawValue != null &amp;&amp; oIDDS.rawValue != "") {
+				message += "Chybně zadaný údaj Datová schránka zástupce věřitele č: " + (ver + 1) + ".\n";
+				
+			};
+		}
+		
+		if (message != "") {
+			xfa.host.messageBox(message);
+			xfa.event.cancelAction = 1;
+		};
+	}
+	
+	if (xfa.event.cancelAction != 1) {
+		var message = "";
+		for (var pohl = 0; pohl &lt; Formular.pohledavky._pohledavka.count; pohl++) {
+			var oPohl = xfa.resolveNode("Formular.pohledavky.pohledavka["+pohl+"].wrapper.nezajistena_hromadne")
+			if (oPohl  != null) {
+				for (var pvj  = 0; pvj &lt; oPohl.vlastnosti.penezita._penezita_info.count; pvj++) {
+					if (oPohl.resolveNode("vlastnosti.penezita.penezita_info["+pvj+"].pvj_vyse").rawValue === null || oPohl.resolveNode("vlastnosti.penezita.penezita_info["+pvj+"].pvj_vyse").rawValue === "")
+						message += "Nezadána původní výše jistiny u hromadné pohledávky č. " + oPohl.resolveNode("vlastnosti.penezita.penezita_info["+pvj+"].pohledavka_cislo").rawValue +"\n";
+				}
+			}
+		}
+
+		if (message != "") {
+			xfa.host.messageBox(message);
+			xfa.event.cancelAction = 1;
+		};
+	}
+	if (xfa.event.cancelAction != 1) sharedLib.FillAllChildFields(ELPP.Formular, 0);
 };
 </script>
          <script usehref="..\..\Fragments\IsirLib.xdp#som($template.form1.#subform.#variables.IsirLib)"/>
@@ -13054,6 +13249,14 @@ function PreSignCheck_local() {
          </manifest>
          <manifest name="podpis_lock" id="4c99e604-f075-42e7-af3d-cc7e3c44b9cc">
             <ref>xfa[0].template[0].ELPP[0].Formular[0].podpis[0].wrapper[0].podpisy[0].epodatelna[0].Odeslat[0]</ref>
+            <ref>xfa[0].template[0].ELPP[0].Formular[0].QR[0].prihlaska_wrapper[0].QRPrihlaska[0]</ref>
+            <ref>xfa[0].template[0].ELPP[0].Formular[0].QR[0].dluznik_wrapper[0].QRDluznik[0]</ref>
+            <ref>xfa[0].template[0].ELPP[0].Formular[0].QR[0].veritel_wrapper[0].QRVeritel[0]</ref>
+            <ref>xfa[0].template[0].ELPP[0].Formular[0].QR[0].prihlaska_wrapper[0].prihlaska_calc[0]</ref>
+            <ref>xfa[0].template[0].ELPP[0].Formular[0].QR[0].dluznik_wrapper[0].dluznik_calc[0]</ref>
+            <ref>xfa[0].template[0].ELPP[0].Formular[0].QR[0].veritel_wrapper[0].veritel_calc[0]</ref>
+            <ref>xfa[0].template[0].ELPP[0].#pageSet[0].Page[0].Footer[0].Pages[0]</ref>
+            <ref>xfa[0].template[0].ELPP[0].Formular[0].QR[0].QR_lock[0]</ref>
          </manifest>
          <script usehref="..\..\Fragments\uuid_generator.xdp#som($template.form1.#subform.#variables.uuid_generator)"/>
          <text name="form_version">0.0</text>
@@ -13069,8 +13272,8 @@ function PreSignCheck_local() {
       </border>
       <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
       <?templateDesigner expand 1?>
-      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 304 00010009000A000D000E000F00100011001200130014001500170018001B0022002300240025002600270028002A002B002C002D002E002F0030003100330034003500360037003B00420043004400450046004700480049004A004B004C004D004E004F0050005100530054005500560057005A005B0066006F00C800CF00D300D800DD00DE00E200E4018E01CF01D201D401F201FE0343?>
-      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 216 0001000C000D000F0010001B00220024002A002B002C002F003000310034003500360037003B0042004300440045004600470049004A004B004C004D004E004F0050005100530054005500560057005A005B00A600C800CF00D300DD00DE00E200E401CF01D401EA01F201FE?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 308 00010009000A000D000E000F00100011001200130014001500170018001B0022002300240025002600270028002A002B002C002D002E002F0030003100330034003500360037003B00420043004400450046004700480049004A004B004C004D004E004F00500051005300540055005600570059005A005B0066006F00C800CF00D300D800DD00DE00E200E4018E01CF01D201D401F201FE0343?>
+      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 220 0001000C000D000F00100011001B00220024002A002B002C002F003000310034003500360037003B0042004300440045004600470049004A004B004C004D004E004F0050005100530054005500560057005A005B00A600C800CF00D300DD00DE00E200E401CF01D401EA01F201FE?>
    </subform>
    <?templateDesigner DefaultPreviewDynamic 1?>
    <?templateDesigner WidowOrphanControl 0?>
@@ -13090,9 +13293,9 @@ function PreSignCheck_local() {
    <?templateDesigner XDPPreviewFormat 20?>
    <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner SavePDFWithLog 0?>
    <?templateDesigner SaveTaggedPDF 0?>
    <?templateDesigner SavePDFWithEmbeddedFonts 0?>
-   <?templateDesigner SavePDFWithLog 0?>
    <?templateDesigner Zoom 143?>
    <?templateDesigner FormTargetVersion 33?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:0, crosshairs:0?>
@@ -13250,17 +13453,17 @@ function PreSignCheck_local() {
    <xsdConnection name="DataConnection" dataDescription="ELPP">
       <uri>..\..\Data\Xsd\08_-_Prihlaska_pohledavky.xsd</uri>
       <rootElement>ELPP</rootElement>
-      <?templateDesigner fileDigest shaHash="0fm4a5ihvPge/TzYTFxYiQ8eygM="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="90Gi6u0khyATBjAxWrtdqaKfsHk="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>
    <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="ELPP">
       <ELPP verze="">
          <prilohy>
-            <obecna_priloha dd:minOccur="0" dd:maxOccur="20" cislo="" nazev="" jmeno_souboru="" velikost_souboru="" dd:dataNode="dataGroup"/>
+            <obecna_priloha dd:minOccur="0" dd:maxOccur="-1" cislo="" nazev="" jmeno_souboru="" velikost_souboru="" dd:dataNode="dataGroup"/>
          </prilohy>
          <listinne_prilohy>
-            <listinna_priloha dd:minOccur="0" dd:maxOccur="20" cislo="" nazev="" dd:dataNode="dataGroup"/>
+            <listinna_priloha dd:minOccur="0" dd:maxOccur="-1" cislo="" nazev="" dd:dataNode="dataGroup"/>
          </listinne_prilohy>
          <hlavicka>
             <spisznacka>
@@ -13294,7 +13497,7 @@ function PreSignCheck_local() {
                   <obec/>
                   <stat dd:minOccur="0" dd:nullType="exclude"/>
                </adresa>
-               <koresp_adresa switch="">
+               <koresp_adresa dd:minOccur="0" switch="">
                   <ulice/>
                   <cpop/>
                   <cori/>
@@ -13904,8 +14107,8 @@ function PreSignCheck_local() {
                      <ico dd:minOccur="0" dd:nullType="exclude"/>
                   </osoba>
                   <epodatelna dd:minOccur="0" switch="">
-                     <guid/>
-                     <email/>
+                     <guid dd:minOccur="0" dd:nullType="exclude"/>
+                     <email dd:minOccur="0" dd:nullType="exclude"/>
                   </epodatelna>
                </podpis>
             </podpis>
@@ -13916,14 +14119,14 @@ function PreSignCheck_local() {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2021-02-23T07:46:21Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-04-20T07:00:42Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:6b300da3-09b4-40b2-99d8-34f64d1760b2</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:1bd43536-033c-4d1d-8c51-2e1b48bd6e4a</xmpMM:DocumentID>
          <xmpMM:InstanceID>uuid:45f61fe7-6399-4f36-bb3f-5f4c3176ee05</xmpMM:InstanceID>
       </rdf:Description>
       <rdf:Description xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/" rdf:about="">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-10T14:41:15Z" uuid="35536059-543b-4726-ba5e-55bb59c94b9f">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-04-06T15:04:06Z" uuid="5f1e2f50-23c5-4eb6-8ea7-1f780248747d">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="listinne_prilohy" locale="cs_CZ" layout="tb">
@@ -313,7 +313,7 @@ if (_priloha.count &gt; 0) {
                   </corner>
                </border>
                <?templateDesigner expand 1?></subform>
-            <occur max="20" min="0"/>
+            <occur max="-1" min="0"/>
             <keep intact="none"/>
             <bind match="dataRef" ref="$.listinna_priloha[*]"/>
             <event activity="indexChange" name="event__indexChange">
@@ -359,8 +359,8 @@ if (this.poradi.rawValue != this.index + 1)
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
-   <?templateDesigner Zoom 97?></template>
+   <?templateDesigner Zoom 93?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -397,14 +397,14 @@ if (this.poradi.rawValue != this.index + 1)
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-12-10T14:41:15Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-04-06T15:04:06Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:35536059-543b-4726-ba5e-55bb59c94b9f</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:5f1e2f50-23c5-4eb6-8ea7-1f780248747d</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
@@ -537,13 +537,13 @@ if (this.poradi.rawValue != this.index + 1)
    <xsdConnection name="DataConnection" dataDescription="listinne_prilohy">
       <uri>..\Data\Xsd\fragents_xsd\listinne_prilohy.xsd</uri>
       <rootElement>listinne_prilohy</rootElement>
-      <?templateDesigner fileDigest shaHash="o0X+ktnUPArGlKGR5edX4GAbYAY="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="OIXicEUZw3S6jarxJX0mYco0R+0="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>
    <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="listinne_prilohy">
       <listinne_prilohy>
-         <listinna_priloha dd:minOccur="0" dd:maxOccur="20" cislo="" nazev="" dd:dataNode="dataGroup"/>
+         <listinna_priloha dd:minOccur="0" dd:maxOccur="-1" cislo="" nazev="" dd:dataNode="dataGroup"/>
       </listinne_prilohy>
    </dd:dataDescription>
 </xfa:datasets></xdp:xdp>

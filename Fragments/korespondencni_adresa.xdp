@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2019-12-12T08:44:57Z" uuid="7de5622b-4227-4138-96a9-6f5c27606167">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-03-16T09:30:40Z" uuid="4a2e7310-3379-4185-a83a-45802da838b3">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="koresp_adresa" locale="cs_CZ" layout="tb">
@@ -77,7 +77,7 @@ if (this.rawValue == '0' || this.rawValue == null) {
 </script>
             </event>
             <assist>
-               <toolTip>Vyplňte pouze tehdy, pokud si přejete, aby Vám bylo doručováno na jinou adresu, než na adresu sídla či adresu místa trvalého pobytu.</toolTip>
+               <toolTip>Vyplňte pouze tehdy, pokud si přejete, aby bylo doručováno na jinou adresu, než na adresu sídla či adresu místa trvalého pobytu.</toolTip>
                <speak priority="toolTip"/>
             </assist>
          </field>
@@ -98,7 +98,8 @@ if (this.rawValue == '0' || this.rawValue == null) {
                <corner stroke="solid"/>
             </border>
             <bind match="none" ref=""/>
-            <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 1?>
+         </subform>
          <margin leftInset="0mm"/>
          <border>
             <edge thickness="0.2mm" presence="hidden">
@@ -129,7 +130,7 @@ if (this.rawValue == '0' || this.rawValue == null) {
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Zoom 92?>
+   <?templateDesigner Zoom 93?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
@@ -167,14 +168,14 @@ if (this.rawValue == '0' || this.rawValue == null) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2019-12-12T08:44:57Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-03-16T09:30:40Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:7de5622b-4227-4138-96a9-6f5c27606167</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:4a2e7310-3379-4185-a83a-45802da838b3</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
@@ -307,7 +308,7 @@ if (this.rawValue == '0' || this.rawValue == null) {
    <xsdConnection name="DataConnection" dataDescription="koresp_adresa">
       <uri>..\Data\Xsd\fragents_xsd\koresp_adresa.xsd</uri>
       <rootElement>koresp_adresa</rootElement>
-      <?templateDesigner fileDigest shaHash="SXguHidZGCylGkfRXoOX7MFmgjo="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="pySxFP0VE6X+W+BexIse5cEanFg="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>

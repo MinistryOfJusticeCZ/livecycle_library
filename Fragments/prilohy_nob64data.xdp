@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-12-10T14:42:48Z" uuid="0ade2da5-03c7-4e6b-ae12-1c57060a16d5">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-04-06T13:05:17Z" uuid="204c22b9-52af-4c86-b387-2be379e60d0c">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="prilohy" locale="cs_CZ" layout="tb">
@@ -237,8 +237,20 @@ if (att) {
 			//console.println("new row SOM: " + newRow.somExpression);
 			xfa.resolveNode(newRow.somExpression+".subAtt.attId").rawValue = attTempId;
 			xfa.resolveNode(newRow.somExpression+".subAtt.fileName").rawValue = att.path;
+			xfa.resolveNode(newRow.somExpression+".nazev").rawValue = att.path;
 			attSize = Math.ceil(attSize/1024);	
 			xfa.resolveNode(newRow.somExpression+".attSize").rawValue = attSize + " kB";
+
+			var SumSize = 0;
+			
+			for (var i = 0; i &lt; _priloha.count; i++) {
+				SumSize += xfa.resolveNode("priloha["+i+"].attSize").rawValue.split(" ")[0]*1;
+			} 
+		
+			if (SumSize &gt; 17*1024) {
+				xfa.host.messageBox("Celková velikost příloh nesmí překročit 17MB.");
+				newRow.btnRemove.btn.execEvent("click");
+			}	
 			//xfa.resolveNode(attachName.value).rawValue = attach.path;
 			//xfa.resolveNode(attachId.value).rawValue = attachTime;
 		
@@ -725,7 +737,7 @@ if (_priloha.count &gt; 0) {
                   </corner>
                </border>
                <?templateDesigner expand 1?></subform>
-            <occur max="20" min="0"/>
+            <occur max="-1" min="0"/>
             <keep intact="none"/>
             <bind match="none"/>
             <event activity="indexChange" name="event__indexChange">
@@ -771,8 +783,8 @@ if (this.poradi.rawValue != this.index + 1)
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Zoom 97?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 93?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -809,14 +821,14 @@ if (this.poradi.rawValue != this.index + 1)
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-12-10T14:42:48Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-04-06T13:05:17Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:0ade2da5-03c7-4e6b-ae12-1c57060a16d5</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:204c22b9-52af-4c86-b387-2be379e60d0c</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
@@ -949,13 +961,13 @@ if (this.poradi.rawValue != this.index + 1)
    <xsdConnection name="DataConnection" dataDescription="prilohy">
       <uri>..\Data\Xsd\fragents_xsd\prilohy_popis.xsd</uri>
       <rootElement>prilohy</rootElement>
-      <?templateDesigner fileDigest shaHash="ztd6SXZHQwJPC2hpSVYN0lVg9os="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="vC278erDYvMX0F4epRM0KKBqsgw="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>
    <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="prilohy">
       <prilohy>
-         <obecna_priloha dd:minOccur="0" dd:maxOccur="20" cislo="" nazev="" jmeno_souboru="" velikost_souboru="" dd:dataNode="dataGroup"/>
+         <obecna_priloha dd:minOccur="0" dd:maxOccur="-1" cislo="" nazev="" jmeno_souboru="" velikost_souboru="" dd:dataNode="dataGroup"/>
       </prilohy>
    </dd:dataDescription>
 </xfa:datasets></xdp:xdp>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-02-06T18:22:25Z" uuid="43070dea-2e7f-4a75-b91e-52730fb260aa">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-04-15T13:24:30Z" uuid="31a373c1-41b7-4554-b2ad-40051e047f68">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="form1" locale="cs_CZ" layout="tb">
@@ -19,7 +19,8 @@ var DEBUG3 = false; // visible/hide
 var DEBUG4 = false  // limitDecField
 var DEBUG5 = false // EraseAllChildFields
 var DEBUG6 = false //setOnValueChange
-if (DEBUG1 || DEBUG2 || DEBUG3 || DEBUG4 || DEBUG5|| DEBUG6) console.show();
+var DEBUG7 = false // EraseAllChildFields
+if (DEBUG1 || DEBUG2 || DEBUG3 || DEBUG4 || DEBUG5|| DEBUG6 || DEBUG7) console.show();
 
 function sumColumn(field, sSOMExp) {
 
@@ -168,7 +169,7 @@ function PreSignCheck(povinne, jedno_z_nich) {
                             
                             lbl_pref_txt = (lbl_pref_txt==""?"":lbl_pref_txt + " - ");
 							
-							if ( (obj_fld.rawValue == null ||  obj_fld.rawValue == " "  || obj_fld.rawValue == "") &amp;&amp; isVisible(obj_fld) ) {
+							if ( (obj_fld.rawValue === null ||  obj_fld.rawValue === " "  || obj_fld.rawValue === "") &amp;&amp; isVisible(obj_fld) ) {
 								if (! sec_used) {
 									result += sec_txt;
 									sec_used = true;
@@ -638,6 +639,45 @@ function excMaxAttachSize(doc) {
 	return false;
 }               
 
+function FillAllChildFields(myParentObject, FillValue){
+
+	var allChildElements;
+	var intNumElements;
+	var currentElement;
+
+	if (DEBUG7) console.println("FillAllChildFields: field: " + myParentObject.name)
+
+	//Get all the child nodes of the parent element
+	allChildElements = myParentObject.nodes;
+
+	if (allChildElements ==  null) return;
+	//Total number of element in the object
+	intNumElements = allChildElements.length;
+
+	//Loop through all the child elements
+	for(var j=0; j &lt; allChildElements.length; j++){
+		currentElement = allChildElements.item(j);
+		//If the element is another subform we'll recusively call the function again
+		if(allChildElements.item(j).className == "subform"){
+			FillAllChildFields(currentElement, FillValue);
+		}
+		else if(currentElement.className == "field"){
+			if (DEBUG7) console.println ("field: " + currentElement.name);
+			if (DEBUG7 &amp;&amp; currentElement.resolveNode("ui.#numericEdit") != null) {
+				console.println ("NUM Field name: " + currentElement.name);
+			};
+			if (currentElement.resolveNode("ui.#numericEdit") != null &amp;&amp; (currentElement.rawValue == "" || currentElement.rawValue == null))
+				currentElement.rawValue = FillValue;
+		}
+		
+	}
+}
+               
+               
+
+               
+               
+
                
                
 
@@ -691,14 +731,14 @@ function excMaxAttachSize(doc) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2021-02-06T18:22:25Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-04-15T13:24:30Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:43070dea-2e7f-4a75-b91e-52730fb260aa</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:31a373c1-41b7-4554-b2ad-40051e047f68</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>

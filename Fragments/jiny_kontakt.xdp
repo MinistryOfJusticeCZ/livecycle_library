@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-02-10T16:21:52Z" uuid="1f262248-03ee-4c46-a014-601f67cf3aba">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-03-15T09:01:52Z" uuid="55844f98-3a84-4db7-b9f0-1ebe6314503d">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="kontakt" locale="cs_CZ" layout="tb">
@@ -72,7 +72,7 @@
             </font>
             <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="1mm" rightInset="1mm"/>
             <para marginLeft="2.835pt" marginRight="2.835pt" vAlign="middle" spaceAbove="2pt" spaceBelow="1pt"/>
-            <caption reserve="3.1mm" placement="top">
+            <caption reserve="2.8319mm" placement="top">
                <value>
                   <text>Datová schránka:</text>
                </value>
@@ -91,21 +91,22 @@
             <value>
                <text maxChars="7"/>
             </value>
-            <event activity="exit" name="event__exit">
+            <validate scriptTest="warning">
                <script contentType="application/x-javascript">
-/*
+
+
 var r = new RegExp(); 
 
-r.compile ("^[0-9a-zA-Z]{9}$");
+r.compile ("^[2-9a-km-np-z]{7}$");
 
 if( r.test(this.rawValue) == "0" &amp;&amp; this.rawValue != null &amp;&amp; this.rawValue != "") {
 	xfa.host.messageBox("Chybně zadaný údaj Datová schránka");
-	xfa.host.setFocus(this);
+	
 };
-*/
+
+1;
 </script>
-            </event>
-            <validate scriptTest="warning"/>
+            </validate>
          </field>
          <field name="telefon" w="41mm" minH="9mm">
             <ui>
@@ -247,21 +248,20 @@ if( r.test(this.rawValue) == "0" &amp;&amp; this.rawValue != null &amp;&amp; thi
             <value>
                <text maxChars="7"/>
             </value>
-            <event activity="exit" name="event__exit">
+            <validate scriptTest="warning">
                <script contentType="application/x-javascript">
-/*
 var r = new RegExp(); 
 
-r.compile ("^[0-9a-zA-Z]{9}$");
+r.compile ("^[2-9a-km-np-z]{7}$");
 
 if( r.test(this.rawValue) == "0" &amp;&amp; this.rawValue != null &amp;&amp; this.rawValue != "") {
 	xfa.host.messageBox("Chybně zadaný údaj Datová schránka");
-	xfa.host.setFocus(this);
+	
 };
-*/
+
+1;
 </script>
-            </event>
-            <validate scriptTest="warning"/>
+            </validate>
          </field>
          <field name="telefon" w="41mm" minH="9mm">
             <ui>
@@ -367,14 +367,14 @@ if( r.test(this.rawValue) == "0" &amp;&amp; this.rawValue != null &amp;&amp; thi
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2021-02-10T16:21:52Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-03-15T09:01:52Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:1f262248-03ee-4c46-a014-601f67cf3aba</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:55844f98-3a84-4db7-b9f0-1ebe6314503d</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
@@ -521,7 +521,7 @@ if( r.test(this.rawValue) == "0" &amp;&amp; this.rawValue != null &amp;&amp; thi
    <xsdConnection name="DataConnection" dataDescription="kontakt">
       <uri>..\Data\Xsd\fragents_xsd\kontakt.xsd</uri>
       <rootElement>kontakt</rootElement>
-      <?templateDesigner fileDigest shaHash="0gUWOMEgxk7Mg1TYza5MhavBnQc="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="fXs6hF1oKmLGTVntxKoPqewiqU0="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>

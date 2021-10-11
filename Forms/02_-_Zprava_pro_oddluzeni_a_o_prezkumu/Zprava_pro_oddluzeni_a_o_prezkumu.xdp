@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.1.20130830.1.901444" APIVersion="3.6.13235.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-01-07T16:30:13Z" uuid="70c82d33-407e-4869-98f4-455c213948d5">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-03-03T15:45:00Z" uuid="7cee30f5-40da-47a8-a079-5c486c4a2f62">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
    <?formServer defaultPDFRenderFormat acrobat10.0dynamic?>
    <?formServer allowRenderCaching 0?>
@@ -18,7 +18,7 @@
                   <textEdit/>
                </ui>
                <value>
-                  <text>1.1.12-TEST</text>
+                  <text>1.2.1-TEST</text>
                </value>
                <font typeface="Myriad Pro" baselineShift="0pt" size="8pt">
                   <fill>
@@ -243,7 +243,7 @@ myFormVersionELZPPO = vf.rawValue;
             </subform>
             <margin topInset="0mm" leftInset="0.1mm" rightInset="0.1mm" bottomInset="2mm"/>
             <bind match="none"/>
-            <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 0?></subform>
          <subform w="190.2mm" minH="6mm" layout="tb" name="insolvencni_spravce">
             <subform w="190mm" layout="tb" name="wrapper">
                <draw name="label" w="190mm" h="6mm">
@@ -8552,6 +8552,9 @@ sharedLib.setFontSizeFromValue(this);
 sharedLib.setFontSizeFromValue(this);
 </script>
                      </event>
+                     <assist>
+                        <toolTip>Uveďte výši životního minima.</toolTip>
+                     </assist>
                   </field>
                   <subform layout="tb" colSpan="3" w="94mm" name="Cell2">
                      <bind match="none"/>
@@ -8576,7 +8579,7 @@ sharedLib.setFontSizeFromValue(this);
                         <margin topInset="1mm" bottomInset="1mm" leftInset="2mm" rightInset="1mm"/>
                         <para vAlign="middle" hAlign="right" marginLeft="0pt" marginRight="2.835pt" spaceAbove="2pt"/>
                         <value>
-                           <decimal leadDigits="11">6502</decimal>
+                           <decimal leadDigits="11">6637</decimal>
                         </value>
                         <format>
                            <picture>null{'Kč'}|zero{9' Kč'}|num{zz,zzz,zzz,zzz.zz' Kč'}</picture>
@@ -8589,7 +8592,7 @@ sharedLib.setFontSizeFromValue(this);
                         </event>
                         <caption reserve="63.5158mm">
                            <value>
-                              <text>Výše normativních nákladů:</text>
+                              <text>Výše normativních nákladů na bydlení:</text>
                            </value>
                            <para vAlign="middle"/>
                            <font typeface="Myriad Pro" baselineShift="0pt" size="9pt">
@@ -8603,6 +8606,9 @@ sharedLib.setFontSizeFromValue(this);
 sharedLib.setFontSizeFromValue(this);
 </script>
                         </event>
+                        <assist>
+                           <toolTip>Uveďte výši normativních nákladů na bydlení.</toolTip>
+                        </assist>
                      </field>
                      <para vAlign="middle" hAlign="center"/>
                      <?templateDesigner expand 1?></subform>
@@ -9077,8 +9083,8 @@ vyse;
                            </border>
                            <calculate>
                               <script contentType="application/x-javascript">
-var mira = Isir_CalculateLib.calcMira1(36);
-sharedLib.limitDecField(this, mira);
+var varMira = Isir_CalculateLib.calcMira1(36);
+sharedLib.limitDecField(this, varMira);
 
 </script>
                            </calculate>
@@ -9121,10 +9127,10 @@ sharedLib.limitDecField(this, mira);
                            </border>
                            <calculate>
                               <script contentType="application/x-javascript">
-var vyse = Isir_CalculateLib.calcVyse1(36);
-vyse = sharedLib.limitDecField(this, vyse);
-this.rawValue = vyse;
-sharedLib.setFontSizeFromValue(this, vyse);
+var varVyse = Isir_CalculateLib.calcVyse1(36);
+varVyse = sharedLib.limitDecField(this, varVyse);
+this.rawValue = varVyse;
+sharedLib.setFontSizeFromValue(this, varVyse);
 </script>
                            </calculate>
                            <event activity="initialize" name="event__initialize">
@@ -9218,8 +9224,8 @@ sharedLib.setFontSizeFromValue(this);
                            <calculate>
                               <script contentType="application/x-javascript">
 
-var mira = Isir_CalculateLib.calcMira1(60);
-sharedLib.limitDecField(this, mira);
+var varMira = Isir_CalculateLib.calcMira1(60);
+sharedLib.limitDecField(this, varMira);
 
 </script>
                            </calculate>
@@ -9262,10 +9268,10 @@ sharedLib.limitDecField(this, mira);
                            </border>
                            <calculate>
                               <script contentType="application/x-javascript">
-var vyse = Isir_CalculateLib.calcVyse1(60);
-vyse = sharedLib.limitDecField(this, vyse);
-this.rawValue = vyse;
-sharedLib.setFontSizeFromValue(this, vyse);
+var varVyse = Isir_CalculateLib.calcVyse1(60);
+varVyse = sharedLib.limitDecField(this, varVyse);
+this.rawValue = varVyse;
+sharedLib.setFontSizeFromValue(this, varVyse);
 </script>
                            </calculate>
                            <event activity="initialize" name="event__initialize">
@@ -9541,8 +9547,8 @@ poc
                            </border>
                            <calculate>
                               <script contentType="application/x-javascript">
-var mira = Isir_CalculateLib.calcMira2(36);
-sharedLib.limitDecField(this, mira);
+var varMira = Isir_CalculateLib.calcMira2(36);
+sharedLib.limitDecField(this, varMira);
 
 </script>
                            </calculate>
@@ -9585,12 +9591,12 @@ sharedLib.limitDecField(this, mira);
                            </border>
                            <calculate>
                               <script contentType="application/x-javascript">
-var vyse = Isir_CalculateLib.calcVyse2(36);
+var varVyse = Isir_CalculateLib.calcVyse2(36);
 
-vyse = sharedLib.limitDecField(this, vyse);
+varVyse = sharedLib.limitDecField(this, varVyse);
 
-this.rawValue = vyse;
-sharedLib.setFontSizeFromValue(this, vyse);
+this.rawValue = varVyse;
+sharedLib.setFontSizeFromValue(this, varVyse);
 </script>
                            </calculate>
                            <event activity="initialize" name="event__initialize">
@@ -9684,9 +9690,9 @@ sharedLib.setFontSizeFromValue(this);
                            <calculate>
                               <script contentType="application/x-javascript">
 
-var mira = Isir_CalculateLib.calcMira2(60);
+var varMira = Isir_CalculateLib.calcMira2(60);
 
-sharedLib.limitDecField(this, mira);
+sharedLib.limitDecField(this, varMira);
 
 </script>
                            </calculate>
@@ -9729,10 +9735,10 @@ sharedLib.limitDecField(this, mira);
                            </border>
                            <calculate>
                               <script contentType="application/x-javascript">
-var vyse = Isir_CalculateLib.calcVyse2(60);
-vyse = sharedLib.limitDecField(this, vyse);
-this.rawValue = vyse;
-sharedLib.setFontSizeFromValue(this, vyse);
+var varVyse = Isir_CalculateLib.calcVyse2(60);
+varVyse = sharedLib.limitDecField(this, varVyse);
+this.rawValue = varVyse ;
+sharedLib.setFontSizeFromValue(this, varVyse);
 </script>
                            </calculate>
                            <event activity="initialize" name="event__initialize">
@@ -11162,7 +11168,7 @@ endif
                   <subform usehref="..\..\Fragments\prilohy_nob64data.xdp#som($template.prilohy.prilohy)">
                      <bind match="dataRef" ref="$.prilohy"/>
                      <margin topInset="0mm"/>
-                     <?templateDesigner expand 1?>
+                     <?templateDesigner expand 0?>
                   </subform>
                   <draw name="label_list" w="190mm" h="6mm">
                      <ui>
@@ -11180,13 +11186,12 @@ endif
                      <para spaceAbove="3pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
                      <keep next="contentArea"/>
                   </draw>
-                  <?templateDesigner expand 1?>
                   <subform usehref="..\..\Fragments\listinne_prilohy.xdp#som($template.listinne_prilohy.listinne_prilohy)">
                      <margin topInset="0mm"/>
                      <bind match="dataRef" ref="$.listinne_prilohy"/>
                      <?templateDesigner expand 0?>
                   </subform>
-               </subform>
+                  <?templateDesigner expand 1?></subform>
                <bind match="none"/>
                <?templateDesigner expand 1?></subform>
             <margin topInset="0mm" leftInset="0mm" rightInset="0mm" bottomInset="2mm"/>
@@ -12833,9 +12838,8 @@ function setIdentifikaceDluznikaTitle (pocet) {
       </border>
       <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
       <?templateDesigner expand 1?>
-      <?renderCache.subset "Calibri" 0 0 UTF-16 2 36 000300260064011A011E015D016F019A01C6?>
-      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 308 000100060009000A000D000E000F001000110012001300140015001600170019001A001B0022002300240025002600270029002A002B002C002D002F003000310034003500360037003B00420043004400450046004700480049004A004B004C004D004E004F0050005100530054005500560057005A005B005D006600C800CF00D300DD00DE00E200E4018E01CF01D201D401EA01F201FE0343?>
-      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 244 0001000C000F0010001100120013001400150016001700180019001A002200230024002A002F0030003100340037003B00420043004400450046004700480049004A004B004C004D004E004F0050005100530054005500560057005A005B005C005E00A600C800CF00D300DD00DE00E200E401CF01D401F201FE?>
+      <?renderCache.subset "Myriad Pro" 0 0 UTF-16 2 312 000100060009000A000D000E000F0010001100120013001400150016001700180019001A001B0022002300240025002600270029002A002B002C002D002F003000310034003500360037003B00420043004400450046004700480049004A004B004C004D004E004F0050005100530054005500560057005A005B005D006600C800CF00D300DD00DE00E200E4018E01CF01D201D401EA01F201FE0343?>
+      <?renderCache.subset "Myriad Pro" 1 0 UTF-16 2 228 0001000C000F001100120013001400150016001700180019001A002200230024002A002F0030003100340037003B0042004300440045004600470049004A004B004C004D004E004F0050005100530054005500560057005A005B00A600C800CF00D300DD00DE00E200E401CF01D401F201FE?>
    </subform>
    <?templateDesigner DefaultPreviewDynamic 1?>
    <?templateDesigner WidowOrphanControl 0?>
@@ -12859,7 +12863,7 @@ function setIdentifikaceDluznikaTitle (pocet) {
    <?templateDesigner SaveTaggedPDF 0?>
    <?templateDesigner SavePDFWithEmbeddedFonts 0?>
    <?templateDesigner SavePDFWithLog 0?>
-   <?templateDesigner Zoom 74?>
+   <?templateDesigner Zoom 143?>
    <?templateDesigner FormTargetVersion 33?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
    <?templateDesigner Guidelines v:4947750?></template>
@@ -13015,7 +13019,7 @@ function setIdentifikaceDluznikaTitle (pocet) {
    <xsdConnection name="DataConnection" dataDescription="ELZPPO">
       <uri>..\..\Data\Xsd\02_-_Zprava_pro_oddluzeni_a_o_prezkumu.xsd</uri>
       <rootElement>ELZPPO</rootElement>
-      <?templateDesigner fileDigest shaHash="kYqvigAZgjnRyoW8ADFwDuzo9Vc="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="LftcbhWrrJc7HUily1xkYufnaSY="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>
@@ -13123,6 +13127,10 @@ function setIdentifikaceDluznikaTitle (pocet) {
                      <titul_za dd:minOccur="0" dd:nullType="exclude"/>
                      <ico dd:minOccur="0" dd:nullType="exclude"/>
                   </osoba>
+                  <epodatelna dd:minOccur="0" switch="">
+                     <guid dd:minOccur="0" dd:nullType="exclude"/>
+                     <email dd:minOccur="0" dd:nullType="exclude"/>
+                  </epodatelna>
                </podpis>
             </podpisy>
          </zaznam_o_jednani>
@@ -13288,6 +13296,10 @@ function setIdentifikaceDluznikaTitle (pocet) {
                <titul_za dd:minOccur="0" dd:nullType="exclude"/>
                <ico dd:minOccur="0" dd:nullType="exclude"/>
             </osoba>
+            <epodatelna dd:minOccur="0" switch="">
+               <guid dd:minOccur="0" dd:nullType="exclude"/>
+               <email dd:minOccur="0" dd:nullType="exclude"/>
+            </epodatelna>
          </podpis>
       </ELZPPO>
    </dd:dataDescription>
@@ -13295,14 +13307,14 @@ function setIdentifikaceDluznikaTitle (pocet) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2021-01-07T16:30:13Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-03-03T15:45Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer 11.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:70c82d33-407e-4869-98f4-455c213948d5</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:7cee30f5-40da-47a8-a079-5c486c4a2f62</xmpMM:DocumentID>
          <xmpMM:InstanceID>uuid:fcc44af0-90b4-429a-9055-8bac68fe5aae</xmpMM:InstanceID>
       </rdf:Description>
       <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">

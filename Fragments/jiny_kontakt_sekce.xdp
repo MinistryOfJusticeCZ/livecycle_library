@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesigner_V11.0.0.20130303.1.892433" APIVersion="3.6.13061.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-10-21T14:39:06Z" uuid="39ed05fd-6f30-4fe1-8ba4-06ca723730c3">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2021-03-15T09:02:05Z" uuid="39ed05fd-6f30-4fe1-8ba4-06ca723730c3">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.6/">
    <?formServer defaultPDFRenderFormat acrobat11.0static?>
    <subform name="kontakt" locale="cs_CZ" layout="tb">
@@ -82,9 +82,9 @@
    <?templateDesigner SaveTaggedPDF 1?>
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner Grid show:0, snap:0, units:17, color:ff8080, origin:(0,0), interval:(158750,158750), objsnap:0, guidesnap:0, pagecentersnap:0?>
-   <?templateDesigner Zoom 89?>
    <?templateDesigner FormTargetVersion 36?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 93?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -121,7 +121,7 @@
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.150055, 2013/08/07-22:58:47        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2020-10-21T14:39:06Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2021-03-15T09:02:05Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer 11.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
@@ -275,7 +275,7 @@
    <xsdConnection name="DataConnection" dataDescription="kontakt">
       <uri>..\Data\Xsd\fragents_xsd\kontakt.xsd</uri>
       <rootElement>kontakt</rootElement>
-      <?templateDesigner fileDigest shaHash="A2pzafOOJPm38b5MCU2NtqtqmQc="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="fXs6hF1oKmLGTVntxKoPqewiqU0="?></xsdConnection>
 </connectionSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>
